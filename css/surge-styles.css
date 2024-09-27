@@ -10,6 +10,9 @@
 /* End Img FX */
 /* Transforms & Transitions */
 /* End Transforms & Transitions */
+/* Shading  */
+/* Shading * /
+
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 /* End Fonts */
@@ -21,7 +24,7 @@ body {
   body header#header.site-header {
     padding: 0;
     position: fixed;
-    background: rgba(234, 234, 215, 0.5);
+    background: rgba(234, 234, 215, 0.55);
     width: 100%;
     transition: ease all 0.25s;
     z-index: 99; }
@@ -176,8 +179,8 @@ body {
     content: " › ";
     font-size: 33px;
     position: absolute;
-    right: 64px;
-    top: 26px;
+    right: 48px;
+    top: 30px;
     text-shadow: none;
     transition: ease all 0.5s;
     text-shadow: none;
@@ -192,9 +195,9 @@ body {
       body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children > a::after {
         right: 56px; } }
   body header#header nav#navigation.nav-primary ul.menu li.current_page_item {
-    box-shadow: #dccf99 inset 0px 0px 26px -12px; }
+    box-shadow: #dccf99 inset 0px 0px 26px -2px; }
   body .site-container .site-inner {
-    background: #bdd0d6; }
+    background: #888074; }
   body .site-container .bground {
     background-color: black;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
@@ -214,9 +217,11 @@ body {
     max-width: 1620px; }
     body .site-container div.wrap main.content {
       width: 95%;
+      border: solid 2px #aea28b;
+      box-shadow: 0 0 134px 17px #2e2e2e;
       padding: 18px;
       border-radius: 10px;
-      background: #eafaff; }
+      background: #cdc8bd; }
   body .site-container h1.bground-title {
     font-family: "Special Elite", system-ui;
     letter-spacing: 21px;
@@ -230,10 +235,11 @@ body {
       font-family: "Special Elite", system-ui;
       padding: 0; }
       body .site-container .omega-nav-menu li.sfHover > a {
-        background-color: rgba(237, 229, 200, 0.3);
+        background-color: rgba(237, 229, 200, 0.8);
         box-shadow: 5px 14px 7px -4px #494a4b12; }
         body .site-container .omega-nav-menu li.sfHover > a::after {
-          top: 35px !important;
+          right: 12px;
+          top: 30px;
           transform: rotate(270deg) !important; }
       body .site-container .omega-nav-menu li:last-child a:hover, body .site-container .omega-nav-menu li:last-child a:focus, body .site-container .omega-nav-menu li:last-child a:active {
         border-bottom-right-radius: 15px; }
@@ -244,32 +250,33 @@ body {
         transition: ease all 0.5s;
         font-size: 13px; }
         body .site-container .omega-nav-menu li a::before {
-          content: " * ";
-          color: black;
+          content: "\1F6E5";
+          color: #6d6666;
           position: absolute;
           right: 41%;
           top: 0;
           text-shadow: none;
           opacity: 0;
           transition: ease all 0.25s;
-          font-size: 18px; }
+          font-size: 22px; }
           @media only screen and (min-width: 768px) and (max-width: 992px) {
             body .site-container .omega-nav-menu li a::before {
-              font-size: 19px; } }
+              font-size: 25px; } }
           @media only screen and (min-width: 1023px) and (max-width: 1200px) {
             body .site-container .omega-nav-menu li a::before {
-              font-size: 21px; } }
+              font-size: 38px; } }
           @media only screen and (min-width: 1200px) and (max-width: 1400px) {
             body .site-container .omega-nav-menu li a::before {
-              font-size: 23px; } }
+              font-size: 50px; } }
           @media only screen and (min-width: 1400px) {
             body .site-container .omega-nav-menu li a::before {
-              font-size: 25px;
-              top: 0;
-              right: 39%; } }
+              font-size: 64px !important;
+              top: 10px !important;
+              right: 0 !important; } }
         body .site-container .omega-nav-menu li a:hover, body .site-container .omega-nav-menu li a:focus, body .site-container .omega-nav-menu li a:active {
-          background: rgba(237, 229, 203, 0.5);
+          background: rgba(237, 229, 203, 0.8);
           box-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
+          text-shadow: 1px 1px 19px black;
           width: 100%; }
           body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
             opacity: 1; }
@@ -277,7 +284,7 @@ body {
         margin-top: 0px;
         margin-left: 1px; }
       body .site-container .omega-nav-menu li ul.sub-menu {
-        background: rgba(234, 234, 215, 0.5);
+        background: rgba(234, 234, 215, 0.55);
         padding: 0;
         margin-top: 0;
         margin-left: 0;
@@ -300,3 +307,14 @@ body {
             max-width: 420px; } }
   body ul.menu-primary ul {
     border-top: 3px solid #a90000 !important; }
+  body .site-footer {
+    border-top: 1px solid #E9E9E9;
+    color: #666;
+    font-size: 16px;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #d3cfc4; }
+  body .footer-widgets {
+    background: none repeat scroll 0 0 #c3beb1;
+    border-top: 2px solid #EEE3D7;
+    padding: 40px 0 16px; }

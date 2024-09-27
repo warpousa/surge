@@ -67,11 +67,12 @@ $xxl:  1400px;
 
 $black: black;
 $charade: #222630;
-$content-background1: #bdd0d6;
-$content-background2: #eafaff;
-$menu-background: rgba(234, 234, 215, 0.5);
-$menu-item-hover: rgba(237, 229, 203, 0.5);
-$menu-background-highlight: rgba(237, 229, 200, 0.3);
+$content-background1: #888074;
+$content-background2: #cdc8bd;
+$contentcolor: #6d6666;
+$menu-background: rgba(234, 234, 215, 0.55);
+$menu-item-hover: rgba(237, 229, 203, 0.8);
+$menu-background-highlight: rgba(237, 229, 200, 0.8);
 $menu-border: 3px solid #008CBA;
 $submenu-background: rgba(237, 229, 200, 0.8);
 $menu-highlight-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
@@ -82,7 +83,7 @@ $topborder: 3px solid #a90000 !important;
 
 /*  Img FX */
 
-$nav-select-bg1: #dccf99 inset 0px 0px 26px -12px;
+$nav-select-bg1: #dccf99 inset 0px 0px 26px -2px;
 $sepia-sat-bright-hue: sepia(100%) saturate(300%) brightness(100%) hue-rotate(180deg);
 $sepia-sat-bright-hue-ii: sepia(40%) saturate(50%) brightness(100%) hue-rotate(80deg);
 
@@ -97,6 +98,12 @@ $animate-header: translateY(-75px);
 
 /* End Transforms & Transitions */
 
+/* Shading  */
+
+$main-shadow: 0 0 134px 17px #2e2e2e;
+
+/* Shading * /
+
 /* Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
@@ -108,9 +115,11 @@ $EliteFont: 'Special Elite', system-ui;
 /* Mixins */
 
 @mixin main-content {
-  padding: 18px;
-  border-radius: 10px;
-  background: $content-background2;	
+	border: solid 2px #aea28b;
+	box-shadow: 0 0 134px 17px #2e2e2e;
+  	padding: 18px;
+  	border-radius: 10px;
+  	background: $content-background2;
 }
 
 /* End Mixins */
@@ -338,8 +347,8 @@ body {
 											content: " › ";
 											font-size: 33px;
 											position: absolute;
-											right: 64px;
-											top: 26px;
+											right: 48px;
+											top: 30px;
 											text-shadow: none;
 											transition: ease all 0.5s;
 											
@@ -432,7 +441,8 @@ body {
 					background-color: $menu-background-highlight;
 					box-shadow: 5px 14px 7px -4px #494a4b12;
 					&::after {
-						top: 35px !important;
+						right: 12px;
+						top: 30px;
 						transform: rotate(270deg) !important;
 					}
 				}
@@ -453,35 +463,36 @@ body {
 					font-size: 13px;
 					
 					&::before {
-						content: " * ";
-						color: black;
+						content: "\1F6E5"; 
+						color: $contentcolor;
 						position: absolute;
 						right: 41%;
 						top: 0;
 						text-shadow: none;
 						opacity: 0;
 						transition: $ease-quarter-sec;
-						font-size: 18px;
+						font-size: 22px;
 						
 						@include tablet-landscape-up {
-							font-size: 19px;
+							font-size: 25px;
 						}
 						@include custom-desktop {
-							font-size: 21px
+							font-size: 38px
 						}
 						@include large-desktop-up {
-							font-size: 23px;
+							font-size: 50px;
 						}
 						@include hd-desktop-up {
-							font-size: 25px;
-							top: 0;
-							right: 39%;
+							font-size: 64px !important;
+							top: 10px !important;
+							right: 0 !important;
 						}
 					}
 					
 					&:hover, &:focus, &:active {
 						background: $menu-item-hover;
 						box-shadow: $menu-highlight-shadow;
+						text-shadow: 1px 1px 19px $black;
 						width: 100%;
 						
 						&::before {
@@ -524,8 +535,21 @@ body {
 			}
 		}
 	}
-			ul.menu-primary ul {
-			  border-top: $topborder;
-			}
+	ul.menu-primary ul {
+	  border-top: $topborder;
+	}
+	.site-footer {
+		border-top: 1px solid #E9E9E9;
+		color: #666;
+		font-size: 16px;
+		padding: 30px 0;
+		text-align: center;
+		background-color: #d3cfc4;
+	}	
+	.footer-widgets {
+		background: none repeat scroll 0 0 #c3beb1;
+		border-top: 2px solid #EEE3D7;
+		padding: 40px 0 16px;
+	}
 }
 
