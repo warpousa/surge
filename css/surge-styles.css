@@ -24,12 +24,14 @@ body {
   body header#header.site-header {
     padding: 0;
     position: fixed;
-    background: rgba(234, 234, 215, 0.55);
+    background: #eaead7;
     width: 100%;
     transition: ease all 0.25s;
     z-index: 99; }
     body header#header.site-header.hide-header {
       transform: translateY(-75px); }
+    body header#header.site-header.is-transparent {
+      background: rgba(234, 234, 215, 0.55); }
   body header#header .site-title a {
     color: #333;
     font-family: "Special Elite", system-ui;
@@ -143,7 +145,7 @@ body {
     body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children.sfHover::before {
       content: 'Success!'; } }
   body header#header nav#navigation.nav-primary ul.menu li ul li {
-    background-color: rgba(237, 229, 200, 0.8);
+    background-color: rgba(237, 229, 200, 0.9);
     width: 100%; }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body header#header nav#navigation.nav-primary ul.menu li ul li a {
@@ -195,24 +197,35 @@ body {
       body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children > a::after {
         right: 56px; } }
   body header#header nav#navigation.nav-primary ul.menu li.current_page_item {
-    box-shadow: #dccf99 inset 0px 0px 26px -2px; }
+    box-shadow: #fffae7 inset 0px 0px 26px -2px; }
+  body .searchwp-modal-form .search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; }
+    body .searchwp-modal-form .search-form input[type="submit"] {
+      bottom: 88px;
+      left: 385px;
+      bottom: 88px; }
   body .site-container .site-inner {
-    background: #888074; }
+    background: #8e8982; }
   body .site-container .bground {
     background-color: black;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
     filter: sepia(40%) saturate(50%) brightness(100%) hue-rotate(80deg); }
     body .site-container .bground.bground1 {
-      background-image: url("../wp-content/uploads/2024/06/ornifiles-bg-1.jpg") !important; }
+      background-image: url("img/surgengo-bground1.jpg") !important; }
     body .site-container .bground.bground2 {
-      background-image: url("../wp-content/uploads/2024/06/ornifiles-bg-2.jpg") !important; }
+      background-image: url("img/surgengo-bground2.jpg") !important; }
     body .site-container .bground.bground3 {
-      background-image: url("../wp-content/uploads/2024/06/ornifiles-bg-3.jpg") !important; }
+      background-image: url("img/surgengo-bground3.jpg") !important; }
     body .site-container .bground.bground4 {
-      background-image: url("../wp-content/uploads/2024/06/ornifiles-bg-4.jpg") !important; }
+      background-image: url("img/surgengo-bground4.jpg") !important; }
     body .site-container .bground.bground5 {
-      background-image: url("../wp-content/uploads/2024/06/ornifiles-bg-5.jpg") !important; }
+      background-image: url("img/surgengo-bground5.jpg") !important; }
   body .site-container div.wrap {
     max-width: 1620px; }
     body .site-container div.wrap main.content {
@@ -221,7 +234,7 @@ body {
       box-shadow: 0 0 134px 17px #2e2e2e;
       padding: 18px;
       border-radius: 10px;
-      background: #cdc8bd; }
+      background: #fffaf1; }
   body .site-container h1.bground-title {
     font-family: "Special Elite", system-ui;
     letter-spacing: 21px;
@@ -250,7 +263,11 @@ body {
         transition: ease all 0.5s;
         font-size: 13px; }
         body .site-container .omega-nav-menu li a::before {
-          content: "\1F6E5";
+          content: '\00a0\00a0\00a0\00a0\00a0';
+          background-image: url("wp-content/themes/composer/images/DasBoot.png");
+          background-size: 80px 23px;
+          background-repeat: no-repeat;
+          background-position: 13px 37px;
           color: #6d6666;
           position: absolute;
           right: 41%;
@@ -274,7 +291,7 @@ body {
               top: 10px !important;
               right: 0 !important; } }
         body .site-container .omega-nav-menu li a:hover, body .site-container .omega-nav-menu li a:focus, body .site-container .omega-nav-menu li a:active {
-          background: rgba(237, 229, 203, 0.8);
+          background: rgba(255, 255, 233, 0.95);
           box-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
           text-shadow: 1px 1px 19px black;
           width: 100%; }
@@ -284,7 +301,8 @@ body {
         margin-top: 0px;
         margin-left: 1px; }
       body .site-container .omega-nav-menu li ul.sub-menu {
-        background: rgba(234, 234, 215, 0.55);
+        background: #eaead7;
+        box-shadow: 0 0px 57px 2px #a9a391;
         padding: 0;
         margin-top: 0;
         margin-left: 0;
@@ -307,6 +325,27 @@ body {
             max-width: 420px; } }
   body ul.menu-primary ul {
     border-top: 3px solid #a90000 !important; }
+  body .relevanssi-live-search-results {
+    margin-top: -10px;
+    border-top-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    border-left: solid 1px #767676;
+    border-bottom: solid 1px gray;
+    border-right: solid 1px gray;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: 0;
+    margin-top: -20px !important; }
+    body .relevanssi-live-search-results a {
+      border-bottom: 2px solid #a90000;
+      transition: ease all 0.3s;
+      text-decoration: none !important; }
+      body .relevanssi-live-search-results a:hover {
+        color: #a90000;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        background-color: #a90000;
+        color: white;
+        padding: 0 0 0 10px; }
   body .site-footer {
     border-top: 1px solid #E9E9E9;
     color: #666;
@@ -318,3 +357,106 @@ body {
     background: none repeat scroll 0 0 #c3beb1;
     border-top: 2px solid #EEE3D7;
     padding: 40px 0 16px; }
+    body .footer-widgets a {
+      border-bottom: 2px solid #a90000;
+      transition: ease all 0.3s;
+      text-decoration: none !important; }
+      body .footer-widgets a:hover {
+        color: #a90000;
+        border-bottom: 2px solid rgba(0, 0, 0, 0); }
+
+body .relevanssi-live-search-results {
+  border-top-color: rgba(255, 255, 255, 0);
+  box-shadow: inset gray 0px 0px 1px 0px;
+  border-left: solid 1px #bbb;
+  border-bottom: solid 1px #bbb;
+  border-right: solid 1px #bbb;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-left: 0px;
+  margin-top: -188px; }
+
+.searchwp-modal-form-default .searchwp-modal-form__content {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 2em;
+  border-radius: 2px; }
+
+input, select, textarea {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #999;
+  font-family: "Special Elite", system-ui;
+  font-size: 48px;
+  padding: 16px;
+  max-width: 100%;
+  color: black;
+  border-radius: 16px; }
+
+.searchwp-modal-form-default .searchwp-modal-form__close {
+  line-height: 1em;
+  background: yellow;
+  padding: 0.4em 0.5em;
+  border: 0;
+  margin: 0 auto;
+  z-index: 9999;
+  position: relative;
+  bottom: 15px;
+  left: 22%;
+  color: black;
+  font-size: 80px;
+  position: relative;
+  bottom: 100px; }
+
+.searchwp-modal-form-default .searchwp-modal-form__footer {
+  padding-top: 1em;
+  position: relative;
+  bottom: 350px;
+  z-index: 9999999; }
+
+.searchwp-modal-form-default .searchwp-modal-form__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.95;
+  background-color: #89a0b9 !important;
+  z-index: 1; }
+
+.searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
+  z-index: 99; }
+
+.searchwp-modal-form-default .searchwp-modal-form__content {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 2em;
+  border-radius: 2px;
+  z-index: -1;
+  height: 100vh; }
+
+searchwp-modal-form-default .searchwp-modal-form__content .search-form {
+  margin-top: 200px; }
+
+.search-form input[type="submit"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: relative;
+  width: 1px;
+  display: inline-block;
+  background: red;
+  height: 91px;
+  width: 100px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  right: 12px;
+  font-size: 25px;
+  z-index: 9999999999; }
