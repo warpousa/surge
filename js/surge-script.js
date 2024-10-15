@@ -1,7 +1,7 @@
 	/////* Start SURGE Javascript Customizations */////
 	///////////////////////////////////////////////////
 	// Misc.Inital DOM manipulation and/or alteration //
-	document.querySelector('.credit').classList.remove();
+	document.querySelector('.credit').remove();
 	document.getElementById('header').classList.add('is-transparent');
 	//////////////////////////////////////////////////
 	// Assign random classes to specifc element(s) //
@@ -15,7 +15,7 @@
 	// Function to apply transparency based on scroll position //
 	function applyTransparency(pageYOffsetValue) {
 		let header = document.getElementById('header');
-		if (pageYOffsetValue < 400) {
+		if (pageYOffsetValue < 150) {
 			header.classList.add('is-transparent');
 			header.classList.remove('not-transparent');
 		} else {

@@ -74,8 +74,8 @@ $linkhover: #a90000;
 $linkhover-border: rgba(0,0,0,0);
 $menu-background: rgba(234, 234, 215, 1.0);
 $menu-background-transparent: rgba(234, 234, 215, 0.55);
-$menu-item-hover: rgba(267, 259, 233, 0.95);
-$menu-background-highlight: rgba(237, 229, 200, 0.8);
+$menu-item-hover: linear-gradient(90deg, rgba(254,254,230,0.9492590981705182) 0%, rgba(254,254,230,0.5) 53%, rgba(254,254,230,0) 100%); 
+$menu-background-highlight: rgba(254, 254, 230, 0.95);
 $menu-border: 3px solid #008CBA;
 $submenu-background: rgba(237, 229, 200, 0.9);
 $menu-highlight-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
@@ -359,7 +359,7 @@ body {
 
 									&.menu-item-has-children > a {
 										&::after {
-											transform: rotate(90deg);
+											transform: rotate(-90deg);
 											-ms-transform: rotate(90deg);
 											-webkit-transform: rotate(90deg);
 											-moz-transform: rotate(90deg);
@@ -409,9 +409,24 @@ body {
 			
 			input {
 				&[type="submit"] {
+					left: 397px;
 					bottom: 88px;
-					left: 385px;
-					bottom: 88px;
+					border: 0;
+					clip: rect(0, 0, 0, 0);
+					height: 1px;
+					margin: -1px;
+					padding: 0;
+					position: relative;
+					width: 1px;
+					display: inline-block;
+					background: red;
+					height: 91px;
+					width: 100px;
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+					right: 12px;
+					font-size: 25px;
+					z-index: 9999999999;
 				}
 			}
 		}
@@ -476,12 +491,13 @@ body {
 				padding: 0;
 				
 				&.sfHover > a {
-					background-color: $menu-background-highlight;
+					background: $menu-background-highlight;
 					box-shadow: 5px 14px 7px -4px #494a4b12;
 					&::after {
 						right: 12px;
 						top: 30px;
-						transform: rotate(270deg) !important;
+//						transform: rotate(270deg) !important;
+						transform: translateX(5px) rotate(270deg) !important;
 					}
 				}
 				
@@ -503,7 +519,7 @@ body {
 					&::before {
 						// content: "\1F6E5";
 						content: '\00a0\00a0\00a0\00a0\00a0';
-						background-image: url('wp-content/themes/composer/images/DasBoot.png');
+						background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png"); /* wp-content/themes/composer/images/DasBoot.png */
 						background-size: 80px 23px;
 						background-repeat: no-repeat;
 						background-position: 13px 37px;
@@ -681,8 +697,15 @@ input, select, textarea {
 .searchwp-modal-form-default .searchwp-modal-form__footer {
   padding-top: 1em;
   position: relative;
-  bottom: 350px;
+  bottom: -45px;
   z-index: 9999999; 
+}
+
+.searchwp-modal-form-default .searchwp-modal-form__close:before {
+    font-size: 2em;
+    position: fixed;
+    top: 35px;
+    right: 2%;
 }
 
 .searchwp-modal-form-default .searchwp-modal-form__overlay {
@@ -708,29 +731,10 @@ input, select, textarea {
   padding: 2em;
   border-radius: 2px;
   z-index: -1;
- height: 100vh;
+  height: 100vh;
 }
 
 searchwp-modal-form-default .searchwp-modal-form__content .search-form {
     margin-top: 200px;
-}
-
-.search-form input[type="submit"] {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    position: relative;
-    width: 1px;
-    display: inline-block;
-    background: red;
-    height: 91px;
-    width: 100px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    right: 12px;
-    font-size: 25px;
-    z-index: 9999999999;
 }
 

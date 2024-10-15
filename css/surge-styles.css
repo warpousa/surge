@@ -174,7 +174,7 @@ body {
     body header#header nav#navigation.nav-primary ul.menu li a {
       font-size: 20px; } }
   body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children > a::after {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
     -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -206,9 +206,24 @@ body {
     text-align: center;
     min-height: 100vh; }
     body .searchwp-modal-form .search-form input[type="submit"] {
+      left: 397px;
       bottom: 88px;
-      left: 385px;
-      bottom: 88px; }
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      position: relative;
+      width: 1px;
+      display: inline-block;
+      background: red;
+      height: 91px;
+      width: 100px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      right: 12px;
+      font-size: 25px;
+      z-index: 9999999999; }
   body .site-container .site-inner {
     background: #8e8982; }
   body .site-container .bground {
@@ -248,12 +263,12 @@ body {
       font-family: "Special Elite", system-ui;
       padding: 0; }
       body .site-container .omega-nav-menu li.sfHover > a {
-        background-color: rgba(237, 229, 200, 0.8);
+        background: rgba(254, 254, 230, 0.95);
         box-shadow: 5px 14px 7px -4px #494a4b12; }
         body .site-container .omega-nav-menu li.sfHover > a::after {
           right: 12px;
           top: 30px;
-          transform: rotate(270deg) !important; }
+          transform: translateX(5px) rotate(270deg) !important; }
       body .site-container .omega-nav-menu li:last-child a:hover, body .site-container .omega-nav-menu li:last-child a:focus, body .site-container .omega-nav-menu li:last-child a:active {
         border-bottom-right-radius: 15px; }
       body .site-container .omega-nav-menu li a {
@@ -264,7 +279,8 @@ body {
         font-size: 13px; }
         body .site-container .omega-nav-menu li a::before {
           content: '\00a0\00a0\00a0\00a0\00a0';
-          background-image: url("wp-content/themes/composer/images/DasBoot.png");
+          background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
+          /* wp-content/themes/composer/images/DasBoot.png */
           background-size: 80px 23px;
           background-repeat: no-repeat;
           background-position: 13px 37px;
@@ -291,7 +307,7 @@ body {
               top: 10px !important;
               right: 0 !important; } }
         body .site-container .omega-nav-menu li a:hover, body .site-container .omega-nav-menu li a:focus, body .site-container .omega-nav-menu li a:active {
-          background: rgba(255, 255, 233, 0.95);
+          background: linear-gradient(90deg, rgba(254, 254, 230, 0.9492590982) 0%, rgba(254, 254, 230, 0.5) 53%, rgba(254, 254, 230, 0) 100%);
           box-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
           text-shadow: 1px 1px 19px black;
           width: 100%; }
@@ -414,8 +430,14 @@ input, select, textarea {
 .searchwp-modal-form-default .searchwp-modal-form__footer {
   padding-top: 1em;
   position: relative;
-  bottom: 350px;
+  bottom: -45px;
   z-index: 9999999; }
+
+.searchwp-modal-form-default .searchwp-modal-form__close:before {
+  font-size: 2em;
+  position: fixed;
+  top: 35px;
+  right: 2%; }
 
 .searchwp-modal-form-default .searchwp-modal-form__overlay {
   position: fixed;
@@ -442,21 +464,3 @@ input, select, textarea {
 
 searchwp-modal-form-default .searchwp-modal-form__content .search-form {
   margin-top: 200px; }
-
-.search-form input[type="submit"] {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  position: relative;
-  width: 1px;
-  display: inline-block;
-  background: red;
-  height: 91px;
-  width: 100px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  right: 12px;
-  font-size: 25px;
-  z-index: 9999999999; }
