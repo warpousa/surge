@@ -40,4 +40,52 @@
 		prevScrollpos = currentScrollPos;
 	}
 	///////////////////////////////////////////////////
+	// Div cover for background //
+	const menu = document.querySelector('#menu-menu-1');
+	const content = document.querySelector('#content');
+	let overlay = null;
+	//let fadeTimer = null;
+	function fadeIn(el) {
+		let start = null;
+		function step(ts) {
+			if (!start) start = ts;
+			let progress = ts - start;
+			el.style.opacity = Math.min(progress / 500, 1);
+			if (progress < 500) requestAnimationFrame(step);
+		}
+		requestAnimationFrame(step);
+	}
+	function fadeOutAndRemove(el) {
+		let start = null;
+		function step(ts) {
+			if (!start) start = ts;
+			let progress = ts - start;
+			el.style.opacity = Math.max(1 - progress / 500, 0);
+			if (progress < 500) {
+				requestAnimationFrame(step);
+			} else {
+				el.remove();
+				overlay = null;
+			}
+		}
+		requestAnimationFrame(step);
+	}
+	menu.querySelectorAll('a').forEach(anchor => {
+		['mouseenter', 'click', 'touchstart'].forEach(evt => {
+			anchor.addEventListener(evt, () => {
+				if (!overlay) {
+					overlay = Object.assign(document.createElement('div'), {
+						className: 'bg-coverup',
+						style: 'width:100%; height: 100vh; background: #b8b8b8b2; position: absolute; top: 0; z-index: 0; left: 0; opacity: 0;'
+					});
+					content.appendChild(overlay);
+					fadeIn(overlay);
+				}
+			});
+		});
+	});
+	menu.addEventListener('mouseleave', () => {
+		if (overlay) fadeOutAndRemove(overlay);
+	});
+    ///////////////////////////////////////////////////
 	/////* End SURGE Javascript Customizations  *//////

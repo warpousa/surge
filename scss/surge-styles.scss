@@ -6,11 +6,11 @@ $main-background: url(https://surge.ngo/wp-content/themes/composer/images/header
 $main-background-pos: 20% -24.8333px;
 
 $surge-bg-color: black;
-$surge-bg1: url("img/surgengo-bground1.jpg") !important;
-$surge-bg2: url("img/surgengo-bground2.jpg") !important;
-$surge-bg3: url("img/surgengo-bground3.jpg") !important;
-$surge-bg4: url("img/surgengo-bground4.jpg") !important;
-$surge-bg5: url("img/surgengo-bground5.jpg") !important;
+$surge-bg1: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important;
+$surge-bg2: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground2.jpg) !important;
+$surge-bg3: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground3.jpg) !important;
+$surge-bg4: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground4.jpg) !important;
+$surge-bg5: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground5.jpg) !important;
 
 /* End Background Img Variables  */
 
@@ -67,20 +67,21 @@ $xxl:  1400px;
 
 $black: black;
 $charade: #222630;
-$content-background1: #8e8982;
-$content-background2: #fffaf1;
+$content-background1: #bec7c2;
+$content-background2: #eff2e3;
 $contentcolor: #6d6666;
 $linkhover: #a90000;
 $linkhover-border: rgba(0,0,0,0);
 $menu-background: rgba(234, 234, 215, 1.0);
+$menu-background-ii: #eff3e8;
 $menu-background-transparent: rgba(234, 234, 215, 0.55);
-$menu-item-hover: linear-gradient(90deg, rgba(254,254,230,0.9492590981705182) 0%, rgba(254,254,230,0.5) 53%, rgba(254,254,230,0) 100%); 
-$menu-background-highlight: rgba(254, 254, 230, 0.95);
+$menu-item-hover: linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);
+$menu-background-highlight: white;
 $menu-border: 3px solid #008CBA;
-$submenu-background: rgba(237, 229, 200, 0.9);
+$submenu-background: #fff;
 $menu-highlight-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
 $text-shadow: 1px 1px 19px #ffe29d;
-$topborder: 3px solid #a90000 !important;
+$topborder: none !important;
 $white: white;
 
 /* End Colors & Borders */
@@ -105,7 +106,7 @@ $animate-header: translateY(-75px);
 /* Shading  */
 
 $main-shadow: 0 0 134px 17px #2e2e2e;
-$submenu-shadow1: 0 0px 57px 2px #a9a391;
+$submenu-shadow1: 6px 6px 2px 1px rgba(0,0,0,0.3);
 
 /* Shading * /
 
@@ -131,11 +132,12 @@ $EliteFont: 'Special Elite', system-ui;
 }
 
 @mixin main-content {
-	border: solid 2px #aea28b;
-	box-shadow: 0 0 134px 17px #2e2e2e;
-  	padding: 18px;
-  	border-radius: 10px;
-  	background: $content-background2;
+  width: 95%;
+  border: solid 2px #8e9993;
+  box-shadow: 5px 3px 1px 1px rgba(0, 0, 0, 0.12);
+  padding: 18px;
+  border-radius: 10px;
+  background: $content-background2;
 }
 
 /* End Mixins */
@@ -143,10 +145,12 @@ $EliteFont: 'Special Elite', system-ui;
 body {
 	color: $charade;
 	font-family: $EliteFont;
+//	background-color: green !important;
 	
 	header {
 		&#header {
 			&.site-header {
+				box-shadow: #777 0 0 40px;
 				padding: 0;
 				position: fixed;
 				background: $menu-background;
@@ -197,15 +201,15 @@ body {
 					}
 					@include custom-desktop {
 						font-size: 26px;
-						top: 10px;
+						top: 15px;
 					}
 					@include large-desktop-up {
 						font-size: 32px;
-						top: 17px;
+						top: 18px;
 					}
 					@include hd-desktop-up {
 						font-size: 36px;
-						top: 12px;
+						top: 20px;
 					}
 				}
 			}
@@ -232,10 +236,13 @@ body {
 					}
 					&.nav-primary {
 						ul {
-							&.menu {							
+							&.menu {
+							    border-top: $topborder;
+//								background: $menu-background-ii;
+								
 								@include  lowres-vertical {
-									overflow-y:scroll;
-    								overflow-x:hidden;
+									overflow-y: scroll;
+    								overflow-x: hidden;
 									height: 118vh;
 								}
 								
@@ -319,28 +326,35 @@ body {
 										li {
 											background-color: $submenu-background;
 											width: 100%;
+											&.current-menu-item {
+												background-color: #e4e9de !important;
+												outline: dashed 1px gray;
+											}	
 											
 											a {
 												@include extra-extra-small {
 													padding-left: 40px;
-													width: 200px;
+													//width: 300px;
 												}
 												@include phone-only-up {
 													padding-left: 40px;
-													width: 200px;													
+													//width: 300px;													
 												}											
 												@include tablet-portrait-up {
 													padding-left: 40px;
-													width: 200px;													
+													//width: 300px;													
 												}											
 												@include tablet-landscape-up {
 													padding-left: 40px;
-													width: 200px;
+													//width: 300px;
 												}
 
 												&:hover, &:focus, &:active {
 													width: 100% !important;
 												}
+												
+												z-index: 99;
+												width: 100%;
 											}
                                             &:last-child {
                                                 border-bottom-right-radius: 15px;
@@ -366,19 +380,20 @@ body {
 											content: " › ";
 											font-size: 33px;
 											position: absolute;
-											right: 48px;
-											top: 30px;
+											right: 5px;
+											top: 10px;
 											text-shadow: none;
-											transition: ease all 0.5s;
+											// transition: ease all 0.5s;
 											
 											@include desktop-up {
-												right: 50px;
+												right: 3px;
+												bottom: 7px;
 											}
 											@include custom-desktop {
-												right: 50px;
+												right: 3px;
 											}
 											@include large-desktop-up {
-												right: 56px;
+												right: 3px;
 											}
 
 											text-shadow: none;
@@ -388,6 +403,7 @@ body {
 
 									&.current_page_item {
 										box-shadow: $nav-select-bg1;
+										outline: dashed 1px;
 									}
 								}
 							}
@@ -426,7 +442,7 @@ body {
 					border-bottom-left-radius: 0;
 					right: 12px;
 					font-size: 25px;
-					z-index: 9999999999;
+					z-index: 999;
 				}
 			}
 		}
@@ -436,7 +452,7 @@ body {
 		.site-inner {
 			background: $content-background1;
 		}
-		.bground {
+		.banner {
 			background-color: $surge-bg-color;
 			background-image: $main-background;
 			background-position: $main-background-pos;
@@ -456,6 +472,9 @@ body {
 			}
 			&.bground5 {
 				background-image: $surge-bg5;
+			}
+			.banner-title {
+				text-shadow: 1px 2px 6px #000;
 			}
 		}
 
@@ -493,6 +512,7 @@ body {
 				&.sfHover > a {
 					background: $menu-background-highlight;
 					box-shadow: 5px 14px 7px -4px #494a4b12;
+					
 					&::after {
 						right: 12px;
 						top: 30px;
@@ -513,51 +533,64 @@ body {
 					color: $black;
 					padding: 22px 15px 20px 15px;
     				text-shadow: $text-shadow;
-					transition: $ease-half-sec;
+					// transition: $ease-half-sec;
 					font-size: 13px;
 					
 					&::before {
 						// content: "\1F6E5";
 						content: '\00a0\00a0\00a0\00a0\00a0';
-						background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png"); /* wp-content/themes/composer/images/DasBoot.png */
-						background-size: 80px 23px;
+						background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
+						background-size: 110px 29px;
 						background-repeat: no-repeat;
 						background-position: 13px 37px;
-						color: $contentcolor;
+						color: #6d6666;
 						position: absolute;
 						right: 41%;
 						top: 0;
 						text-shadow: none;
 						opacity: 0;
-						transition: $ease-quarter-sec;
+						transition: ease all 0.25s;
 						font-size: 22px;
+						width: 125px;
 						
 						@include tablet-landscape-up {
 							font-size: 25px;
 						}
 						@include custom-desktop {
-							font-size: 38px
+							font-size: 38px;
+							top: -36px !important;
+							right: -30px !important;
+							background-size: 78px 19px;
 						}
 						@include large-desktop-up {
 							font-size: 50px;
+							top: -41px !important;
+							right: -17px !important;
+							background-size: 90px 26px;
+
 						}
 						@include hd-desktop-up {
 							font-size: 64px !important;
-							top: 10px !important;
-							right: 0 !important;
+							top: -41px !important;
+							right: 24px !important;
 						}
 					}
 					
 					&:hover, &:focus, &:active {
-						background: $menu-item-hover;
-						box-shadow: $menu-highlight-shadow;
-						text-shadow: 1px 1px 19px $black;
-						width: 100%;
-						
+						background: $menu-item-hover;				
+						text-shadow: 1px 1px 19px black;
+ 						// width: 100%;
+  						outline: dotted #aeaeae 2px;
+	
 						&::before {
 							opacity: 1;
+							right: 2px !important;
 						}
-					}	
+					}
+					&:focus, &:focus-visible, &:focus-within {
+						outline: dotted;
+						border-radius: 3px;
+					}
 				}
 				
 				&:hover > ul {
@@ -574,20 +607,19 @@ body {
 						margin-left: 0;
 						
 						@include desktop-up {
-							width: 22%;
-							max-width: 420px;
+							width: 100%;
 						}
 						@include custom-desktop {
-							width: 22%;
-							max-width: 420px;
+							width: 13%;
+							max-width: 300px;
 						}
 						@include large-desktop-up {
-							width: 22%;
-							max-width: 420px;
+							width: 15%;
+							max-width: 300px;
 						}
 						@include hd-desktop-up {
-							width: 22%;
-							max-width: 420px;
+							width: 18%;
+							max-width: 320px;
 						}
                         border-bottom-right-radius: 15px;
 					}
@@ -598,6 +630,7 @@ body {
 	//////
 	ul.menu-primary ul {
 	  border-top: $topborder;
+	  background: rgba(206, 214, 199, 0.96) !important;
 	}
 	///////
 	.relevanssi-live-search-results {
@@ -655,7 +688,7 @@ body .relevanssi-live-search-results {
   border-top-left-radius: 0;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
- border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   margin-left: 0px;
   margin-top: -188px;
@@ -690,7 +723,7 @@ input, select, textarea {
   left: 22%;
   color: black;
   font-size: 80px;
- position: relative;
+  position: relative;
   bottom: 100px;
 }
 
@@ -737,4 +770,33 @@ input, select, textarea {
 searchwp-modal-form-default .searchwp-modal-form__content .search-form {
     margin-top: 200px;
 }
+
+
+//.sub {
+//  content: '\00a0\00a0\00a0\00a0\00a0';
+//  background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
+//  background-size: 64px 21px;
+//  background-repeat: no-repeat;
+//  background-position: 15px -5px;
+//  color: #6d6666;
+//  position: absolute;
+//  right: 0%;
+//  top: 0;
+//  text-shadow: none;
+//  opacity: 1;
+//  transition: ease all 0.25s;
+//  font-size: 40px;
+//  width: 100%;
+//}
+
+
+// .bg-coverup {
+//  width: 99%;
+//  height: 100vh;
+//  background: #b8b8b8b2;
+//  position: absolute;
+//  top: 0;
+//  z-index: 0;
+//  left: 0;
+//}
 
