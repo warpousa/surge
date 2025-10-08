@@ -290,7 +290,6 @@ body {
           background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
           background-size: 110px 29px;
           background-repeat: no-repeat;
-          background-position: 13px 37px;
           color: #6d6666;
           position: absolute;
           right: 41%;
@@ -305,18 +304,21 @@ body {
               font-size: 25px; } }
           @media only screen and (min-width: 1023px) and (max-width: 1200px) {
             body .site-container .omega-nav-menu li a::before {
+              background-position: 13px 37px;
               font-size: 38px;
               top: -36px !important;
               right: -30px !important;
               background-size: 78px 19px; } }
           @media only screen and (min-width: 1200px) and (max-width: 1400px) {
             body .site-container .omega-nav-menu li a::before {
+              background-position: 13px 37px;
               font-size: 50px;
               top: -41px !important;
               right: -17px !important;
               background-size: 90px 26px; } }
           @media only screen and (min-width: 1400px) {
             body .site-container .omega-nav-menu li a::before {
+              background-position: 13px 37px;
               font-size: 64px !important;
               top: -41px !important;
               right: 24px !important; } }

@@ -542,7 +542,7 @@ body {
 						background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
 						background-size: 110px 29px;
 						background-repeat: no-repeat;
-						background-position: 13px 37px;
+
 						color: #6d6666;
 						position: absolute;
 						right: 41%;
@@ -557,12 +557,14 @@ body {
 							font-size: 25px;
 						}
 						@include custom-desktop {
+							background-position: 13px 37px;
 							font-size: 38px;
 							top: -36px !important;
 							right: -30px !important;
 							background-size: 78px 19px;
 						}
 						@include large-desktop-up {
+							background-position: 13px 37px;
 							font-size: 50px;
 							top: -41px !important;
 							right: -17px !important;
@@ -570,6 +572,7 @@ body {
 
 						}
 						@include hd-desktop-up {
+							background-position: 13px 37px;
 							font-size: 64px !important;
 							top: -41px !important;
 							right: 24px !important;
