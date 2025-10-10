@@ -76,7 +76,7 @@
 				if (!overlay) {
 					overlay = Object.assign(document.createElement('div'), {
 						className: 'bg-coverup',
-						style: 'width:100%; height: 100vh; background: #b8b8b8b2; position: absolute; top: 0; z-index: 0; left: 0; opacity: 0;'
+						style: 'width:100%; height: 100vh; background: #b8b8b8b2; position: fixed; top: 0; z-index: 0; left: 0; opacity: 0;'
 					});
 					content.appendChild(overlay);
 					fadeIn(overlay);
