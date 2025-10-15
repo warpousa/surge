@@ -67,28 +67,29 @@ $xxl:  1400px;
 
 $black: black;
 $charade: #222630;
-$content-background1: #bec7c2;
-$content-background2: #eff2e3;
-$contentcolor: #6d6666;
+$content-background1: linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%);
+$content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 232, 232, 1) 33%, rgba(239, 242, 227, 1) 100%);
+$contentcolor: #6d6666; 
 $linkhover: #a90000;
 $linkhover-border: rgba(0,0,0,0);
-$menu-background: rgba(234, 234, 215, 1.0);
+$menu-background: #eff4f2;
 $menu-background-ii: #eff3e8;
 $menu-background-transparent: rgba(234, 234, 215, 0.55);
 $menu-item-hover: linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);
-$menu-background-highlight: white;
+$menu-background-highlight: #eff4f2;
 $menu-border: 3px solid #008CBA;
-$submenu-background: #fff;
+$submenu-background: rgba(255,255,255,0);
 $menu-highlight-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
 $text-shadow: 1px 1px 19px #ffe29d;
 $topborder: none !important;
+$black: black;
 $white: white;
 
 /* End Colors & Borders */
 
 /*  Img FX */
 
-$nav-select-bg1: #fffae7 inset 0px 0px 26px -2px;
+$nav-select-bg1: #d0d8c4 inset 0px 0px 26px -2px;
 $sepia-sat-bright-hue: sepia(100%) saturate(300%) brightness(100%) hue-rotate(180deg);
 $sepia-sat-bright-hue-ii: sepia(40%) saturate(50%) brightness(100%) hue-rotate(80deg);
 
@@ -99,7 +100,7 @@ $sepia-sat-bright-hue-ii: sepia(40%) saturate(50%) brightness(100%) hue-rotate(8
 $ease-quarter-sec: ease all 0.25s;
 $ease-half-sec: ease all 0.5s;
 $ease-one-sec: ease all 1s;
-$animate-header: translateY(-75px);
+$animate-header: translateY(-568px);
 
 /* End Transforms & Transitions */
 
@@ -145,7 +146,7 @@ $EliteFont: 'Special Elite', system-ui;
 body {
 	color: $charade;
 	font-family: $EliteFont;
-//	background-color: green !important;
+//	background-color: green !important; /* Use this to test SCSS to CSS output for "signs of life" */
 	
 	header {
 		&#header {
@@ -163,8 +164,21 @@ body {
 				&.is-transparent {
 					background: $menu-background-transparent;
 				}
+				&.menu-expanded {
+					@include tablet-landscape-up {
+						background-color: $white;
+					}
+					@include tablet-portrait-up {
+						background-color: $white;
+					}
+					@include phone-only-up {
+						background-color: $white;
+					}					
+					@include extra-extra-small {
+						background-color: $white;
+					}					
+				}
 			}
-			
 			.site-title {
 				a {
 					color: #333;
@@ -177,34 +191,42 @@ body {
 					transition: $ease-half-sec;
 					
 					@include extra-extra-small {
-						font-size: 11px;
-						letter-spacing: 1px;
-						margin-right: 5px;
-						top: -6px;
+						font-size: 29px;
+						margin-top: -4px;
+						position: absolute;
+						margin-right: 38px;
 					}
 					@include phone-only-up {
-						font-size: 15px;
-						margin-right: 10px;
-						top: -5px;
+						font-size: 30px;
+						margin-top: -4px;
+						position: absolute;
+						margin-right: 38px;
 					}
 					@include tablet-portrait-up { 
-						font-size: 20px;
-						top: -4px;
+						font-size: 31px;
+						margin-top: -5px;
+						position: absolute;
+						margin-right: 38px;
 					}
 					@include tablet-landscape-up { 
-						font-size: 22px;
-						top: -3px;
+						font-size: 32px;
+						margin-top: -4px;
+						position: absolute;
+						margin-right: 38px;
 					}
 					@include desktop-up {
-						font-size: 24px;
+						font-size: 33px;
 						top: -3px;
+						position: absolute;
+						margin-top: 7px;
+						margin-right: 60px;
 					}
 					@include custom-desktop {
-						font-size: 26px;
+						font-size: 34px;
 						top: 15px;
 					}
 					@include large-desktop-up {
-						font-size: 32px;
+						font-size: 37px;
 						top: 18px;
 					}
 					@include hd-desktop-up {
@@ -248,35 +270,35 @@ body {
 								
 								@include extra-extra-small {
 									left: 0px;
-									top: 34px;
+									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
 								
 								@include phone-only-up {
 									left: 0px;
-									top: 34px;
+									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
 								
 								@include tablet-portrait-up {
 									left: 0px;
-									top: 34px;
+									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
 
 								@include tablet-landscape-up {
 									left: 0px;
-									top: 34px;
+									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
 								
 								@include desktop-up {
 									left: 0px;
-									top: 34px;
+									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
@@ -285,46 +307,90 @@ body {
 									@include extra-extra-small {
 										&.menu-item-has-children {
 											&::before {
-												content: 'Ready...';
+												color: $black;
+												content: " › ";
+												font-size: 36px;
+												position: absolute;
+												margin-left: 50%;
+												margin-top: 9px;
+												z-index: 9999;
+												transform: rotate(90deg);
+												transition: $ease-quarter-sec;
 											}
 										}
 										
 										&.menu-item-has-children.sfHover {
 											&::before {
-												content: 'Success!';
+												color: $black;
+												content: " › ";
+												font-size: 37px;
+												position: absolute;
+												margin-left: 50%;
+												margin-top: 2px;
+												z-index: 9999;
+												transform: rotate(-90deg);
 											}
 										}
 									}
 									@include phone-only-up {
 										&.menu-item-has-children {
 											&::before {
-												content: 'Ready...';
+												color: $black;
+												content: " › ";
+												font-size: 37px;
+												position: absolute;
+												margin-left: 49%;
+												margin-top: 3px;
+												z-index: 9999;
+												transform: rotate(90deg);
+												transition: $ease-quarter-sec;
 											}
 										}
 										
 										&.menu-item-has-children.sfHover {
 											&::before {
-												content: 'Success!';
+												color: $black;
+												content: " › ";
+												font-size: 39px;
+												position: absolute;
+												margin-left: 50%;
+												margin-top: 11px;
+												z-index: 9999;
+												transform: rotate(270deg);
 											}
 										}	
 									}											
 									@include tablet-portrait-up {
 										&.menu-item-has-children {
 											&::before {
-												content: 'Ready...';
+												color: $black;
+												content: " › ";
+												font-size: 32px;
+												position: absolute;
+												margin-left: 50%;
+												margin-top: 9px;
+												z-index: 9999;
+												transform: rotate(90deg);
+												transition: $ease-half-sec;
 											}
 										}
 										
 										&.menu-item-has-children.sfHover {
 											&::before {
-												content: 'Success!';
+												color: $black;
+												content: " › ";
+												font-size: 32px;
+												position: absolute;
+												margin-left: 50%;
+												margin-top: 9px;
+												z-index: 9999;
+												transform: rotate(90deg);
 											}
 										}
-									}									
+									}						
 									
 									ul {
 										li {
-											background-color: $submenu-background;
 											width: 100%;
 											&.current-menu-item {
 												background-color: #e4e9de !important;
@@ -380,7 +446,7 @@ body {
 											content: " › ";
 											font-size: 33px;
 											position: absolute;
-											right: 5px;
+											right: 7px;
 											top: 10px;
 											text-shadow: none;
 											// transition: ease all 0.5s;
@@ -391,6 +457,7 @@ body {
 											}
 											@include custom-desktop {
 												right: 3px;
+												top: 6px;
 											}
 											@include large-desktop-up {
 												right: 3px;
@@ -404,6 +471,47 @@ body {
 									&.current_page_item {
 										box-shadow: $nav-select-bg1;
 										outline: dashed 1px;
+										
+										&::after {
+											filter: brightness(0);
+										    content: '⚓';
+											font-size: 12px;
+											margin-top: -39px;
+											position: absolute;
+										   
+											@include extra-extra-small {
+												margin-top: -39px;
+												margin-left: 14px !importanti;
+											}
+											@include phone-only-up {
+												margin-top: -39px;
+												margin-left: 14px !important;											
+											}											
+											@include tablet-portrait-up {
+												margin-top: -39px;
+												margin-left: 14px !important;										
+											}											
+											@include tablet-landscape-up {
+												margin-top: -39px;
+												margin-left: 14px !important;
+											}
+											@include desktop-up {
+												margin-top: -39px;
+												margin-left: 14px !important;
+											}
+											@include custom-desktop {
+												margin-top: -39px;
+												margin-left: 14px !important;
+											}
+											@include large-desktop-up {
+												margin-top: -41px;
+												margin-left: 14px !important;
+											}
+											@include hd-desktop-up {
+												margin-top: -45px;
+												margin-left: 14px !important;
+											}
+										}
 									}
 								}
 							}
@@ -475,6 +583,9 @@ body {
 			}
 			.banner-title {
 				text-shadow: 1px 2px 6px #000;
+				@include extra-extra-small {
+					font-size: 32px;
+				}
 			}
 		}
 
@@ -486,6 +597,9 @@ body {
 					&.content {
 						width: 95%;
 						@include main-content;
+					}
+					.nf-form-hp {
+   						position: inherit;
 					}
 				}
 			}
@@ -507,7 +621,7 @@ body {
 			
 			li {
 				font-family: $EliteFont;
-				padding: 0;
+				padding: 0 3px 0 0;
 				
 				&.sfHover > a {
 					background: $menu-background-highlight;
@@ -521,6 +635,11 @@ body {
 					}
 				}
 				
+		        &.item-has-children a::after { 
+					content:' › ';
+					font-size: 15px;
+				}
+				
 				&:last-child {
 					a {
 						&:hover, &:focus, &:active {
@@ -531,7 +650,7 @@ body {
 
 				a {
 					color: $black;
-					padding: 22px 15px 20px 15px;
+					padding: 22px 18px 20px 37px;
     				text-shadow: $text-shadow;
 					// transition: $ease-half-sec;
 					font-size: 13px;
@@ -560,14 +679,14 @@ body {
 							background-position: 13px 37px;
 							font-size: 38px;
 							top: -36px !important;
-							right: -30px !important;
+							right: 30px !important;
 							background-size: 78px 19px;
 						}
 						@include large-desktop-up {
 							background-position: 13px 37px;
 							font-size: 50px;
 							top: -41px !important;
-							right: -17px !important;
+							right: 37px !important;
 							background-size: 90px 26px;
 
 						}
@@ -575,9 +694,16 @@ body {
 							background-position: 13px 37px;
 							font-size: 64px !important;
 							top: -41px !important;
-							right: 24px !important;
+							right: 44px !important;
 						}
+						
+//							@include extra-extra-small { }
+//							@include phone-only-up { }
+//							@include tablet-potrait-up { }
+//							@include tablet-landscape-up { }			
 					}
+					
+
 					
 					&:hover, &:focus, &:active {
 						background: $menu-item-hover;				
@@ -587,7 +713,7 @@ body {
 	
 						&::before {
 							opacity: 1;
-							right: 2px !important;
+							right: 0 !important;								
 						}
 					}
 					&:focus, &:focus-visible, &:focus-within {
@@ -604,27 +730,32 @@ body {
 				ul {
 					&.sub-menu {
 						background: $menu-background;
-						box-shadow: $submenu-shadow1;
+						border-bottom-right-radius: 15px;
 						padding: 0;
 						margin-top: 0;
 						margin-left: 0;
+						border-top: dashed 1px darkgrey;
+						border-bottom: dashed 1px darkgrey !important;
 						
 						@include desktop-up {
+							box-shadow: none;
 							width: 100%;
 						}
 						@include custom-desktop {
-							width: 13%;
+							box-shadow: $submenu-shadow1;
+							width: 22%;
 							max-width: 300px;
 						}
 						@include large-desktop-up {
-							width: 15%;
-							max-width: 300px;
+							box-shadow: $submenu-shadow1;
+							width: 24%;
+							max-width: 400px;
 						}
 						@include hd-desktop-up {
-							width: 18%;
-							max-width: 320px;
+							box-shadow: $submenu-shadow1;
+							width: 26%;
+							max-width: 480px;
 						}
-                        border-bottom-right-radius: 15px;
 					}
 				}		
 			}
@@ -633,7 +764,6 @@ body {
 	//////
 	ul.menu-primary ul {
 	  border-top: $topborder;
-	  background: rgba(206, 214, 199, 0.96) !important;
 	}
 	///////
 	.relevanssi-live-search-results {
@@ -803,3 +933,5 @@ searchwp-modal-form-default .searchwp-modal-form__content .search-form {
 //  left: 0;
 //}
 
+
+//  body .site-container .omega-nav-menu li a::after { content:' › ' }
