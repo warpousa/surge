@@ -1,20 +1,21 @@
 	/////* Start SURGE Javascript Customizations */////
 	///////////////////////////////////////////////////
-	// Misc.Inital DOM manipulation and/or alteration //
-	document.querySelector('.credit').remove();
-	document.getElementById('header').classList.add('is-transparent');
+	// Misc.Initial DOM manipulation and/or alteration //
+	document.querySelector('.credit')?.remove();
+	document.getElementById('header')?.classList.add('is-transparent');
+
 	//////////////////////////////////////////////////
-	// Assign random classes to specifc element(s) //
-	let classes = new Array('bground1', 'bground2', 'bground3', 'bground4', 'bground5');
-	let length = classes.length;
-	let bgroundImage = document.querySelectorAll('.banner');
-	bgroundImage.forEach(function(value) {
-		value.classList.add(classes[Math.floor(Math.random() * length)]);
+	// Assign random classes to specific element(s) //
+	let classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5'];
+	document.querySelectorAll('.banner').forEach(banner => {
+		banner.classList.add(classes[Math.floor(Math.random() * classes.length)]);
 	});
+
 	/////////////////////////////////////////////////
 	// Function to apply transparency based on scroll position //
 	function applyTransparency(pageYOffsetValue) {
 		let header = document.getElementById('header');
+		if (!header) return;
 		if (pageYOffsetValue < 150) {
 			header.classList.add('is-transparent');
 			header.classList.remove('not-transparent');
@@ -23,39 +24,43 @@
 			header.classList.add('not-transparent');
 		}
 	}
+
 	/////////////////////////////////////////////////
 	// When user scrolls down, hide the navbar. When user scrolls up, show the navbar //
-	document.getElementById('header').classList.add('show-header');
 	let prevScrollpos = window.pageYOffset;
-	window.onscroll = function() {
+	window.onscroll = function () {
 		let currentScrollPos = window.pageYOffset;
+		let header = document.getElementById('header');
+		if (!header) return;
 		if (prevScrollpos > currentScrollPos) {
-			document.getElementById('header').classList.add('show-header');
-			document.getElementById('header').classList.remove('hide-header');
+			header.classList.add('show-header');
+			header.classList.remove('hide-header');
 			applyTransparency(currentScrollPos);
 		} else {
-			document.getElementById('header').classList.add('hide-header');
-			document.getElementById('header').classList.remove('show-header');
+			header.classList.add('hide-header');
+			header.classList.remove('show-header');
 		}
 		prevScrollpos = currentScrollPos;
-	}
+	};
+
 	///////////////////////////////////////////////////
 	// Div cover for background //
 	const menu = document.querySelector('#menu-menu-1');
 	const menuIcon = document.querySelector('#menu-icon.menu-icon');
 	const content = document.querySelector('#content');
 	let overlay = null;
-	//let fadeTimer = null;
+
 	function createOverlay() {
 		if (!overlay) {
 			overlay = Object.assign(document.createElement('div'), {
 				className: 'bg-coverup',
 				style: 'width:100%; height: 100vh; background: #b8b8b8b2; position: fixed; top: 0; z-index: 0; left: 0; opacity: 0;'
 			});
-			content.appendChild(overlay);
+			content?.appendChild(overlay);
 			fadeIn(overlay);
 		}
 	}
+
 	function fadeIn(el) {
 		let start = null;
 		function step(ts) {
@@ -66,6 +71,7 @@
 		}
 		requestAnimationFrame(step);
 	}
+
 	function fadeOutAndRemove(el) {
 		let start = null;
 		function step(ts) {
@@ -81,39 +87,94 @@
 		}
 		requestAnimationFrame(step);
 	}
-	menu.querySelectorAll('a').forEach(anchor => {
+
+	menu?.querySelectorAll('a').forEach(anchor => {
 		['mouseenter', 'click', 'touchstart'].forEach(evt => {
 			anchor.addEventListener(evt, () => {
 				createOverlay();
 			});
 		});
 	});
-	menu.addEventListener('mouseleave', () => {
+
+	menu?.addEventListener('mouseleave', () => {
 		if (overlay) fadeOutAndRemove(overlay);
 	});
-	menuIcon.addEventListener('click', () => {
-		setTimeout(() => {
-			if (menuIcon.classList.contains('active')) {
-				createOverlay();
-			} else {
-				if (overlay) fadeOutAndRemove(overlay);
+
+	if (menuIcon) {
+		menuIcon.setAttribute("tabindex", "0");
+		menuIcon.setAttribute("role", "button");
+		menuIcon.setAttribute("aria-controls", "menu-icon");
+		menuIcon.setAttribute("aria-expanded", "false");
+
+		menuIcon.addEventListener('click', () => {
+			setTimeout(() => {
+				if (menuIcon.classList.contains('active')) {
+					createOverlay();
+				} else {
+					if (overlay) fadeOutAndRemove(overlay);
+				}
+			}, 10);
+		});
+
+		menuIcon.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				menuIcon.click();
+				menuIcon.setAttribute('aria-expanded', menuIcon.classList.contains('active') ? 'true' : 'false');
 			}
-		}, 10); // small delay to allow class toggle to complete
+		});
+	}
+
+	document.querySelector('#menu-icon')?.addEventListener('click', () => {
+		document.querySelector('.site-header')?.classList.toggle('menu-expanded');
 	});
-	document.querySelector('#menu-icon').addEventListener('click', () => {
-		document.querySelector('.site-header').classList.toggle('menu-expanded');
-	});
+
 	document.addEventListener("DOMContentLoaded", () => {
 		const menuIcon = document.getElementById("menu-icon");
 		if (menuIcon && menuIcon.getAttribute("href") === "#") {
 			menuIcon.removeAttribute("href");
 		}
 	});
+
 	let clickEvent = ('ontouchstart' in window) ? 'touchstart' : 'click';
-	document.addEventListener(clickEvent, function(e) {
+	document.addEventListener(clickEvent, function (e) {
 		if (window.innerWidth < 1023 && e.target.classList.contains('bg-coverup')) {
-			menuIcon.click(); // simulate burger menu toggle
+			menuIcon?.click();
 		}
 	});
-    ///////////////////////////////////////////////////
-	/////* End SURGE Javascript Customizations  *//////
+
+	///////////////////////////////////////////////////
+	// Desktop menu click-to-expand logic //
+	(function () {
+		const isDesktop = () => window.innerWidth >= 1023;
+		const navMenu = document.querySelector('.omega-nav-menu');
+		if (!navMenu) return;
+
+		let lastClicked = null;
+
+		navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				if (!isDesktop()) return;
+
+				const parentLi = this.parentElement;
+				const submenu = parentLi.querySelector('ul');
+
+				if (submenu && submenu.offsetParent === null) {
+					e.preventDefault();
+					submenu.style.display = 'block';
+					lastClicked = this;
+				} else if (lastClicked === this) {
+					lastClicked = null;
+				} else {
+					e.preventDefault();
+					navMenu.querySelectorAll('li.menu-item-has-children ul').forEach(ul => {
+						ul.style.display = 'none';
+					});
+					submenu.style.display = 'block';
+					lastClicked = this;
+				}
+			});
+		});
+	})();
+	/////* End SURGE Javascript Customizations *///////
+	///////////////////////////////////////////////////
