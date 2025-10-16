@@ -1,8 +1,8 @@
 	/////* Start SURGE Javascript Customizations */////
 	///////////////////////////////////////////////////
 	// Misc.Initial DOM manipulation and/or alteration //
-	document.querySelector('.credit')?.remove();
-	document.getElementById('header')?.classList.add('is-transparent');
+	document.querySelector('.credit').remove();
+	document.getElementById('header').classList.add('is-transparent');
 
 	//////////////////////////////////////////////////
 	// Assign random classes to specific element(s) //
@@ -23,6 +23,10 @@
 			header.classList.remove('is-transparent');
 			header.classList.add('not-transparent');
 		}
+	}
+
+	function setAria() {
+		menuIcon.setAttribute('aria-expanded', menuIcon.classList.contains('active') ? 'true' : 'false');
 	}
 
 	/////////////////////////////////////////////////
@@ -56,7 +60,7 @@
 				className: 'bg-coverup',
 				style: 'width:100%; height: 100vh; background: #b8b8b8b2; position: fixed; top: 0; z-index: 0; left: 0; opacity: 0;'
 			});
-			content?.appendChild(overlay);
+			content.appendChild(overlay);
 			fadeIn(overlay);
 		}
 	}
@@ -88,7 +92,7 @@
 		requestAnimationFrame(step);
 	}
 
-	menu?.querySelectorAll('a').forEach(anchor => {
+	menu.querySelectorAll('a').forEach(anchor => {
 		['mouseenter', 'click', 'touchstart'].forEach(evt => {
 			anchor.addEventListener(evt, () => {
 				createOverlay();
@@ -96,7 +100,7 @@
 		});
 	});
 
-	menu?.addEventListener('mouseleave', () => {
+	menu.addEventListener('mouseleave', () => {
 		if (overlay) fadeOutAndRemove(overlay);
 	});
 
@@ -106,8 +110,10 @@
 		menuIcon.setAttribute("aria-controls", "menu-icon");
 		menuIcon.setAttribute("aria-expanded", "false");
 
+
 		menuIcon.addEventListener('click', () => {
 			setTimeout(() => {
+				setAria();
 				if (menuIcon.classList.contains('active')) {
 					createOverlay();
 				} else {
@@ -118,15 +124,33 @@
 
 		menuIcon.addEventListener('keydown', (e) => {
 			if (e.key === 'Enter' || e.key === ' ') {
+				setAria();
 				e.preventDefault();
 				menuIcon.click();
-				menuIcon.setAttribute('aria-expanded', menuIcon.classList.contains('active') ? 'true' : 'false');
 			}
 		});
 	}
 
-	document.querySelector('#menu-icon')?.addEventListener('click', () => {
-		document.querySelector('.site-header')?.classList.toggle('menu-expanded');
+	function updateBurgerAccessibility() {
+		if (!menuIcon) return;
+
+		if (window.innerWidth >= 1023) {
+			menuIcon.setAttribute("tabindex", "-1"); // remove from tab order
+			menuIcon.setAttribute("aria-hidden", "true"); // hide from screen readers
+		} else {
+			menuIcon.setAttribute("tabindex", "0"); // allow focus
+			menuIcon.setAttribute("aria-hidden", "false"); // expose to screen readers
+		}
+	}
+
+	// Run on load
+	updateBurgerAccessibility();
+
+	// Run on resize
+	window.addEventListener("resize", updateBurgerAccessibility);
+
+	document.querySelector('#menu-icon').addEventListener('click', () => {
+		document.querySelector('.site-header').classList.toggle('menu-expanded');
 	});
 
 	document.addEventListener("DOMContentLoaded", () => {
@@ -139,7 +163,7 @@
 	let clickEvent = ('ontouchstart' in window) ? 'touchstart' : 'click';
 	document.addEventListener(clickEvent, function (e) {
 		if (window.innerWidth < 1023 && e.target.classList.contains('bg-coverup')) {
-			menuIcon?.click();
+			menuIcon.click();
 		}
 	});
 
