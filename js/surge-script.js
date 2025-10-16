@@ -111,9 +111,9 @@
 	});
 	let clickEvent = ('ontouchstart' in window) ? 'touchstart' : 'click';
 	document.addEventListener(clickEvent, function(e) {
-		if (e.target.classList.contains('bg-coverup')) {
-			menuIcon.click();
+		if (window.innerWidth < 1023 && e.target.classList.contains('bg-coverup')) {
+			menuIcon.click(); // simulate burger menu toggle
 		}
-	});   
+	});
     ///////////////////////////////////////////////////
 	/////* End SURGE Javascript Customizations  *//////

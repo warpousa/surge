@@ -16,7 +16,7 @@ $surge-bg5: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bgr
 
 /* Breakpoints */
 
-//// Vertical ////
+//// Vertical /////
 $lv: 	600px;
 //// End Vertical ////
 
@@ -257,6 +257,45 @@ body {
 						margin-right: 35px;
 					}
 					&.nav-primary {
+						@include extra-extra-small {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+										padding: 7px 30px 16px 0;
+									}
+								}
+							}
+						}
+						
+						@include phone-only-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+										padding: 7px 30px 16px 0;
+									}
+								}
+							}
+						}
+						
+						@include tablet-portrait-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+										padding: 7px 30px 16px 0;
+									}
+								}
+							}
+						}
+						@include tablet-landscape-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+										padding: 7px 30px 16px 0;
+									}
+								}
+							}	
+						}
+						
 						ul {
 							&.menu {
 							    border-top: $topborder;
@@ -311,7 +350,7 @@ body {
 												content: " › ";
 												font-size: 36px;
 												position: absolute;
-												margin-left: 50%;
+												margin-left: 88%;
 												margin-top: 9px;
 												z-index: 9999;
 												transform: rotate(90deg);
@@ -325,7 +364,7 @@ body {
 												content: " › ";
 												font-size: 37px;
 												position: absolute;
-												margin-left: 50%;
+												margin-left: 88%;
 												margin-top: 2px;
 												z-index: 9999;
 												transform: rotate(-90deg);
@@ -339,7 +378,7 @@ body {
 												content: " › ";
 												font-size: 37px;
 												position: absolute;
-												margin-left: 49%;
+												margin-left: 88%;
 												margin-top: 3px;
 												z-index: 9999;
 												transform: rotate(90deg);
@@ -353,7 +392,7 @@ body {
 												content: " › ";
 												font-size: 39px;
 												position: absolute;
-												margin-left: 50%;
+												margin-left: 88%;
 												margin-top: 11px;
 												z-index: 9999;
 												transform: rotate(270deg);
@@ -367,7 +406,7 @@ body {
 												content: " › ";
 												font-size: 32px;
 												position: absolute;
-												margin-left: 50%;
+												margin-left: 88%;
 												margin-top: 9px;
 												z-index: 9999;
 												transform: rotate(90deg);
@@ -381,7 +420,7 @@ body {
 												content: " › ";
 												font-size: 32px;
 												position: absolute;
-												margin-left: 50%;
+												margin-left: 88%;
 												margin-top: 9px;
 												z-index: 9999;
 												transform: rotate(90deg);
@@ -478,10 +517,11 @@ body {
 											font-size: 12px;
 											margin-top: -39px;
 											position: absolute;
-										   
+										    z-index: 99;
+											
 											@include extra-extra-small {
 												margin-top: -39px;
-												margin-left: 14px !importanti;
+												margin-left: 14px !important;
 											}
 											@include phone-only-up {
 												margin-top: -39px;
@@ -653,7 +693,8 @@ body {
 					padding: 22px 18px 20px 37px;
     				text-shadow: $text-shadow;
 					// transition: $ease-half-sec;
-					font-size: 13px;
+					font-size: 13px;	
+
 					
 					&::before {
 						// content: "\1F6E5";
@@ -661,20 +702,16 @@ body {
 						background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
 						background-size: 110px 29px;
 						background-repeat: no-repeat;
-
 						color: #6d6666;
 						position: absolute;
 						right: 41%;
 						top: 0;
 						text-shadow: none;
 						opacity: 0;
-						transition: ease all 0.25s;
+						transition: $ease-quarter-sec;
 						font-size: 22px;
 						width: 125px;
 						
-						@include tablet-landscape-up {
-							font-size: 25px;
-						}
 						@include custom-desktop {
 							background-position: 13px 37px;
 							font-size: 38px;
@@ -695,15 +732,8 @@ body {
 							font-size: 64px !important;
 							top: -41px !important;
 							right: 44px !important;
-						}
-						
-//							@include extra-extra-small { }
-//							@include phone-only-up { }
-//							@include tablet-potrait-up { }
-//							@include tablet-landscape-up { }			
+						}		
 					}
-					
-
 					
 					&:hover, &:focus, &:active {
 						background: $menu-item-hover;				
@@ -713,7 +743,33 @@ body {
 	
 						&::before {
 							opacity: 1;
-							right: 0 !important;								
+						
+							@include extra-extra-small {
+								right: -30px !important;
+							}
+							@include phone-only-up {
+								right: -30px !important;
+							}
+							
+							@include tablet-portrait-up {
+								right: -30px !important;
+							}
+							@include tablet-landscape-up {
+								right: -30px !important;
+								font-size: 25px;
+							}						
+							@include desktop-up {
+								right: -30px !important;
+							}
+							@include custom-desktop {
+								right: -30px !important;
+							}
+							@include large-desktop-up {
+								right: -15px !important;
+							}
+							@include hd-desktop-up {
+								right: 1px !important;	
+							}						
 						}
 					}
 					&:focus, &:focus-visible, &:focus-within {
@@ -748,12 +804,12 @@ body {
 						}
 						@include large-desktop-up {
 							box-shadow: $submenu-shadow1;
-							width: 24%;
+							width: 23%;
 							max-width: 400px;
 						}
 						@include hd-desktop-up {
 							box-shadow: $submenu-shadow1;
-							width: 26%;
+							width: 18%;
 							max-width: 480px;
 						}
 					}
@@ -898,9 +954,10 @@ input, select, textarea {
   border-radius: 2px;
   z-index: -1;
   height: 100vh;
+  overflow-y: hidden !important;
 }
 
-searchwp-modal-form-default .searchwp-modal-form__content .search-form {
+.searchwp-modal-form-default .searchwp-modal-form__content .search-form {
     margin-top: 200px;
 }
 
@@ -934,4 +991,4 @@ searchwp-modal-form-default .searchwp-modal-form__content .search-form {
 //}
 
 
-//  body .site-container .omega-nav-menu li a::after { content:' › ' }
+//  body .site-container .omega-nav-menu li a::after { content:' › ' } //
