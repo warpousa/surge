@@ -181,7 +181,6 @@
 			menuIcon.click();
 		}
 	});
-
 	///////////////////////////////////////////////////
 	// Desktop menu click-to-expand logic //
 	(function () {
@@ -189,30 +188,17 @@
 		const navMenu = document.querySelector('.omega-nav-menu');
 		if (!navMenu) return;
 
-		let lastClicked = null;
+		//let lastClicked = null;
 
 		navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
-			const parentLi = anchor.parentElement;
-			const submenu = parentLi.querySelector('ul');
+			//const parentLi = anchor.parentElement;
+			//const submenu = parentLi.querySelector('ul');
 
 			// Desktop click-to-expand logic
 			anchor.addEventListener('click', function (e) {
 				if (!isDesktop()) return;
-
-				if (submenu && submenu.offsetParent === null) {
-					e.preventDefault();
-					submenu.style.display = 'block';
-					lastClicked = this;
-				} else if (lastClicked === this) {
-					lastClicked = null;
-				} else {
-					e.preventDefault();
-					navMenu.querySelectorAll('li.menu-item-has-children ul').forEach(ul => {
-						ul.style.display = 'none';
-					});
-					submenu.style.display = 'block';
-					lastClicked = this;
-				}
+				e.preventDefault();
+				triggerSuperfishEvent(this, 'mouseenter');
 			});
 
 			anchor.addEventListener('focus', function () {
@@ -225,7 +211,13 @@
 
 				if (e.key === 'Enter' || e.key === ' ') {
 					e.preventDefault();
-					triggerSuperfishEvent(this, 'mouseenter');
+					
+					triggerSuperfishEvent(this, 'mouseenter');				
+// 					document.querySelector('.omega-nav-menu li ul.sub-menu').style.setProperty("opacity", "1");
+// 					document.querySelector('.omega-nav-menu li ul.sub-menu').style.setProperty("display", "block");
+// 					document.querySelector('.omega-nav-menu li ul.sub-menu').style.setProperty("left", "auto");	
+					Object.assign(document.querySelector('.omega-nav-menu li ul.sub-menu').style, { display: "block", opacity: "1", left: "auto" });   
+					console.log("Signs of life.");
 				}
 
 				if (e.key === 'Escape') {
@@ -235,26 +227,10 @@
 			});
 		});
 	})();
-
 	////////////////
-
 	(function () {
 		const navMenu = $('.omega-nav-menu');
 		if (!navMenu.length) return;
-
-		navMenu.on('focusin', 'li.menu-item-has-children', function () {
-			const $li = $(this);
-			const $submenu = $li.children('ul');
-
-			// Only trigger if submenu is hidden
-			if ($submenu.length && !$li.hasClass('sfHover')) {
-				$li.addClass('sfHover');
-				$submenu.stop(true, true).animate({ opacity: 'show' }, 'normal');
-				$submenu.stop(true, true).animate({ opacity: 'hide' }, 'fast', function () {
-					$li.removeClass('sfHover');
-				});				
-			}
-		});
 	})();
 	/////* End SURGE Javascript Customizations *///////
 	///////////////////////////////////////////////////
