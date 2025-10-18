@@ -29,6 +29,21 @@
 		menuIcon.setAttribute('aria-expanded', menuIcon.classList.contains('active') ? 'true' : 'false');
 	}
 
+	function triggerSuperfishEvent(anchor, type) {
+		if (!anchor || !anchor.parentElement) return;
+
+		const parentLi = anchor.parentElement;
+
+		const evt = new MouseEvent(type, {
+			bubbles: true,
+			cancelable: true,
+			view: window
+		});
+		parentLi.dispatchEvent(evt);
+
+		anchor.setAttribute('aria-expanded', type === 'mouseenter' ? 'true' : 'false');
+	}
+
 	/////////////////////////////////////////////////
 	// When user scrolls down, hide the navbar. When user scrolls up, show the navbar //
 	let prevScrollpos = window.pageYOffset;
@@ -177,11 +192,12 @@
 		let lastClicked = null;
 
 		navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
+			const parentLi = anchor.parentElement;
+			const submenu = parentLi.querySelector('ul');
+
+			// Desktop click-to-expand logic
 			anchor.addEventListener('click', function (e) {
 				if (!isDesktop()) return;
-
-				const parentLi = this.parentElement;
-				const submenu = parentLi.querySelector('ul');
 
 				if (submenu && submenu.offsetParent === null) {
 					e.preventDefault();
@@ -198,6 +214,46 @@
 					lastClicked = this;
 				}
 			});
+
+			anchor.addEventListener('focus', function () {
+				if (!isDesktop()) return;
+				triggerSuperfishEvent(this, 'mouseenter');
+			});
+
+			anchor.addEventListener('keydown', function (e) {
+				if (!isDesktop()) return;
+
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					triggerSuperfishEvent(this, 'mouseenter');
+				}
+
+				if (e.key === 'Escape') {
+					e.preventDefault();
+					triggerSuperfishEvent(this, 'mouseleave');
+				}
+			});
+		});
+	})();
+
+	////////////////
+
+	(function () {
+		const navMenu = $('.omega-nav-menu');
+		if (!navMenu.length) return;
+
+		navMenu.on('focusin', 'li.menu-item-has-children', function () {
+			const $li = $(this);
+			const $submenu = $li.children('ul');
+
+			// Only trigger if submenu is hidden
+			if ($submenu.length && !$li.hasClass('sfHover')) {
+				$li.addClass('sfHover');
+				$submenu.stop(true, true).animate({ opacity: 'show' }, 'normal');
+				$submenu.stop(true, true).animate({ opacity: 'hide' }, 'fast', function () {
+					$li.removeClass('sfHover');
+				});				
+			}
 		});
 	})();
 	/////* End SURGE Javascript Customizations *///////
