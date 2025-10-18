@@ -76,6 +76,15 @@
 	const content = document.querySelector('#content');
 	let overlay = null;
 
+	function bindOverlayDismiss(el) {
+		if (!el) return;
+		['click', 'mouseenter', 'touchstart'].forEach(evt => {
+			el.addEventListener(evt, () => {
+				fadeOutAndRemove(el);
+			});
+		});
+	}
+
 	function createOverlay() {
 		if (!overlay) {
 			overlay = Object.assign(document.createElement('div'), {
@@ -84,18 +93,7 @@
 			});
 			content.appendChild(overlay);
 			fadeIn(overlay);
-			
-			overlay.addEventListener('click', 'mouseenter','touchstart', () => {
-				fadeOutAndRemove(overlay);
-			});
-
-// 			overlay.addEventListener('mouseenter', () => {
-// 				fadeOutAndRemove(overlay);
-// 			});
-
-// 			overlay.addEventListener('touchstart', () => {
-// 				fadeOutAndRemove(overlay);
-// 			});			
+			bindOverlayDismiss(overlay);
 		}
 	}
 
@@ -258,4 +256,4 @@
 		if (!navMenu.length) return;
 	})();
 	/////* End SURGE Javascript Customizations *///////
-	///////////////////////////////////////////////////
+	///////////////////////////////////////////////////         
