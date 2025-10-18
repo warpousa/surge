@@ -3,7 +3,14 @@
 	// Misc.Initial DOM manipulation and/or alteration //
 	document.querySelector('.credit').remove();
 	document.getElementById('header').classList.add('is-transparent');
-
+	//////////////////////////////////////////////////
+	document.querySelectorAll('.omega-nav-menu li ul.sub-menu').forEach(submenu => {
+		Object.assign(submenu.style, {
+			display: "block",
+			opacity: "1",
+			left: "auto"
+		});
+	});	
 	//////////////////////////////////////////////////
 	// Assign random classes to specific element(s) //
 	let classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5'];
@@ -77,6 +84,18 @@
 			});
 			content.appendChild(overlay);
 			fadeIn(overlay);
+			
+			overlay.addEventListener('click', 'mouseenter','touchstart', () => {
+				fadeOutAndRemove(overlay);
+			});
+
+// 			overlay.addEventListener('mouseenter', () => {
+// 				fadeOutAndRemove(overlay);
+// 			});
+
+// 			overlay.addEventListener('touchstart', () => {
+// 				fadeOutAndRemove(overlay);
+// 			});			
 		}
 	}
 
@@ -187,14 +206,7 @@
 		const isDesktop = () => window.innerWidth >= 1023;
 		const navMenu = document.querySelector('.omega-nav-menu');
 		if (!navMenu) return;
-
-		//let lastClicked = null;
-
 		navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
-			//const parentLi = anchor.parentElement;
-			//const submenu = parentLi.querySelector('ul');
-
-			// Desktop click-to-expand logic
 			anchor.addEventListener('click', function (e) {
 				if (!isDesktop()) return;
 				e.preventDefault();
@@ -204,20 +216,24 @@
 			anchor.addEventListener('focus', function () {
 				if (!isDesktop()) return;
 				triggerSuperfishEvent(this, 'mouseenter');
+
+				const parentLi = this.parentElement;
+				const submenu = parentLi.querySelector('ul.sub-menu');
+				if (submenu) {
+					Object.assign(submenu.style, {
+						display: "block",
+						opacity: "1",
+						left: "auto"
+					});
+				}
 			});
 
 			anchor.addEventListener('keydown', function (e) {
 				if (!isDesktop()) return;
-
 				if (e.key === 'Enter' || e.key === ' ') {
-					e.preventDefault();
-					
+					e.preventDefault();					
 					triggerSuperfishEvent(this, 'mouseenter');				
-// 					document.querySelector('.omega-nav-menu li ul.sub-menu').style.setProperty("opacity", "1");
-// 					document.querySelector('.omega-nav-menu li ul.sub-menu').style.setProperty("display", "block");
-// 					document.querySelector('.omega-nav-menu li ul.sub-menu').style.setProperty("left", "auto");	
-					Object.assign(document.querySelector('.omega-nav-menu li ul.sub-menu').style, { display: "block", opacity: "1", left: "auto" });   
-					console.log("Signs of life.");
+
 				}
 
 				if (e.key === 'Escape') {
@@ -225,6 +241,15 @@
 					triggerSuperfishEvent(this, 'mouseleave');
 				}
 			});
+			const parentLi = anchor.parentElement;
+			const submenu = parentLi.querySelector('ul.sub-menu');
+			if (submenu) {
+				Object.assign(submenu.style, {
+					display: "block",
+					opacity: "1",
+					left: "auto"
+				});
+			}	
 		});
 	})();
 	////////////////
