@@ -1,295 +1,241 @@
 	/////* Start SURGE Javascript Customizations */////
 	///////////////////////////////////////////////////
-	// Misc.Initial DOM manipulation and/or alteration //
-	document.querySelector('.credit').remove();
-	document.getElementById('header').classList.add('is-transparent');
-	//////////////////////////////////////////////////
-	function showSubmenu(submenu) {
-		if (submenu) {
-			Object.assign(submenu.style, {
-				display: "block",
-				opacity: "1",
-				left: "auto"
+	// surgeMenu.js
+	(function () {
+		'use strict';
+
+		function assignRandomBannerClasses() {
+			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5'];
+			document.querySelectorAll('.banner').forEach(banner => {
+				banner.classList.add(classes[Math.floor(Math.random() * classes.length)]);
 			});
 		}
-	}
-	document.querySelectorAll('.omega-nav-menu li ul.sub-menu').forEach(submenu => {
-		showSubmenu(submenu);
-	});	
-	//////////////////////////////////////////////////
-	// Assign random classes to specific element(s) //
-	let classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5'];
-	document.querySelectorAll('.banner').forEach(banner => {
-		banner.classList.add(classes[Math.floor(Math.random() * classes.length)]);
-	});
 
-	/////////////////////////////////////////////////
-	// Function to apply transparency based on scroll position //
-	function applyTransparency(pageYOffsetValue) {
-		let header = document.getElementById('header');
-		if (!header) return;
-		if (pageYOffsetValue < 150) {
-			header.classList.add('is-transparent');
-			header.classList.remove('not-transparent');
-		} else {
-			header.classList.remove('is-transparent');
-			header.classList.add('not-transparent');
-		}
-	}
-
-	function setAria() {
-		menuIcon.setAttribute('aria-expanded', menuIcon.classList.contains('active') ? 'true' : 'false');
-	}
-
-	function triggerSuperfishEvent(anchor, type) {
-		if (!anchor || !anchor.parentElement) return;
-
-		const parentLi = anchor.parentElement;
-
-		const evt = new MouseEvent(type, {
-			bubbles: true,
-			cancelable: true,
-			view: window
-		});
-		parentLi.dispatchEvent(evt);
-
-		anchor.setAttribute('aria-expanded', type === 'mouseenter' ? 'true' : 'false');
-	}
-
-	/////////////////////////////////////////////////
-	// When user scrolls down, hide the navbar. When user scrolls up, show the navbar //
-	let prevScrollpos = window.pageYOffset;
-	window.onscroll = function () {
-		let currentScrollPos = window.pageYOffset;
-		let header = document.getElementById('header');
-		if (!header) return;
-		if (prevScrollpos > currentScrollPos) {
-			header.classList.add('show-header');
-			header.classList.remove('hide-header');
-			applyTransparency(currentScrollPos);
-		} else {
-			header.classList.add('hide-header');
-			header.classList.remove('show-header');
-		}
-		prevScrollpos = currentScrollPos;
-	};
-
-	///////////////////////////////////////////////////
-	// Div cover for background //
-	const menu = document.querySelector('#menu-menu-1');
-	const menuIcon = document.querySelector('#menu-icon.menu-icon');
-	const content = document.querySelector('#content');
-	let overlay = null;
-
-	function bindOverlayDismiss(el) {
-		if (!el) return;
-		['click', 'mouseenter', 'touchstart'].forEach(evt => {
-			el.addEventListener(evt, () => {
-				fadeOutAndRemove(el);
-			});
-		});
-	}
-
-	function createOverlay(source = 'mouse') {
-		if (!overlay) {
-			overlay = Object.assign(document.createElement('div'), {
-				className: 'bg-coverup',
-				style: 'width:100%; height: 100vh; background: #b8b8b8b2; position: fixed; top: 0; z-index: 0; left: 0; opacity: 0;'
-			});
-			content.appendChild(overlay);
-			fadeIn(overlay);
-
-			if (source !== 'keyboard') {
-				bindOverlayDismiss(overlay);
-			}
-		}
-	}
-
-	function fadeIn(el) {
-		let start = null;
-		function step(ts) {
-			if (!start) start = ts;
-			let progress = ts - start;
-			el.style.opacity = Math.min(progress / 500, 1);
-			if (progress < 500) requestAnimationFrame(step);
-		}
-		requestAnimationFrame(step);
-	}
-
-	function fadeOutAndRemove(el) {
-		let start = null;
-		function step(ts) {
-			if (!start) start = ts;
-			let progress = ts - start;
-			el.style.opacity = Math.max(1 - progress / 500, 0);
-			if (progress < 500) {
-				requestAnimationFrame(step);
+		function applyTransparency(pageYOffsetValue) {
+			const header = document.getElementById('header');
+			if (!header) return;
+			if (pageYOffsetValue < 150) {
+				header.classList.add('is-transparent');
+				header.classList.remove('not-transparent');
 			} else {
-				el.remove();
-				overlay = null;
+				header.classList.remove('is-transparent');
+				header.classList.add('not-transparent');
 			}
 		}
-		requestAnimationFrame(step);
-	}
 
-	menu.querySelectorAll('a').forEach(anchor => {
-		['mouseenter', 'click', 'touchstart'].forEach(evt => {
-			anchor.addEventListener(evt, () => {
-				createOverlay();
-			});
-		});
-	});
+		function initScrollHeaderBehavior() {
+			let prevScrollpos = window.pageYOffset;
+			window.addEventListener('scroll', () => {
+				const currentScrollPos = window.pageYOffset;
+				const header = document.getElementById('header');
+				if (!header) return;
 
-	menu.addEventListener('mouseleave', () => {
-		if (overlay) fadeOutAndRemove(overlay);
-	});
+				const delta = Math.abs(currentScrollPos - prevScrollpos);
 
-	menu.querySelectorAll('a, button, li').forEach(el => {
-		el.addEventListener('focus', () => {
-			createOverlay('keyboard');
-		});
+				if (delta < 10) return; // ignore micro scrolls
 
-		el.addEventListener('blur', () => {
-			setTimeout(() => {
-				if (!menu.contains(document.activeElement)) {
-					if (overlay) fadeOutAndRemove(overlay);
-				}
-			}, 10);
-		});
-	});
-
-	if (menuIcon) {
-		menuIcon.setAttribute("tabindex", "0");
-		menuIcon.setAttribute("role", "button");
-		menuIcon.setAttribute("aria-controls", "menu-icon");
-		menuIcon.setAttribute("aria-expanded", "false");
-
-
-		menuIcon.addEventListener('click', () => {
-			setTimeout(() => {
-				setAria();
-				if (menuIcon.classList.contains('active')) {
-					createOverlay();
+				if (prevScrollpos > currentScrollPos) {
+					header.classList.add('show-header');
+					header.classList.remove('hide-header');
+					applyTransparency(currentScrollPos);
 				} else {
-					if (overlay) fadeOutAndRemove(overlay);
+					header.classList.add('hide-header');
+					header.classList.remove('show-header');
 				}
-			}, 10);
-		});
-
-		menuIcon.addEventListener('keydown', (e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				setAria();
-				e.preventDefault();
-				menuIcon.click();
-			}
-		});
-	}
-
-	function updateBurgerAccessibility() {
-		if (!menuIcon) return;
-
-		if (window.innerWidth >= 1023) {
-			menuIcon.setAttribute("tabindex", "-1"); // remove from tab order
-			menuIcon.setAttribute("aria-hidden", "true"); // hide from screen readers
-		} else {
-			menuIcon.setAttribute("tabindex", "0"); // allow focus
-			menuIcon.setAttribute("aria-hidden", "false"); // expose to screen readers
-		}
-	}
-
-	// Run on load
-	updateBurgerAccessibility();
-
-	// Run on resize
-	window.addEventListener("resize", updateBurgerAccessibility);
-
-	document.querySelector('#menu-icon').addEventListener('click', () => {
-		document.querySelector('.site-header').classList.toggle('menu-expanded');
-	});
-
-	document.addEventListener("DOMContentLoaded", () => {
-		const menuIcon = document.getElementById("menu-icon");
-		if (menuIcon && menuIcon.getAttribute("href") === "#") {
-			menuIcon.removeAttribute("href");
-		}
-	});
-
-	let clickEvent = ('ontouchstart' in window) ? 'touchstart' : 'click';
-	document.addEventListener(clickEvent, function (e) {
-		if (window.innerWidth < 1023 && e.target.classList.contains('bg-coverup')) {
-			menuIcon.click();
-		}
-	});
-	//////////////////////////////////////////////////
-	document.addEventListener('keydown', function (e) {
-		if (e.key === 'Escape' && overlay) {
-			fadeOutAndRemove(overlay);
-		}
-	});
-	///////////////////////////////////////////////////
-	// Desktop menu click-to-expand logic //
-	(function () {
-		const isDesktop = () => window.innerWidth >= 1023;
-		const navMenu = document.querySelector('.omega-nav-menu');
-		
-		navMenu.addEventListener('focusout', function (e) {
-			// Check if focus moved outside the navMenu
-			if (!navMenu.contains(e.relatedTarget)) {
-				if (overlay) fadeOutAndRemove(overlay);
-			}
-		});
-		
-		if (!navMenu) return;
-		navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				if (!isDesktop()) return;
-				e.preventDefault();
-				triggerSuperfishEvent(this, 'mouseenter');
+				prevScrollpos = currentScrollPos;
 			});
+		}
 
-			anchor.addEventListener('focus', function () {
-				if (!isDesktop()) return;
-				triggerSuperfishEvent(this, 'mouseenter');
-				createOverlay();
-			});
-			
-			anchor.addEventListener('keydown', function (e) {
-				if (!isDesktop()) return;
-				if (e.key === 'Enter' || e.key === ' ') {
-					e.preventDefault();					
-					triggerSuperfishEvent(this, 'mouseenter');
-					createOverlay('keyboard');
+		// === Configurable Selectors ===
+		const menu = document.querySelector('#menu-menu-1');
+		const menuIcon = document.querySelector('#menu-icon.menu-icon');
+		const content = document.querySelector('#content');
+		let overlay = null;
 
-				}
-
-				if (e.key === 'Escape') {
-					e.preventDefault();
-					triggerSuperfishEvent(this, 'mouseleave');
-				}
-			});	
-			
-			const parentLi = anchor.parentElement;
-			const submenu = parentLi.querySelector('ul.sub-menu');
+		// === Utility Functions ===
+		function showSubmenu(submenu) {
 			if (submenu) {
-				showSubmenu(submenu);
-			}	
-		});
-	})();
-	////////////////
-	menu.querySelectorAll('a, button, li').forEach(el => {
-		el.addEventListener('blur', () => {
-			// Delay slightly to allow focus to move within menu
-			setTimeout(() => {
-				if (!menu.contains(document.activeElement)) {
+				Object.assign(submenu.style, {
+					display: "block",
+					opacity: "1",
+					left: "auto"
+				});
+			}
+		}
+
+		function triggerSuperfishEvent(anchor, type) {
+			if (!anchor || !anchor.parentElement) return;
+			const parentLi = anchor.parentElement;
+			const evt = new MouseEvent(type, {
+				bubbles: true,
+				cancelable: true,
+				view: window
+			});
+			parentLi.dispatchEvent(evt);
+			anchor.setAttribute('aria-expanded', type === 'mouseenter' ? 'true' : 'false');
+		}
+
+		function fadeIn(el) {
+			let start = null;
+			function step(ts) {
+				if (!start) start = ts;
+				let progress = ts - start;
+				el.style.opacity = Math.min(progress / 500, 1);
+				if (progress < 500) requestAnimationFrame(step);
+			}
+			requestAnimationFrame(step);
+		}
+
+		function fadeOutAndRemove(el) {
+			let start = null;
+			function step(ts) {
+				if (!start) start = ts;
+				let progress = ts - start;
+				el.style.opacity = Math.max(1 - progress / 500, 0);
+				if (progress < 500) {
+					requestAnimationFrame(step);
+				} else {
+					el.remove();
+					overlay = null;
+				}
+			}
+			requestAnimationFrame(step);
+		}
+
+		function bindOverlayDismiss(el) {
+			if (!el) return;
+			['click', 'mouseenter', 'touchstart'].forEach(evt => {
+				el.addEventListener(evt, () => {
+					fadeOutAndRemove(el);
+				});
+			});
+		}
+
+		function createOverlay(source = 'mouse') {
+			if (!overlay) {
+				overlay = Object.assign(document.createElement('div'), {
+					className: 'bg-coverup',
+					style: 'width:100%; height: 100vh; background: #b8b8b8b2; position: fixed; top: 0; z-index: 0; left: 0; opacity: 0;'
+				});
+				content.appendChild(overlay);
+				fadeIn(overlay);
+				if (source !== 'keyboard') {
+					bindOverlayDismiss(overlay);
+				}
+			}
+		}
+
+		// === Initialization ===
+		function initSubmenus() {
+			document.querySelectorAll('.omega-nav-menu li ul.sub-menu').forEach(showSubmenu);
+		}
+
+		function initOverlayTriggers() {
+			menu.querySelectorAll('a, button, li').forEach(el => {
+				['mouseenter', 'click', 'touchstart'].forEach(evt => {
+					el.addEventListener(evt, () => {
+						createOverlay();
+					});
+				});
+				el.addEventListener('focus', () => {
+					createOverlay('keyboard');
+				});
+				el.addEventListener('blur', () => {
+					setTimeout(() => {
+						const active = document.activeElement;
+						if (!menu.contains(active) && active !== overlay) {
+							if (overlay) fadeOutAndRemove(overlay);
+						}
+					}, 10);
+				});
+			});
+
+			function setAria() {
+				menuIcon.setAttribute('aria-expanded', menuIcon.classList.contains('active') ? 'true' : 'false');
+			}		
+
+			if (menuIcon) {
+				menuIcon.addEventListener('click', () => {
+					setTimeout(() => {
+						setAria();
+						if (menuIcon.classList.contains('active')) {
+							createOverlay();
+						} else {
+							if (overlay) fadeOutAndRemove(overlay);
+						}
+					}, 10);
+				});
+
+				menuIcon.addEventListener('keydown', (e) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						setAria();
+						e.preventDefault();
+						menuIcon.click();
+					}
+				});
+			}		
+
+			menu.addEventListener('mouseleave', () => {
+				if (overlay) fadeOutAndRemove(overlay);
+			});
+		}
+
+		function initDesktopMenu() {
+			const navMenu = document.querySelector('.omega-nav-menu');
+			if (!navMenu) return;
+
+			navMenu.addEventListener('focusout', function (e) {
+				if (!navMenu.contains(e.relatedTarget)) {
 					if (overlay) fadeOutAndRemove(overlay);
 				}
-			}, 10);
-		});
-	});		
-	////////////////
-	(function () {
-		const navMenu = $('.omega-nav-menu');
-		if (!navMenu.length) return;
+			});
+
+			navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					if (window.innerWidth < 1023) return;
+					e.preventDefault();
+					triggerSuperfishEvent(this, 'mouseenter');
+				});
+
+				anchor.addEventListener('focus', function () {
+					if (window.innerWidth < 1023) return;
+					triggerSuperfishEvent(this, 'mouseenter');
+					createOverlay();
+				});
+
+				anchor.addEventListener('keydown', function (e) {
+					if (window.innerWidth < 1023) return;
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault();
+						triggerSuperfishEvent(this, 'mouseenter');
+						createOverlay('keyboard');
+					}
+					if (e.key === 'Escape') {
+						e.preventDefault();
+						triggerSuperfishEvent(this, 'mouseleave');
+					}
+				});
+
+				const submenu = anchor.parentElement.querySelector('ul.sub-menu');
+				if (submenu) showSubmenu(submenu);
+			});
+		}
+
+		function initGlobalEscapeHandler() {
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape' && overlay) {
+					fadeOutAndRemove(overlay);
+				}
+			});
+		}
+
+		// === Run All ===
+		assignRandomBannerClasses();
+		initSubmenus();
+		initOverlayTriggers();
+		initDesktopMenu();
+		initGlobalEscapeHandler();
+		initScrollHeaderBehavior();
 	})();
 	/////* End SURGE Javascript Customizations *///////
 	///////////////////////////////////////////////////         
