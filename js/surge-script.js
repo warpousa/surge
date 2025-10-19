@@ -252,8 +252,15 @@
 			navMenuDesktop.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
 				anchor.addEventListener('click', function (e) {
 					if (window.innerWidth < 1023) return;
-					e.preventDefault();
-					triggerSuperfishEvent(this, 'mouseenter');
+
+					if (!this.dataset.opened) {
+						e.preventDefault();
+						this.dataset.opened = 'true';
+						triggerSuperfishEvent(this, 'mouseenter');
+					} else {
+						// Allow navigation
+						this.removeAttribute('data-opened');
+					}
 				});
 
 				anchor.addEventListener('focus', function () {
@@ -272,8 +279,13 @@
 					if (e.key === 'Escape') {
 						e.preventDefault();
 						triggerSuperfishEvent(this, 'mouseleave');
+						this.removeAttribute('data-opened');
 					}
 				});
+				
+				anchor.addEventListener('blur', () => {
+					anchor.removeAttribute('data-opened');
+				});				
 
 				const submenu = anchor.parentElement.querySelector('ul.sub-menu');
 				if (submenu) showSubmenu(submenu);
