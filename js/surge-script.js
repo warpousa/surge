@@ -14,6 +14,7 @@
 		function applyTransparency(pageYOffsetValue) {
 			const header = document.getElementById('header');
 			if (!header) return;
+
 			if (pageYOffsetValue < 150) {
 				header.classList.add('is-transparent');
 				header.classList.remove('not-transparent');
@@ -21,6 +22,12 @@
 				header.classList.remove('is-transparent');
 				header.classList.add('not-transparent');
 			}
+		}
+		
+		function initHeaderState() {
+			document.addEventListener('DOMContentLoaded', () => {
+				applyTransparency(window.pageYOffset);
+			});
 		}
 
 		function initScrollHeaderBehavior() {
@@ -275,6 +282,7 @@
 
 		// === Run All ===
 		assignRandomBannerClasses();
+		initHeaderState();
 		initSubmenus();
 		initOverlayTriggers();
 		initDesktopMenu();
@@ -285,4 +293,4 @@
 		window.addEventListener("resize", updateBurgerAccessibility);
 	})();
 	/////* End SURGE Javascript Customizations *///////
-	///////////////////////////////////////////////////         
+	///////////////////////////////////////////////////        

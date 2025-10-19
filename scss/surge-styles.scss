@@ -72,11 +72,11 @@ $content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 
 $contentcolor: #6d6666; 
 $linkhover: #a90000;
 $linkhover-border: rgba(0,0,0,0);
-$menu-background: #eff4f2;
+$menu-background: rgba(255,255,255,0.99);   /*#eff4f2*/
 $menu-background-ii: #eff3e8;
 $menu-background-transparent: rgba(234, 234, 215, 0.55);
-$menu-item-hover: linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);
-$menu-background-highlight: #eff4f2;
+$menu-item-hover: rgba(255,255,255, 0.15);  /* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
+$menu-background-highlight: rgba(255,255,255,0.75);  /* #eff4f2;  */
 $menu-border: 3px solid #008CBA;
 $submenu-background: rgba(255,255,255,0);
 $menu-highlight-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
@@ -423,7 +423,7 @@ body {
 												margin-left: 88%;
 												margin-top: 9px;
 												z-index: 9999;
-												transform: rotate(90deg);
+												transform: rotate(-90deg);
 											}
 										}
 									}						
@@ -437,6 +437,7 @@ body {
 											}	
 											
 											a {
+												width: 100%;
 												@include extra-extra-small {
 													padding-left: 40px;
 													//width: 300px;
@@ -457,9 +458,6 @@ body {
 												&:hover, &:focus, &:active {
 													width: 100% !important;
 												}
-												
-												z-index: 99;
-												width: 100%;
 											}
                                             &:last-child {
                                                 border-bottom-right-radius: 15px;
@@ -711,6 +709,7 @@ body {
 						transition: $ease-quarter-sec;
 						font-size: 22px;
 						width: 125px;
+						z-index: -1;
 						
 						@include custom-desktop {
 							background-position: 13px 37px;
@@ -736,13 +735,15 @@ body {
 					}
 					
 					&:hover, &:focus, &:active {
-						background: $menu-item-hover;				
+						background: $menu-item-hover;
+						box-shadow: inset 0 0 30px white;
 						text-shadow: 1px 1px 19px black;
  						// width: 100%;
   						outline: dotted #aeaeae 2px;
 	
 						&::before {
 							opacity: 1;
+							z-index: -1;
 						
 							@include extra-extra-small {
 								right: -30px !important;
