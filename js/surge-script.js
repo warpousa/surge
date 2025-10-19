@@ -4,12 +4,17 @@
 	document.querySelector('.credit').remove();
 	document.getElementById('header').classList.add('is-transparent');
 	//////////////////////////////////////////////////
+	function showSubmenu(submenu) {
+		if (submenu) {
+			Object.assign(submenu.style, {
+				display: "block",
+				opacity: "1",
+				left: "auto"
+			});
+		}
+	}
 	document.querySelectorAll('.omega-nav-menu li ul.sub-menu').forEach(submenu => {
-		Object.assign(submenu.style, {
-			display: "block",
-			opacity: "1",
-			left: "auto"
-		});
+		showSubmenu(submenu);
 	});	
 	//////////////////////////////////////////////////
 	// Assign random classes to specific element(s) //
@@ -85,7 +90,7 @@
 		});
 	}
 
-	function createOverlay() {
+	function createOverlay(source = 'mouse') {
 		if (!overlay) {
 			overlay = Object.assign(document.createElement('div'), {
 				className: 'bg-coverup',
@@ -93,7 +98,10 @@
 			});
 			content.appendChild(overlay);
 			fadeIn(overlay);
-			bindOverlayDismiss(overlay);
+
+			if (source !== 'keyboard') {
+				bindOverlayDismiss(overlay);
+			}
 		}
 	}
 
@@ -134,6 +142,20 @@
 
 	menu.addEventListener('mouseleave', () => {
 		if (overlay) fadeOutAndRemove(overlay);
+	});
+
+	menu.querySelectorAll('a, button, li').forEach(el => {
+		el.addEventListener('focus', () => {
+			createOverlay('keyboard');
+		});
+
+		el.addEventListener('blur', () => {
+			setTimeout(() => {
+				if (!menu.contains(document.activeElement)) {
+					if (overlay) fadeOutAndRemove(overlay);
+				}
+			}, 10);
+		});
 	});
 
 	if (menuIcon) {
@@ -198,11 +220,25 @@
 			menuIcon.click();
 		}
 	});
+	//////////////////////////////////////////////////
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && overlay) {
+			fadeOutAndRemove(overlay);
+		}
+	});
 	///////////////////////////////////////////////////
 	// Desktop menu click-to-expand logic //
 	(function () {
 		const isDesktop = () => window.innerWidth >= 1023;
 		const navMenu = document.querySelector('.omega-nav-menu');
+		
+		navMenu.addEventListener('focusout', function (e) {
+			// Check if focus moved outside the navMenu
+			if (!navMenu.contains(e.relatedTarget)) {
+				if (overlay) fadeOutAndRemove(overlay);
+			}
+		});
+		
 		if (!navMenu) return;
 		navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
@@ -214,23 +250,15 @@
 			anchor.addEventListener('focus', function () {
 				if (!isDesktop()) return;
 				triggerSuperfishEvent(this, 'mouseenter');
-
-				const parentLi = this.parentElement;
-				const submenu = parentLi.querySelector('ul.sub-menu');
-				if (submenu) {
-					Object.assign(submenu.style, {
-						display: "block",
-						opacity: "1",
-						left: "auto"
-					});
-				}
+				createOverlay();
 			});
-
+			
 			anchor.addEventListener('keydown', function (e) {
 				if (!isDesktop()) return;
 				if (e.key === 'Enter' || e.key === ' ') {
 					e.preventDefault();					
-					triggerSuperfishEvent(this, 'mouseenter');				
+					triggerSuperfishEvent(this, 'mouseenter');
+					createOverlay('keyboard');
 
 				}
 
@@ -238,18 +266,26 @@
 					e.preventDefault();
 					triggerSuperfishEvent(this, 'mouseleave');
 				}
-			});
+			});	
+			
 			const parentLi = anchor.parentElement;
 			const submenu = parentLi.querySelector('ul.sub-menu');
 			if (submenu) {
-				Object.assign(submenu.style, {
-					display: "block",
-					opacity: "1",
-					left: "auto"
-				});
+				showSubmenu(submenu);
 			}	
 		});
 	})();
+	////////////////
+	menu.querySelectorAll('a, button, li').forEach(el => {
+		el.addEventListener('blur', () => {
+			// Delay slightly to allow focus to move within menu
+			setTimeout(() => {
+				if (!menu.contains(document.activeElement)) {
+					if (overlay) fadeOutAndRemove(overlay);
+				}
+			}, 10);
+		});
+	});		
 	////////////////
 	(function () {
 		const navMenu = $('.omega-nav-menu');
