@@ -66,7 +66,7 @@
 		}		
 
 		// === Configurable Selectors ===
-		const menu = document.querySelector('#menu-menu-1');
+		const navMenuRoot = document.querySelector('#menu-menu-1');
 		const menuIcon = document.querySelector('#menu-icon.menu-icon');
 		const content = document.querySelector('#content');
 		let overlay = null;
@@ -158,7 +158,7 @@
 		}		
 
 		function initOverlayTriggers() {
-			menu.querySelectorAll('a, button, li').forEach(el => {
+			navMenuRoot.querySelectorAll('a, button, li').forEach(el => {
 				['mouseenter', 'click', 'touchstart'].forEach(evt => {
 					el.addEventListener(evt, () => {
 						createOverlay();
@@ -170,7 +170,7 @@
 				el.addEventListener('blur', () => {
 					setTimeout(() => {
 						const active = document.activeElement;
-						if (!menu.contains(active) && active !== overlay) {
+						if (!navMenuRoot.contains(active) && active !== overlay) {
 							if (overlay) fadeOutAndRemove(overlay);
 						}
 					}, 10);
@@ -185,10 +185,18 @@
 				menuIcon.addEventListener('click', () => {
 					setTimeout(() => {
 						setAria();
+						const header = document.getElementById('header');
 						if (menuIcon.classList.contains('active')) {
 							createOverlay();
+							if (header) {
+								header.classList.remove('is-transparent');
+								header.classList.add('not-transparent');
+							}
 						} else {
 							if (overlay) fadeOutAndRemove(overlay);
+							if (header) {
+								applyTransparency(window.pageYOffset); // restore based on scroll
+							}
 						}
 					}, 10);
 				});
@@ -202,12 +210,12 @@
 				});
 			}		
 
-			menu.addEventListener('mouseleave', () => {
+			navMenuRoot.addEventListener('mouseleave', () => {
 				if (overlay) fadeOutAndRemove(overlay);
 			});
 			
 			document.addEventListener('focusin', (e) => {
-				if (window.innerWidth < 1023 && !menu.contains(e.target) && !menuIcon.contains(e.target)) {
+				if (window.innerWidth < 1023 && !navMenuRoot.contains(e.target) && !menuIcon.contains(e.target)) {
 					if (menuIcon.classList.contains('active')) {
 						menuIcon.click(); // collapse menu
 					}
@@ -215,7 +223,7 @@
 			});
 			
 			document.addEventListener('touchstart', (e) => {
-				if (window.innerWidth < 1023 && !menu.contains(e.target) && !menuIcon.contains(e.target)) {
+				if (window.innerWidth < 1023 && !navMenuRoot.contains(e.target) && !menuIcon.contains(e.target)) {
 					if (menuIcon.classList.contains('active')) {
 						menuIcon.click(); // collapse menu
 					}
@@ -223,7 +231,7 @@
 			});	
 			
 			document.addEventListener('click', (e) => {
-				if (window.innerWidth < 1023 && !menu.contains(e.target) && !menuIcon.contains(e.target)) {
+				if (window.innerWidth < 1023 && !navMenuRoot.contains(e.target) && !menuIcon.contains(e.target)) {
 					if (menuIcon.classList.contains('active')) {
 						menuIcon.click();
 					}
@@ -232,16 +240,16 @@
 		}
 
 		function initDesktopMenu() {
-			const navMenu = document.querySelector('.omega-nav-menu');
-			if (!navMenu) return;
+			const navMenuDesktop = document.querySelector('.omega-nav-menu');
+			if (!navMenuDesktop) return;
 
-			navMenu.addEventListener('focusout', function (e) {
-				if (!navMenu.contains(e.relatedTarget)) {
+			navMenuDesktop.addEventListener('focusout', function (e) {
+				if (!navMenuDesktop.contains(e.relatedTarget)) {
 					if (overlay) fadeOutAndRemove(overlay);
 				}
 			});
 
-			navMenu.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
+			navMenuDesktop.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
 				anchor.addEventListener('click', function (e) {
 					if (window.innerWidth < 1023) return;
 					e.preventDefault();
@@ -290,7 +298,10 @@
 		initScrollHeaderBehavior();
 		initMenuIcon();		
 		updateBurgerAccessibility();
-		window.addEventListener("resize", updateBurgerAccessibility);
+		window.addEventListener('resize', () => {
+			applyTransparency(window.pageYOffset);
+			updateBurgerAccessibility();
+		});
 	})();
 	/////* End SURGE Javascript Customizations *///////
 	///////////////////////////////////////////////////        
