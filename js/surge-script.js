@@ -45,6 +45,18 @@
 				prevScrollpos = currentScrollPos;
 			});
 		}
+		
+		function updateBurgerAccessibility() {
+			if (!menuIcon) return;
+
+			if (window.innerWidth >= 1023) {
+				menuIcon.setAttribute("tabindex", "-1"); // remove from tab order
+				menuIcon.setAttribute("aria-hidden", "true"); // hide from screen readers
+			} else {
+				menuIcon.setAttribute("tabindex", "0"); // allow focus
+				menuIcon.setAttribute("aria-hidden", "false"); // expose to screen readers
+			}
+		}		
 
 		// === Configurable Selectors ===
 		const menu = document.querySelector('#menu-menu-1');
@@ -129,6 +141,14 @@
 		function initSubmenus() {
 			document.querySelectorAll('.omega-nav-menu li ul.sub-menu').forEach(showSubmenu);
 		}
+		
+		function initMenuIcon() {
+			document.addEventListener("DOMContentLoaded", () => {
+				if (menuIcon && menuIcon.getAttribute("href") === "#") {
+					menuIcon.removeAttribute("href");
+				}
+			});
+		}		
 
 		function initOverlayTriggers() {
 			menu.querySelectorAll('a, button, li').forEach(el => {
@@ -177,6 +197,30 @@
 
 			menu.addEventListener('mouseleave', () => {
 				if (overlay) fadeOutAndRemove(overlay);
+			});
+			
+			document.addEventListener('focusin', (e) => {
+				if (window.innerWidth < 1023 && !menu.contains(e.target) && !menuIcon.contains(e.target)) {
+					if (menuIcon.classList.contains('active')) {
+						menuIcon.click(); // collapse menu
+					}
+				}
+			});
+			
+			document.addEventListener('touchstart', (e) => {
+				if (window.innerWidth < 1023 && !menu.contains(e.target) && !menuIcon.contains(e.target)) {
+					if (menuIcon.classList.contains('active')) {
+						menuIcon.click(); // collapse menu
+					}
+				}
+			});	
+			
+			document.addEventListener('click', (e) => {
+				if (window.innerWidth < 1023 && !menu.contains(e.target) && !menuIcon.contains(e.target)) {
+					if (menuIcon.classList.contains('active')) {
+						menuIcon.click();
+					}
+				}
 			});
 		}
 
@@ -236,6 +280,9 @@
 		initDesktopMenu();
 		initGlobalEscapeHandler();
 		initScrollHeaderBehavior();
+		initMenuIcon();		
+		updateBurgerAccessibility();
+		window.addEventListener("resize", updateBurgerAccessibility);
 	})();
 	/////* End SURGE Javascript Customizations *///////
 	///////////////////////////////////////////////////         
