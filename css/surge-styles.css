@@ -5,6 +5,7 @@
 /* Breakpoints */
 /* End Breakpoints */
 /* Colors & Borders */
+/* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
 /*#eff4f2*/
 /* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
 /* #eff4f2;  */
@@ -57,6 +58,8 @@ body {
     position: relative;
     top: 7px;
     transition: ease all 0.5s; }
+    body header#header .site-title a:active, body header#header .site-title a:focus {
+      outline: dashed 2px rgba(0, 0, 0, 0.4); }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body header#header .site-title a {
         font-size: 29px;
@@ -100,6 +103,9 @@ body {
       body header#header .site-title a {
         font-size: 36px;
         top: 20px; } }
+  body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
+    text-decoration: none;
+    outline: 2px dashed rgba(0, 0, 0, 0.5); }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
     body header#header nav#navigation {
       margin-right: 10px; } }
@@ -120,16 +126,20 @@ body {
       margin-right: 35px; } }
   @media only screen and (min-width: 0) and (max-width: 480px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 7px 30px 16px 0; } }
+      padding: 9px 30px 13px 5px;
+      top: 4px; } }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 7px 30px 16px 0; } }
+      padding: 9px 30px 13px 5px;
+      top: 4px; } }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 7px 30px 16px 0; } }
+      padding: 9px 30px 13px 5px;
+      top: 4px; } }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 7px 30px 16px 0; } }
+      padding: 9px 30px 13px 5px;
+      top: 4px; } }
   body header#header nav#navigation.nav-primary ul.menu {
     border-top: none !important; }
     @media only screen and (max-height: 600px) and (max-width: 1023px) {
@@ -329,32 +339,91 @@ body {
     align-items: center;
     text-align: center;
     min-height: 100vh; }
-    body .searchwp-modal-form .search-form input[type="submit"] {
-      left: 397px;
-      bottom: 88px;
-      border: 0;
-      clip: rect(0, 0, 0, 0);
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      position: relative;
-      width: 1px;
-      display: inline-block;
-      background: red;
-      height: 91px;
-      width: 100px;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      right: 12px;
-      font-size: 25px;
-      z-index: 999; }
+    body .searchwp-modal-form .search-form input {
+      border: solid 1px;
+      transition: ease all 0.125s;
+      transition: ease all 0.125s; }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 180px;
+          font-size: 14px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 260px;
+          font-size: 22px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 340px; } }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 500px; } }
+      body .searchwp-modal-form .search-form input[type="submit"] {
+        left: 397px;
+        bottom: 81px;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        margin: -1px;
+        padding: 0;
+        position: relative;
+        display: inline-block;
+        background: #688793;
+        height: 83.5px;
+        width: 100px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        font-size: 25px;
+        z-index: 999; }
+      body .searchwp-modal-form .search-form input:hover {
+        box-shadow: 5px 6px 15px #75858a; }
+      body .searchwp-modal-form .search-form input:focus, body .searchwp-modal-form .search-form input:active {
+        outline: dashed 2px #4d5659;
+        box-shadow: 11px 10px 25px #75858a; }
+      body .searchwp-modal-form .search-form input.search-submit:active, body .searchwp-modal-form .search-form input.search-submit:hover, body .searchwp-modal-form .search-form input.search-submit:focus {
+        background-color: black !important; }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          max-width: 50px;
+          left: 114px;
+          font-size: 10px;
+          height: 47px;
+          bottom: 46px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          max-width: 75px;
+          left: 167px;
+          font-size: 16px;
+          height: 56px;
+          bottom: 55px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          max-width: 100px;
+          left: 220px; } }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          left: 300px; } }
+@-moz-document url-prefix() {
+  body .searchwp-modal-form .search-form input {
+    height: 81px;
+    margin-right: -25px; }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .searchwp-modal-form .search-form input {
+        max-width: 153px;
+        height: 46px; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .searchwp-modal-form .search-form input {
+        max-width: 234px;
+        height: 56px; } } }
   body .site-container .site-inner {
-    background: linear-gradient(0deg, #c4c8c3 0%, #a8aba7 24%, #7d7878 100%); }
+    background: linear-gradient(0deg, #c4c8c3 0%, #a8aba7 24%, #5e6365 100%);
+    padding: 30px 0; }
   body .site-container .banner {
+    box-shadow: #353737 0px -8px 15px 20px;
     background-color: black;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
-    filter: sepia(40%) saturate(50%) brightness(100%) hue-rotate(80deg); }
+    filter: saturate(80%) brightness(100%) hue-rotate(30deg); }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
     body .site-container .banner.bground2 {
@@ -380,6 +449,8 @@ body {
       padding: 18px;
       border-radius: 10px;
       background: linear-gradient(0deg, #fff9f6 0%, #e8e8e8 33%, #eff2e3 100%); }
+    body .site-container div.wrap main .entry {
+      background: none !important; }
     body .site-container div.wrap main .nf-form-hp {
       position: inherit; }
   body .site-container h1.bground-title {
@@ -393,7 +464,7 @@ body {
     font-size: 0; }
     body .site-container .omega-nav-menu li {
       font-family: "Special Elite", system-ui;
-      padding: 0 3px 0 0; }
+      padding: 0 1px 0 0; }
       body .site-container .omega-nav-menu li.sfHover > a {
         background: rgba(255, 255, 255, 0.75);
         box-shadow: 5px 14px 7px -4px #494a4b12; }
@@ -524,15 +595,20 @@ body {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
     margin-left: 0;
-    margin-top: -20px !important; }
+    margin-top: -20px !important;
+    border-right: 2px dashed #4d5659 !important;
+    border-bottom: 2px dashed #4d5659 !important;
+    border-left: 2px dashed #4d5659 !important; }
     body .relevanssi-live-search-results a {
-      border-bottom: 2px solid #a90000;
+      border-bottom: 2px solid black;
       transition: ease all 0.3s;
       text-decoration: none !important; }
       body .relevanssi-live-search-results a:hover {
-        color: #a90000;
+        color: black;
         border-bottom: 2px solid rgba(0, 0, 0, 0);
-        background-color: #a90000;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        background-color: black;
         color: white;
         padding: 0 0 0 10px; }
   body .site-footer {
@@ -547,16 +623,22 @@ body {
     border-top: 2px solid #EEE3D7;
     padding: 40px 0 16px; }
     body .footer-widgets a {
-      border-bottom: 2px solid #a90000;
+      border-bottom: 2px solid black;
       transition: ease all 0.3s;
       text-decoration: none !important; }
       body .footer-widgets a:hover {
-        color: #a90000;
-        border-bottom: 2px solid rgba(0, 0, 0, 0); }
+        color: black;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
+      body .footer-widgets a:active, body .footer-widgets a:focus {
+        outline: 2px dashed rgba(0, 0, 0, 0.5);
+        border-bottom: 2px solid rgba(255, 255, 255, 0);
+        color: black;
+        text-shadow: 0 0 2px; }
 
 body .relevanssi-live-search-results {
   border-top-color: rgba(255, 255, 255, 0);
-  box-shadow: inset gray 0px 0px 1px 0px;
   border-left: solid 1px #bbb;
   border-bottom: solid 1px #bbb;
   border-right: solid 1px #bbb;
@@ -564,10 +646,7 @@ body .relevanssi-live-search-results {
   border-top-left-radius: 0;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  margin-left: 0px;
-  margin-top: -188px; }
+  margin-left: 0px; }
 
 .searchwp-modal-form-default .searchwp-modal-form__content {
   background-color: rgba(0, 0, 0, 0);
@@ -583,22 +662,8 @@ input, select, textarea {
   padding: 16px;
   max-width: 100%;
   color: black;
-  border-radius: 16px; }
-
-.searchwp-modal-form-default .searchwp-modal-form__close {
-  line-height: 1em;
-  background: yellow;
-  padding: 0.4em 0.5em;
-  border: 0;
-  margin: 0 auto;
-  z-index: 9999;
-  position: relative;
-  bottom: 15px;
-  left: 22%;
-  color: black;
-  font-size: 80px;
-  position: relative;
-  bottom: 100px; }
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px; }
 
 .searchwp-modal-form-default .searchwp-modal-form__footer {
   padding-top: 1em;
@@ -610,7 +675,8 @@ input, select, textarea {
   font-size: 2em;
   position: fixed;
   top: 35px;
-  right: 2%; }
+  right: 2%;
+  transition: ease all 0.125s; }
 
 .searchwp-modal-form-default .searchwp-modal-form__overlay {
   position: fixed;
@@ -622,19 +688,42 @@ input, select, textarea {
   justify-content: center;
   align-items: center;
   opacity: 0.95;
-  background-color: #89a0b9 !important;
+  background-color: rgba(200, 220, 255, 0.95) !important;
   z-index: 1; }
 
 .searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
   z-index: 99; }
 
 .searchwp-modal-form-default .searchwp-modal-form__content {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(220, 224, 226, 0.95) !important;
   padding: 2em;
   border-radius: 2px;
   z-index: -1;
   height: 100vh;
-  overflow-y: hidden !important; }
+  overflow-y: hidden !important;
+  box-shadow: 0 150px 0 #c3cccc; }
 
 .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
   margin-top: 200px; }
+
+.searchwp-modal-form-default button.searchwp-modal-form__close {
+  outline: dashed 3px rgba(255, 255, 255, 0);
+  line-height: 1em;
+  padding: 0.4em 0.5em;
+  margin: 0 auto;
+  z-index: 9999;
+  color: black;
+  font-size: 80px;
+  bottom: 100px;
+  position: fixed;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  right: 17px;
+  transition: ease all 0.25s; }
+  .searchwp-modal-form-default button.searchwp-modal-form__close:active, .searchwp-modal-form-default button.searchwp-modal-form__close:focus, .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible {
+    outline: dashed 3px rgba(0, 0, 0, 0.5);
+    background: white; }
+  .searchwp-modal-form-default button.searchwp-modal-form__close:hover::before, .searchwp-modal-form-default button.searchwp-modal-form__close:active::before, .searchwp-modal-form-default button.searchwp-modal-form__close:focus::before, .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible::before {
+    transform: scale(1.15);
+    transition: ease all 0.25s; }
