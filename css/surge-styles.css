@@ -366,7 +366,7 @@ body {
         padding: 0;
         position: relative;
         display: inline-block;
-        background: #688793;
+        background: #575872;
         height: 83.5px;
         width: 100px;
         border-top-right-radius: 15px;
@@ -378,7 +378,7 @@ body {
       body .searchwp-modal-form .search-form input:hover {
         box-shadow: 5px 6px 15px #75858a; }
       body .searchwp-modal-form .search-form input:focus, body .searchwp-modal-form .search-form input:active {
-        outline: dashed 2px #4d5659;
+        outline: dashed 3px #555e60;
         box-shadow: 11px 10px 25px #75858a; }
       body .searchwp-modal-form .search-form input.search-submit:active, body .searchwp-modal-form .search-form input.search-submit:hover, body .searchwp-modal-form .search-form input.search-submit:focus {
         background-color: black !important; }
@@ -439,6 +439,8 @@ body {
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .site-container .banner .banner-title {
           font-size: 32px; } }
+    body .site-container .banner h3.archive-title {
+      text-shadow: 0 0 3px black; }
   body .site-container div.wrap {
     max-width: 1620px; }
     body .site-container div.wrap main.content {
@@ -596,9 +598,9 @@ body {
     border-top-left-radius: 0;
     margin-left: 0;
     margin-top: -20px !important;
-    border-right: 2px dashed #4d5659 !important;
-    border-bottom: 2px dashed #4d5659 !important;
-    border-left: 2px dashed #4d5659 !important; }
+    border-right: 3px dashed #4d5659 !important;
+    border-bottom: 3px dashed #4d5659 !important;
+    border-left: 3px dashed #4d5659 !important; }
     body .relevanssi-live-search-results a {
       border-bottom: 2px solid black;
       transition: ease all 0.3s;
@@ -617,11 +619,83 @@ body {
     font-size: 16px;
     padding: 30px 0;
     text-align: center;
-    background-color: #d3cfc4; }
+    background-color: #e2e4dd; }
   body .footer-widgets {
-    background: none repeat scroll 0 0 #c3beb1;
+    background: none repeat scroll 0 0 #d7d9d0;
     border-top: 2px solid #EEE3D7;
     padding: 40px 0 16px; }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body .footer-widgets .wrap .widget-area {
+        display: flex;
+        width: 95%; }
+        body .footer-widgets .wrap .widget-area section.widget {
+          width: 30%; }
+          body .footer-widgets .wrap .widget-area section.widget:first-of-type {
+            margin-left: 20%;
+            margin-right: 15px; }
+          body .footer-widgets .wrap .widget-area section.widget:last-of-type {
+            max-width: 120px;
+            margin-left: 15px; } }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      body .footer-widgets .wrap .widget-area {
+        display: flex;
+        width: 95%; }
+        body .footer-widgets .wrap .widget-area section.widget {
+          width: 30%; }
+          body .footer-widgets .wrap .widget-area section.widget:first-of-type {
+            margin-left: 20%;
+            margin-right: 15px; }
+          body .footer-widgets .wrap .widget-area section.widget:last-of-type {
+            max-width: 120px;
+            margin-left: 15px; } }
+    @media only screen and (min-width: 992px) and (max-width: 1023px) {
+      body .footer-widgets .wrap .widget-area {
+        display: flex;
+        width: 95%; }
+        body .footer-widgets .wrap .widget-area section.widget {
+          width: 30%; }
+          body .footer-widgets .wrap .widget-area section.widget:first-of-type {
+            margin-left: 20%;
+            margin-right: 15px; }
+          body .footer-widgets .wrap .widget-area section.widget:last-of-type {
+            max-width: 120px;
+            margin-left: 15px; } }
+    @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+      body .footer-widgets .wrap .widget-area {
+        display: flex;
+        width: 95%; }
+        body .footer-widgets .wrap .widget-area section.widget {
+          width: 30%; }
+          body .footer-widgets .wrap .widget-area section.widget:first-of-type {
+            margin-left: 20%;
+            margin-right: 15px; }
+          body .footer-widgets .wrap .widget-area section.widget:last-of-type {
+            max-width: 120px;
+            margin-left: 15px; } }
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+      body .footer-widgets .wrap .widget-area {
+        display: flex;
+        width: 95%; }
+        body .footer-widgets .wrap .widget-area section.widget {
+          width: 30%; }
+          body .footer-widgets .wrap .widget-area section.widget:first-of-type {
+            margin-left: 20%;
+            margin-right: 15px; }
+          body .footer-widgets .wrap .widget-area section.widget:last-of-type {
+            max-width: 120px;
+            margin-left: 15px; } }
+    @media only screen and (min-width: 1400px) {
+      body .footer-widgets .wrap .widget-area {
+        display: flex;
+        width: 95%; }
+        body .footer-widgets .wrap .widget-area section.widget {
+          width: 30%; }
+          body .footer-widgets .wrap .widget-area section.widget:first-of-type {
+            margin-left: 20%;
+            margin-right: 15px; }
+          body .footer-widgets .wrap .widget-area section.widget:last-of-type {
+            max-width: 120px;
+            margin-left: 15px; } }
     body .footer-widgets a {
       border-bottom: 2px solid black;
       transition: ease all 0.3s;
@@ -646,7 +720,7 @@ body .relevanssi-live-search-results {
   border-top-left-radius: 0;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  margin-left: 0px; }
+  margin-left: -2px; }
 
 .searchwp-modal-form-default .searchwp-modal-form__content {
   background-color: rgba(0, 0, 0, 0);
