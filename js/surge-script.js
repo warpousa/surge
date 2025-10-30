@@ -1,3 +1,4 @@
+	///////////////////////////////////////////////////	
 	/////* Start SURGE Javascript Customizations */////
 	///////////////////////////////////////////////////
 	// surgeMenu.js
@@ -253,12 +254,13 @@
 				anchor.addEventListener('click', function (e) {
 					if (window.innerWidth < 1023) return;
 
-					if (!this.dataset.opened) {
+					const isKeyboardClick = e.detail === 0; // detail === 0 means keyboard-triggered
+
+					if (!this.dataset.opened && !isKeyboardClick) {
 						e.preventDefault();
 						this.dataset.opened = 'true';
 						triggerSuperfishEvent(this, 'mouseenter');
 					} else {
-						// Allow navigation
 						this.removeAttribute('data-opened');
 					}
 				});
@@ -271,11 +273,13 @@
 
 				anchor.addEventListener('keydown', function (e) {
 					if (window.innerWidth < 1023) return;
-					if (e.key === 'Enter' || e.key === ' ') {
-						e.preventDefault();
+
+					if (e.key === ' ') {
+						e.preventDefault(); // Space toggles submenu
 						triggerSuperfishEvent(this, 'mouseenter');
 						createOverlay('keyboard');
 					}
+
 					if (e.key === 'Escape') {
 						e.preventDefault();
 						triggerSuperfishEvent(this, 'mouseleave');
@@ -315,5 +319,6 @@
 			updateBurgerAccessibility();
 		});
 	})();
+	///////////////////////////////////////////////////
 	/////* End SURGE Javascript Customizations *///////
 	///////////////////////////////////////////////////        
