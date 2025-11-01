@@ -1,5 +1,7 @@
 @charset "UTF-8";
 /* SURGE-styles*/
+/* Body Background */
+/* End Body Background */
 /* Background Img Variables */
 /* End Background Img Variables  */
 /* Breakpoints */
@@ -23,8 +25,11 @@
 /* Mixins */
 /* End Mixins */
 body {
+  background: linear-gradient(to bottom, #e2e4dd 0%, #1f2119 100%);
   color: #222630;
   font-family: "Special Elite", system-ui; }
+  body ul.menu-primary ul {
+    border-top: none !important; }
   body header#header.site-header {
     box-shadow: #777 0 0 40px;
     padding: 0;
@@ -57,31 +62,49 @@ body {
     margin-left: 15px;
     position: relative;
     top: 7px;
-    transition: ease all 0.5s; }
+    transition: ease all 0.25s;
+    padding: 1px 1px 0 1px;
+    border-radius: 3px; }
+    body header#header .site-title a:hover {
+      color: black;
+      text-shadow: 0px 0px 18px grey;
+      -webkit-text-stroke: 0.025em black;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      background-color: rgba(255, 255, 255, 0.3); }
     body header#header .site-title a:active, body header#header .site-title a:focus {
-      outline: dashed 2px rgba(0, 0, 0, 0.4); }
+      outline: 2px dashed rgba(0, 0, 0, 0.5);
+      color: black;
+      text-shadow: 0px 0px 12px black;
+      -webkit-text-stroke: 0.028em black;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      outline: dashed 2px rgba(0, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0.3); }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body header#header .site-title a {
-        font-size: 29px;
-        margin-top: -4px;
+        font-size: 23px;
+        margin-top: -1px;
         position: absolute;
         margin-right: 38px; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body header#header .site-title a {
-        font-size: 30px;
-        margin-top: -4px;
+        font-size: 24px;
+        margin-top: -1px;
         position: absolute;
         margin-right: 38px; } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body header#header .site-title a {
-        font-size: 31px;
-        margin-top: -5px;
+        font-size: 25px;
+        margin-top: -1px;
         position: absolute;
         margin-right: 38px; } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body header#header .site-title a {
-        font-size: 32px;
-        margin-top: -4px;
+        font-size: 26px;
+        margin-top: -1px;
         position: absolute;
         margin-right: 38px; } }
     @media only screen and (min-width: 992px) and (max-width: 1023px) {
@@ -106,6 +129,23 @@ body {
   body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
     text-decoration: none;
     outline: 2px dashed rgba(0, 0, 0, 0.5); }
+  body header#header nav#navigation a:hover {
+    color: black;
+    text-shadow: 0px 0px 18px grey;
+    -webkit-text-stroke: 0.025em black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility; }
+  body header#header nav#navigation a:active, body header#header nav#navigation a:focus {
+    outline: 2px dashed rgba(0, 0, 0, 0.5);
+    color: black;
+    text-shadow: 0px 0px 12px black;
+    -webkit-text-stroke: 0.028em black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    position: relative;
+    top: 1px; }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
     body header#header nav#navigation {
       margin-right: 10px; } }
@@ -585,8 +625,6 @@ body {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
             width: 18%;
             max-width: 480px; } }
-  body ul.menu-primary ul {
-    border-top: none !important; }
   body .relevanssi-live-search-results {
     margin-top: -10px;
     border-top-color: rgba(255, 255, 255, 0);
@@ -603,13 +641,15 @@ body {
     border-left: 3px dashed #4d5659 !important; }
     body .relevanssi-live-search-results a {
       border-bottom: 2px solid black;
-      transition: ease all 0.3s;
+      transition: ease all 0.2s;
       text-decoration: none !important; }
       body .relevanssi-live-search-results a:hover {
         color: black;
-        border-bottom: 2px solid rgba(0, 0, 0, 0);
-        border-bottom: 2px solid rgba(0, 0, 0, 0);
-        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        text-shadow: 0px 0px 18px grey;
+        -webkit-text-stroke: 0.025em black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
         background-color: black;
         color: white;
         padding: 0 0 0 10px; }
@@ -697,107 +737,112 @@ body {
             max-width: 120px;
             margin-left: 15px; } }
     body .footer-widgets a {
+      padding: 5px 2px 1px 2px;
+      border-radius: 3px;
       border-bottom: 2px solid black;
-      transition: ease all 0.3s;
+      transition: ease all 0.2s;
       text-decoration: none !important; }
       body .footer-widgets a:hover {
         color: black;
-        border-bottom: 2px solid rgba(0, 0, 0, 0);
-        border-bottom: 2px solid rgba(0, 0, 0, 0);
-        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 0px 18px grey;
+        -webkit-text-stroke: 0.025em black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-bottom: solid 2px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 137px #a2a5a1; }
       body .footer-widgets a:active, body .footer-widgets a:focus {
         outline: 2px dashed rgba(0, 0, 0, 0.5);
-        border-bottom: 2px solid rgba(255, 255, 255, 0);
         color: black;
-        text-shadow: 0 0 2px; }
-
-body .relevanssi-live-search-results {
-  border-top-color: rgba(255, 255, 255, 0);
-  border-left: solid 1px #bbb;
-  border-bottom: solid 1px #bbb;
-  border-right: solid 1px #bbb;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  margin-left: -2px; }
-
-.searchwp-modal-form-default .searchwp-modal-form__content {
-  background-color: rgba(0, 0, 0, 0);
-  padding: 2em;
-  border-radius: 2px; }
-
-input, select, textarea {
-  background: #fff;
-  border: 1px solid #ddd;
-  color: #999;
-  font-family: "Special Elite", system-ui;
-  font-size: 48px;
-  padding: 16px;
-  max-width: 100%;
-  color: black;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px; }
-
-.searchwp-modal-form-default .searchwp-modal-form__footer {
-  padding-top: 1em;
-  position: relative;
-  bottom: -45px;
-  z-index: 9999999; }
-
-.searchwp-modal-form-default .searchwp-modal-form__close:before {
-  font-size: 2em;
-  position: fixed;
-  top: 35px;
-  right: 2%;
-  transition: ease all 0.125s; }
-
-.searchwp-modal-form-default .searchwp-modal-form__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.95;
-  background-color: rgba(200, 220, 255, 0.95) !important;
-  z-index: 1; }
-
-.searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
-  z-index: 99; }
-
-.searchwp-modal-form-default .searchwp-modal-form__content {
-  background-color: rgba(220, 224, 226, 0.95) !important;
-  padding: 2em;
-  border-radius: 2px;
-  z-index: -1;
-  height: 100vh;
-  overflow-y: hidden !important;
-  box-shadow: 0 150px 0 #c3cccc; }
-
-.searchwp-modal-form-default .searchwp-modal-form__content .search-form {
-  margin-top: 200px; }
-
-.searchwp-modal-form-default button.searchwp-modal-form__close {
-  outline: dashed 3px rgba(255, 255, 255, 0);
-  line-height: 1em;
-  padding: 0.4em 0.5em;
-  margin: 0 auto;
-  z-index: 9999;
-  color: black;
-  font-size: 80px;
-  bottom: 100px;
-  position: fixed;
-  top: 0;
-  width: 100px;
-  height: 100px;
-  right: 17px;
-  transition: ease all 0.25s; }
-  .searchwp-modal-form-default button.searchwp-modal-form__close:active, .searchwp-modal-form-default button.searchwp-modal-form__close:focus, .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible {
-    outline: dashed 3px rgba(0, 0, 0, 0.5);
-    background: white; }
-  .searchwp-modal-form-default button.searchwp-modal-form__close:hover::before, .searchwp-modal-form-default button.searchwp-modal-form__close:active::before, .searchwp-modal-form-default button.searchwp-modal-form__close:focus::before, .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible::before {
-    transform: scale(1.15);
+        text-shadow: 0px 0px 12px black;
+        -webkit-text-stroke: 0.028em black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        border-bottom: solid 2px rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 137px #848a82;
+        position: relative;
+        top: 1px; }
+  body .relevanssi-live-search-results {
+    border-top-color: rgba(255, 255, 255, 0);
+    border-left: solid 1px #bbb;
+    border-bottom: solid 1px #bbb;
+    border-right: solid 1px #bbb;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: -2px; }
+  body .searchwp-modal-form-default .searchwp-modal-form__content {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 2em;
+    border-radius: 2px; }
+  body input, body select, body textarea {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #999;
+    font-family: "Special Elite", system-ui;
+    font-size: 48px;
+    padding: 16px;
+    max-width: 100%;
+    color: black;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px; }
+  body .searchwp-modal-form-default .searchwp-modal-form__footer {
+    padding-top: 1em;
+    position: relative;
+    bottom: -45px;
+    z-index: 9999999; }
+  body .searchwp-modal-form-default .searchwp-modal-form__close:before {
+    font-size: 2em;
+    position: fixed;
+    top: 35px;
+    right: 2%;
+    transition: ease all 0.125s; }
+  body .searchwp-modal-form-default .searchwp-modal-form__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.95;
+    background-color: rgba(200, 220, 255, 0.95) !important;
+    z-index: 1; }
+  body .searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
+    z-index: 99; }
+  body .searchwp-modal-form-default .searchwp-modal-form__content {
+    background-color: rgba(220, 224, 226, 0.95) !important;
+    padding: 2em;
+    border-radius: 2px;
+    z-index: -1;
+    height: 100vh;
+    overflow-y: hidden !important;
+    box-shadow: 0 150px 0 #c3cccc; }
+  body .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
+    margin-top: 200px; }
+  body .searchwp-modal-form-default button.searchwp-modal-form__close {
+    outline: dashed 3px rgba(255, 255, 255, 0);
+    line-height: 1em;
+    padding: 0.4em 0.5em;
+    margin: 0 auto;
+    z-index: 9999;
+    color: black;
+    font-size: 80px;
+    bottom: 100px;
+    position: fixed;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    right: 17px;
     transition: ease all 0.25s; }
+    body .searchwp-modal-form-default button.searchwp-modal-form__close:active, body .searchwp-modal-form-default button.searchwp-modal-form__close:focus, body .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible {
+      outline: dashed 3px rgba(0, 0, 0, 0.5);
+      background: white; }
+    body .searchwp-modal-form-default button.searchwp-modal-form__close:hover::before, body .searchwp-modal-form-default button.searchwp-modal-form__close:active::before, body .searchwp-modal-form-default button.searchwp-modal-form__close:focus::before, body .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible::before {
+      transform: scale(1.15);
+      transition: ease all 0.25s; }

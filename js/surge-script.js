@@ -1,17 +1,17 @@
 	///////////////////////////////////////////////////	
 	/////* Start SURGE Javascript Customizations */////
 	///////////////////////////////////////////////////
-	// surgeMenu.js
 	(function () {
 		'use strict';
-
+		function removeCredits() {
+			document.querySelector('p.credit').remove();
+		}
 		function assignRandomBannerClasses() {
 			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5'];
 			document.querySelectorAll('.banner').forEach(banner => {
 				banner.classList.add(classes[Math.floor(Math.random() * classes.length)]);
 			});
 		}
-
 		function applyTransparency(pageYOffsetValue) {
 			const header = document.getElementById('header');
 			if (!header) return;
@@ -24,24 +24,19 @@
 				header.classList.add('not-transparent');
 			}
 		}
-		
 		function initHeaderState() {
 			document.addEventListener('DOMContentLoaded', () => {
 				applyTransparency(window.pageYOffset);
 			});
 		}
-
 		function initScrollHeaderBehavior() {
 			let prevScrollpos = window.pageYOffset;
 			window.addEventListener('scroll', () => {
 				const currentScrollPos = window.pageYOffset;
 				const header = document.getElementById('header');
 				if (!header) return;
-
 				const delta = Math.abs(currentScrollPos - prevScrollpos);
-
 				if (delta < 10) return; // ignore micro scrolls
-
 				if (prevScrollpos > currentScrollPos) {
 					header.classList.add('show-header');
 					header.classList.remove('hide-header');
@@ -53,10 +48,8 @@
 				prevScrollpos = currentScrollPos;
 			});
 		}
-		
 		function updateBurgerAccessibility() {
 			if (!menuIcon) return;
-
 			if (window.innerWidth >= 1023) {
 				menuIcon.setAttribute("tabindex", "-1"); // remove from tab order
 				menuIcon.setAttribute("aria-hidden", "true"); // hide from screen readers
@@ -65,7 +58,6 @@
 				menuIcon.setAttribute("aria-hidden", "false"); // expose to screen readers
 			}
 		}		
-
 		// === Configurable Selectors ===
 		const navMenuRoot = document.querySelector('#menu-menu-1');
 		const menuIcon = document.querySelector('#menu-icon.menu-icon');
@@ -82,7 +74,6 @@
 				});
 			}
 		}
-
 		function triggerSuperfishEvent(anchor, type) {
 			if (!anchor || !anchor.parentElement) return;
 			const parentLi = anchor.parentElement;
@@ -94,7 +85,6 @@
 			parentLi.dispatchEvent(evt);
 			anchor.setAttribute('aria-expanded', type === 'mouseenter' ? 'true' : 'false');
 		}
-
 		function fadeIn(el) {
 			let start = null;
 			function step(ts) {
@@ -105,7 +95,6 @@
 			}
 			requestAnimationFrame(step);
 		}
-
 		function fadeOutAndRemove(el) {
 			let start = null;
 			function step(ts) {
@@ -121,7 +110,6 @@
 			}
 			requestAnimationFrame(step);
 		}
-
 		function bindOverlayDismiss(el) {
 			if (!el) return;
 			['click', 'mouseenter', 'touchstart'].forEach(evt => {
@@ -130,7 +118,6 @@
 				});
 			});
 		}
-
 		function createOverlay(source = 'mouse') {
 			if (!overlay) {
 				overlay = Object.assign(document.createElement('div'), {
@@ -144,12 +131,10 @@
 				}
 			}
 		}
-
 		// === Initialization ===
 		function initSubmenus() {
 			document.querySelectorAll('.omega-nav-menu li ul.sub-menu').forEach(showSubmenu);
-		}
-		
+		}	
 		function initMenuIcon() {
 			document.addEventListener("DOMContentLoaded", () => {
 				if (menuIcon && menuIcon.getAttribute("href") === "#") {
@@ -157,7 +142,6 @@
 				}
 			});
 		}		
-
 		function initOverlayTriggers() {
 			navMenuRoot.querySelectorAll('a, button, li').forEach(el => {
 				['mouseenter', 'click', 'touchstart'].forEach(evt => {
@@ -177,11 +161,9 @@
 					}, 10);
 				});
 			});
-
 			function setAria() {
 				menuIcon.setAttribute('aria-expanded', menuIcon.classList.contains('active') ? 'true' : 'false');
 			}		
-
 			if (menuIcon) {
 				menuIcon.addEventListener('click', () => {
 					setTimeout(() => {
@@ -201,7 +183,6 @@
 						}
 					}, 10);
 				});
-
 				menuIcon.addEventListener('keydown', (e) => {
 					if (e.key === 'Enter' || e.key === ' ') {
 						setAria();
@@ -210,19 +191,16 @@
 					}
 				});
 			}		
-
 			navMenuRoot.addEventListener('mouseleave', () => {
 				if (overlay) fadeOutAndRemove(overlay);
 			});
-			
 			document.addEventListener('focusin', (e) => {
 				if (window.innerWidth < 1023 && !navMenuRoot.contains(e.target) && !menuIcon.contains(e.target)) {
 					if (menuIcon.classList.contains('active')) {
 						menuIcon.click(); // collapse menu
 					}
 				}
-			});
-			
+			});		
 			document.addEventListener('touchstart', (e) => {
 				if (window.innerWidth < 1023 && !navMenuRoot.contains(e.target) && !menuIcon.contains(e.target)) {
 					if (menuIcon.classList.contains('active')) {
@@ -230,7 +208,6 @@
 					}
 				}
 			});	
-			
 			document.addEventListener('click', (e) => {
 				if (window.innerWidth < 1023 && !navMenuRoot.contains(e.target) && !menuIcon.contains(e.target)) {
 					if (menuIcon.classList.contains('active')) {
@@ -239,23 +216,18 @@
 				}
 			});
 		}
-
 		function initDesktopMenu() {
 			const navMenuDesktop = document.querySelector('.omega-nav-menu');
 			if (!navMenuDesktop) return;
-
 			navMenuDesktop.addEventListener('focusout', function (e) {
 				if (!navMenuDesktop.contains(e.relatedTarget)) {
 					if (overlay) fadeOutAndRemove(overlay);
 				}
 			});
-
 			navMenuDesktop.querySelectorAll('li.menu-item-has-children > a').forEach(anchor => {
 				anchor.addEventListener('click', function (e) {
 					if (window.innerWidth < 1023) return;
-
 					const isKeyboardClick = e.detail === 0; // detail === 0 means keyboard-triggered
-
 					if (!this.dataset.opened && !isKeyboardClick) {
 						e.preventDefault();
 						this.dataset.opened = 'true';
@@ -270,32 +242,26 @@
 					triggerSuperfishEvent(this, 'mouseenter');
 					createOverlay();
 				});
-
 				anchor.addEventListener('keydown', function (e) {
 					if (window.innerWidth < 1023) return;
-
 					if (e.key === ' ') {
 						e.preventDefault(); // Space toggles submenu
 						triggerSuperfishEvent(this, 'mouseenter');
 						createOverlay('keyboard');
 					}
-
 					if (e.key === 'Escape') {
 						e.preventDefault();
 						triggerSuperfishEvent(this, 'mouseleave');
 						this.removeAttribute('data-opened');
 					}
 				});
-				
 				anchor.addEventListener('blur', () => {
 					anchor.removeAttribute('data-opened');
 				});				
-
 				const submenu = anchor.parentElement.querySelector('ul.sub-menu');
 				if (submenu) showSubmenu(submenu);
 			});
 		}
-
 		function initGlobalEscapeHandler() {
 			document.addEventListener('keydown', function (e) {
 				if (e.key === 'Escape' && overlay) {
@@ -303,7 +269,6 @@
 				}
 			});
 		}
-
 		// === Run All ===
 		assignRandomBannerClasses();
 		initHeaderState();
@@ -312,7 +277,8 @@
 		initDesktopMenu();
 		initGlobalEscapeHandler();
 		initScrollHeaderBehavior();
-		initMenuIcon();		
+		initMenuIcon();
+		removeCredits();
 		updateBurgerAccessibility();
 		window.addEventListener('resize', () => {
 			applyTransparency(window.pageYOffset);
