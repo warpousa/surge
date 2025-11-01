@@ -28,6 +28,17 @@ body {
   background: linear-gradient(to bottom, #e2e4dd 0%, #1f2119 100%);
   color: #222630;
   font-family: "Special Elite", system-ui; }
+  body input, body select, body textarea {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #999;
+    font-family: "Special Elite", system-ui;
+    font-size: 48px;
+    padding: 16px;
+    max-width: 100%;
+    color: black;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px; }
   body ul.menu-primary ul {
     border-top: none !important; }
   body header#header.site-header {
@@ -779,17 +790,6 @@ body {
     background-color: rgba(0, 0, 0, 0);
     padding: 2em;
     border-radius: 2px; }
-  body input, body select, body textarea {
-    background: #fff;
-    border: 1px solid #ddd;
-    color: #999;
-    font-family: "Special Elite", system-ui;
-    font-size: 48px;
-    padding: 16px;
-    max-width: 100%;
-    color: black;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px; }
   body .searchwp-modal-form-default .searchwp-modal-form__footer {
     padding-top: 1em;
     position: relative;

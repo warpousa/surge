@@ -195,6 +195,18 @@ body {
 	background: $bodybackground;
 	color: $charade;
 	font-family: $EliteFont;
+	input, select, textarea {
+		background: #fff;
+		border: 1px solid #ddd;
+		color: #999;
+		font-family: "Special Elite", system-ui;
+		font-size: 48px;
+		padding: 16px;
+		max-width: 100%;
+		color: black;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+	}	
 	ul.menu-primary ul {
 		border-top: $topborder;
 	}
@@ -628,7 +640,6 @@ body {
 			}
 		}
 	}
-	
 	.searchwp-modal-form {
 		.search-form {
 			display: flex;
@@ -637,15 +648,13 @@ body {
 			align-items: center;
 			text-align: center;
 			min-height: 100vh;		
-			
 			input {
 				border: solid 1px;
 				transition: $ease-eighth-sec;
-				
 				@include extra-extra-small {
 					max-width: 180px;
 					font-size: 14px;
-									}
+				}
 				@include phone-only-up {
 					max-width: 260px;
 					font-size: 22px;
@@ -676,16 +685,13 @@ body {
 					font-size: 25px;
 					z-index: 999;
 				}
-				
 				&:hover {
 					box-shadow: 5px 6px 15px #75858a; 
 				}
-				
 				&:focus, &:active {
 					outline: dashed 3px #555e60;
 					box-shadow: 11px 10px 25px #75858a;
 				}
-				
 				&.search-submit {
 					&:active, &:hover, &:focus {
 						background-color: $black !important;
@@ -771,28 +777,23 @@ body {
 				}
 			}
 		}
-
 		div {
 			&.wrap {
 				max-width: 1620px;
-				
 				main {
 					&.content {
 						width: 95%;
 						@include main-content;
 					}
-					
 					.entry {
 						background: none !important;
-					}
-											
+					}						
 					.nf-form-hp {
    						position: inherit;
 					}
 				}
 			}
 		}
-	
 		h1 { 
 			&.bground-title {
 				font-family: $EliteFont;
@@ -803,18 +804,14 @@ body {
 				text-transform: uppercase;
 			}
 		}
-
 		.omega-nav-menu {
 			font-size: 0;
-			
 			li {
 				font-family: $EliteFont;
 				padding: 0 1px 0 0;
-				
 				&.sfHover > a {
 					background: $menu-background-highlight;
 					box-shadow: 5px 14px 7px -4px #494a4b12;
-					
 					&::after {
 						right: 12px;
 						top: 30px;
@@ -822,12 +819,10 @@ body {
 						transform: translateX(5px) rotate(270deg) !important;
 					}
 				}
-				
 		        &.item-has-children a::after { 
 					content: ' › ';
 					font-size: 15px;
 				}
-				
 				&:last-child {
 					a {
 						&:hover, &:focus, &:active {
@@ -835,15 +830,12 @@ body {
 						}
 					}
 				}
-
 				a {
 					color: $black;
 					padding: 22px 18px 20px 37px;
     				text-shadow: $text-shadow;
 					// transition: $ease-half-sec;
 					font-size: 13px;	
-
-					
 					&::before {
 						// content: "\1F6E5";
 						content: '\00a0\00a0\00a0\00a0\00a0';
@@ -860,7 +852,6 @@ body {
 						font-size: 22px;
 						width: 125px;
 						z-index: -1;
-						
 						@include custom-desktop {
 							background-position: 13px 37px;
 							font-size: 38px;
@@ -883,25 +874,21 @@ body {
 							right: 44px !important;
 						}		
 					}
-					
 					&:hover, &:focus, &:active {
 						background: $menu-item-hover;
 						box-shadow: inset 0 0 30px white;
 						text-shadow: 1px 1px 19px black;
  						// width: 100%;
   						outline: dotted #aeaeae 2px;
-	
 						&::before {
 							opacity: 1;
 							z-index: -1;
-						
 							@include extra-extra-small {
 								right: -30px !important;
 							}
 							@include phone-only-up {
 								right: -30px !important;
 							}
-							
 							@include tablet-portrait-up {
 								right: -30px !important;
 							}
@@ -928,12 +915,10 @@ body {
 						border-radius: 3px;
 					}
 				}
-				
 				&:hover > ul {
 					margin-top: 0px;
     				margin-left: 1px;
 				}
-				
 				ul {
 					&.sub-menu {
 						background: $menu-background;
@@ -943,7 +928,6 @@ body {
 						margin-left: 0;
 						border-top: dashed 1px darkgrey;
 						border-bottom: dashed 1px darkgrey !important;
-						
 						@include desktop-up {
 							box-shadow: none;
 							width: 100%;
@@ -983,7 +967,6 @@ body {
 		border-right: 3px dashed #4d5659 !important;
 		border-bottom: 3px dashed #4d5659 !important;
 		border-left: 3px dashed #4d5659 !important;
-
 		a {
 			@include link-props;
 			&:hover {
@@ -994,7 +977,6 @@ body {
 			}
 		}
 	}
-	
 	.site-footer {
 		border-top: 1px solid #E9E9E9;
 		color: #666;
@@ -1003,12 +985,10 @@ body {
 		text-align: center;
 		background-color: #e2e4dd;
 	}
-	
 	.footer-widgets {
 		background: none repeat scroll 0 0 #d7d9d0;
 		border-top: 2px solid #EEE3D7;
 		padding: 40px 0 16px;
-		
 		.wrap {			
 			.widget-area {
 				@include tablet-portrait-up {
@@ -1031,7 +1011,6 @@ body {
 				}				
 			}
 		}
-		
 		a {
 			padding: 5px 2px 1px 2px;
 			border-radius: 3px;
@@ -1063,33 +1042,17 @@ body {
 		border-bottom-right-radius: 15px;
 		margin-left: -2px;
 	}
-
 	.searchwp-modal-form-default .searchwp-modal-form__content {
 		background-color: rgba(0,0,0,0);
 		padding: 2em;
 		border-radius: 2px;
 	}
-
-	input, select, textarea {
-		background: #fff;
-		border: 1px solid #ddd;
-		color: #999;
-		font-family: "Special Elite", system-ui;
-		font-size: 48px;
-		padding: 16px;
-		max-width: 100%;
-		color: black;
-		border-top-left-radius: 15px;
-		border-bottom-left-radius: 15px;
-	}
-
 	.searchwp-modal-form-default .searchwp-modal-form__footer {
 		padding-top: 1em;
 		position: relative;
 		bottom: -45px;
 		z-index: 9999999; 
 	}
-
 	.searchwp-modal-form-default .searchwp-modal-form__close:before {
 		font-size: 2em;
 		position: fixed;
@@ -1097,7 +1060,6 @@ body {
 		right: 2%;
 		transition: $ease-eighth-sec;
 	}
-
 	.searchwp-modal-form-default .searchwp-modal-form__overlay {
 		position: fixed;
 		top: 0;
@@ -1111,11 +1073,9 @@ body {
 		background-color: $search-background-i;
 		z-index: 1;
 	}
-
 	.searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
 		z-index: 99;
 	}
-
 	.searchwp-modal-form-default .searchwp-modal-form__content {
 		background-color: $search-background-ii;
 		padding: 2em;
@@ -1125,11 +1085,9 @@ body {
 		overflow-y: hidden !important;
 		box-shadow: 0 150px 0 #c3cccc;
 	}
-
 	.searchwp-modal-form-default .searchwp-modal-form__content .search-form {
 		margin-top: 200px;
 	}
-
 	.searchwp-modal-form-default button.searchwp-modal-form__close {
 		outline: dashed 3px rgba(255,255,255,0);
 		line-height: 1em;
@@ -1149,7 +1107,6 @@ body {
 			outline: dashed 3px rgba(0, 0, 0, 0.5);
 			background: $white;
 		}
-
 		&:hover, &:active, &:focus, &:focus-visible { 
 			&::before {
 				transform: scale(1.15);
