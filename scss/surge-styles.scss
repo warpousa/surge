@@ -80,7 +80,7 @@ $contentcolor: #6d6666;
 $grey: grey;
 $linkhover: black;
 $linkhover-border: rgba(0,0,0,0);
-$menu-background: rgba(255,255,255,0.99);   /*#eff4f2*/
+$menu-background: rgba(255,255,255,0.9);   /*#eff4f2*/
 $menu-background-ii: #eff3e8;
 $menu-background-transparent: rgba(234, 234, 215, 0.55);
 $menu-item-hover: rgba(255,255,255, 0.15);  /* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
@@ -139,21 +139,23 @@ $EliteFont: 'Special Elite', system-ui;
 	
 @mixin link-props-hover {
 	color: $linkhover;
-    text-shadow: 0px 0px 18px grey;
-    -webkit-text-stroke: 0.025em $black;
+    text-shadow: 0px 0px 12px grey;
+    -webkit-text-stroke: 0.04em $black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;	
+    text-rendering: optimizeLegibility;
+    font-size: 103%;
 }
 
 @mixin link-props-active-focus {
 	outline: 2px dashed rgba(0,0,0,0.5);
     color: $black;
-    text-shadow: 0px 0px 12px $black;
+    text-shadow: 0px 0px 3px $black;
     -webkit-text-stroke: 0.028em $black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-size: 105%;
 }
 
 @mixin main-content {
@@ -260,7 +262,7 @@ body {
 					&:active, &:focus {
 						@include link-props-active-focus;
 						
-						outline: dashed 2px rgba(0,0,0,0.4);
+						outline: dashed 2px rgba(0,0,0,0.3);
 						background-color: rgba(255,255,255,0.3);
 					}
 					@include extra-extra-small {
@@ -977,6 +979,17 @@ body {
 			}
 		}
 	}
+	.relevanssi-live-search-results {
+		border-top-color: rgba(255, 255, 255, 0);
+		border-left: solid 1px #bbb;
+		border-bottom: solid 1px #bbb;
+		border-right: solid 1px #bbb;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		margin-left: -2px;
+	}	
 	.site-footer {
 		border-top: 1px solid #E9E9E9;
 		color: #666;
@@ -1030,17 +1043,6 @@ body {
 				top: 1px;
 			}
 		}
-	}
-	.relevanssi-live-search-results {
-		border-top-color: rgba(255, 255, 255, 0);
-		border-left: solid 1px #bbb;
-		border-bottom: solid 1px #bbb;
-		border-right: solid 1px #bbb;
-		border-top-right-radius: 0;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 15px;
-		border-bottom-right-radius: 15px;
-		margin-left: -2px;
 	}
 	.searchwp-modal-form-default .searchwp-modal-form__content {
 		background-color: rgba(0,0,0,0);

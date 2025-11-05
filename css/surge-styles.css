@@ -45,7 +45,7 @@ body {
     box-shadow: #777 0 0 40px;
     padding: 0;
     position: fixed;
-    background: rgba(255, 255, 255, 0.99);
+    background: rgba(255, 255, 255, 0.9);
     width: 100%;
     transition: ease all 0.25s;
     z-index: 99; }
@@ -78,21 +78,23 @@ body {
     border-radius: 3px; }
     body header#header .site-title a:hover {
       color: black;
-      text-shadow: 0px 0px 18px grey;
-      -webkit-text-stroke: 0.025em black;
+      text-shadow: 0px 0px 12px grey;
+      -webkit-text-stroke: 0.04em black;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
+      font-size: 103%;
       background-color: rgba(255, 255, 255, 0.3); }
     body header#header .site-title a:active, body header#header .site-title a:focus {
       outline: 2px dashed rgba(0, 0, 0, 0.5);
       color: black;
-      text-shadow: 0px 0px 12px black;
+      text-shadow: 0px 0px 3px black;
       -webkit-text-stroke: 0.028em black;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
-      outline: dashed 2px rgba(0, 0, 0, 0.4);
+      font-size: 105%;
+      outline: dashed 2px rgba(0, 0, 0, 0.3);
       background-color: rgba(255, 255, 255, 0.3); }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body header#header .site-title a {
@@ -142,19 +144,21 @@ body {
     outline: 2px dashed rgba(0, 0, 0, 0.5); }
   body header#header nav#navigation a:hover {
     color: black;
-    text-shadow: 0px 0px 18px grey;
-    -webkit-text-stroke: 0.025em black;
+    text-shadow: 0px 0px 12px grey;
+    -webkit-text-stroke: 0.04em black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility; }
+    text-rendering: optimizeLegibility;
+    font-size: 103%; }
   body header#header nav#navigation a:active, body header#header nav#navigation a:focus {
     outline: 2px dashed rgba(0, 0, 0, 0.5);
     color: black;
-    text-shadow: 0px 0px 12px black;
+    text-shadow: 0px 0px 3px black;
     -webkit-text-stroke: 0.028em black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-size: 105%;
     position: relative;
     top: 1px; }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
@@ -610,7 +614,7 @@ body {
         margin-top: 0px;
         margin-left: 1px; }
       body .site-container .omega-nav-menu li ul.sub-menu {
-        background: rgba(255, 255, 255, 0.99);
+        background: rgba(255, 255, 255, 0.9);
         border-bottom-right-radius: 15px;
         padding: 0;
         margin-top: 0;
@@ -656,14 +660,25 @@ body {
       text-decoration: none !important; }
       body .relevanssi-live-search-results a:hover {
         color: black;
-        text-shadow: 0px 0px 18px grey;
-        -webkit-text-stroke: 0.025em black;
+        text-shadow: 0px 0px 12px grey;
+        -webkit-text-stroke: 0.04em black;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        font-size: 103%;
         background-color: black;
         color: white;
         padding: 0 0 0 10px; }
+  body .relevanssi-live-search-results {
+    border-top-color: rgba(255, 255, 255, 0);
+    border-left: solid 1px #bbb;
+    border-bottom: solid 1px #bbb;
+    border-right: solid 1px #bbb;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: -2px; }
   body .site-footer {
     border-top: 1px solid #E9E9E9;
     color: #666;
@@ -755,37 +770,29 @@ body {
       text-decoration: none !important; }
       body .footer-widgets a:hover {
         color: black;
-        text-shadow: 0px 0px 18px grey;
-        -webkit-text-stroke: 0.025em black;
+        text-shadow: 0px 0px 12px grey;
+        -webkit-text-stroke: 0.04em black;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        font-size: 103%;
         background-color: rgba(255, 255, 255, 0.2);
         border-bottom: solid 2px rgba(0, 0, 0, 0);
         box-shadow: 0 0 137px #a2a5a1; }
       body .footer-widgets a:active, body .footer-widgets a:focus {
         outline: 2px dashed rgba(0, 0, 0, 0.5);
         color: black;
-        text-shadow: 0px 0px 12px black;
+        text-shadow: 0px 0px 3px black;
         -webkit-text-stroke: 0.028em black;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        font-size: 105%;
         border-bottom: solid 2px rgba(0, 0, 0, 0);
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0 0 137px #848a82;
         position: relative;
         top: 1px; }
-  body .relevanssi-live-search-results {
-    border-top-color: rgba(255, 255, 255, 0);
-    border-left: solid 1px #bbb;
-    border-bottom: solid 1px #bbb;
-    border-right: solid 1px #bbb;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    margin-left: -2px; }
   body .searchwp-modal-form-default .searchwp-modal-form__content {
     background-color: rgba(0, 0, 0, 0);
     padding: 2em;
