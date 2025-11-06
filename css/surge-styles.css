@@ -25,7 +25,7 @@
 /* Mixins */
 /* End Mixins */
 body {
-  background: linear-gradient(to bottom, #e2e4dd 0%, #1f2119 100%);
+  background: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
   color: #222630;
   font-family: "Special Elite", system-ui; }
   body input, body select, body textarea {
@@ -65,100 +65,102 @@ body {
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body header#header.site-header.menu-expanded {
         background-color: white; } }
-  body header#header .site-title a {
-    color: #333;
-    font-family: "Special Elite", system-ui;
-    text-transform: capitalize;
-    letter-spacing: 2px;
-    margin-left: 15px;
-    position: relative;
-    top: 7px;
-    transition: ease all 0.25s;
-    padding: 1px 1px 0 1px;
-    border-radius: 3px; }
-    body header#header .site-title a:hover {
-      color: black;
-      text-shadow: 0px 0px 12px grey;
-      -webkit-text-stroke: 0.04em black;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      font-size: 103%;
-      background-color: rgba(255, 255, 255, 0.3); }
-    body header#header .site-title a:active, body header#header .site-title a:focus {
-      outline: 2px dashed rgba(0, 0, 0, 0.5);
-      color: black;
-      text-shadow: 0px 0px 3px black;
-      -webkit-text-stroke: 0.028em black;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      font-size: 105%;
-      outline: dashed 2px rgba(0, 0, 0, 0.3);
-      background-color: rgba(255, 255, 255, 0.3); }
-    @media only screen and (min-width: 0) and (max-width: 480px) {
-      body header#header .site-title a {
-        font-size: 23px;
-        margin-top: -1px;
-        position: absolute;
-        margin-right: 38px; } }
-    @media only screen and (min-width: 480px) and (max-width: 576px) {
-      body header#header .site-title a {
-        font-size: 24px;
-        margin-top: -1px;
-        position: absolute;
-        margin-right: 38px; } }
-    @media only screen and (min-width: 576px) and (max-width: 768px) {
-      body header#header .site-title a {
-        font-size: 25px;
-        margin-top: -1px;
-        position: absolute;
-        margin-right: 38px; } }
-    @media only screen and (min-width: 768px) and (max-width: 992px) {
-      body header#header .site-title a {
-        font-size: 26px;
-        margin-top: -1px;
-        position: absolute;
-        margin-right: 38px; } }
-    @media only screen and (min-width: 992px) and (max-width: 1023px) {
-      body header#header .site-title a {
-        font-size: 33px;
-        top: -3px;
-        position: absolute;
-        margin-top: 7px;
-        margin-right: 60px; } }
-    @media only screen and (min-width: 1023px) and (max-width: 1200px) {
-      body header#header .site-title a {
-        font-size: 34px;
-        top: 15px; } }
-    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
-      body header#header .site-title a {
-        font-size: 37px;
-        top: 18px; } }
-    @media only screen and (min-width: 1400px) {
-      body header#header .site-title a {
-        font-size: 36px;
-        top: 20px; } }
+  body header#header .site-title {
+    transition: ease all 0.125s; }
+    body header#header .site-title:hover {
+      transform: scale(1.05); }
+    body header#header .site-title:active, body header#header .site-title:focus, body header#header .site-title:focus-within {
+      transform: scale(1.1); }
+    body header#header .site-title a {
+      color: #333;
+      font-family: "Special Elite", system-ui;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      margin-left: 15px;
+      position: relative;
+      top: 7px;
+      transition: ease all 0.25s;
+      padding: 1px 1px 0 1px;
+      border-radius: 3px; }
+      body header#header .site-title a:hover {
+        color: black;
+        text-shadow: 0px 0px 12px grey;
+        -webkit-text-stroke: 0.03em black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        background-color: rgba(255, 255, 255, 0.3); }
+      body header#header .site-title a:active, body header#header .site-title a:focus {
+        outline: 2px dashed rgba(0, 0, 0, 0.5);
+        color: black;
+        text-shadow: 0px 0px 0.034em black;
+        -webkit-text-stroke: 0.055em black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        outline: dashed 2px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, 0.3); }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body header#header .site-title a {
+          font-size: 23px;
+          margin-top: -1px;
+          position: absolute;
+          margin-right: 38px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body header#header .site-title a {
+          font-size: 24px;
+          margin-top: -1px;
+          position: absolute;
+          margin-right: 38px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body header#header .site-title a {
+          font-size: 25px;
+          margin-top: -1px;
+          position: absolute;
+          margin-right: 38px; } }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body header#header .site-title a {
+          font-size: 26px;
+          margin-top: -1px;
+          position: absolute;
+          margin-right: 38px; } }
+      @media only screen and (min-width: 992px) and (max-width: 1023px) {
+        body header#header .site-title a {
+          font-size: 33px;
+          top: -3px;
+          position: absolute;
+          margin-top: 7px;
+          margin-right: 60px; } }
+      @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+        body header#header .site-title a {
+          font-size: 34px;
+          top: 15px; } }
+      @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+        body header#header .site-title a {
+          font-size: 37px;
+          top: 18px; } }
+      @media only screen and (min-width: 1400px) {
+        body header#header .site-title a {
+          font-size: 36px;
+          top: 20px; } }
   body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
     text-decoration: none;
     outline: 2px dashed rgba(0, 0, 0, 0.5); }
   body header#header nav#navigation a:hover {
     color: black;
     text-shadow: 0px 0px 12px grey;
-    -webkit-text-stroke: 0.04em black;
+    -webkit-text-stroke: 0.03em black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    font-size: 103%; }
+    text-rendering: optimizeLegibility; }
   body header#header nav#navigation a:active, body header#header nav#navigation a:focus {
     outline: 2px dashed rgba(0, 0, 0, 0.5);
     color: black;
-    text-shadow: 0px 0px 3px black;
-    -webkit-text-stroke: 0.028em black;
+    text-shadow: 0px 0px 0.034em black;
+    -webkit-text-stroke: 0.055em black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-size: 105%;
     position: relative;
     top: 1px; }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
@@ -191,10 +193,15 @@ body {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
       padding: 9px 30px 13px 5px;
       top: 4px; } }
-  @media only screen and (min-width: 768px) and (max-width: 992px) {
-    body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 9px 30px 13px 5px;
-      top: 4px; } }
+  @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+    body header#header nav#navigation.nav-primary a#menu-icon {
+      display: none; } }
+  @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    body header#header nav#navigation.nav-primary a#menu-icon {
+      display: none; } }
+  @media only screen and (min-width: 1400px) {
+    body header#header nav#navigation.nav-primary a#menu-icon {
+      display: none; } }
   body header#header nav#navigation.nav-primary ul.menu {
     border-top: none !important; }
     @media only screen and (max-height: 600px) and (max-width: 1023px) {
@@ -413,8 +420,8 @@ body {
         body .searchwp-modal-form .search-form input {
           max-width: 500px; } }
       body .searchwp-modal-form .search-form input[type="submit"] {
-        left: 397px;
-        bottom: 81px;
+        left: 388px;
+        bottom: 82px;
         border: 0;
         clip: rect(0, 0, 0, 0);
         margin: -1px;
@@ -470,6 +477,20 @@ body {
       body .searchwp-modal-form .search-form input {
         max-width: 234px;
         height: 56px; } } }
+  body .site-container a {
+    transition: ease all 0.125s; }
+    body .site-container a:hover {
+      color: black;
+      text-decoration: none;
+      text-shadow: 0 0 40px;
+      -webkit-text-stroke: 1px;
+      background: white; }
+    body .site-container a:active, body .site-container a:focus {
+      color: black;
+      text-decoration: none;
+      text-shadow: 0 0 57px;
+      -webkit-text-stroke: 1.5px;
+      background: white; }
   body .site-container .site-inner {
     background: linear-gradient(0deg, #c4c8c3 0%, #a8aba7 24%, #5e6365 100%);
     padding: 30px 0; }
@@ -553,35 +574,37 @@ body {
           transition: ease all 0.25s;
           font-size: 22px;
           width: 125px;
-          z-index: -1; }
+          z-index: 99; }
           @media only screen and (min-width: 1023px) and (max-width: 1200px) {
             body .site-container .omega-nav-menu li a::before {
               background-position: 13px 37px;
               font-size: 38px;
               top: -36px !important;
               right: 30px !important;
-              background-size: 78px 19px; } }
+              background-size: 78px 19px;
+              z-index: -1; } }
           @media only screen and (min-width: 1200px) and (max-width: 1400px) {
             body .site-container .omega-nav-menu li a::before {
               background-position: 13px 37px;
               font-size: 50px;
               top: -41px !important;
               right: 37px !important;
-              background-size: 90px 26px; } }
+              background-size: 90px 26px;
+              z-index: -1; } }
           @media only screen and (min-width: 1400px) {
             body .site-container .omega-nav-menu li a::before {
               background-position: 13px 37px;
               font-size: 64px !important;
               top: -41px !important;
-              right: 44px !important; } }
+              right: 44px !important;
+              z-index: -1; } }
         body .site-container .omega-nav-menu li a:hover, body .site-container .omega-nav-menu li a:focus, body .site-container .omega-nav-menu li a:active {
           background: rgba(255, 255, 255, 0.15);
           box-shadow: inset 0 0 30px white;
           text-shadow: 1px 1px 19px black;
           outline: dotted #aeaeae 2px; }
           body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-            opacity: 1;
-            z-index: -1; }
+            opacity: 1; }
             @media only screen and (min-width: 0) and (max-width: 480px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
                 right: -30px !important; } }
@@ -597,16 +620,20 @@ body {
                 font-size: 25px; } }
             @media only screen and (min-width: 992px) and (max-width: 1023px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important; } }
+                right: -30px !important;
+                z-index: -1; } }
             @media only screen and (min-width: 1023px) and (max-width: 1200px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important; } }
+                right: -30px !important;
+                z-index: -1; } }
             @media only screen and (min-width: 1200px) and (max-width: 1400px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -15px !important; } }
+                right: -15px !important;
+                z-index: -1; } }
             @media only screen and (min-width: 1400px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: 1px !important; } }
+                right: 1px !important;
+                z-index: -1; } }
         body .site-container .omega-nav-menu li a:focus, body .site-container .omega-nav-menu li a:focus-visible, body .site-container .omega-nav-menu li a:focus-within {
           outline: dotted;
           border-radius: 3px; }
@@ -661,11 +688,10 @@ body {
       body .relevanssi-live-search-results a:hover {
         color: black;
         text-shadow: 0px 0px 12px grey;
-        -webkit-text-stroke: 0.04em black;
+        -webkit-text-stroke: 0.03em black;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        font-size: 103%;
         background-color: black;
         color: white;
         padding: 0 0 0 10px; }
@@ -678,7 +704,11 @@ body {
     border-top-left-radius: 0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin-left: -2px; }
+    margin-left: -1px;
+    max-width: 678px; }
+@-moz-document url-prefix() {
+  body .relevanssi-live-search-results {
+    max-width: 663px; } }
   body .site-footer {
     border-top: 1px solid #E9E9E9;
     color: #666;
@@ -771,28 +801,36 @@ body {
       body .footer-widgets a:hover {
         color: black;
         text-shadow: 0px 0px 12px grey;
-        -webkit-text-stroke: 0.04em black;
+        -webkit-text-stroke: 0.03em black;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        font-size: 103%;
         background-color: rgba(255, 255, 255, 0.2);
         border-bottom: solid 2px rgba(0, 0, 0, 0);
         box-shadow: 0 0 137px #a2a5a1; }
       body .footer-widgets a:active, body .footer-widgets a:focus {
         outline: 2px dashed rgba(0, 0, 0, 0.5);
         color: black;
-        text-shadow: 0px 0px 3px black;
-        -webkit-text-stroke: 0.028em black;
+        text-shadow: 0px 0px 0.034em black;
+        -webkit-text-stroke: 0.055em black;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        font-size: 105%;
         border-bottom: solid 2px rgba(0, 0, 0, 0);
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0 0 137px #848a82;
         position: relative;
         top: 1px; }
+  body form button.wp-block-search__button {
+    transition: ease all 0.125s;
+    background: #575872;
+    margin-left: 0; }
+    body form button.wp-block-search__button:hover, body form button.wp-block-search__button:focus {
+      box-shadow: 11px 10px 25px #75858a; }
+    body form button.wp-block-search__button:hover, body form button.wp-block-search__button:active, body form button.wp-block-search__button:focus {
+      background: black;
+      box-shadow: 5px 6px 15px #75858a;
+      outline: dashed 3px #555e60; }
   body .searchwp-modal-form-default .searchwp-modal-form__content {
     background-color: rgba(0, 0, 0, 0);
     padding: 2em;
@@ -806,7 +844,7 @@ body {
     font-size: 2em;
     position: fixed;
     top: 35px;
-    right: 2%;
+    right: 1%;
     transition: ease all 0.125s; }
   body .searchwp-modal-form-default .searchwp-modal-form__overlay {
     position: fixed;

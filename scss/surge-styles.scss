@@ -3,7 +3,7 @@
 
 /* Body Background */
 
-$bodybackground: linear-gradient(to bottom, #e2e4dd 0%, #1f2119 100%);
+$bodybackground: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
 
 /* End Body Background */
 
@@ -136,28 +136,23 @@ $EliteFont: 'Special Elite', system-ui;
 	transition: ease all 0.2s;
 	text-decoration: none !important;
 }
-	
 @mixin link-props-hover {
 	color: $linkhover;
     text-shadow: 0px 0px 12px grey;
-    -webkit-text-stroke: 0.04em $black;
+    -webkit-text-stroke: 0.03em $black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-size: 103%;
 }
-
 @mixin link-props-active-focus {
 	outline: 2px dashed rgba(0,0,0,0.5);
     color: $black;
-    text-shadow: 0px 0px 3px $black;
-    -webkit-text-stroke: 0.028em $black;
+    text-shadow: 0px 0px 0.034em $black;
+    -webkit-text-stroke: 0.055em $black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-size: 105%;
 }
-
 @mixin main-content {
 	width: 95%;
 	border: solid 2px #8e9993;
@@ -166,19 +161,16 @@ $EliteFont: 'Special Elite', system-ui;
 	border-radius: 10px;
 	background: $content-background2;
 }
-
 @mixin desktop-footer {
 	display: flex;
 	width: 95%;
 	section {
 		&.widget {
 			width: 30%;
-
 			&:first-of-type {
 				margin-left: 20%;
 				margin-right: 15px;
 			}
-
 			&:last-of-type {
 				max-width: 120px;
 				margin-left: 15px;
@@ -244,6 +236,13 @@ body {
 				}
 			}
 			.site-title {
+                transition: $ease-eighth-sec;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                &:active, &:focus, &:focus-within {
+                    transform: scale(1.1);
+                }
 				a {
 					color: #333;
 					font-family: $EliteFont;
@@ -375,62 +374,66 @@ body {
 								}
 							}
 						}
-						@include tablet-landscape-up {
+                        @include custom-desktop {
 							a {
 								&#menu-icon {
-									&.menu-icon {
-										padding: 9px 30px 13px 5px;
-										top: 4px;
-									}
+                                    display: none;
 								}
 							}	
 						}
+                        @include large-desktop-up {
+							a {
+								&#menu-icon {
+                                    display: none;
+								}
+							}	
+						}
+                        @include hd-desktop-up {
+							a {
+								&#menu-icon {
+                                    display: none;
+								}
+							}	
+						}                            
 						ul {
 							&.menu {
 							    border-top: $topborder;
 //								background: $menu-background-ii;
-								
 								@include  lowres-vertical {
 									overflow-y: scroll;
     								overflow-x: hidden;
 									height: 118vh;
 								}
-								
 								@include extra-extra-small {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
-								
 								@include phone-only-up {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
-								
 								@include tablet-portrait-up {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
-
 								@include tablet-landscape-up {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
-								
 								@include desktop-up {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
 								}
-								
 								li {
 									@include extra-extra-small {
 										&.menu-item-has-children {
@@ -446,7 +449,6 @@ body {
 												transition: $ease-quarter-sec;
 											}
 										}
-										
 										&.menu-item-has-children.sfHover {
 											&::before {
 												color: $black;
@@ -514,8 +516,7 @@ body {
 												transform: rotate(-90deg);
 											}
 										}
-									}						
-									
+									}
 									ul {
 										li {
 											width: 100%;
@@ -523,7 +524,6 @@ body {
 												background-color: #e4e9de !important;
 												outline: dashed 1px gray;
 											}	
-											
 											a {
 												width: 100%;
 												@include extra-extra-small {
@@ -532,17 +532,16 @@ body {
 												}
 												@include phone-only-up {
 													padding-left: 40px;
-													//width: 300px;													
+													//width: 300px;		
 												}											
 												@include tablet-portrait-up {
 													padding-left: 40px;
-													//width: 300px;													
-												}											
+													//width: 300px;		
+												}
 												@include tablet-landscape-up {
 													padding-left: 40px;
 													//width: 300px;
 												}
-
 												&:hover, &:focus, &:active {
 													width: 100% !important;
 												}
@@ -591,7 +590,6 @@ body {
 									&.current_page_item {
 										box-shadow: $nav-select-bg1;
 										outline: dashed 1px;
-										
 										&::after {
 											filter: brightness(0);
 										    content: '⚓';
@@ -599,19 +597,18 @@ body {
 											margin-top: -39px;
 											position: absolute;
 										    z-index: 99;
-											
 											@include extra-extra-small {
 												margin-top: -39px;
 												margin-left: 14px !important;
 											}
 											@include phone-only-up {
 												margin-top: -39px;
-												margin-left: 14px !important;											
-											}											
+												margin-left: 14px !important;		
+											}
 											@include tablet-portrait-up {
 												margin-top: -39px;
-												margin-left: 14px !important;										
-											}											
+												margin-left: 14px !important;
+											}
 											@include tablet-landscape-up {
 												margin-top: -39px;
 												margin-left: 14px !important;
@@ -669,8 +666,8 @@ body {
 				}	
 				transition: $ease-eighth-sec;
 				&[type="submit"] {
-					left: 397px;
-					bottom: 81px;
+					left: 388px;
+					bottom: 82px;
 					border: 0;
 					clip: rect(0, 0, 0, 0);
 					margin: -1px;
@@ -724,13 +721,11 @@ body {
 			@-moz-document url-prefix() {
     			input {
 					height: 81px;
-				  	margin-right: -25px;
-					
+				  	margin-right: -25px;	
 					@include extra-extra-small {
 						max-width: 153px;
   						height: 46px;
 					}
-					
 				  	@include phone-only-up {
 						max-width: 234px;
   						height: 56px;
@@ -739,8 +734,24 @@ body {
 			}
 		}
 	}
-	
 	.site-container {
+        a {
+            transition: $ease-eighth-sec;
+            &:hover {
+                 color: $black;
+                text-decoration: none;
+                text-shadow: 0 0 40px;
+                -webkit-text-stroke: 1px;
+                background: white;               
+            }
+            &:active, &:focus {
+                color: $black;
+                text-decoration: none;
+                text-shadow: 0 0 57px;
+                -webkit-text-stroke: 1.5px;
+                background: white;
+            }
+        }
 		.site-inner {
 			background: $content-background1;
 			padding: 30px 0;
@@ -853,13 +864,14 @@ body {
 						transition: $ease-quarter-sec;
 						font-size: 22px;
 						width: 125px;
-						z-index: -1;
+                        z-index: 99;
 						@include custom-desktop {
 							background-position: 13px 37px;
 							font-size: 38px;
 							top: -36px !important;
 							right: 30px !important;
 							background-size: 78px 19px;
+                            z-index: -1;
 						}
 						@include large-desktop-up {
 							background-position: 13px 37px;
@@ -867,6 +879,7 @@ body {
 							top: -41px !important;
 							right: 37px !important;
 							background-size: 90px 26px;
+                            z-index: -1;
 
 						}
 						@include hd-desktop-up {
@@ -874,6 +887,7 @@ body {
 							font-size: 64px !important;
 							top: -41px !important;
 							right: 44px !important;
+                            z-index: -1;
 						}		
 					}
 					&:hover, &:focus, &:active {
@@ -884,7 +898,6 @@ body {
   						outline: dotted #aeaeae 2px;
 						&::before {
 							opacity: 1;
-							z-index: -1;
 							@include extra-extra-small {
 								right: -30px !important;
 							}
@@ -900,15 +913,19 @@ body {
 							}						
 							@include desktop-up {
 								right: -30px !important;
+                                z-index: -1;
 							}
 							@include custom-desktop {
 								right: -30px !important;
+                                z-index: -1;
 							}
 							@include large-desktop-up {
 								right: -15px !important;
+                                z-index: -1;
 							}
 							@include hd-desktop-up {
-								right: 1px !important;	
+								right: 1px !important;
+                                z-index: -1;
 							}						
 						}
 					}
@@ -988,7 +1005,11 @@ body {
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
-		margin-left: -2px;
+		margin-left: -1px;
+        max-width: 678px;
+        @-moz-document url-prefix() { 
+            max-width: 663px;
+        }
 	}	
 	.site-footer {
 		border-top: 1px solid #E9E9E9;
@@ -1044,6 +1065,25 @@ body {
 			}
 		}
 	}
+    ////////////////////////////////////////////////////////////
+    form {
+        button {
+            &.wp-block-search__button {
+                transition: $ease-eighth-sec;
+                background: #575872;
+                margin-left: 0;
+                &:hover, &:focus {
+				    box-shadow: 11px 10px 25px #75858a;
+                }
+                &:hover, &:active, &:focus {
+                    background: $black;
+                    box-shadow: 5px 6px 15px #75858a;
+                    outline: dashed 3px #555e60;
+                }
+            }
+        }
+    }
+    ////////////////////////////////////////////////////////////
 	.searchwp-modal-form-default .searchwp-modal-form__content {
 		background-color: rgba(0,0,0,0);
 		padding: 2em;
@@ -1059,7 +1099,7 @@ body {
 		font-size: 2em;
 		position: fixed;
 		top: 35px;
-		right: 2%;
+		right: 1%;
 		transition: $ease-eighth-sec;
 	}
 	.searchwp-modal-form-default .searchwp-modal-form__overlay {
@@ -1115,7 +1155,7 @@ body {
 				transition: $ease-quarter-sec;
 			}
 		}
-	}	
+	}
 }
 /////////////////////////////////
 ///////////End body ///////////
