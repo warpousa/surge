@@ -143,6 +143,7 @@ $EliteFont: 'Special Elite', system-ui;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    background: rgba(140, 155, 155, 0.18);
 }
 @mixin link-props-active-focus {
 	outline: 2px dashed rgba(0,0,0,0.5);
@@ -152,6 +153,7 @@ $EliteFont: 'Special Elite', system-ui;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    background: rgba(140, 155, 155, 0.33);
 }
 @mixin main-content {
 	width: 95%;
@@ -365,6 +367,26 @@ body {
 							}
 						}
 						@include tablet-portrait-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+										padding: 9px 30px 13px 5px;
+										top: 4px;
+									}
+								}
+							}
+						} 
+                        @include tablet-landscape-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+										padding: 9px 30px 13px 5px;
+										top: 4px;
+									}
+								}
+							}
+						} 
+                        @include desktop-up {
 							a {
 								&#menu-icon {
 									&.menu-icon {
@@ -899,13 +921,16 @@ body {
 						&::before {
 							opacity: 1;
 							@include extra-extra-small {
-								right: -30px !important;
+								right: 6px !important;
+                                top: -6px;
 							}
 							@include phone-only-up {
-								right: -30px !important;
+								right: 6px !important;
+                                top: -6px;
 							}
 							@include tablet-portrait-up {
-								right: -30px !important;
+								right: 6px !important;
+                                top: -6px;
 							}
 							@include tablet-landscape-up {
 								right: -30px !important;
@@ -1062,6 +1087,7 @@ body {
 				box-shadow: 0 0 137px #848a82;
 				position: relative;
 				top: 1px;
+                background: rgba(155, 155, 155, 0.45);
 			}
 		}
 	}

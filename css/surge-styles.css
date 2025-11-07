@@ -89,6 +89,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        background: rgba(140, 155, 155, 0.18);
         background-color: rgba(255, 255, 255, 0.3); }
       body header#header .site-title a:active, body header#header .site-title a:focus {
         outline: 2px dashed rgba(0, 0, 0, 0.5);
@@ -98,6 +99,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        background: rgba(140, 155, 155, 0.33);
         outline: dashed 2px rgba(0, 0, 0, 0.3);
         background-color: rgba(255, 255, 255, 0.3); }
       @media only screen and (min-width: 0) and (max-width: 480px) {
@@ -152,7 +154,8 @@ body {
     -webkit-text-stroke: 0.03em black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility; }
+    text-rendering: optimizeLegibility;
+    background: rgba(140, 155, 155, 0.18); }
   body header#header nav#navigation a:active, body header#header nav#navigation a:focus {
     outline: 2px dashed rgba(0, 0, 0, 0.5);
     color: black;
@@ -161,6 +164,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    background: rgba(140, 155, 155, 0.33);
     position: relative;
     top: 1px; }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
@@ -190,6 +194,14 @@ body {
       padding: 9px 30px 13px 5px;
       top: 4px; } }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
+    body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
+      padding: 9px 30px 13px 5px;
+      top: 4px; } }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
+      padding: 9px 30px 13px 5px;
+      top: 4px; } }
+  @media only screen and (min-width: 992px) and (max-width: 1023px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
       padding: 9px 30px 13px 5px;
       top: 4px; } }
@@ -607,13 +619,16 @@ body {
             opacity: 1; }
             @media only screen and (min-width: 0) and (max-width: 480px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important; } }
+                right: 6px !important;
+                top: -6px; } }
             @media only screen and (min-width: 480px) and (max-width: 576px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important; } }
+                right: 6px !important;
+                top: -6px; } }
             @media only screen and (min-width: 576px) and (max-width: 768px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important; } }
+                right: 6px !important;
+                top: -6px; } }
             @media only screen and (min-width: 768px) and (max-width: 992px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
                 right: -30px !important;
@@ -692,6 +707,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        background: rgba(140, 155, 155, 0.18);
         background-color: black;
         color: white;
         padding: 0 0 0 10px; }
@@ -805,6 +821,7 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        background: rgba(140, 155, 155, 0.18);
         background-color: rgba(255, 255, 255, 0.2);
         border-bottom: solid 2px rgba(0, 0, 0, 0);
         box-shadow: 0 0 137px #a2a5a1; }
@@ -816,11 +833,13 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        background: rgba(140, 155, 155, 0.33);
         border-bottom: solid 2px rgba(0, 0, 0, 0);
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0 0 137px #848a82;
         position: relative;
-        top: 1px; }
+        top: 1px;
+        background: rgba(155, 155, 155, 0.45); }
   body form button.wp-block-search__button {
     transition: ease all 0.125s;
     background: #575872;
