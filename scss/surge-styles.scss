@@ -304,9 +304,9 @@ body {
 					}
 					@include desktop-up {
 						font-size: 33px;
-						top: -3px;
+//						top: -3px;
 						position: absolute;
-						margin-top: 7px;
+						margin-top: -13px;
 						margin-right: 60px;
 					}
 					@include custom-desktop {
@@ -1040,7 +1040,7 @@ body {
 			}
 		}
 	}
-	///////////////////
+	//////////////////////////////////////
 	.relevanssi-live-search-results {
 		margin-top: -10px;
         border-top-color: rgba(255, 255, 255, 0);
@@ -1061,6 +1061,9 @@ body {
         @-moz-document url-prefix() { 
             max-width: 663px;
         }
+        .ajax-results {
+            font-size: 125%;
+        }
 		a {
 			@include link-props;
 			&:hover {
@@ -1068,7 +1071,11 @@ body {
 				background-color: $linkhover;
 				color: $white;
 				padding: 0 0 0 10px;
+                -webkit-text-stroke: 0.05em white;
 			}
+            &:active, &:focus {
+                @include link-props-active-focus;
+            }
 		}
 	}
 	.site-footer {
@@ -1125,7 +1132,7 @@ body {
 			}
 		}
 	}
-    ////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////
     form {
         button {
             &.wp-block-search__button {
@@ -1145,9 +1152,8 @@ body {
         }
     }
     ////////////////////////////////////////////////////////////
-    
     .searchwp-modal-form {
-        &[aria-hidden="false"] { 
+        &[aria-hidden="false"] {
             .searchwp-modal-form-default {
                 .searchwp-modal-form__overlay {
                     z-index: 99;
@@ -1155,32 +1161,51 @@ body {
             }
         }
         .searchwp-modal-form-default {
-        button.searchwp-modal-form__close {
-                outline: dashed 3px rgba(255,255,255,0);
-                line-height: 1em;
-                padding: 0.4em 0.5em;
-                margin: 0 auto;
-                z-index: 9999;
-                color: black;
-                font-size: 80px;
-                bottom: 100px;
-                position: fixed;
-                top: 0;
-                width: 100px;
-                height: 100px;
-                right: 17px;
-                transition: $ease-quarter-sec;
-                &:active, &:focus, &:focus-visible {
-                    outline: dashed 3px rgba(0, 0, 0, 0.5);
-                    background: $white;
-                }
-                &:hover, &:active, &:focus, &:focus-visible { 
-                    &::before {
-                        transform: scale(1.15);
-                        transition: $ease-quarter-sec;
+            button {
+                &.searchwp-modal-form__close {
+                    outline: dashed 3px rgba(255,255,255,0);
+                    line-height: 1em;
+                    padding: 0.4em 0.5em;
+                    margin: 0 auto;
+                    z-index: 9999;
+                    color: black;
+                    font-size: 80px;
+                    bottom: 100px;
+                    position: fixed;
+                    top: 0;
+                    width: 100px;
+                    height: 100px;                      
+                    right: 17px;
+                    @include extra-extra-small {
+                        font-size: 50px;
+                        width: 50px;
+                        height: 50px;
+                        top: 25px;
+                    }
+                    @include phone-only-up {
+                        font-size: 60px;
+                        width: 60px;
+                        height: 60px;
+                        top: 20px;
+                    }
+                    @include tablet-portrait-up {
+                        width: 80px;
+                        height: 80px;
+                        top: 13px;
+                    }                     
+                    transition: $ease-quarter-sec;
+                    &:active, &:focus, &:focus-visible {
+                        outline: dashed 3px rgba(0, 0, 0, 0.5);
+                        background: $white;
+                    }
+                    &:hover, &:active, &:focus, &:focus-visible { 
+                        &::before {
+                            transform: scale(1.15);
+                            transition: $ease-quarter-sec;
+                        }
                     }
                 }
-            }            
+            }
             .searchwp-modal-form__content {
                 background-color: $search-background-ii;
                 padding: 2em;
@@ -1202,9 +1227,18 @@ body {
             .searchwp-modal-form__close {
                 &:before {
                 font-size: 2em;
+                @include extra-extra-small {
+                    font-size: 1.2em;
+                }
+                @include phone-only-up {
+                    font-size: 1.4em;	
+                }
+                @include tablet-portrait-up {
+                    font-size: 1.6em;
+                }    
                 position: fixed;
                 top: 35px;
-                right: 1%;
+                right: 25px;
                 transition: $ease-eighth-sec; 
                 }
 	        }
