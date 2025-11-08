@@ -118,6 +118,7 @@ $animate-header: translateY(-568px);
 
 $main-shadow: 0 0 134px 17px #2e2e2e;
 $submenu-shadow1: 6px 6px 2px 1px rgba(0,0,0,0.3);
+$tablet-mobile-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4);
 
 /* Shading * /
 
@@ -238,6 +239,18 @@ body {
 				}
 			}
 			.site-title {
+                @include extra-extra-small {
+                    margin-top: -10px;
+                }
+                @include phone-only-up {
+                    margin-top: -10px;
+                }
+                @include tablet-portrait-up { 
+                    margin-top: -10px;
+                }
+                @include tablet-landscape-up { 
+                    margin-top: -10px;
+                }
                 transition: $ease-eighth-sec;
                 &:hover {
                     transform: scale(1.05);
@@ -252,7 +265,6 @@ body {
 					letter-spacing: 2px;
 					margin-left: 15px;
 					position: relative;
-					top: 7px;
 					transition: $ease-quarter-sec;
 					padding: 1px 1px 0 1px;
 					border-radius: 3px;
@@ -431,24 +443,28 @@ body {
 									top: 29px;
 									width: 100%;
 									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
 								}
 								@include phone-only-up {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
 								}
 								@include tablet-portrait-up {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
 								}
 								@include tablet-landscape-up {
 									left: 0px;
 									top: 29px;
 									width: 100%;
 									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
 								}
 								@include desktop-up {
 									left: 0px;
@@ -539,6 +555,33 @@ body {
 											}
 										}
 									}
+									@include tablet-landscape-up {
+										&.menu-item-has-children {
+											&::before {
+												color: $black;
+												content: " › ";
+												font-size: 32px;
+												position: absolute;
+												margin-left: 88%;
+												margin-top: 9px;
+												z-index: 9999;
+												transform: rotate(90deg);
+												transition: $ease-half-sec;
+											}
+										}
+										&.menu-item-has-children.sfHover {
+											&::before {
+												color: $black;
+												content: " › ";
+												font-size: 32px;
+												position: absolute;
+												margin-left: 88%;
+												margin-top: 9px;
+												z-index: 9999;
+												transform: rotate(-90deg);
+											}
+										}
+									}                                    
 									ul {
 										li {
 											width: 100%;
@@ -772,6 +815,7 @@ body {
                 text-shadow: 0 0 57px;
                 -webkit-text-stroke: 1.5px;
                 background: white;
+                outline: dotted 2px;
             }
         }
 		.site-inner {
@@ -1072,7 +1116,6 @@ body {
 		}
 		a {
 			padding: 5px 2px 1px 2px;
-			border-radius: 3px;
 			@include link-props;
 			&:hover {
 				@include link-props-hover;
@@ -1098,6 +1141,7 @@ body {
                 transition: $ease-eighth-sec;
                 background: #575872;
                 margin-left: 0;
+                border-radius: 0 15px 15px 0;
                 &:hover, &:focus {
 				    box-shadow: 11px 10px 25px #75858a;
                 }

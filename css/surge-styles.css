@@ -67,6 +67,18 @@ body {
         background-color: white; } }
   body header#header .site-title {
     transition: ease all 0.125s; }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body header#header .site-title {
+        margin-top: -10px; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body header#header .site-title {
+        margin-top: -10px; } }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body header#header .site-title {
+        margin-top: -10px; } }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      body header#header .site-title {
+        margin-top: -10px; } }
     body header#header .site-title:hover {
       transform: scale(1.05); }
     body header#header .site-title:active, body header#header .site-title:focus, body header#header .site-title:focus-within {
@@ -78,7 +90,6 @@ body {
       letter-spacing: 2px;
       margin-left: 15px;
       position: relative;
-      top: 7px;
       transition: ease all 0.25s;
       padding: 1px 1px 0 1px;
       border-radius: 3px; }
@@ -226,25 +237,29 @@ body {
         left: 0px;
         top: 29px;
         width: 100%;
-        margin: 0; } }
+        margin: 0;
+        box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
         top: 29px;
         width: 100%;
-        margin: 0; } }
+        margin: 0;
+        box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
         top: 29px;
         width: 100%;
-        margin: 0; } }
+        margin: 0;
+        box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
         top: 29px;
         width: 100%;
-        margin: 0; } }
+        margin: 0;
+        box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 992px) and (max-width: 1023px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
@@ -292,6 +307,26 @@ body {
         z-index: 9999;
         transform: rotate(270deg); } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children::before {
+        color: black;
+        content: " › ";
+        font-size: 32px;
+        position: absolute;
+        margin-left: 88%;
+        margin-top: 9px;
+        z-index: 9999;
+        transform: rotate(90deg);
+        transition: ease all 0.5s; }
+      body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children.sfHover::before {
+        color: black;
+        content: " › ";
+        font-size: 32px;
+        position: absolute;
+        margin-left: 88%;
+        margin-top: 9px;
+        z-index: 9999;
+        transform: rotate(-90deg); } }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
       body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children::before {
         color: black;
         content: " › ";
@@ -502,7 +537,8 @@ body {
       text-decoration: none;
       text-shadow: 0 0 57px;
       -webkit-text-stroke: 1.5px;
-      background: white; }
+      background: white;
+      outline: dotted 2px; }
   body .site-container .site-inner {
     background: linear-gradient(0deg, #c4c8c3 0%, #a8aba7 24%, #5e6365 100%);
     padding: 30px 0; }
@@ -810,7 +846,6 @@ body {
             margin-left: 15px; } }
     body .footer-widgets a {
       padding: 5px 2px 1px 2px;
-      border-radius: 3px;
       border-bottom: 2px solid black;
       transition: ease all 0.2s;
       text-decoration: none !important; }
@@ -843,7 +878,8 @@ body {
   body form button.wp-block-search__button {
     transition: ease all 0.125s;
     background: #575872;
-    margin-left: 0; }
+    margin-left: 0;
+    border-radius: 0 15px 15px 0; }
     body form button.wp-block-search__button:hover, body form button.wp-block-search__button:focus {
       box-shadow: 11px 10px 25px #75858a; }
     body form button.wp-block-search__button:hover, body form button.wp-block-search__button:active, body form button.wp-block-search__button:focus {
