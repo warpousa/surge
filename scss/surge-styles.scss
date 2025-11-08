@@ -1043,18 +1043,24 @@ body {
 	///////////////////
 	.relevanssi-live-search-results {
 		margin-top: -10px;
-		border-top-color: rgba(255, 255, 255, 0);
-		box-shadow: none;
-		border-left: solid 1px #767676;
-		border-bottom: solid 1px gray;
-		border-right: solid 1px gray;
+        border-top-color: rgba(255, 255, 255, 0);
+		border-left: solid 1px #bbb;
+		border-bottom: solid 1px #bbb;
+		border-right: solid 1px #bbb;
 		border-top-right-radius: 0;
 		border-top-left-radius: 0;
-		margin-left: 0;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		margin-left: -1px;
+        max-width: 678px;
 		margin-top: -20px !important;
 		border-right: 3px dashed #4d5659 !important;
 		border-bottom: 3px dashed #4d5659 !important;
 		border-left: 3px dashed #4d5659 !important;
+        box-shadow: 6px 29px 28px #a0adb2;
+        @-moz-document url-prefix() { 
+            max-width: 663px;
+        }
 		a {
 			@include link-props;
 			&:hover {
@@ -1065,21 +1071,6 @@ body {
 			}
 		}
 	}
-	.relevanssi-live-search-results {
-		border-top-color: rgba(255, 255, 255, 0);
-		border-left: solid 1px #bbb;
-		border-bottom: solid 1px #bbb;
-		border-right: solid 1px #bbb;
-		border-top-right-radius: 0;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 15px;
-		border-bottom-right-radius: 15px;
-		margin-left: -1px;
-        max-width: 678px;
-        @-moz-document url-prefix() { 
-            max-width: 663px;
-        }
-	}	
 	.site-footer {
 		border-top: 1px solid #E9E9E9;
 		color: #666;
@@ -1154,78 +1145,84 @@ body {
         }
     }
     ////////////////////////////////////////////////////////////
-	.searchwp-modal-form-default .searchwp-modal-form__content {
-		background-color: rgba(0,0,0,0);
-		padding: 2em;
-		border-radius: 2px;
-	}
-	.searchwp-modal-form-default .searchwp-modal-form__footer {
-		padding-top: 1em;
-		position: relative;
-		bottom: -45px;
-		z-index: 9999999; 
-	}
-	.searchwp-modal-form-default .searchwp-modal-form__close:before {
-		font-size: 2em;
-		position: fixed;
-		top: 35px;
-		right: 1%;
-		transition: $ease-eighth-sec;
-	}
-	.searchwp-modal-form-default .searchwp-modal-form__overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		opacity: 0.95;
-		background-color: $search-background-i;
-		z-index: 1;
-	}
-	.searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
-		z-index: 99;
-	}
-	.searchwp-modal-form-default .searchwp-modal-form__content {
-		background-color: $search-background-ii;
-		padding: 2em;
-		border-radius: 2px;
-		z-index: -1;
-		height: 100vh;
-		overflow-y: hidden !important;
-		box-shadow: 0 150px 0 #c3cccc;
-	}
-	.searchwp-modal-form-default .searchwp-modal-form__content .search-form {
-		margin-top: 200px;
-	}
-	.searchwp-modal-form-default button.searchwp-modal-form__close {
-		outline: dashed 3px rgba(255,255,255,0);
-		line-height: 1em;
-		padding: 0.4em 0.5em;
-		margin: 0 auto;
-		z-index: 9999;
-		color: black;
-		font-size: 80px;
-		bottom: 100px;
-		position: fixed;
-		top: 0;
-		width: 100px;
-		height: 100px;
-		right: 17px;
-		transition: $ease-quarter-sec;
-		&:active, &:focus, &:focus-visible {
-			outline: dashed 3px rgba(0, 0, 0, 0.5);
-			background: $white;
-		}
-		&:hover, &:active, &:focus, &:focus-visible { 
-			&::before {
-				transform: scale(1.15);
-				transition: $ease-quarter-sec;
-			}
-		}
-	}
+    
+    .searchwp-modal-form {
+        &[aria-hidden="false"] { 
+            .searchwp-modal-form-default {
+                .searchwp-modal-form__overlay {
+                    z-index: 99;
+                }
+            }
+        }
+        .searchwp-modal-form-default {
+        button.searchwp-modal-form__close {
+                outline: dashed 3px rgba(255,255,255,0);
+                line-height: 1em;
+                padding: 0.4em 0.5em;
+                margin: 0 auto;
+                z-index: 9999;
+                color: black;
+                font-size: 80px;
+                bottom: 100px;
+                position: fixed;
+                top: 0;
+                width: 100px;
+                height: 100px;
+                right: 17px;
+                transition: $ease-quarter-sec;
+                &:active, &:focus, &:focus-visible {
+                    outline: dashed 3px rgba(0, 0, 0, 0.5);
+                    background: $white;
+                }
+                &:hover, &:active, &:focus, &:focus-visible { 
+                    &::before {
+                        transform: scale(1.15);
+                        transition: $ease-quarter-sec;
+                    }
+                }
+            }            
+            .searchwp-modal-form__content {
+                background-color: $search-background-ii;
+                padding: 2em;
+                border-radius: 2px;
+                z-index: -1;
+                height: 100vh;
+                overflow-y: hidden !important;
+                box-shadow: 0 150px 0 #c3cccc;
+                .search-form {
+		            margin-top: 200px;
+	            }
+            }          
+            .searchwp-modal-form__footer {
+                padding-top: 1em;
+                position: relative;
+                bottom: -45px;
+                z-index: 9999999; 
+	        }
+            .searchwp-modal-form__close {
+                &:before {
+                font-size: 2em;
+                position: fixed;
+                top: 35px;
+                right: 1%;
+                transition: $ease-eighth-sec; 
+                }
+	        }
+            .searchwp-modal-form__overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.95;
+                background-color: $search-background-i;
+                z-index: 1;
+	        } 
+        }      
+    }
 }
 /////////////////////////////////
 ///////////End body ///////////
