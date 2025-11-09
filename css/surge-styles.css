@@ -1,10 +1,29 @@
 @charset "UTF-8";
 /* SURGE-styles*/
+/* Body Background */
+/* End Body Background */
+/* Background Img Variables */
+/* End Background Img Variables  */
+/* Breakpoints */
+/* End Breakpoints */
+/* Colors & Borders */
+/* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
+/*#eff4f2*/
+/* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
+/* #eff4f2;  */
+/* End Colors & Borders */
+/*  Img FX */
+/* End Img FX */
+/* Transforms & Transitions */
+/* End Transforms & Transitions */
+/* Shading  */
+/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 /* End Fonts */
-
+/* Mixins */
+/* End Mixins */
 body {
   background: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
   color: #222630;
@@ -311,6 +330,26 @@ body {
         color: black;
         content: " › ";
         font-size: 32px;
+        position: absolute;
+        margin-left: 88%;
+        margin-top: 9px;
+        z-index: 9999;
+        transform: rotate(90deg);
+        transition: ease all 0.5s; }
+      body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children.sfHover::before {
+        color: black;
+        content: " › ";
+        font-size: 32px;
+        position: absolute;
+        margin-left: 88%;
+        margin-top: 9px;
+        z-index: 9999;
+        transform: rotate(-90deg); } }
+    @media only screen and (min-width: 992px) and (max-width: 1023px) {
+      body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children::before {
+        color: black;
+        content: " › ";
+        font-size: 33px;
         position: absolute;
         margin-left: 88%;
         margin-top: 9px;
@@ -647,8 +686,9 @@ body {
                 top: -6px; } }
             @media only screen and (min-width: 768px) and (max-width: 992px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important;
-                font-size: 25px; } }
+                right: -40px !important;
+                font-size: 25px;
+                top: -7px; } }
             @media only screen and (min-width: 992px) and (max-width: 1023px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
                 right: -30px !important;
@@ -765,6 +805,12 @@ body {
     background: none repeat scroll 0 0 #d7d9d0;
     border-top: 2px solid #EEE3D7;
     padding: 40px 0 16px; }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .footer-widgets .wrap .widget-area .widget {
+        margin-left: 33px; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .footer-widgets .wrap .widget-area .widget {
+        margin-left: 33px; } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .footer-widgets .wrap .widget-area {
         display: flex;
@@ -886,12 +932,23 @@ body {
     outline: dashed 3px #555e60;
     box-shadow: 6px 5px 15px #75858a; }
   body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
-    width: 37%;
+    width: 33%;
     min-width: 210px;
-    font-size: 2.5em;
+    font-size: 2.2em;
     height: 80px;
     padding-top: 20px;
     border-radius: 10px; }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
+        font-size: 1.4em;
+        height: 60px; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
+        font-size: 1.6em;
+        height: 70px; } }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
+        font-size: 1.8em; } }
     body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:hover {
       transform: scale(1.01); }
     body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:active, body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:focus {

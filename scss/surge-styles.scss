@@ -164,6 +164,11 @@ $EliteFont: 'Special Elite', system-ui;
 	border-radius: 10px;
 	background: $content-background2;
 }
+@mixin mobile-footer {
+    .widget {
+        margin-left: 33px;
+    }
+}
 @mixin desktop-footer {
 	display: flex;
 	width: 95%;
@@ -581,7 +586,34 @@ body {
 												transform: rotate(-90deg);
 											}
 										}
-									}                                    
+									}
+                                    @include desktop-up {
+										&.menu-item-has-children {
+											&::before {
+												color: $black;
+												content: " › ";
+												font-size: 33px;
+												position: absolute;
+												margin-left: 88%;
+												margin-top: 9px;
+												z-index: 9999;
+												transform: rotate(90deg);
+												transition: $ease-half-sec;
+											}
+										}
+										&.menu-item-has-children.sfHover {
+											&::before {
+												color: $black;
+												content: " › ";
+												font-size: 32px;
+												position: absolute;
+												margin-left: 88%;
+												margin-top: 9px;
+												z-index: 9999;
+												transform: rotate(-90deg);
+											}
+										}                          
+                                    }
 									ul {
 										li {
 											width: 100%;
@@ -977,8 +1009,9 @@ body {
                                 top: -6px;
 							}
 							@include tablet-landscape-up {
-								right: -30px !important;
+								right: -40px !important;
 								font-size: 25px;
+                                top: -7px;
 							}						
 							@include desktop-up {
 								right: -30px !important;
@@ -1101,6 +1134,12 @@ body {
 		padding: 40px 0 16px;
 		.wrap {			
 			.widget-area {
+                @include extra-extra-small {
+                    @include mobile-footer;
+                }
+                @include phone-only-up {
+                    @include mobile-footer;
+                }
 				@include tablet-portrait-up {
 					@include desktop-footer;
 				}
@@ -1177,12 +1216,23 @@ body {
                             input {
                                 &.ninja-forms-field {
                                     &.nf-element {
-                                        width: 37%;
+                                        width: 33%;
                                         min-width: 210px;
-                                        font-size: 2.5em;
+                                        font-size: 2.2em;
                                         height: 80px;
                                         padding-top: 20px;
                                         border-radius: 10px;
+                                        @include extra-extra-small {
+                                            font-size: 1.4em;
+                                            height: 60px
+                                        }
+                                        @include phone-only-up {
+                                            font-size: 1.6em;
+                                            height: 70px;
+                                        }
+                                        @include tablet-portrait-up {
+                                            font-size: 1.8em;
+                                        }
                                         &:hover {
                                             transform: scale(1.01);
                                         }
