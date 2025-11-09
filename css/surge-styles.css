@@ -885,10 +885,34 @@ body {
   body .nf-form-layout form .nf-form-content textarea:active, body .nf-form-layout form .nf-form-content textarea:focus {
     outline: dashed 3px #555e60;
     box-shadow: 6px 5px 15px #75858a; }
+  body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
+    width: 37%;
+    min-width: 210px;
+    font-size: 2.5em;
+    height: 80px;
+    padding-top: 20px;
+    border-radius: 10px; }
+    body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:hover {
+      transform: scale(1.01); }
+    body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:active, body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:focus {
+      position: relative;
+      top: 2px;
+      transform: scale(1.02); }
+  body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input[disabled="true"] {
+    opacity: 0.3;
+    pointer-events: none; }
+    body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input[disabled="true"].ninja-forms-field.nf-element:hover {
+      transform: scale(1); }
+    body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input[disabled="true"].ninja-forms-field.nf-element:active, body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input[disabled="true"].ninja-forms-field.nf-element:focus {
+      position: relative;
+      top: 0;
+      transform: scale(1); }
   body .nf-form-layout form .nf-error.field-wrap .nf-field-element:after {
     border-radius: 0 5px 5px 0;
     font-size: 150%;
     -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5); }
+  body .nf-form-layout form .nf-error .ninja-forms-field {
+    background-color: #eadfe1 !important; }
   body .nf-form-layout form input:not([type=button]) {
     border: 2px solid #c4c4c4;
     border-radius: 5px; }
