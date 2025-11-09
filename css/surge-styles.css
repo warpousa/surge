@@ -1,29 +1,10 @@
 @charset "UTF-8";
 /* SURGE-styles*/
-/* Body Background */
-/* End Body Background */
-/* Background Img Variables */
-/* End Background Img Variables  */
-/* Breakpoints */
-/* End Breakpoints */
-/* Colors & Borders */
-/* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
-/*#eff4f2*/
-/* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
-/* #eff4f2;  */
-/* End Colors & Borders */
-/*  Img FX */
-/* End Img FX */
-/* Transforms & Transitions */
-/* End Transforms & Transitions */
-/* Shading  */
-/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 /* End Fonts */
-/* Mixins */
-/* End Mixins */
+
 body {
   background: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
   color: #222630;
@@ -738,7 +719,16 @@ body {
   body .relevanssi-live-search-results {
     max-width: 663px; } }
     body .relevanssi-live-search-results .ajax-results {
-      font-size: 125%; }
+      font-size: 130%; }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .relevanssi-live-search-results .ajax-results {
+          font-size: 100%; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .relevanssi-live-search-results .ajax-results {
+          font-size: 110%; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .relevanssi-live-search-results .ajax-results {
+          font-size: 120%; } }
     body .relevanssi-live-search-results a {
       border-bottom: 2px solid black;
       transition: ease all 0.2s;
@@ -878,17 +868,33 @@ body {
         position: relative;
         top: 1px;
         background: rgba(155, 155, 155, 0.45); }
-  body form button.wp-block-search__button {
+  body .nf-form-layout form button.wp-block-search__button {
     transition: ease all 0.125s;
     background: #575872;
     margin-left: 0;
     border-radius: 0 15px 15px 0; }
-    body form button.wp-block-search__button:hover, body form button.wp-block-search__button:focus {
+    body .nf-form-layout form button.wp-block-search__button:hover, body .nf-form-layout form button.wp-block-search__button:focus {
       box-shadow: 11px 10px 25px #75858a; }
-    body form button.wp-block-search__button:hover, body form button.wp-block-search__button:active, body form button.wp-block-search__button:focus {
+    body .nf-form-layout form button.wp-block-search__button:hover, body .nf-form-layout form button.wp-block-search__button:active, body .nf-form-layout form button.wp-block-search__button:focus {
       background: black;
       box-shadow: 5px 6px 15px #75858a;
       outline: dashed 3px #555e60; }
+  body .nf-form-layout form .nf-form-content textarea.ninja-forms-field {
+    border: solid 2px #c4c4c4;
+    border-radius: 5px; }
+  body .nf-form-layout form .nf-form-content textarea:active, body .nf-form-layout form .nf-form-content textarea:focus {
+    outline: dashed 3px #555e60;
+    box-shadow: 6px 5px 15px #75858a; }
+  body .nf-form-layout form .nf-error.field-wrap .nf-field-element:after {
+    border-radius: 0 5px 5px 0;
+    font-size: 150%;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5); }
+  body .nf-form-layout form input:not([type=button]) {
+    border: 2px solid #c4c4c4;
+    border-radius: 5px; }
+    body .nf-form-layout form input:not([type=button]):active, body .nf-form-layout form input:not([type=button]):focus {
+      outline: dashed 3px #555e60;
+      box-shadow: 6px 5px 15px #75858a; }
   body .searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
     z-index: 99; }
   body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {

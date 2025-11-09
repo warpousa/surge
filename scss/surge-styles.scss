@@ -1062,7 +1062,16 @@ body {
             max-width: 663px;
         }
         .ajax-results {
-            font-size: 125%;
+            font-size: 130%;
+            @include extra-extra-small {
+                font-size: 100%;
+            }
+            @include phone-only-up {
+                font-size: 110%;
+            }
+            @include tablet-portrait-up {
+                font-size: 120%;
+            }
         }
 		a {
 			@include link-props;
@@ -1132,21 +1141,54 @@ body {
 			}
 		}
 	}
-    /////////////////////////////////////////////////////////
-    form {
-        button {
-            &.wp-block-search__button {
-                transition: $ease-eighth-sec;
-                background: #575872;
-                margin-left: 0;
-                border-radius: 0 15px 15px 0;
-                &:hover, &:focus {
-				    box-shadow: 11px 10px 25px #75858a;
+    ////////////////////////////////////////////////////////////
+    .nf-form-layout {
+        form {
+            button {
+                &.wp-block-search__button {
+                    transition: $ease-eighth-sec;
+                    background: #575872;
+                    margin-left: 0;
+                    border-radius: 0 15px 15px 0;
+                    &:hover, &:focus {
+                        box-shadow: 11px 10px 25px #75858a;
+                    }
+                    &:hover, &:active, &:focus {
+                        background: $black;
+                        box-shadow: 5px 6px 15px #75858a;
+                        outline: dashed 3px #555e60;
+                    }
                 }
-                &:hover, &:active, &:focus {
-                    background: $black;
-                    box-shadow: 5px 6px 15px #75858a;
+            }
+            .nf-form-content {
+                textarea {
+                    &.ninja-forms-field {
+                        border: solid 2px #c4c4c4;
+                        border-radius: 5px;
+                    }
+                    &:active, &:focus {
+                        outline: dashed 3px #555e60;
+                        box-shadow: 6px 5px 15px #75858a;   
+                    }
+                }
+            }
+            .nf-error {
+                &.field-wrap {
+                    .nf-field-element {
+                        &:after {
+                            border-radius: 0 5px 5px 0;
+                            font-size: 150%;
+                            -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5);
+                        }
+                    } 
+                }
+            }
+            input:not([type=button]) {
+                border: 2px solid #c4c4c4;
+                border-radius: 5px;
+                &:active, &:focus {
                     outline: dashed 3px #555e60;
+                    box-shadow: 6px 5px 15px #75858a;   
                 }
             }
         }
