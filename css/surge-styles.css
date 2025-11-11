@@ -1,29 +1,10 @@
 @charset "UTF-8";
 /* SURGE-styles*/
-/* Body Background */
-/* End Body Background */
-/* Background Img Variables */
-/* End Background Img Variables  */
-/* Breakpoints */
-/* End Breakpoints */
-/* Colors & Borders */
-/* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
-/*#eff4f2*/
-/* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
-/* #eff4f2;  */
-/* End Colors & Borders */
-/*  Img FX */
-/* End Img FX */
-/* Transforms & Transitions */
-/* End Transforms & Transitions */
-/* Shading  */
-/* Shading * /
 
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap|family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 /* End Fonts */
-/* Mixins */
-/* End Mixins */
+
 body {
   background: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
   color: #222630;
@@ -48,7 +29,17 @@ body {
     background: rgba(255, 255, 255, 0.9);
     width: 100%;
     transition: ease all 0.25s;
-    z-index: 99; }
+    z-index: 99;
+    height: 72px; }
+    @media only screen and (min-width: 992px) and (max-width: 1023px) {
+      body header#header.site-header {
+        height: 61px; } }
+    @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+      body header#header.site-header {
+        height: 61px; } }
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+      body header#header.site-header {
+        height: 64px; } }
     body header#header.site-header.hide-header {
       transform: translateY(-568px); }
     body header#header.site-header.is-transparent {
@@ -146,15 +137,39 @@ body {
       @media only screen and (min-width: 1023px) and (max-width: 1200px) {
         body header#header .site-title a {
           font-size: 34px;
-          top: 15px; } }
+          top: 0px;
+          left: 15px;
+          height: 72px;
+          display: inline-block;
+          border-radius: 75px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body header#header .site-title a {
           font-size: 37px;
-          top: 18px; } }
+          top: 0px;
+          left: 15px;
+          height: 72px;
+          display: inline-block;
+          border-radius: 75px; } }
       @media only screen and (min-width: 1400px) {
         body header#header .site-title a {
           font-size: 36px;
-          top: 20px; } }
+          top: 0px;
+          left: 15px;
+          height: 72px;
+          display: inline-block;
+          border-radius: 75px; } }
+      @media only screen and (min-width: 992px) and (max-width: 1023px) {
+        body header#header .site-title a img {
+          max-height: 58px; } }
+      @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+        body header#header .site-title a img {
+          max-height: 60px; } }
+      @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+        body header#header .site-title a img {
+          max-height: 62px; } }
+      @media only screen and (min-width: 1400px) {
+        body header#header .site-title a img {
+          max-height: 68px; } }
   body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
     text-decoration: none;
     outline: 2px dashed rgba(0, 0, 0, 0.5); }
@@ -197,24 +212,99 @@ body {
       margin-right: 35px; } }
   @media only screen and (min-width: 0) and (max-width: 480px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 9px 30px 13px 5px;
-      top: 4px; } }
+      padding: 30px 64px 25px 5px;
+      top: 9px; }
+      body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span {
+        height: 7px;
+        width: 60px;
+        margin: -5px 0; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::before {
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::after {
+          bottom: -8px;
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; } }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 9px 30px 13px 5px;
-      top: 4px; } }
+      padding: 30px 64px 25px 5px;
+      top: 9px; }
+      body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span {
+        height: 7px;
+        width: 60px;
+        margin: -5px 0; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::before {
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::after {
+          bottom: -8px;
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; } }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 9px 30px 13px 5px;
-      top: 4px; } }
+      padding: 30px 64px 25px 5px;
+      top: 9px; }
+      body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span {
+        height: 7px;
+        width: 60px;
+        margin: -5px 0; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::before {
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::after {
+          bottom: -8px;
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; } }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 9px 30px 13px 5px;
-      top: 4px; } }
+      padding: 30px 64px 25px 5px;
+      top: 9px; }
+      body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span {
+        height: 7px;
+        width: 60px;
+        margin: -5px 0; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::before {
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::after {
+          bottom: -8px;
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; } }
   @media only screen and (min-width: 992px) and (max-width: 1023px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
-      padding: 9px 30px 13px 5px;
-      top: 4px; } }
+      padding: 30px 64px 25px 5px;
+      top: 9px; }
+      body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span {
+        height: 7px;
+        width: 60px;
+        margin: -5px 0; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::before {
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; }
+        body header#header nav#navigation.nav-primary a#menu-icon.menu-icon span::after {
+          bottom: -8px;
+          height: 7px;
+          width: 60px;
+          margin-top: -5px;
+          margin-bottom: -5px; } }
   @media only screen and (min-width: 1023px) and (max-width: 1200px) {
     body header#header nav#navigation.nav-primary a#menu-icon {
       display: none; } }
@@ -234,35 +324,35 @@ body {
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
-        top: 29px;
+        top: 72px;
         width: 100%;
         margin: 0;
         box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
-        top: 29px;
+        top: 72px;
         width: 100%;
         margin: 0;
         box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
-        top: 29px;
+        top: 72px;
         width: 100%;
         margin: 0;
         box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
-        top: 29px;
+        top: 72px;
         width: 100%;
         margin: 0;
         box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
     @media only screen and (min-width: 992px) and (max-width: 1023px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
-        top: 29px;
+        top: 72px;
         width: 100%;
         margin: 0; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
@@ -578,10 +668,23 @@ body {
     body .site-container .banner.bground5 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground5.jpg) !important; }
     body .site-container .banner .banner-title {
-      text-shadow: 1px 2px 6px #000; }
+      text-shadow: 1px 2px 6px #000;
+      color: #f9ffdc;
+      font-size: 60px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-family: "Rubik", sans-serif;
+      margin: 20px 0 -32px 0; }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .site-container .banner .banner-title {
           font-size: 32px; } }
+      body .site-container .banner .banner-title.site-description::before {
+        content: '';
+        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only.png);
+        margin: 0 auto;
+        width: 1020px;
+        height: 250px;
+        display: block; }
     body .site-container .banner h3.archive-title {
       text-shadow: 0 0 3px black; }
   body .site-container div.wrap {
@@ -934,10 +1037,14 @@ body {
   body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
     width: 33%;
     min-width: 210px;
-    font-size: 2.2em;
+    font-size: 2.8em;
     height: 80px;
-    padding-top: 20px;
-    border-radius: 10px; }
+    padding-top: 9px;
+    border-radius: 10px;
+    font-family: "Rubik", sans-serif;
+    text-shadow: 0 0 20px #a2a2a2;
+    -webkit-text-stroke: 1px #a9a9a2;
+    font-weight: 700; }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
         font-size: 1.4em;
@@ -964,6 +1071,8 @@ body {
       position: relative;
       top: 0;
       transform: scale(1); }
+  body .nf-form-layout form .nf-pass.field-wrap .nf-field-element::after {
+    font-size: 45px; }
   body .nf-form-layout form .nf-error.field-wrap .nf-field-element:after {
     border-radius: 0 5px 5px 0;
     font-size: 150%;
