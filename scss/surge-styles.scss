@@ -74,7 +74,7 @@ $xxl:  1400px;
 $banner-shadow: #353737 0px -8px 15px 20px;
 $black: black;
 $charade: #222630;
-$content-background1: linear-gradient(0deg, #c4c8c3 0%, #a8aba7 24%, #5e6365 100%); /* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
+$content-background1: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%); /* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
 $content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 232, 232, 1) 33%, rgba(239, 242, 227, 1) 100%);
 $contentcolor: #6d6666;
 $grey: grey;
@@ -124,9 +124,10 @@ $tablet-mobile-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4);
 
 /* Fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap|family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap|family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 $EliteFont: 'Special Elite', system-ui;
+$RubikSansFont: "Rubik", sans-serif;
 
 /* End Fonts */
 
@@ -158,10 +159,10 @@ $EliteFont: 'Special Elite', system-ui;
 }
 @mixin banner-title {
     color: #f9ffdc;
-    font-size: 60px;
+    font-size: 96px;
     font-weight: 600;
     margin-bottom: 8px;
-    font-family: "Rubik", sans-serif;
+    font-family: $RubikSansFont;
     margin: 20px 0 -32px 0;
 }
 @mixin burger-menu {
@@ -252,10 +253,10 @@ body {
 				z-index: 99;
                 height: 72px;
                 @include desktop-up {
-                    height: 61px;
+                    height: 70px;
 				}
                 @include custom-desktop {
-                    height: 61px;
+                    height: 62px;
                 }
                 @include large-desktop-up {
                     height: 64px;
@@ -308,7 +309,6 @@ body {
 					letter-spacing: 2px;
 					margin-left: 15px;
 					position: relative;
-					transition: $ease-quarter-sec;
 					padding: 1px 1px 0 1px;
 					border-radius: 3px;
 					&:hover {
@@ -346,7 +346,6 @@ body {
 					}
 					@include desktop-up {
 						font-size: 33px;
-//						top: -3px;
 						position: absolute;
 						margin-top: -13px;
 						margin-right: 60px;
@@ -355,7 +354,7 @@ body {
 						font-size: 34px;
 				        top: 0px;
                         left: 15px;
-                        height: 72px;
+                        height: 62px;
                         display: inline-block;
                         border-radius: 75px;
 					}
@@ -363,7 +362,7 @@ body {
 						font-size: 37px;
                         top: 0px;
                         left: 15px;
-                        height: 72px;
+                        height: 64px;
                         display: inline-block;
                         border-radius: 75px;
 					}
@@ -371,7 +370,7 @@ body {
                         font-size: 36px;
                         top: 0px;
                         left: 15px;
-                        height: 72px;
+                        height: 71px;
                         display: inline-block;
                         border-radius: 75px;  
                     }
@@ -394,7 +393,9 @@ body {
 			nav {
 				&#navigation {
 					a {
+                        border-bottom: none;
 						&:hover, &:focus {
+                            border-bottom: none;
 							text-decoration: none;
     						outline: 2px dashed rgba(0, 0, 0, 0.5);
 						}
@@ -403,6 +404,7 @@ body {
 						}
 						&:active, &:focus {
 							@include link-props-active-focus;
+                            border-bottom: none;
 							position: relative;
     						top: 1px;
 						}
@@ -880,7 +882,7 @@ body {
 					}
 					@include tablet-landscape-up {
 						left: 300px;
-					}	
+					}
 				}
 			}
 			@-moz-document url-prefix() {
@@ -902,12 +904,14 @@ body {
 	.site-container {
         a {
             transition: $ease-eighth-sec;
+            border-bottom: 4px solid;
             &:hover {
                  color: $black;
                 text-decoration: none;
                 text-shadow: 0 0 40px;
                 -webkit-text-stroke: 1px;
-                background: white;               
+                background: white;
+                border-bottom: none;
             }
             &:active, &:focus {
                 color: $black;
@@ -916,6 +920,7 @@ body {
                 -webkit-text-stroke: 1.5px;
                 background: white;
                 outline: dotted 2px;
+                border-bottom: none;
             }
         }
 		.site-inner {
@@ -927,8 +932,7 @@ body {
 			background-color: $surge-bg-color;
 			background-image: $main-background;
 			background-position: $main-background-pos;
-			filter: $sepia-sat-bright-hue-ii;
-			
+			background-size: 100% 65%;
 			&.bground1 {
 				background-image: $surge-bg1;
 			}
@@ -944,36 +948,133 @@ body {
 			&.bground5 {
 				background-image: $surge-bg5;
 			}
+            .filter {
+                backdrop-filter: blur(3px);
+//                filter: drop-shadow(2px 4px 6px $black);
+            }
 			.banner-title {
 				text-shadow: 1px 2px 6px #000;
+                transition: $ease-quarter-sec;
                 @include banner-title;
 				@include extra-extra-small {
 					font-size: 32px;
+                    line-height: 1.0em;
 				}
+                @include phone-only-up {
+					font-size: 40px;
+                    line-height: 1.02em;
+				}
+                @include tablet-portrait-up {
+					font-size: 45px;
+                    line-height: 1.07em;
+				}
+                @include tablet-landscape-up { 
+                    font-size: 50px;
+                }
+                @include tablet-landscape-up {
+                    font-size: 55px;
+                }
+                @include desktop-up { 
+                    font-size: 60px;
+                }
                 &.site-description {
                     &::before {
                         content: '';
                         background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only.png);
                         margin: 0 auto;
-                        width: 1020px;
-                        height: 250px;
+                        width: 1040px;
+                        height: 230px;
                         display: block;
+                        border-bottom: solid 10px #ebffe7;
+                        background-repeat: no-repeat;
+                        box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
+                        transition: $ease-quarter-sec;
+                        @include extra-extra-small {
+                            width: 280px;
+                            height: 65px;
+                            background-size: contain;
+                        }
+                        @include phone-only-up {
+                            width: 440px;
+                            height: 110px;
+                            background-size: contain;
+                        }											
+                        @include tablet-portrait-up {
+                            width: 550px;
+                            height: 127px;
+                            background-size: contain;
+                        }
+                        @include tablet-landscape-up {
+                            width: 700px;
+                            height: 165px;
+                            background-size: contain;
+					    }
+                        @include desktop-up {
+                            width: 740px;
+                            height: 175px;
+                            background-size: contain;
+                        }
+                        @include custom-desktop {
+                            width: 800px;
+                            height: 185px;
+                            background-size: contain;
+                        }                        
                     }
                 }                
 			}
 			h3 {
 				&.archive-title { 
-					text-shadow: 0 0 3px black;
+                    text-shadow: 1px 1px 5px black;
+                    font-family: $RubikSansFont;
+                    font-size: 60px;
+                    margin-top: 3%;
+                    font-weight: 700;
+                    color: #ebffe7;
 				}
-			}          
+			}      
 		}
 		div {
 			&.wrap {
 				max-width: 1620px;
 				main {
 					&.content {
+                        h2 {
+                            &.wp-block-heading {
+                                &.has-text-align-center {
+                                    font-size: 50px;
+                                    @include tablet-portrait-up {
+                                        font-size: 45px;
+                                    }
+                                    @include phone-only-up {
+                                        font-size: 40px;
+                                    }	
+                                    @include extra-extra-small {
+                                        font-size: 35px;
+                                    }										
+                                }
+                            }
+                        }
 						width: 95%;
 						@include main-content;
+                        button {
+                            background: #575872;
+                            margin-left: -1px;
+                            word-break: normal;
+                            font-family: "Rubik", sans-serif;
+                            text-shadow: 0 0 20px #a2a2a2;
+                            -webkit-text-stroke: 1px #a9a9a2;
+                            font-weight: 700;
+                            border-radius: 0 16px 15px 0;
+                            transition: $ease-quarter-sec;
+                            &:hover {
+                                background: $black;
+                                box-shadow: 8px 7px 14px #75858a;
+                            }
+                            &:active, &:focus {
+                                outline: dashed 3px #555e60;
+                                box-shadow: 11px 10px 25px #75858a;
+                            }
+                        }
 					}
 					.entry {
 						background: none !important;
@@ -981,6 +1082,22 @@ body {
 					.nf-form-hp {
    						position: inherit;
 					}
+                    .nf-form-cont {
+                        span {
+                            h3 {
+                                font-size: 70px;
+                                @include extra-extra-small {
+                                    font-size: 22px;
+                                }
+                                @include phone-only-up {
+                                    font-size: 50px;
+                                }											
+                                @include tablet-portrait-up {
+                                    font-size: 60px;
+                                }
+                            }
+                        }
+                    }
 				}
 			}
 		}
@@ -1200,16 +1317,16 @@ body {
 		}
 	}
 	.site-footer {
-		border-top: 1px solid #E9E9E9;
+		border-top: 1px solid #eaf4f0;
 		color: #666;
 		font-size: 16px;
 		padding: 30px 0;
 		text-align: center;
-		background-color: #e2e4dd;
+		background-color: #d3e9e4;
 	}
 	.footer-widgets {
-		background: none repeat scroll 0 0 #d7d9d0;
-		border-top: 2px solid #EEE3D7;
+		background: none repeat scroll 0 0 #d5e1d3;
+		border-top: 2px solid #e1eae7;
 		padding: 40px 0 16px;
 		.wrap {			
 			.widget-area {
@@ -1301,7 +1418,7 @@ body {
                                         height: 80px;
                                         padding-top: 9px;
                                         border-radius: 10px;
-                                        font-family: "Rubik", sans-serif;
+                                        font-family: $RubikSansFont;
                                         text-shadow: 0 0 20px #a2a2a2;
                                         -webkit-text-stroke: 1px #a9a9a2;
                                         font-weight: 700;

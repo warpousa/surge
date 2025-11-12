@@ -2,7 +2,7 @@
 /* SURGE-styles*/
 
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap|family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap|family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 /* End Fonts */
 
 body {
@@ -33,10 +33,10 @@ body {
     height: 72px; }
     @media only screen and (min-width: 992px) and (max-width: 1023px) {
       body header#header.site-header {
-        height: 61px; } }
+        height: 70px; } }
     @media only screen and (min-width: 1023px) and (max-width: 1200px) {
       body header#header.site-header {
-        height: 61px; } }
+        height: 62px; } }
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body header#header.site-header {
         height: 64px; } }
@@ -81,7 +81,6 @@ body {
       letter-spacing: 2px;
       margin-left: 15px;
       position: relative;
-      transition: ease all 0.25s;
       padding: 1px 1px 0 1px;
       border-radius: 3px; }
       body header#header .site-title a:hover {
@@ -139,7 +138,7 @@ body {
           font-size: 34px;
           top: 0px;
           left: 15px;
-          height: 72px;
+          height: 62px;
           display: inline-block;
           border-radius: 75px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
@@ -147,7 +146,7 @@ body {
           font-size: 37px;
           top: 0px;
           left: 15px;
-          height: 72px;
+          height: 64px;
           display: inline-block;
           border-radius: 75px; } }
       @media only screen and (min-width: 1400px) {
@@ -155,7 +154,7 @@ body {
           font-size: 36px;
           top: 0px;
           left: 15px;
-          height: 72px;
+          height: 71px;
           display: inline-block;
           border-radius: 75px; } }
       @media only screen and (min-width: 992px) and (max-width: 1023px) {
@@ -170,28 +169,32 @@ body {
       @media only screen and (min-width: 1400px) {
         body header#header .site-title a img {
           max-height: 68px; } }
-  body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
-    text-decoration: none;
-    outline: 2px dashed rgba(0, 0, 0, 0.5); }
-  body header#header nav#navigation a:hover {
-    color: black;
-    text-shadow: 0px 0px 12px grey;
-    -webkit-text-stroke: 0.03em black;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    background: rgba(140, 155, 155, 0.18); }
-  body header#header nav#navigation a:active, body header#header nav#navigation a:focus {
-    outline: 2px dashed rgba(0, 0, 0, 0.5);
-    color: black;
-    text-shadow: 0px 0px 0.034em black;
-    -webkit-text-stroke: 0.055em black;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    background: rgba(140, 155, 155, 0.33);
-    position: relative;
-    top: 1px; }
+  body header#header nav#navigation a {
+    border-bottom: none; }
+    body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
+      border-bottom: none;
+      text-decoration: none;
+      outline: 2px dashed rgba(0, 0, 0, 0.5); }
+    body header#header nav#navigation a:hover {
+      color: black;
+      text-shadow: 0px 0px 12px grey;
+      -webkit-text-stroke: 0.03em black;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      background: rgba(140, 155, 155, 0.18); }
+    body header#header nav#navigation a:active, body header#header nav#navigation a:focus {
+      outline: 2px dashed rgba(0, 0, 0, 0.5);
+      color: black;
+      text-shadow: 0px 0px 0.034em black;
+      -webkit-text-stroke: 0.055em black;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      background: rgba(140, 155, 155, 0.33);
+      border-bottom: none;
+      position: relative;
+      top: 1px; }
   @media only screen and (min-width: 480px) and (max-width: 576px) {
     body header#header nav#navigation {
       margin-right: 10px; } }
@@ -634,29 +637,32 @@ body {
         max-width: 234px;
         height: 56px; } } }
   body .site-container a {
-    transition: ease all 0.125s; }
+    transition: ease all 0.125s;
+    border-bottom: 4px solid; }
     body .site-container a:hover {
       color: black;
       text-decoration: none;
       text-shadow: 0 0 40px;
       -webkit-text-stroke: 1px;
-      background: white; }
+      background: white;
+      border-bottom: none; }
     body .site-container a:active, body .site-container a:focus {
       color: black;
       text-decoration: none;
       text-shadow: 0 0 57px;
       -webkit-text-stroke: 1.5px;
       background: white;
-      outline: dotted 2px; }
+      outline: dotted 2px;
+      border-bottom: none; }
   body .site-container .site-inner {
-    background: linear-gradient(0deg, #c4c8c3 0%, #a8aba7 24%, #5e6365 100%);
+    background: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%);
     padding: 30px 0; }
   body .site-container .banner {
     box-shadow: #353737 0px -8px 15px 20px;
     background-color: black;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
-    filter: saturate(80%) brightness(100%) hue-rotate(30deg); }
+    background-size: 100% 65%; }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
     body .site-container .banner.bground2 {
@@ -667,26 +673,86 @@ body {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground4.jpg) !important; }
     body .site-container .banner.bground5 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground5.jpg) !important; }
+    body .site-container .banner .filter {
+      backdrop-filter: blur(3px); }
     body .site-container .banner .banner-title {
       text-shadow: 1px 2px 6px #000;
+      transition: ease all 0.25s;
       color: #f9ffdc;
-      font-size: 60px;
+      font-size: 96px;
       font-weight: 600;
       margin-bottom: 8px;
       font-family: "Rubik", sans-serif;
       margin: 20px 0 -32px 0; }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .site-container .banner .banner-title {
-          font-size: 32px; } }
+          font-size: 32px;
+          line-height: 1.0em; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .site-container .banner .banner-title {
+          font-size: 40px;
+          line-height: 1.02em; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .site-container .banner .banner-title {
+          font-size: 45px;
+          line-height: 1.07em; } }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body .site-container .banner .banner-title {
+          font-size: 50px; } }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body .site-container .banner .banner-title {
+          font-size: 55px; } }
+      @media only screen and (min-width: 992px) and (max-width: 1023px) {
+        body .site-container .banner .banner-title {
+          font-size: 60px; } }
       body .site-container .banner .banner-title.site-description::before {
         content: '';
         background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only.png);
         margin: 0 auto;
-        width: 1020px;
-        height: 250px;
-        display: block; }
+        width: 1040px;
+        height: 230px;
+        display: block;
+        border-bottom: solid 10px #ebffe7;
+        background-repeat: no-repeat;
+        box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
+        transition: ease all 0.25s; }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container .banner .banner-title.site-description::before {
+            width: 280px;
+            height: 65px;
+            background-size: contain; } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container .banner .banner-title.site-description::before {
+            width: 440px;
+            height: 110px;
+            background-size: contain; } }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container .banner .banner-title.site-description::before {
+            width: 550px;
+            height: 127px;
+            background-size: contain; } }
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+          body .site-container .banner .banner-title.site-description::before {
+            width: 700px;
+            height: 165px;
+            background-size: contain; } }
+        @media only screen and (min-width: 992px) and (max-width: 1023px) {
+          body .site-container .banner .banner-title.site-description::before {
+            width: 740px;
+            height: 175px;
+            background-size: contain; } }
+        @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+          body .site-container .banner .banner-title.site-description::before {
+            width: 800px;
+            height: 185px;
+            background-size: contain; } }
     body .site-container .banner h3.archive-title {
-      text-shadow: 0 0 3px black; }
+      text-shadow: 1px 1px 5px black;
+      font-family: "Rubik", sans-serif;
+      font-size: 60px;
+      margin-top: 3%;
+      font-weight: 700;
+      color: #ebffe7; }
   body .site-container div.wrap {
     max-width: 1620px; }
     body .site-container div.wrap main.content {
@@ -697,10 +763,48 @@ body {
       padding: 18px;
       border-radius: 10px;
       background: linear-gradient(0deg, #fff9f6 0%, #e8e8e8 33%, #eff2e3 100%); }
+      body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+        font-size: 50px; }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+            font-size: 45px; } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+            font-size: 40px; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+            font-size: 35px; } }
+      body .site-container div.wrap main.content button {
+        background: #575872;
+        margin-left: -1px;
+        word-break: normal;
+        font-family: "Rubik", sans-serif;
+        text-shadow: 0 0 20px #a2a2a2;
+        -webkit-text-stroke: 1px #a9a9a2;
+        font-weight: 700;
+        border-radius: 0 16px 15px 0;
+        transition: ease all 0.25s; }
+        body .site-container div.wrap main.content button:hover {
+          background: black;
+          box-shadow: 8px 7px 14px #75858a; }
+        body .site-container div.wrap main.content button:active, body .site-container div.wrap main.content button:focus {
+          outline: dashed 3px #555e60;
+          box-shadow: 11px 10px 25px #75858a; }
     body .site-container div.wrap main .entry {
       background: none !important; }
     body .site-container div.wrap main .nf-form-hp {
       position: inherit; }
+    body .site-container div.wrap main .nf-form-cont span h3 {
+      font-size: 70px; }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .site-container div.wrap main .nf-form-cont span h3 {
+          font-size: 22px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .site-container div.wrap main .nf-form-cont span h3 {
+          font-size: 50px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .site-container div.wrap main .nf-form-cont span h3 {
+          font-size: 60px; } }
   body .site-container h1.bground-title {
     font-family: "Special Elite", system-ui;
     letter-spacing: 21px;
@@ -898,15 +1002,15 @@ body {
         text-rendering: optimizeLegibility;
         background: rgba(140, 155, 155, 0.33); }
   body .site-footer {
-    border-top: 1px solid #E9E9E9;
+    border-top: 1px solid #eaf4f0;
     color: #666;
     font-size: 16px;
     padding: 30px 0;
     text-align: center;
-    background-color: #e2e4dd; }
+    background-color: #d3e9e4; }
   body .footer-widgets {
-    background: none repeat scroll 0 0 #d7d9d0;
-    border-top: 2px solid #EEE3D7;
+    background: none repeat scroll 0 0 #d5e1d3;
+    border-top: 2px solid #e1eae7;
     padding: 40px 0 16px; }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .footer-widgets .wrap .widget-area .widget {
