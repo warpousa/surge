@@ -39,32 +39,32 @@ $xxl:  1400px;
 
 //////////////
 
-@mixin lowres-vertical {
-	@media only screen and (max-height: $lv) and (max-width: $clg ) { @content}	
-}
-@mixin extra-extra-small {
-  @media only screen and (min-width: $xxs) and (max-width: $xs) { @content; }
-}
-@mixin phone-only-up {
-  @media only screen and (min-width: $xs) and (max-width: $sm) { @content; }	
-}
-@mixin tablet-portrait-up {
-  @media only screen and (min-width: $sm) and (max-width: $md) { @content; }	
-}
-@mixin tablet-landscape-up {
-  @media only screen and (min-width: $md) and (max-width: $lg) { @content; }	
-}
-@mixin desktop-up {
-  @media only screen and (min-width: $lg) and (max-width: $clg) { @content; }	
-}
-@mixin custom-desktop {
-  @media only screen and (min-width: $clg) and (max-width: $xl) { @content; }	
+@mixin hd-desktop-up {
+  @media only screen and (min-width: $xxl) { @content; }	
 }
 @mixin large-desktop-up {
   @media only screen and (min-width: $xl) and (max-width: $xxl) { @content; }	
 }
-@mixin hd-desktop-up {
-  @media only screen and (min-width: $xxl) { @content; }	
+@mixin custom-desktop {
+  @media only screen and (min-width: $clg) and (max-width: $xl) { @content; }	
+}
+@mixin desktop-up {
+  @media only screen and (min-width: $lg) and (max-width: $clg) { @content; }	
+}
+@mixin tablet-landscape-up {
+  @media only screen and (min-width: $md) and (max-width: $lg) { @content; }	
+}
+@mixin tablet-portrait-up {
+  @media only screen and (min-width: $sm) and (max-width: $md) { @content; }	
+}
+@mixin phone-only-up {
+  @media only screen and (min-width: $xs) and (max-width: $sm) { @content; }	
+}
+@mixin extra-extra-small {
+  @media only screen and (min-width: $xxs) and (max-width: $xs) { @content; }
+}
+@mixin lowres-vertical {
+	@media only screen and (max-height: $lv) and (max-width: $clg ) { @content}	
 }
 
 /* End Breakpoints */
@@ -252,15 +252,15 @@ body {
 				transition: $ease-quarter-sec;
 				z-index: 99;
                 height: 72px;
-                @include desktop-up {
-                    height: 70px;
-				}
-                @include custom-desktop {
-                    height: 62px;
-                }
                 @include large-desktop-up {
                     height: 64px;
                 }
+                @include custom-desktop {
+                    height: 62px;
+                }
+                @include desktop-up {
+                    height: 70px;
+				}
 				&.hide-header {
 					transform: $animate-header;
 				}
@@ -283,16 +283,16 @@ body {
 				}
 			}        
 			.site-title {
-                @include extra-extra-small {
-                    margin-top: -10px;
-                }
-                @include phone-only-up {
+                @include tablet-landscape-up { 
                     margin-top: -10px;
                 }
                 @include tablet-portrait-up { 
                     margin-top: -10px;
                 }
-                @include tablet-landscape-up { 
+                @include phone-only-up {
+                    margin-top: -10px;
+                }                
+                @include extra-extra-small {
                     margin-top: -10px;
                 }
                 transition: $ease-eighth-sec;
@@ -320,52 +320,6 @@ body {
 						outline: dashed 2px rgba(0,0,0,0.3);
 						background-color: rgba(255,255,255,0.3);
 					}
-					@include extra-extra-small {
-						font-size:  23px;
-						margin-top: -1px;
-						position: absolute;
-						margin-right: 38px;
-					}
-					@include phone-only-up {
-						font-size: 24px;
-						margin-top: -1px;
-						position: absolute;
-						margin-right: 38px;
-					}
-					@include tablet-portrait-up { 
-						font-size: 25px;
-						margin-top: -1px;
-						position: absolute;
-						margin-right: 38px;
-					}
-					@include tablet-landscape-up { 
-						font-size: 26px;
-						margin-top: -1px;
-						position: absolute;
-						margin-right: 38px;
-					}
-					@include desktop-up {
-						font-size: 33px;
-						position: absolute;
-						margin-top: -13px;
-						margin-right: 60px;
-					}
-					@include custom-desktop {
-						font-size: 34px;
-				        top: 0px;
-                        left: 15px;
-                        height: 62px;
-                        display: inline-block;
-                        border-radius: 75px;
-					}
-					@include large-desktop-up {
-						font-size: 37px;
-                        top: 0px;
-                        left: 15px;
-                        height: 64px;
-                        display: inline-block;
-                        border-radius: 75px;
-					}
 					@include hd-desktop-up {
                         font-size: 36px;
                         top: 0px;
@@ -373,19 +327,65 @@ body {
                         height: 71px;
                         display: inline-block;
                         border-radius: 75px;  
-                    }
+                    }                    
+ 					@include large-desktop-up {
+						font-size: 37px;
+                        top: 0px;
+                        left: 15px;
+                        height: 64px;
+                        display: inline-block;
+                        border-radius: 75px;
+					}                   
+					@include custom-desktop {
+						font-size: 34px;
+				        top: 0px;
+                        left: 15px;
+                        height: 62px;
+                        display: inline-block;
+                        border-radius: 75px;
+					}                    
+					@include desktop-up {
+						font-size: 33px;
+						position: absolute;
+						margin-top: -13px;
+						margin-right: 60px;
+					}                    
+ 					@include tablet-landscape-up { 
+						font-size: 26px;
+						margin-top: -1px;
+						position: absolute;
+						margin-right: 38px;
+					}                   
+  					@include tablet-portrait-up { 
+						font-size: 25px;
+						margin-top: -1px;
+						position: absolute;
+						margin-right: 38px;
+					}                 
+					@include phone-only-up {
+						font-size: 24px;
+						margin-top: -1px;
+						position: absolute;
+						margin-right: 38px;
+					}                    
+					@include extra-extra-small {
+						font-size:  23px;
+						margin-top: -1px;
+						position: absolute;
+						margin-right: 38px;
+					}
                     img {
-                        @include desktop-up {
-                            max-height: 58px;
-                        }
+                        @include hd-desktop-up { 
+                            max-height: 68px;
+                        }                       
+                         @include large-desktop-up { 
+                            max-height: 62px;
+                        }                       
                         @include custom-desktop { 
                             max-height: 60px;
                         }
-                        @include large-desktop-up { 
-                            max-height: 62px;
-                        }
-                        @include hd-desktop-up { 
-                            max-height: 68px;
+                        @include desktop-up {
+                            max-height: 58px;
                         }
                     }
 				}
@@ -409,23 +409,23 @@ body {
     						top: 1px;
 						}
 					}
-					@include phone-only-up {
-						margin-right: 10px;
-					}
+					@include hd-desktop-up {
+						margin-right: 35px;
+					}              
+					@include large-desktop-up {
+						margin-right: 30px;
+					}                    
+					@include desktop-up {
+						margin-right: 25px;
+					}                    
+ 					@include tablet-landscape-up { 
+						margin-right: 20px;
+					}                   
 					@include tablet-portrait-up { 
 						margin-right: 15px;
 					}
-					@include tablet-landscape-up { 
-						margin-right: 20px;
-					}
-					@include desktop-up {
-						margin-right: 25px;
-					}
-					@include large-desktop-up {
-						margin-right: 30px;
-					}
-					@include hd-desktop-up {
-						margin-right: 35px;
+					@include phone-only-up {
+						margin-right: 10px;
 					}
 					&.nav-primary {
 						@include extra-extra-small {
@@ -439,6 +439,60 @@ body {
 								}
 							}
 						}
+                        @include hd-desktop-up {
+							a {
+								&#menu-icon {
+                                    display: none;
+								}
+							}	
+						}                           
+                        @include large-desktop-up {
+							a {
+								&#menu-icon {
+                                    display: none;
+								}
+							}	
+						}                       
+                        @include custom-desktop {
+							a {
+								&#menu-icon {
+                                    display: none;
+								}
+							}	
+						}                      
+                         @include desktop-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+                                        padding: 30px 64px 25px 5px;
+                                        top: 9px;
+                                        @include burger-menu;
+									}
+								}
+							}
+						}                       
+                        @include tablet-landscape-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+                                        padding: 30px 64px 25px 5px;
+                                        top: 9px;
+                                        @include burger-menu;
+									}
+								}
+							}
+						}                         
+						@include tablet-portrait-up {
+							a {
+								&#menu-icon {
+									&.menu-icon {
+                                        padding: 30px 64px 25px 5px;
+                                        top: 9px;
+                                        @include burger-menu;
+									}
+								}
+							}
+						}                         
 						@include phone-only-up {
 							a {
 								&#menu-icon {
@@ -450,60 +504,6 @@ body {
 								}
 							}
 						}
-						@include tablet-portrait-up {
-							a {
-								&#menu-icon {
-									&.menu-icon {
-                                        padding: 30px 64px 25px 5px;
-                                        top: 9px;
-                                        @include burger-menu;
-									}
-								}
-							}
-						} 
-                        @include tablet-landscape-up {
-							a {
-								&#menu-icon {
-									&.menu-icon {
-                                        padding: 30px 64px 25px 5px;
-                                        top: 9px;
-                                        @include burger-menu;
-									}
-								}
-							}
-						} 
-                        @include desktop-up {
-							a {
-								&#menu-icon {
-									&.menu-icon {
-                                        padding: 30px 64px 25px 5px;
-                                        top: 9px;
-                                        @include burger-menu;
-									}
-								}
-							}
-						}
-                        @include custom-desktop {
-							a {
-								&#menu-icon {
-                                    display: none;
-								}
-							}	
-						}
-                        @include large-desktop-up {
-							a {
-								&#menu-icon {
-                                    display: none;
-								}
-							}	
-						}
-                        @include hd-desktop-up {
-							a {
-								&#menu-icon {
-                                    display: none;
-								}
-							}	
-						}                            
 						ul {
 							&.menu {
 							    border-top: $topborder;
@@ -512,34 +512,6 @@ body {
 									overflow-y: scroll;
     								overflow-x: hidden;
 									height: 118vh;
-								}
-								@include extra-extra-small {
-									left: 0px;
-									top: 72px;
-									width: 100%;
-									margin: 0;
-                                    box-shadow: $tablet-mobile-shadow;
-								}
-								@include phone-only-up {
-									left: 0px;
-									top: 72px;
-									width: 100%;
-									margin: 0;
-                                    box-shadow: $tablet-mobile-shadow;
-								}
-								@include tablet-portrait-up {
-									left: 0px;
-									top: 72px;
-									width: 100%;
-									margin: 0;
-                                    box-shadow: $tablet-mobile-shadow;
-								}
-								@include tablet-landscape-up {
-									left: 0px;
-									top: 72px;
-									width: 100%;
-									margin: 0;
-                                    box-shadow: $tablet-mobile-shadow;
 								}
 								@include desktop-up {
 									left: 0px;
@@ -764,41 +736,69 @@ body {
 											margin-top: -39px;
 											position: absolute;
 										    z-index: 99;
-											@include extra-extra-small {
+											@include hd-desktop-up {
+												margin-top: -45px;
+												margin-left: 14px !important;
+											}                                            
+ 											@include large-desktop-up {
+												margin-top: -41px;
+												margin-left: 14px !important;
+											}                                           
+ 											@include custom-desktop {
 												margin-top: -39px;
 												margin-left: 14px !important;
-											}
-											@include phone-only-up {
-												margin-top: -39px;
-												margin-left: 14px !important;		
-											}
-											@include tablet-portrait-up {
-												margin-top: -39px;
-												margin-left: 14px !important;
-											}
-											@include tablet-landscape-up {
-												margin-top: -39px;
-												margin-left: 14px !important;
-											}
+											}                                           
 											@include desktop-up {
 												margin-top: -39px;
 												margin-left: 14px !important;
-											}
-											@include custom-desktop {
+											}                                           
+ 											@include tablet-landscape-up {
 												margin-top: -39px;
 												margin-left: 14px !important;
-											}
-											@include large-desktop-up {
-												margin-top: -41px;
+											}                                           
+											@include tablet-portrait-up {
+												margin-top: -39px;
 												margin-left: 14px !important;
-											}
-											@include hd-desktop-up {
-												margin-top: -45px;
+											}                                            
+  											@include phone-only-up {
+												margin-top: -39px;
+												margin-left: 14px !important;		
+											}                                          
+											@include extra-extra-small {
+												margin-top: -39px;
 												margin-left: 14px !important;
 											}
 										}
 									}
 								}
+								@include extra-extra-small {
+									left: 0px;
+									top: 72px;
+									width: 100%;
+									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
+								}                                
+								@include phone-only-up {
+									left: 0px;
+									top: 72px;
+									width: 100%;
+									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
+								}
+ 								@include tablet-portrait-up {
+									left: 0px;
+									top: 72px;
+									width: 100%;
+									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
+								}                                
+ 								@include tablet-landscape-up {
+									left: 0px;
+									top: 72px;
+									width: 100%;
+									margin: 0;
+                                    box-shadow: $tablet-mobile-shadow;
+								}                               
 							}
 						}
 					}
@@ -817,20 +817,20 @@ body {
 			input {
 				border: solid 1px;
 				transition: $ease-eighth-sec;
+  				@include tablet-landscape-up {
+					max-width: 500px;
+				}	              
+  				@include tablet-portrait-up {
+					max-width: 340px;
+				}              
+                @include phone-only-up {
+					max-width: 260px;
+					font-size: 22px;
+				}            
 				@include extra-extra-small {
 					max-width: 180px;
 					font-size: 14px;
 				}
-				@include phone-only-up {
-					max-width: 260px;
-					font-size: 22px;
-				}
-				@include tablet-portrait-up {
-					max-width: 340px;
-				}
-				@include tablet-landscape-up {
-					max-width: 500px;
-				}	
 				transition: $ease-eighth-sec;
 				&[type="submit"] {
 					left: 388px;
@@ -889,14 +889,14 @@ body {
     			input {
 					height: 81px;
 				  	margin-right: -25px;	
-					@include extra-extra-small {
-						max-width: 153px;
-  						height: 46px;
-					}
 				  	@include phone-only-up {
 						max-width: 234px;
   						height: 56px;
 					}
+					@include extra-extra-small {
+						max-width: 153px;
+  						height: 46px;
+					}                    
     			}
 			}
 		}
@@ -968,27 +968,27 @@ body {
 				text-shadow: 1px 2px 6px #000;
                 transition: $ease-quarter-sec;
                 @include banner-title;
+                @include desktop-up { 
+                    font-size: 60px;
+                }               
+                @include tablet-landscape-up {
+                    font-size: 55px;
+                }             
+                @include tablet-landscape-up { 
+                    font-size: 50px;
+                }
+                @include tablet-portrait-up {
+					font-size: 45px;
+                    line-height: 1.07em;
+				}               
+                @include phone-only-up {
+					font-size: 40px;
+                    line-height: 1.02em;
+				}              
 				@include extra-extra-small {
 					font-size: 32px;
                     line-height: 1.0em;
 				}
-                @include phone-only-up {
-					font-size: 40px;
-                    line-height: 1.02em;
-				}
-                @include tablet-portrait-up {
-					font-size: 45px;
-                    line-height: 1.07em;
-				}
-                @include tablet-landscape-up { 
-                    font-size: 50px;
-                }
-                @include tablet-landscape-up {
-                    font-size: 55px;
-                }
-                @include desktop-up { 
-                    font-size: 60px;
-                }
                 &.site-description {
                     &::before {
                         content: '';
@@ -1006,31 +1006,31 @@ body {
                             height: 65px;
                             background-size: contain;
                         }
-                        @include phone-only-up {
-                            width: 440px;
-                            height: 110px;
+                         @include custom-desktop {
+                            width: 800px;
+                            height: 185px;
                             background-size: contain;
-                        }											
-                        @include tablet-portrait-up {
-                            width: 550px;
-                            height: 127px;
-                            background-size: contain;
-                        }
-                        @include tablet-landscape-up {
-                            width: 700px;
-                            height: 165px;
-                            background-size: contain;
-					    }
+                        }                      
                         @include desktop-up {
                             width: 740px;
                             height: 175px;
                             background-size: contain;
                         }
-                        @include custom-desktop {
-                            width: 800px;
-                            height: 185px;
+                         @include tablet-landscape-up {
+                            width: 700px;
+                            height: 165px;
                             background-size: contain;
-                        }                        
+					    }                       
+                        @include tablet-portrait-up {
+                            width: 550px;
+                            height: 127px;
+                            background-size: contain;
+                        }                       
+                        @include phone-only-up {
+                            width: 440px;
+                            height: 110px;
+                            background-size: contain;
+                        }
                     }
                 }                
 			}
@@ -1098,14 +1098,15 @@ body {
                         span {
                             h3 {
                                 font-size: 70px;
-                                @include extra-extra-small {
-                                    font-size: 22px;
+                                @include tablet-portrait-up {
+                                    font-size: 60px;
                                 }
                                 @include phone-only-up {
                                     font-size: 50px;
-                                }											
-                                @include tablet-portrait-up {
-                                    font-size: 60px;
+                                }                              
+                                
+                                @include extra-extra-small {
+                                    font-size: 22px;
                                 }
                             }
                         }
@@ -1171,14 +1172,13 @@ body {
 						font-size: 22px;
 						width: 125px;
                         z-index: 99;
-						@include custom-desktop {
+ 						@include hd-desktop-up {
 							background-position: 13px 37px;
-							font-size: 38px;
-							top: -36px !important;
-							right: 30px !important;
-							background-size: 78px 19px;
+							font-size: 64px !important;
+							top: -41px !important;
+							right: 44px !important;
                             z-index: -1;
-						}
+						}                       
 						@include large-desktop-up {
 							background-position: 13px 37px;
 							font-size: 50px;
@@ -1187,14 +1187,15 @@ body {
 							background-size: 90px 26px;
                             z-index: -1;
 
-						}
-						@include hd-desktop-up {
+						}                       
+						@include custom-desktop {
 							background-position: 13px 37px;
-							font-size: 64px !important;
-							top: -41px !important;
-							right: 44px !important;
+							font-size: 38px;
+							top: -36px !important;
+							right: 30px !important;
+							background-size: 78px 19px;
                             z-index: -1;
-						}		
+						}
 					}
 					&:hover, &:focus, &:active {
 						background: $menu-item-hover;
@@ -1204,39 +1205,39 @@ body {
   						outline: dotted #aeaeae 2px;
 						&::before {
 							opacity: 1;
-							@include extra-extra-small {
-								right: 6px !important;
-                                top: -6px;
-							}
-							@include phone-only-up {
-								right: 6px !important;
-                                top: -6px;
-							}
-							@include tablet-portrait-up {
-								right: 6px !important;
-                                top: -6px;
-							}
-							@include tablet-landscape-up {
-								right: -40px !important;
-								font-size: 25px;
-                                top: -7px;
-							}						
-							@include desktop-up {
-								right: -30px !important;
+ 							@include hd-desktop-up {
+								right: 1px !important;
                                 z-index: -1;
-							}
+							}	                           
+ 						    @include large-desktop-up {
+								right: -15px !important;
+                                z-index: -1;
+							}                           
 							@include custom-desktop {
 								right: -30px !important;
                                 z-index: -1;
 							}
-							@include large-desktop-up {
-								right: -15px !important;
+  							@include desktop-up {
+								right: -30px !important;
                                 z-index: -1;
+							}                          
+							@include tablet-landscape-up {
+								right: -40px !important;
+								font-size: 25px;
+                                top: -7px;
+							}                            
+							@include tablet-portrait-up {
+								right: 6px !important;
+                                top: -6px;
+							}                            
+ 							@include phone-only-up {
+								right: 6px !important;
+                                top: -6px;
+							}                           
+							@include extra-extra-small {
+								right: 6px !important;
+                                top: -6px;
 							}
-							@include hd-desktop-up {
-								right: 1px !important;
-                                z-index: -1;
-							}						
 						}
 					}
 					&:focus, &:focus-visible, &:focus-within {
@@ -1257,24 +1258,24 @@ body {
 						margin-left: 0;
 						border-top: dashed 1px darkgrey;
 						border-bottom: dashed 1px darkgrey !important;
-						@include desktop-up {
-							box-shadow: none;
-							width: 100%;
-						}
-						@include custom-desktop {
-							box-shadow: $submenu-shadow1;
-							width: 22%;
-							max-width: 300px;
-						}
-						@include large-desktop-up {
-							box-shadow: $submenu-shadow1;
-							width: 23%;
-							max-width: 400px;
-						}
-						@include hd-desktop-up {
+ 						@include hd-desktop-up {
 							box-shadow: $submenu-shadow1;
 							width: 18%;
 							max-width: 480px;
+						}                      
+ 						@include large-desktop-up {
+							box-shadow: $submenu-shadow1;
+							width: 23%;
+							max-width: 400px;
+						}                       
+ 						@include custom-desktop {
+							box-shadow: $submenu-shadow1;
+							width: 22%;
+							max-width: 300px;
+						}                      
+						@include desktop-up {
+							box-shadow: none;
+							width: 100%;
 						}
 					}
 				}		
@@ -1304,14 +1305,14 @@ body {
         }
         .ajax-results {
             font-size: 130%;
-            @include extra-extra-small {
-                font-size: 100%;
-            }
-            @include phone-only-up {
-                font-size: 110%;
-            }
             @include tablet-portrait-up {
                 font-size: 120%;
+            }       
+            @include phone-only-up {
+                font-size: 110%;
+            }            
+            @include extra-extra-small {
+                font-size: 100%;
             }
         }
 		a {
@@ -1342,30 +1343,30 @@ body {
 		padding: 40px 0 16px;
 		.wrap {			
 			.widget-area {
-                @include extra-extra-small {
-                    @include mobile-footer;
-                }
-                @include phone-only-up {
-                    @include mobile-footer;
-                }
-				@include tablet-portrait-up {
+ 				@include hd-desktop-up {
 					@include desktop-footer;
-				}
-				@include tablet-landscape-up {
-					@include desktop-footer;
-				}
-				@include desktop-up {
+				}               
+				@include large-desktop-up {
 					@include desktop-footer;
 				}
 				@include custom-desktop {
 					@include desktop-footer;
 				}
-				@include large-desktop-up {
+ 				@include desktop-up {
+					@include desktop-footer;
+				}               
+				@include tablet-landscape-up {
 					@include desktop-footer;
 				}
-				@include hd-desktop-up {
+				@include tablet-portrait-up {
 					@include desktop-footer;
-				}				
+				}                
+                 @include phone-only-up {
+                    @include mobile-footer;
+                }               
+                @include extra-extra-small {
+                    @include mobile-footer;
+                }
 			}
 		}
 		a {
@@ -1434,16 +1435,16 @@ body {
                                         text-shadow: 0 0 20px #a2a2a2;
                                         -webkit-text-stroke: 1px #a9a9a2;
                                         font-weight: 700;
+                                        @include tablet-portrait-up {
+                                            font-size: 1.8em;
+                                        }                                       
+                                         @include phone-only-up {
+                                            font-size: 1.6em;
+                                            height: 70px;
+                                        }                                       
                                         @include extra-extra-small {
                                             font-size: 1.4em;
                                             height: 60px
-                                        }
-                                        @include phone-only-up {
-                                            font-size: 1.6em;
-                                            height: 70px;
-                                        }
-                                        @include tablet-portrait-up {
-                                            font-size: 1.8em;
                                         }
                                         &:hover {
                                             transform: scale(1.01);
@@ -1534,23 +1535,23 @@ body {
                     width: 100px;
                     height: 100px;                      
                     right: 17px;
+                    @include tablet-portrait-up {
+                        width: 80px;
+                        height: 80px;
+                        top: 13px;
+                    }                    
+                    @include phone-only-up {
+                        font-size: 60px;
+                        width: 60px;
+                        height: 60px;
+                        top: 20px;
+                    }                   
                     @include extra-extra-small {
                         font-size: 50px;
                         width: 50px;
                         height: 50px;
                         top: 25px;
                     }
-                    @include phone-only-up {
-                        font-size: 60px;
-                        width: 60px;
-                        height: 60px;
-                        top: 20px;
-                    }
-                    @include tablet-portrait-up {
-                        width: 80px;
-                        height: 80px;
-                        top: 13px;
-                    }                     
                     transition: $ease-quarter-sec;
                     &:active, &:focus, &:focus-visible {
                         outline: dashed 3px rgba(0, 0, 0, 0.5);
@@ -1584,20 +1585,20 @@ body {
 	        }
             .searchwp-modal-form__close {
                 &:before {
-                font-size: 2em;
-                @include extra-extra-small {
-                    font-size: 1.2em;
-                }
-                @include phone-only-up {
-                    font-size: 1.4em;	
-                }
-                @include tablet-portrait-up {
-                    font-size: 1.6em;
-                }    
-                position: fixed;
-                top: 35px;
-                right: 25px;
-                transition: $ease-eighth-sec; 
+                    font-size: 2em;
+                    position: fixed;
+                    top: 35px;
+                    right: 25px;
+                    transition: $ease-eighth-sec;     
+                    @include tablet-portrait-up {
+                        font-size: 1.6em;
+                    }                 
+                    @include phone-only-up {
+                        font-size: 1.4em;	
+                    }                    
+                    @include extra-extra-small {
+                        font-size: 1.2em;
+                    }
                 }
 	        }
             .searchwp-modal-form__overlay {
