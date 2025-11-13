@@ -862,13 +862,13 @@ body {
 					&:active, &:hover, &:focus {
 						background-color: $black !important;
 					}
-					@include extra-extra-small {
-						max-width: 50px;
-						left: 114px;
-						font-size: 10px;
-						height: 47px;
-						bottom: 46px;
+                    @include tablet-landscape-up {
+						left: 300px;
 					}
+					@include tablet-portrait-up {
+						max-width: 100px;
+						left: 220px;
+					}                    
 					@include phone-only-up {
 						max-width: 75px;
 						left: 167px;
@@ -876,12 +876,12 @@ body {
 						height: 56px;
 						bottom: 55px;
 					}
-					@include tablet-portrait-up {
-						max-width: 100px;
-						left: 220px;
-					}
-					@include tablet-landscape-up {
-						left: 300px;
+                    @include extra-extra-small {
+						max-width: 50px;
+						left: 114px;
+						font-size: 10px;
+						height: 47px;
+						bottom: 46px;
 					}
 				}
 			}
@@ -932,7 +932,19 @@ body {
 			background-color: $surge-bg-color;
 			background-image: $main-background;
 			background-position: $main-background-pos;
-			background-size: 100%;
+			background-size: 100% 66%;
+            @include tablet-landscape-up {
+                background-size: 100% 55%;
+            }
+            @include tablet-portrait-up {
+                background-size: 100% 42%;
+            }               
+            @include phone-only-up {
+                background-size: 100% 35%;
+            }
+            @include extra-extra-small {
+                background-size: 100% 25%;
+            }
 			&.bground1 {
 				background-image: $surge-bg1;
 			}

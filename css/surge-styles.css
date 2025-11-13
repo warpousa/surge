@@ -603,13 +603,13 @@ body {
         box-shadow: 11px 10px 25px #75858a; }
       body .searchwp-modal-form .search-form input.search-submit:active, body .searchwp-modal-form .search-form input.search-submit:hover, body .searchwp-modal-form .search-form input.search-submit:focus {
         background-color: black !important; }
-      @media only screen and (min-width: 0) and (max-width: 480px) {
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
         body .searchwp-modal-form .search-form input.search-submit {
-          max-width: 50px;
-          left: 114px;
-          font-size: 10px;
-          height: 47px;
-          bottom: 46px; } }
+          left: 300px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          max-width: 100px;
+          left: 220px; } }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
         body .searchwp-modal-form .search-form input.search-submit {
           max-width: 75px;
@@ -617,13 +617,13 @@ body {
           font-size: 16px;
           height: 56px;
           bottom: 55px; } }
-      @media only screen and (min-width: 576px) and (max-width: 768px) {
+      @media only screen and (min-width: 0) and (max-width: 480px) {
         body .searchwp-modal-form .search-form input.search-submit {
-          max-width: 100px;
-          left: 220px; } }
-      @media only screen and (min-width: 768px) and (max-width: 992px) {
-        body .searchwp-modal-form .search-form input.search-submit {
-          left: 300px; } }
+          max-width: 50px;
+          left: 114px;
+          font-size: 10px;
+          height: 47px;
+          bottom: 46px; } }
 @-moz-document url-prefix() {
   body .searchwp-modal-form .search-form input {
     height: 81px;
@@ -662,7 +662,19 @@ body {
     background-color: black;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
-    background-size: 100%; }
+    background-size: 100% 66%; }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      body .site-container .banner {
+        background-size: 100% 55%; } }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body .site-container .banner {
+        background-size: 100% 42%; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .site-container .banner {
+        background-size: 100% 35%; } }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .site-container .banner {
+        background-size: 100% 25%; } }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
     body .site-container .banner.bground2 {
