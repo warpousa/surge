@@ -33,13 +33,16 @@ body {
     height: 72px; }
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body header#header.site-header {
-        height: 64px; } }
-    @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+        height: 65px; } }
+    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
       body header#header.site-header {
         height: 62px; } }
-    @media only screen and (min-width: 992px) and (max-width: 1023px) {
+    @media only screen and (min-width: 1023px) and (max-width: 1023px) {
       body header#header.site-header {
-        height: 70px; } }
+        height: 72px !important; } }
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      body header#header.site-header {
+        height: 62px; } }
     body header#header.site-header.hide-header {
       transform: translateY(-568px); }
     body header#header.site-header.is-transparent {
@@ -106,7 +109,6 @@ body {
       @media only screen and (min-width: 1400px) {
         body header#header .site-title a {
           font-size: 36px;
-          top: 0px;
           left: 15px;
           height: 71px;
           display: inline-block;
@@ -114,48 +116,45 @@ body {
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body header#header .site-title a {
           font-size: 37px;
-          top: 0px;
           left: 15px;
           height: 64px;
           display: inline-block;
           border-radius: 75px; } }
-      @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
         body header#header .site-title a {
           font-size: 34px;
-          top: 0px;
           left: 15px;
           height: 62px;
           display: inline-block;
           border-radius: 75px; } }
-      @media only screen and (min-width: 992px) and (max-width: 1023px) {
+      @media only screen and (min-width: 1023px) and (max-width: 1023px) {
         body header#header .site-title a {
           font-size: 33px;
-          position: absolute;
+          margin-right: 60px; } }
+      @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        body header#header .site-title a {
+          font-size: 33px;
           margin-top: -13px;
           margin-right: 60px; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body header#header .site-title a {
           font-size: 26px;
-          margin-top: -1px;
-          position: absolute;
+          margin-top: -5px;
           margin-right: 38px; } }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body header#header .site-title a {
           font-size: 25px;
           margin-top: -1px;
-          position: absolute;
           margin-right: 38px; } }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
         body header#header .site-title a {
           font-size: 24px;
           margin-top: -1px;
-          position: absolute;
           margin-right: 38px; } }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body header#header .site-title a {
           font-size: 23px;
           margin-top: -1px;
-          position: absolute;
           margin-right: 38px; } }
       @media only screen and (min-width: 1400px) {
         body header#header .site-title a img {
@@ -163,10 +162,10 @@ body {
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body header#header .site-title a img {
           max-height: 62px; } }
-      @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
         body header#header .site-title a img {
           max-height: 60px; } }
-      @media only screen and (min-width: 992px) and (max-width: 1023px) {
+      @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body header#header .site-title a img {
           max-height: 58px; } }
   body header#header nav#navigation a {
@@ -201,7 +200,7 @@ body {
   @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     body header#header nav#navigation {
       margin-right: 30px; } }
-  @media only screen and (min-width: 992px) and (max-width: 1023px) {
+  @media only screen and (min-width: 992px) and (max-width: 1024px) {
     body header#header nav#navigation {
       margin-right: 25px; } }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -238,10 +237,10 @@ body {
   @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     body header#header nav#navigation.nav-primary a#menu-icon {
       display: none; } }
-  @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+  @media only screen and (min-width: 1024px) and (max-width: 1200px) {
     body header#header nav#navigation.nav-primary a#menu-icon {
       display: none; } }
-  @media only screen and (min-width: 992px) and (max-width: 1023px) {
+  @media only screen and (min-width: 992px) and (max-width: 1024px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
       padding: 30px 64px 25px 5px;
       top: 9px; }
@@ -319,15 +318,15 @@ body {
           margin-bottom: -5px; } }
   body header#header nav#navigation.nav-primary ul.menu {
     border-top: none !important; }
-    @media only screen and (max-height: 600px) and (max-width: 1023px) {
+    @media only screen and (max-height: 600px) and (max-width: 1024px) {
       body header#header nav#navigation.nav-primary ul.menu {
         overflow-y: scroll;
         overflow-x: hidden;
         height: 118vh; } }
-    @media only screen and (min-width: 992px) and (max-width: 1023px) {
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
-        top: 72px;
+        top: 62px;
         width: 100%;
         margin: 0; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
@@ -410,7 +409,7 @@ body {
         margin-top: 9px;
         z-index: 9999;
         transform: rotate(-90deg); } }
-    @media only screen and (min-width: 992px) and (max-width: 1023px) {
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
       body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children::before {
         color: black;
         content: " › ";
@@ -472,11 +471,11 @@ body {
       text-shadow: none;
       text-shadow: none;
       transition: ease all 0.5s; }
-      @media only screen and (min-width: 992px) and (max-width: 1023px) {
+      @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children > a::after {
           right: 3px;
           bottom: 7px; } }
-      @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
         body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children > a::after {
           right: 3px;
           top: 6px; } }
@@ -501,11 +500,11 @@ body {
           body header#header nav#navigation.nav-primary ul.menu li.current_page_item::after {
             margin-top: -41px;
             margin-left: 14px !important; } }
-        @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
           body header#header nav#navigation.nav-primary ul.menu li.current_page_item::after {
             margin-top: -39px;
             margin-left: 14px !important; } }
-        @media only screen and (min-width: 992px) and (max-width: 1023px) {
+        @media only screen and (min-width: 992px) and (max-width: 1024px) {
           body header#header nav#navigation.nav-primary ul.menu li.current_page_item::after {
             margin-top: -39px;
             margin-left: 14px !important; } }
@@ -662,16 +661,17 @@ body {
     background-color: black;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
-    background-size: 100% 66%; }
+    background-repeat: no-repeat;
+    background-size: 100% 78%; }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body .site-container .banner {
-        background-size: 100% 55%; } }
+        background-size: 100% 60%; } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .site-container .banner {
-        background-size: 100% 42%; } }
+        background-size: 100% 34%; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .site-container .banner {
-        background-size: 100% 35%; } }
+        background-size: 100% 32%; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container .banner {
         background-size: 100% 25%; } }
@@ -695,8 +695,8 @@ body {
       font-weight: 600;
       margin-bottom: 8px;
       font-family: "Rubik", sans-serif;
-      margin: 20px 0 -32px 0; }
-      @media only screen and (min-width: 992px) and (max-width: 1023px) {
+      margin: 20px 0 -76px 0; }
+      @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body .site-container .banner .banner-title {
           font-size: 60px; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -733,12 +733,12 @@ body {
             width: 280px;
             height: 65px;
             background-size: contain; } }
-        @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 800px;
             height: 185px;
             background-size: contain; } }
-        @media only screen and (min-width: 992px) and (max-width: 1023px) {
+        @media only screen and (min-width: 992px) and (max-width: 1024px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 740px;
             height: 175px;
@@ -876,7 +876,7 @@ body {
               right: 37px !important;
               background-size: 90px 26px;
               z-index: -1; } }
-          @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+          @media only screen and (min-width: 1024px) and (max-width: 1200px) {
             body .site-container .omega-nav-menu li a::before {
               background-position: 13px 37px;
               font-size: 38px;
@@ -899,11 +899,11 @@ body {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
                 right: -15px !important;
                 z-index: -1; } }
-            @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+            @media only screen and (min-width: 1024px) and (max-width: 1200px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
                 right: -30px !important;
                 z-index: -1; } }
-            @media only screen and (min-width: 992px) and (max-width: 1023px) {
+            @media only screen and (min-width: 992px) and (max-width: 1024px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
                 right: -30px !important;
                 z-index: -1; } }
@@ -948,12 +948,12 @@ body {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
             width: 23%;
             max-width: 400px; } }
-        @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
           body .site-container .omega-nav-menu li ul.sub-menu {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
             width: 22%;
             max-width: 300px; } }
-        @media only screen and (min-width: 992px) and (max-width: 1023px) {
+        @media only screen and (min-width: 992px) and (max-width: 1024px) {
           body .site-container .omega-nav-menu li ul.sub-menu {
             box-shadow: none;
             width: 100%; } }
@@ -1048,7 +1048,7 @@ body {
           body .footer-widgets .wrap .widget-area section.widget:last-of-type {
             max-width: 120px;
             margin-left: 15px; } }
-    @media only screen and (min-width: 1023px) and (max-width: 1200px) {
+    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
       body .footer-widgets .wrap .widget-area {
         display: flex;
         width: 95%; }
@@ -1060,7 +1060,7 @@ body {
           body .footer-widgets .wrap .widget-area section.widget:last-of-type {
             max-width: 120px;
             margin-left: 15px; } }
-    @media only screen and (min-width: 992px) and (max-width: 1023px) {
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
       body .footer-widgets .wrap .widget-area {
         display: flex;
         width: 95%; }

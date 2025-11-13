@@ -32,7 +32,8 @@ $xs: 	480px;
 $sm: 	576px;
 $md: 	768px;
 $lg: 	992px;
-$clg:  1023px;
+$cfix:  1023px;
+$clg:  1024px;
 $xl:   1200px;
 $xxl:  1400px;
 //// End Horizontal ////
@@ -44,6 +45,9 @@ $xxl:  1400px;
 }
 @mixin large-desktop-up {
   @media only screen and (min-width: $xl) and (max-width: $xxl) { @content; }	
+}
+@mixin desktop-fix {
+  @media only screen and (min-width: $cfix) and (max-width: $cfix) { @content; }	
 }
 @mixin custom-desktop {
   @media only screen and (min-width: $clg) and (max-width: $xl) { @content; }	
@@ -163,7 +167,7 @@ $RubikSansFont: "Rubik", sans-serif;
     font-weight: 600;
     margin-bottom: 8px;
     font-family: $RubikSansFont;
-    margin: 20px 0 -32px 0;
+    margin: 20px 0 -76px 0;
 }
 @mixin burger-menu {
     span {
@@ -253,13 +257,16 @@ body {
 				z-index: 99;
                 height: 72px;
                 @include large-desktop-up {
-                    height: 64px;
+                    height: 65px;
                 }
                 @include custom-desktop {
                     height: 62px;
                 }
+                @include desktop-fix {
+                    height: 72px !important;
+				}                
                 @include desktop-up {
-                    height: 70px;
+                    height: 62px;
 				}
 				&.hide-header {
 					transform: $animate-header;
@@ -322,7 +329,7 @@ body {
 					}
 					@include hd-desktop-up {
                         font-size: 36px;
-                        top: 0px;
+//                        top: 0px;
                         left: 15px;
                         height: 71px;
                         display: inline-block;
@@ -330,7 +337,7 @@ body {
                     }                    
  					@include large-desktop-up {
 						font-size: 37px;
-                        top: 0px;
+//                        top: 0px;
                         left: 15px;
                         height: 64px;
                         display: inline-block;
@@ -338,40 +345,45 @@ body {
 					}                   
 					@include custom-desktop {
 						font-size: 34px;
-				        top: 0px;
+//				        top: 0px;
                         left: 15px;
                         height: 62px;
                         display: inline-block;
                         border-radius: 75px;
-					}                    
+					}
+					@include desktop-fix {
+						font-size: 33px;
+//						position: absolute;
+						margin-right: 60px;
+					}                      
 					@include desktop-up {
 						font-size: 33px;
-						position: absolute;
+//						position: absolute;
 						margin-top: -13px;
 						margin-right: 60px;
 					}                    
  					@include tablet-landscape-up { 
 						font-size: 26px;
-						margin-top: -1px;
-						position: absolute;
+						margin-top: -5px;
+//						position: absolute;
 						margin-right: 38px;
 					}                   
   					@include tablet-portrait-up { 
 						font-size: 25px;
 						margin-top: -1px;
-						position: absolute;
+//						position: absolute;
 						margin-right: 38px;
 					}                 
 					@include phone-only-up {
 						font-size: 24px;
 						margin-top: -1px;
-						position: absolute;
+//						position: absolute;
 						margin-right: 38px;
 					}                    
 					@include extra-extra-small {
 						font-size:  23px;
 						margin-top: -1px;
-						position: absolute;
+//						position: absolute;
 						margin-right: 38px;
 					}
                     img {
@@ -515,7 +527,7 @@ body {
 								}
 								@include desktop-up {
 									left: 0px;
-									top: 72px;
+									top: 62px;
 									width: 100%;
 									margin: 0;
 								}
@@ -932,15 +944,16 @@ body {
 			background-color: $surge-bg-color;
 			background-image: $main-background;
 			background-position: $main-background-pos;
-			background-size: 100% 66%;
+            background-repeat: no-repeat;
+			background-size: 100% 78%;
             @include tablet-landscape-up {
-                background-size: 100% 55%;
+                background-size: 100% 60%;
             }
             @include tablet-portrait-up {
-                background-size: 100% 42%;
+                background-size: 100% 34%;
             }               
             @include phone-only-up {
-                background-size: 100% 35%;
+                background-size: 100% 32%;
             }
             @include extra-extra-small {
                 background-size: 100% 25%;
@@ -970,7 +983,7 @@ body {
                 @include banner-title;
                 @include desktop-up { 
                     font-size: 60px;
-                }               
+                }         
                 @include tablet-landscape-up {
                     font-size: 55px;
                 }             
