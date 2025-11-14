@@ -3,7 +3,7 @@
 
 /* Body Background */
 
-$bodybackground: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
+$bodybackground: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
 
 /* End Body Background */
 
@@ -11,12 +11,23 @@ $bodybackground: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
    
 $main-background: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg); 
 $main-background-pos: 20% -24.8333px;
-$surge-bg-color: black;
+$surge-bg-color: #43616d;
 $surge-bg1: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important;
 $surge-bg2: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground2.jpg) !important;
 $surge-bg3: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground3.jpg) !important;
 $surge-bg4: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground4.jpg) !important;
 $surge-bg5: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground5.jpg) !important;
+$surge-bg6: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground6.jpg) !important;
+$surge-bg7: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground7.jpg) !important;
+$surge-bg8: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground8.jpg) !important;
+$surge-bg9: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground9.jpg) !important;
+$surge-bg10: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground10.jpg) !important;
+$surge-bg11: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground11.jpg) !important;
+$surge-bg12: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground12.jpg) !important;
+$surge-bg13: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground13.jpg) !important;
+$surge-bg14: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground14.jpg) !important;
+$surge-bg15: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground15.jpg) !important;
+$surge-bg16: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground16.jpg) !important;
 
 /* End Background Img Variables  */
 
@@ -225,9 +236,11 @@ $RubikSansFont: "Rubik", sans-serif;
 /////////////////////////////////
 ///////////Start body ///////////
 /////////////////////////////////
+
 body {
 //	background-color: green !important; /* Use this to test SCSS --> CSS output for "signs of life" */
 	background: $bodybackground;
+    height: 100vh;
 	color: $charade;
 	font-family: $EliteFont;
 	input, select, textarea {
@@ -317,7 +330,7 @@ body {
 					margin-left: 15px;
 					position: relative;
 					padding: 1px 1px 0 1px;
-					border-radius: 3px;
+					border-radius: 75px;
 					&:hover {
 						@include link-props-hover;
 						background-color: rgba(255,255,255,0.3);
@@ -329,62 +342,80 @@ body {
 					}
 					@include hd-desktop-up {
                         font-size: 36px;
-//                        top: 0px;
                         left: 15px;
                         height: 71px;
                         display: inline-block;
-                        border-radius: 75px;  
+                        border-radius: 75px;
+                        border-bottom: none;
                     }                    
  					@include large-desktop-up {
 						font-size: 37px;
-//                        top: 0px;
                         left: 15px;
                         height: 64px;
                         display: inline-block;
                         border-radius: 75px;
+                        border-bottom: none;
 					}                   
 					@include custom-desktop {
 						font-size: 34px;
-//				        top: 0px;
                         left: 15px;
                         height: 62px;
                         display: inline-block;
                         border-radius: 75px;
+                        border-bottom: none;
 					}
 					@include desktop-fix {
 						font-size: 33px;
-//						position: absolute;
 						margin-right: 60px;
+                        border-bottom: none;
 					}                      
 					@include desktop-up {
-						font-size: 33px;
-//						position: absolute;
-						margin-top: -13px;
 						margin-right: 60px;
+                        font-size: 0;
+                        margin-top: 0px;
+                        margin-right: 60px;
+                        display: block;
+                        border-bottom: none;
 					}                    
  					@include tablet-landscape-up { 
 						font-size: 26px;
-						margin-top: -5px;
-//						position: absolute;
-						margin-right: 38px;
+                        top: 10px;
+                        display: block;
+                        height: 72px;
+                        border-radius: 72px;
+                        border-bottom: none;
+                        
 					}                   
   					@include tablet-portrait-up { 
 						font-size: 25px;
 						margin-top: -1px;
-//						position: absolute;
 						margin-right: 38px;
+                        top: 10px;
+                        display: block;
+                        height: 72px;
+                        border-radius: 72px;
+                        border-bottom: none;
 					}                 
 					@include phone-only-up {
 						font-size: 24px;
 						margin-top: -1px;
-//						position: absolute;
 						margin-right: 38px;
+                        top: 10px;
+                        display: block;
+                        height: 72px;
+                        border-radius: 72px;
+                        border-bottom: none;
 					}                    
 					@include extra-extra-small {
 						font-size:  23px;
 						margin-top: -1px;
 //						position: absolute;
 						margin-right: 38px;
+                        top: 10px;
+                        display: block;
+                        height: 72px;
+                        border-radius: 72px;
+                        border-bottom: none;
 					}
                     img {
                         @include hd-desktop-up { 
@@ -767,7 +798,7 @@ body {
  											@include tablet-landscape-up {
 												margin-top: -39px;
 												margin-left: 14px !important;
-											}                                           
+											}                                          
 											@include tablet-portrait-up {
 												margin-top: -39px;
 												margin-left: 14px !important;
@@ -945,18 +976,31 @@ body {
 			background-image: $main-background;
 			background-position: $main-background-pos;
             background-repeat: no-repeat;
-			background-size: 100% 78%;
+            padding: 180px 0;
+            transition: $ease-half-sec;
+            @include hd-desktop-up {
+                background-size: 100% calc(min(800px, 100%));
+            }                                            
+            @include large-desktop-up {
+                background-size: 100% calc(min(750px, 100%));
+            }                                           
+            @include custom-desktop {
+                background-size: 100% calc(min(715px, 100%));
+            }                                           
+            @include desktop-up {
+                background-size: 100% calc(min(630px, 100%));
+            }                                              
             @include tablet-landscape-up {
-                background-size: 100% 60%;
+                background-size: 120% calc(min(675px, 100%));
             }
             @include tablet-portrait-up {
-                background-size: 100% 34%;
+                background-size: 160% calc(min(660px, 100%));
             }               
             @include phone-only-up {
-                background-size: 100% 32%;
+                background-size: 170% calc(min(625px, 170%));
             }
             @include extra-extra-small {
-                background-size: 100% 25%;
+                background-size: 200% calc(min(555px, 100%));
             }
 			&.bground1 {
 				background-image: $surge-bg1;
@@ -973,14 +1017,57 @@ body {
 			&.bground5 {
 				background-image: $surge-bg5;
 			}
+			&.bground6 {
+				background-image: $surge-bg6;
+			}
+			&.bground6 {
+				background-image: $surge-bg6;
+			}
+			&.bground7 {
+				background-image: $surge-bg7;
+			}
+			&.bground8 {
+				background-image: $surge-bg8;
+			}
+			&.bground9 {
+				background-image: $surge-bg9;
+			}
+			&.bground10 {
+				background-image: $surge-bg10;
+			}
+			&.bground11 {
+				background-image: $surge-bg11;
+			}
+			&.bground12 {
+				background-image: $surge-bg12;
+			}
+			&.bground13 {
+				background-image: $surge-bg13;
+			}
+			&.bground14 {
+				background-image: $surge-bg14;
+			}
+			&.bground15 {
+				background-image: $surge-bg15;
+			}
+			&.bground16 {
+				background-image: $surge-bg16;
+			}            
             .filter {
                 backdrop-filter: blur(3px);
 //                filter: drop-shadow(2px 4px 6px $black);
             }
 			.banner-title {
+                padding: 25px 0;
 				text-shadow: 1px 2px 6px #000;
                 transition: $ease-quarter-sec;
                 @include banner-title;
+                @include large-desktop-up {
+                    font-size: 67px;
+                }                
+                @include custom-desktop { 
+                    font-size: 64px;
+                }                 
                 @include desktop-up { 
                     font-size: 60px;
                 }         
@@ -1060,7 +1147,7 @@ body {
 		}
 		div {
 			&.wrap {
-				max-width: 1620px;
+				max-width: 1620px !important;
 				main {
 					&.content {
                         h2 {
@@ -1091,6 +1178,14 @@ body {
                             font-weight: 700;
                             border-radius: 0 16px 15px 0;
                             transition: $ease-quarter-sec;
+                            @include extra-extra-small {
+                                font-size: 17px;
+                                padding: 12px 12px 12px 10px;
+                            }
+                            @include extra-extra-small {
+                                font-size: 14px;
+                                padding: 10px 10px 10px 8px;
+                            }
                             &:hover {
                                 background: $black;
                                 box-shadow: 8px 7px 14px #75858a;
@@ -1630,6 +1725,7 @@ body {
         }      
     }
 }
+
 /////////////////////////////////
 ///////////End body ///////////
 /////////////////////////////////

@@ -6,7 +6,8 @@
 /* End Fonts */
 
 body {
-  background: linear-gradient(to bottom, #e2e4dd 80%, #1f2119 400%);
+  background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
+  height: 100vh;
   color: #222630;
   font-family: "Special Elite", system-ui; }
   body input, body select, body textarea {
@@ -85,7 +86,7 @@ body {
       margin-left: 15px;
       position: relative;
       padding: 1px 1px 0 1px;
-      border-radius: 3px; }
+      border-radius: 75px; }
       body header#header .site-title a:hover {
         color: black;
         text-shadow: 0px 0px 12px grey;
@@ -112,50 +113,75 @@ body {
           left: 15px;
           height: 71px;
           display: inline-block;
-          border-radius: 75px; } }
+          border-radius: 75px;
+          border-bottom: none; } }
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body header#header .site-title a {
           font-size: 37px;
           left: 15px;
           height: 64px;
           display: inline-block;
-          border-radius: 75px; } }
+          border-radius: 75px;
+          border-bottom: none; } }
       @media only screen and (min-width: 1024px) and (max-width: 1200px) {
         body header#header .site-title a {
           font-size: 34px;
           left: 15px;
           height: 62px;
           display: inline-block;
-          border-radius: 75px; } }
+          border-radius: 75px;
+          border-bottom: none; } }
       @media only screen and (min-width: 1023px) and (max-width: 1023px) {
         body header#header .site-title a {
           font-size: 33px;
-          margin-right: 60px; } }
+          margin-right: 60px;
+          border-bottom: none; } }
       @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body header#header .site-title a {
-          font-size: 33px;
-          margin-top: -13px;
-          margin-right: 60px; } }
+          margin-right: 60px;
+          font-size: 0;
+          margin-top: 0px;
+          margin-right: 60px;
+          display: block;
+          border-bottom: none; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body header#header .site-title a {
           font-size: 26px;
-          margin-top: -5px;
-          margin-right: 38px; } }
+          top: 10px;
+          display: block;
+          height: 72px;
+          border-radius: 72px;
+          border-bottom: none; } }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body header#header .site-title a {
           font-size: 25px;
           margin-top: -1px;
-          margin-right: 38px; } }
+          margin-right: 38px;
+          top: 10px;
+          display: block;
+          height: 72px;
+          border-radius: 72px;
+          border-bottom: none; } }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
         body header#header .site-title a {
           font-size: 24px;
           margin-top: -1px;
-          margin-right: 38px; } }
+          margin-right: 38px;
+          top: 10px;
+          display: block;
+          height: 72px;
+          border-radius: 72px;
+          border-bottom: none; } }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body header#header .site-title a {
           font-size: 23px;
           margin-top: -1px;
-          margin-right: 38px; } }
+          margin-right: 38px;
+          top: 10px;
+          display: block;
+          height: 72px;
+          border-radius: 72px;
+          border-bottom: none; } }
       @media only screen and (min-width: 1400px) {
         body header#header .site-title a img {
           max-height: 68px; } }
@@ -658,23 +684,36 @@ body {
     padding: 30px 0; }
   body .site-container .banner {
     box-shadow: #353737 0px -8px 15px 20px;
-    background-color: black;
+    background-color: #43616d;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
     background-repeat: no-repeat;
-    background-size: 100% 78%; }
+    padding: 180px 0;
+    transition: ease all 0.5s; }
+    @media only screen and (min-width: 1400px) {
+      body .site-container .banner {
+        background-size: 100% calc(min(800px, 100%)); } }
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+      body .site-container .banner {
+        background-size: 100% calc(min(750px, 100%)); } }
+    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+      body .site-container .banner {
+        background-size: 100% calc(min(715px, 100%)); } }
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      body .site-container .banner {
+        background-size: 100% calc(min(630px, 100%)); } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body .site-container .banner {
-        background-size: 100% 60%; } }
+        background-size: 120% calc(min(675px, 100%)); } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .site-container .banner {
-        background-size: 100% 34%; } }
+        background-size: 160% calc(min(660px, 100%)); } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .site-container .banner {
-        background-size: 100% 32%; } }
+        background-size: 170% calc(min(625px, 170%)); } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container .banner {
-        background-size: 100% 25%; } }
+        background-size: 200% calc(min(555px, 100%)); } }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
     body .site-container .banner.bground2 {
@@ -685,9 +724,34 @@ body {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground4.jpg) !important; }
     body .site-container .banner.bground5 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground5.jpg) !important; }
+    body .site-container .banner.bground6 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground6.jpg) !important; }
+    body .site-container .banner.bground6 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground6.jpg) !important; }
+    body .site-container .banner.bground7 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground7.jpg) !important; }
+    body .site-container .banner.bground8 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground8.jpg) !important; }
+    body .site-container .banner.bground9 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground9.jpg) !important; }
+    body .site-container .banner.bground10 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground10.jpg) !important; }
+    body .site-container .banner.bground11 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground11.jpg) !important; }
+    body .site-container .banner.bground12 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground12.jpg) !important; }
+    body .site-container .banner.bground13 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground13.jpg) !important; }
+    body .site-container .banner.bground14 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground14.jpg) !important; }
+    body .site-container .banner.bground15 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground15.jpg) !important; }
+    body .site-container .banner.bground16 {
+      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground16.jpg) !important; }
     body .site-container .banner .filter {
       backdrop-filter: blur(3px); }
     body .site-container .banner .banner-title {
+      padding: 25px 0;
       text-shadow: 1px 2px 6px #000;
       transition: ease all 0.25s;
       color: #f9ffdc;
@@ -696,6 +760,12 @@ body {
       margin-bottom: 8px;
       font-family: "Rubik", sans-serif;
       margin: 20px 0 -76px 0; }
+      @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+        body .site-container .banner .banner-title {
+          font-size: 67px; } }
+      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        body .site-container .banner .banner-title {
+          font-size: 64px; } }
       @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body .site-container .banner .banner-title {
           font-size: 60px; } }
@@ -766,7 +836,7 @@ body {
       font-weight: 700;
       color: #ebffe7; }
   body .site-container div.wrap {
-    max-width: 1620px; }
+    max-width: 1620px !important; }
     body .site-container div.wrap main.content {
       width: 95%;
       width: 95%;
@@ -796,6 +866,14 @@ body {
         font-weight: 700;
         border-radius: 0 16px 15px 0;
         transition: ease all 0.25s; }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container div.wrap main.content button {
+            font-size: 17px;
+            padding: 12px 12px 12px 10px; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container div.wrap main.content button {
+            font-size: 14px;
+            padding: 10px 10px 10px 8px; } }
         body .site-container div.wrap main.content button:hover {
           background: black;
           box-shadow: 8px 7px 14px #75858a; }
