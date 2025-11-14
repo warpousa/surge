@@ -851,101 +851,6 @@ body {
 			}
 		}
 	}
-	.searchwp-modal-form {
-		.search-form {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
-			min-height: 100vh;		
-			input {
-				border: solid 1px;
-				transition: $ease-eighth-sec;
-  				@include tablet-landscape-up {
-					max-width: 500px;
-				}	              
-  				@include tablet-portrait-up {
-					max-width: 340px;
-				}              
-                @include phone-only-up {
-					max-width: 260px;
-					font-size: 22px;
-				}            
-				@include extra-extra-small {
-					max-width: 180px;
-					font-size: 14px;
-				}
-				transition: $ease-eighth-sec;
-				&[type="submit"] {
-					left: 388px;
-					bottom: 82px;
-					border: 0;
-					clip: rect(0, 0, 0, 0);
-					margin: -1px;
-					padding: 0;
-					position: relative;
-					display: inline-block;
-					background: $searchbutton-bgcolor;
-					height: 83.5px;
-					width: 100px;
-					border-top-right-radius: 15px;
-					border-bottom-right-radius: 15px;
-					border-top-left-radius: 0;
-					border-bottom-left-radius: 0;
-					font-size: 25px;
-					z-index: 999;
-				}
-				&:hover {
-					box-shadow: 5px 6px 15px #75858a; 
-				}
-				&:focus, &:active {
-					outline: dashed 3px #555e60;
-					box-shadow: 11px 10px 25px #75858a;
-				}
-				&.search-submit {
-					&:active, &:hover, &:focus {
-						background-color: $black !important;
-					}
-                    @include tablet-landscape-up {
-						left: 300px;
-					}
-					@include tablet-portrait-up {
-						max-width: 100px;
-						left: 220px;
-					}                    
-					@include phone-only-up {
-						max-width: 75px;
-						left: 167px;
-						font-size: 16px;
-						height: 56px;
-						bottom: 55px;
-					}
-                    @include extra-extra-small {
-						max-width: 50px;
-						left: 114px;
-						font-size: 10px;
-						height: 47px;
-						bottom: 46px;
-					}
-				}
-			}
-			@-moz-document url-prefix() {
-    			input {
-					height: 81px;
-				  	margin-right: -25px;	
-				  	@include phone-only-up {
-						max-width: 234px;
-  						height: 56px;
-					}
-					@include extra-extra-small {
-						max-width: 153px;
-  						height: 46px;
-					}                    
-    			}
-			}
-		}
-	}
 	.site-container {
         a {
             transition: $ease-eighth-sec;
@@ -1068,28 +973,38 @@ body {
                     font-size: 67px;
                 }                
                 @include custom-desktop { 
-                    font-size: 64px;
+                    font-size: 57px;
+                    position: relative;
+                    bottom: 10px;;
                 }                 
                 @include desktop-up { 
-                    font-size: 60px;
-                }         
-                @include tablet-landscape-up {
-                    font-size: 55px;
-                }             
+                    font-size: 57px;
+                    position: relative;
+                    bottom: 25px;
+                }                 
                 @include tablet-landscape-up { 
-                    font-size: 50px;
+                    font-size: 55px;
+                    position: relative;
+                    bottom: 50px;
                 }
                 @include tablet-portrait-up {
-					font-size: 45px;
+                    font-size: 52px;
                     line-height: 1.07em;
+                    position: relative;
+                    bottom: 75px;
 				}               
                 @include phone-only-up {
-					font-size: 40px;
+                    font-size: 48px;
                     line-height: 1.02em;
+                    position: relative;
+                    bottom: 112px;
+                    
 				}              
 				@include extra-extra-small {
-					font-size: 32px;
+                    font-size: 36px;
                     line-height: 1.0em;
+                    position: relative;
+                    bottom: 75px;
 				}
                 &.site-description {
                     &::before {
@@ -1213,8 +1128,7 @@ body {
                                 }
                                 @include phone-only-up {
                                     font-size: 50px;
-                                }                              
-                                
+                                }
                                 @include extra-extra-small {
                                     font-size: 22px;
                                 }
@@ -1265,7 +1179,13 @@ body {
 					padding: 22px 18px 20px 37px;
     				text-shadow: $text-shadow;
 					// transition: $ease-half-sec;
-					font-size: 13px;	
+					font-size: 18px;
+                    @include custom-desktop {
+                        font-size: 14px;
+				    }
+                    @include desktop-up {
+                        font-size: 13.5px;
+                    }  
 					&::before {
 						// content: "\1F6E5";
 						content: '\00a0\00a0\00a0\00a0\00a0';
@@ -1621,7 +1541,100 @@ body {
         }
     }
     ////////////////////////////////////////////////////////////
+
     .searchwp-modal-form {
+		.search-form {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			min-height: 100vh;		
+			input {
+				border: solid 1px;
+				transition: $ease-eighth-sec;
+  				@include tablet-landscape-up {
+					max-width: 500px;
+				}	              
+  				@include tablet-portrait-up {
+					max-width: 340px;
+				}              
+                @include phone-only-up {
+					max-width: 260px;
+					font-size: 22px;
+				}            
+				@include extra-extra-small {
+					max-width: 180px;
+					font-size: 14px;
+				}
+				&[type="submit"] {
+					left: 388px;
+					bottom: 82px;
+					border: 0;
+					clip: rect(0, 0, 0, 0);
+					margin: -1px;
+					padding: 0;
+					position: relative;
+					display: inline-block;
+					background: $searchbutton-bgcolor;
+					height: 83.5px;
+					width: 100px;
+					border-top-right-radius: 15px;
+					border-bottom-right-radius: 15px;
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+					font-size: 25px;
+					z-index: 999;
+				}
+				&:hover {
+					box-shadow: 5px 6px 15px #75858a; 
+				}
+				&:focus, &:active {
+					outline: dashed 3px #555e60;
+					box-shadow: 11px 10px 25px #75858a;
+				}
+				&.search-submit {
+					&:active, &:hover, &:focus {
+						background-color: $black !important;
+					}
+                    @include tablet-landscape-up {
+						left: 300px;
+					}
+					@include tablet-portrait-up {
+						max-width: 100px;
+						left: 220px;
+					}                    
+					@include phone-only-up {
+						max-width: 75px;
+						left: 167px;
+						font-size: 16px;
+						height: 56px;
+						bottom: 55px;
+					}
+                    @include extra-extra-small {
+						max-width: 50px;
+						left: 114px;
+						font-size: 10px;
+						height: 47px;
+						bottom: 46px;
+					}
+				}
+			}
+			@-moz-document url-prefix() {
+    			input {
+					height: 81px;
+				  	margin-right: -25px;	
+				  	@include phone-only-up {
+						max-width: 234px;
+  						height: 56px;
+					}
+					@include extra-extra-small {
+						max-width: 153px;
+  						height: 46px;
+					}                    
+    			}
+			}
+		}             
         &[aria-hidden="false"] {
             .searchwp-modal-form-default {
                 .searchwp-modal-form__overlay {
@@ -1685,6 +1698,16 @@ body {
                 box-shadow: 0 150px 0 #c3cccc;
                 .search-form {
 		            margin-top: 200px;
+                    @include tablet-portrait-up {
+		                margin-top: -100px;
+                    }                    
+                    @include phone-only-up {
+		                margin-top: -50px;
+                    }                   
+                    @include extra-extra-small {
+		                margin-top: -150px;
+                    }                    
+                    
 	            }
             }          
             .searchwp-modal-form__footer {

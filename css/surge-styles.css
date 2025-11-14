@@ -580,89 +580,6 @@ body {
         width: 100%;
         margin: 0;
         box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
-  body .searchwp-modal-form .search-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh; }
-    body .searchwp-modal-form .search-form input {
-      border: solid 1px;
-      transition: ease all 0.125s;
-      transition: ease all 0.125s; }
-      @media only screen and (min-width: 768px) and (max-width: 992px) {
-        body .searchwp-modal-form .search-form input {
-          max-width: 500px; } }
-      @media only screen and (min-width: 576px) and (max-width: 768px) {
-        body .searchwp-modal-form .search-form input {
-          max-width: 340px; } }
-      @media only screen and (min-width: 480px) and (max-width: 576px) {
-        body .searchwp-modal-form .search-form input {
-          max-width: 260px;
-          font-size: 22px; } }
-      @media only screen and (min-width: 0) and (max-width: 480px) {
-        body .searchwp-modal-form .search-form input {
-          max-width: 180px;
-          font-size: 14px; } }
-      body .searchwp-modal-form .search-form input[type="submit"] {
-        left: 388px;
-        bottom: 82px;
-        border: 0;
-        clip: rect(0, 0, 0, 0);
-        margin: -1px;
-        padding: 0;
-        position: relative;
-        display: inline-block;
-        background: #575872;
-        height: 83.5px;
-        width: 100px;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        font-size: 25px;
-        z-index: 999; }
-      body .searchwp-modal-form .search-form input:hover {
-        box-shadow: 5px 6px 15px #75858a; }
-      body .searchwp-modal-form .search-form input:focus, body .searchwp-modal-form .search-form input:active {
-        outline: dashed 3px #555e60;
-        box-shadow: 11px 10px 25px #75858a; }
-      body .searchwp-modal-form .search-form input.search-submit:active, body .searchwp-modal-form .search-form input.search-submit:hover, body .searchwp-modal-form .search-form input.search-submit:focus {
-        background-color: black !important; }
-      @media only screen and (min-width: 768px) and (max-width: 992px) {
-        body .searchwp-modal-form .search-form input.search-submit {
-          left: 300px; } }
-      @media only screen and (min-width: 576px) and (max-width: 768px) {
-        body .searchwp-modal-form .search-form input.search-submit {
-          max-width: 100px;
-          left: 220px; } }
-      @media only screen and (min-width: 480px) and (max-width: 576px) {
-        body .searchwp-modal-form .search-form input.search-submit {
-          max-width: 75px;
-          left: 167px;
-          font-size: 16px;
-          height: 56px;
-          bottom: 55px; } }
-      @media only screen and (min-width: 0) and (max-width: 480px) {
-        body .searchwp-modal-form .search-form input.search-submit {
-          max-width: 50px;
-          left: 114px;
-          font-size: 10px;
-          height: 47px;
-          bottom: 46px; } }
-@-moz-document url-prefix() {
-  body .searchwp-modal-form .search-form input {
-    height: 81px;
-    margin-right: -25px; }
-    @media only screen and (min-width: 480px) and (max-width: 576px) {
-      body .searchwp-modal-form .search-form input {
-        max-width: 234px;
-        height: 56px; } }
-    @media only screen and (min-width: 0) and (max-width: 480px) {
-      body .searchwp-modal-form .search-form input {
-        max-width: 153px;
-        height: 46px; } } }
   body .site-container a {
     transition: ease all 0.125s;
     border-bottom: 4px solid; }
@@ -767,28 +684,37 @@ body {
           font-size: 67px; } }
       @media only screen and (min-width: 1024px) and (max-width: 1200px) {
         body .site-container .banner .banner-title {
-          font-size: 64px; } }
+          font-size: 57px;
+          position: relative;
+          bottom: 10px; } }
       @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body .site-container .banner .banner-title {
-          font-size: 60px; } }
+          font-size: 57px;
+          position: relative;
+          bottom: 25px; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body .site-container .banner .banner-title {
-          font-size: 55px; } }
-      @media only screen and (min-width: 768px) and (max-width: 992px) {
-        body .site-container .banner .banner-title {
-          font-size: 50px; } }
+          font-size: 55px;
+          position: relative;
+          bottom: 50px; } }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .site-container .banner .banner-title {
-          font-size: 45px;
-          line-height: 1.07em; } }
+          font-size: 52px;
+          line-height: 1.07em;
+          position: relative;
+          bottom: 75px; } }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
         body .site-container .banner .banner-title {
-          font-size: 40px;
-          line-height: 1.02em; } }
+          font-size: 48px;
+          line-height: 1.02em;
+          position: relative;
+          bottom: 112px; } }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .site-container .banner .banner-title {
-          font-size: 32px;
-          line-height: 1.0em; } }
+          font-size: 36px;
+          line-height: 1.0em;
+          position: relative;
+          bottom: 75px; } }
       body .site-container .banner .banner-title.site-description::before {
         content: '';
         background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only.png);
@@ -925,7 +851,13 @@ body {
         color: black;
         padding: 22px 18px 20px 37px;
         text-shadow: 1px 1px 19px #ffe29d;
-        font-size: 13px; }
+        font-size: 18px; }
+        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+          body .site-container .omega-nav-menu li a {
+            font-size: 14px; } }
+        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+          body .site-container .omega-nav-menu li a {
+            font-size: 13.5px; } }
         body .site-container .omega-nav-menu li a::before {
           content: '\00a0\00a0\00a0\00a0\00a0';
           background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
@@ -1281,6 +1213,88 @@ body {
     body .nf-form-layout form input:not([type=button]):active, body .nf-form-layout form input:not([type=button]):focus {
       outline: dashed 3px #555e60;
       box-shadow: 6px 5px 15px #75858a; }
+  body .searchwp-modal-form .search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; }
+    body .searchwp-modal-form .search-form input {
+      border: solid 1px;
+      transition: ease all 0.125s; }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 500px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 340px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 260px;
+          font-size: 22px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .searchwp-modal-form .search-form input {
+          max-width: 180px;
+          font-size: 14px; } }
+      body .searchwp-modal-form .search-form input[type="submit"] {
+        left: 388px;
+        bottom: 82px;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        margin: -1px;
+        padding: 0;
+        position: relative;
+        display: inline-block;
+        background: #575872;
+        height: 83.5px;
+        width: 100px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        font-size: 25px;
+        z-index: 999; }
+      body .searchwp-modal-form .search-form input:hover {
+        box-shadow: 5px 6px 15px #75858a; }
+      body .searchwp-modal-form .search-form input:focus, body .searchwp-modal-form .search-form input:active {
+        outline: dashed 3px #555e60;
+        box-shadow: 11px 10px 25px #75858a; }
+      body .searchwp-modal-form .search-form input.search-submit:active, body .searchwp-modal-form .search-form input.search-submit:hover, body .searchwp-modal-form .search-form input.search-submit:focus {
+        background-color: black !important; }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          left: 300px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          max-width: 100px;
+          left: 220px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          max-width: 75px;
+          left: 167px;
+          font-size: 16px;
+          height: 56px;
+          bottom: 55px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          max-width: 50px;
+          left: 114px;
+          font-size: 10px;
+          height: 47px;
+          bottom: 46px; } }
+@-moz-document url-prefix() {
+  body .searchwp-modal-form .search-form input {
+    height: 81px;
+    margin-right: -25px; }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .searchwp-modal-form .search-form input {
+        max-width: 234px;
+        height: 56px; } }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .searchwp-modal-form .search-form input {
+        max-width: 153px;
+        height: 46px; } } }
   body .searchwp-modal-form[aria-hidden="false"] .searchwp-modal-form-default .searchwp-modal-form__overlay {
     z-index: 99; }
   body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {
@@ -1331,6 +1345,15 @@ body {
     box-shadow: 0 150px 0 #c3cccc; }
     body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
       margin-top: 200px; }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
+          margin-top: -100px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
+          margin-top: -50px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
+          margin-top: -150px; } }
   body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__footer {
     padding-top: 1em;
     position: relative;
