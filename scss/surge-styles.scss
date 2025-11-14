@@ -243,6 +243,7 @@ body {
     height: 100vh;
 	color: $charade;
 	font-family: $EliteFont;
+    min-width: 290px;
 	input, select, textarea {
 		background: #fff;
 		border: 1px solid #ddd;
@@ -269,6 +270,7 @@ body {
 				transition: $ease-quarter-sec;
 				z-index: 99;
                 height: 72px;
+                min-width: 290px;
                 @include large-desktop-up {
                     height: 65px;
                 }
@@ -985,22 +987,22 @@ body {
                 background-size: 100% calc(min(750px, 100%));
             }                                           
             @include custom-desktop {
-                background-size: 100% calc(min(715px, 100%));
+                background-size: 108% calc(min(715px, 100%));
             }                                           
             @include desktop-up {
-                background-size: 100% calc(min(630px, 100%));
+                background-size: 120% calc(min(630px, 100%));
             }                                              
             @include tablet-landscape-up {
-                background-size: 120% calc(min(675px, 100%));
+                background-size: 130% calc(min(675px, 100%));
             }
             @include tablet-portrait-up {
-                background-size: 160% calc(min(660px, 100%));
+                background-size: 150% calc(min(660px, 100%));
             }               
             @include phone-only-up {
-                background-size: 170% calc(min(625px, 170%));
+                background-size: 200% calc(min(625px, 170%));
             }
             @include extra-extra-small {
-                background-size: 200% calc(min(555px, 100%));
+                background-size: 250% calc(min(555px, 100%));
             }
 			&.bground1 {
 				background-image: $surge-bg1;

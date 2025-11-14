@@ -9,7 +9,8 @@ body {
   background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
   height: 100vh;
   color: #222630;
-  font-family: "Special Elite", system-ui; }
+  font-family: "Special Elite", system-ui;
+  min-width: 290px; }
   body input, body select, body textarea {
     background: #fff;
     border: 1px solid #ddd;
@@ -31,7 +32,8 @@ body {
     width: 100%;
     transition: ease all 0.25s;
     z-index: 99;
-    height: 72px; }
+    height: 72px;
+    min-width: 290px; }
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body header#header.site-header {
         height: 65px; } }
@@ -698,22 +700,22 @@ body {
         background-size: 100% calc(min(750px, 100%)); } }
     @media only screen and (min-width: 1024px) and (max-width: 1200px) {
       body .site-container .banner {
-        background-size: 100% calc(min(715px, 100%)); } }
+        background-size: 108% calc(min(715px, 100%)); } }
     @media only screen and (min-width: 992px) and (max-width: 1024px) {
       body .site-container .banner {
-        background-size: 100% calc(min(630px, 100%)); } }
+        background-size: 120% calc(min(630px, 100%)); } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body .site-container .banner {
-        background-size: 120% calc(min(675px, 100%)); } }
+        background-size: 130% calc(min(675px, 100%)); } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .site-container .banner {
-        background-size: 160% calc(min(660px, 100%)); } }
+        background-size: 150% calc(min(660px, 100%)); } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .site-container .banner {
-        background-size: 170% calc(min(625px, 170%)); } }
+        background-size: 200% calc(min(625px, 170%)); } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container .banner {
-        background-size: 200% calc(min(555px, 100%)); } }
+        background-size: 250% calc(min(555px, 100%)); } }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
     body .site-container .banner.bground2 {
