@@ -6,8 +6,24 @@
 		function removeCredits() {
 			document.querySelector('p.credit').remove();
 		}
+        function wrapExceptFirstLetters(selector, style = 'opacity:0.75') {
+          const element = document.querySelector(selector);
+          if (!element) return;
+          const words = element.textContent.split(/(\s+)/);
+          const transformed = words.map(word => {
+            if (/^\s+$/.test(word)) return word;
+            const firstLetter = word.charAt(0);
+            const remainder = word.slice(1);
+            if (remainder.length > 0) {
+              return firstLetter + `<span style="${style}">${remainder}</span>`;
+            } else {
+              return firstLetter; // single-letter word case
+            }
+          });
+          element.innerHTML = transformed.join('');
+        }
 		function assignRandomBannerClasses() {
-			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5','bground6','bground7','bground8','bground9','bground10','bground11','bground12','bground13','bground14','bground15','bground16'];
+			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5','bground6','bground7','bground8','bground9','bground10','bground11','bground12','bground13','bground14','bground15','bground16','bground17','bground18','bground19','bground20'];
 			document.querySelectorAll('.banner').forEach(banner => {
 				banner.classList.add(classes[Math.floor(Math.random() * classes.length)]);
 			});
@@ -271,6 +287,7 @@
 		}
 		// === Run All ===
 		assignRandomBannerClasses();
+        wrapExceptFirstLetters('h1.banner-title.site-description'); 
 		initHeaderState();
 		initSubmenus();
 		initOverlayTriggers();
