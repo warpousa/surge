@@ -180,9 +180,8 @@ $VollkornSCFont: "Vollkorn SC", serif;
 }
 @mixin banner-title {
     color: #f9ffdc;
-    font-size: 84px;
+    font-size: 88px;
     font-weight: 600;
-    margin-bottom: 8px;
     font-family: $VollkornSCFont;
     margin: 20px 0 -76px 0;
     text-shadow: 0 0 18px $black;
@@ -868,6 +867,7 @@ body {
 	.site-container {
         a {
             transition: $ease-eighth-sec;
+            text-decoration: none;
             border-bottom: 4px solid;
             &:hover {
                  color: $black;
@@ -907,26 +907,32 @@ body {
                 @include desktop-up {
                     font-size: 52px;
                     line-height: 44px;
+                    margin-top: 14px;
                 }                                           
                 @include tablet-landscape-up {
                     font-size: 44px;
-                    line-height: 36px;
+                    line-height: 43px;
+                    margin-top: 14px;
                 }                                          
                 @include tablet-portrait-up {
-                    font-size: 28px;
-                    line-height: 30px;
+                    font-size: 34px;
+                    line-height: 32px;
+                    margin-top: 13px;
                 }                                            
                 @include phone-only-up {
-                    font-size: 24px;
-                    line-height: 24px;
+                    font-size: 32px;
+                    line-height: 31px;
+                    margin-top: 10px;
                 }                                          
                 @include extra-extra-small {
-                    font-size: 16px;
-                    line-height: 16px;
+                    font-size: 23px;
+                    line-height: 20px;
+                    margin-top: 10px;
                 }        
             }
 		}
 		.banner {
+            border-bottom: 2px solid #738f9b;
 			box-shadow: $banner-shadow;
 			background-color: $surge-bg-color;
 			background-image: $main-background;
@@ -1034,10 +1040,10 @@ body {
                 transition: $ease-quarter-sec;
                 @include banner-title;
                 @include large-desktop-up {
-                    font-size: 65px;
+                    font-size: 74px;
                 }                
                 @include custom-desktop { 
-                    font-size: 54px;
+                    font-size: 64px;
                     position: relative;
                     bottom: 10px;;
                 }                 
@@ -1049,29 +1055,30 @@ body {
                 @include tablet-landscape-up { 
                     font-size: 50px;
                     position: relative;
-                    bottom: 50px;
+                    bottom: 40px;
                 }
                 @include tablet-portrait-up {
-                    font-size: 45px;
+                    font-size: 44px;
                     line-height: 1.07em;
                     position: relative;
-                    bottom: 75px;
+                    bottom: 48px;
 				}               
                 @include phone-only-up {
-                    font-size: 38px;
+                    font-size:42px;
                     line-height: 1.02em;
                     position: relative;
-                    bottom: 112px;
+                    bottom: 42px;
                     
 				}              
 				@include extra-extra-small {
-                    font-size: 24px;
+                    font-size: 30px;
                     line-height: 1.0em;
                     position: relative;
-                    bottom: 75px;
+                    bottom: 50px;
 				}
                 &.site-description {
                     &::before {
+                        bottom: 8px;
                         content: '';
                         background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only.png);
                         margin: 0 auto;
@@ -1082,41 +1089,51 @@ body {
                         background-repeat: no-repeat;
                         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
                         transition: $ease-quarter-sec;
+                        position: relative;                      
                         @include custom-desktop {
                             width: 800px;
                             height: 185px;
                             background-size: contain;
+                            position: relative;
+                            bottom: 8px;
                         }                      
                         @include desktop-up {
                             width: 740px;
                             height: 175px;
                             background-size: contain;
+                            position: relative;
+                            bottom: 8px;
                         }
                          @include tablet-landscape-up {
                             width: 700px;
                             height: 165px;
                             background-size: contain;
+                            position: relative;
+                            bottom: 8px;
 					    }                       
                         @include tablet-portrait-up {
                             width: 550px;
                             height: 127px;
                             background-size: contain;
                             position: relative;
-                            bottom: 10px; 
+                            bottom: 10px;
+                            border-bottom: solid 8px #ebffe7;
                         }                       
                         @include phone-only-up {
                             width: 440px;
                             height: 110px;
                             background-size: contain;
                             position: relative;
-                            bottom: 7px; 
+                            bottom: 7px;
+                            border-bottom: solid 6px #ebffe7;
                         }
                         @include extra-extra-small {
                             width: 280px;
                             height: 65px;
                             background-size: contain;
                             position: relative;
-                            bottom: 5px; 
+                            bottom: 5px;
+                            border-bottom: solid 5px #ebffe7;
                         }                        
                     }
                 }                
@@ -1135,6 +1152,21 @@ body {
 		div {
 			&.wrap {
 				max-width: 1620px !important;
+                @include desktop-up {
+                    width: 95%;
+                }                                              
+                @include tablet-landscape-up {
+                    width: 96%;
+                }
+                @include tablet-portrait-up {
+                    width: 96%;
+                }
+                @include phone-only-up {
+                    width: 97%;
+                }	
+                @include extra-extra-small {
+                    width: 98%;
+                }	                
 				main {
 					&.content {
                         h2 {
@@ -1157,12 +1189,11 @@ body {
 						@include main-content;
                         button {
                             background: #575872;
+                            font-family: "Vollkorn SC", serif;
                             margin-left: -1px;
                             word-break: normal;
-                            font-family: "Rubik", sans-serif;
                             text-shadow: 0 0 20px #a2a2a2;
                             -webkit-text-stroke: 1px #a9a9a2;
-                            font-weight: 700;
                             border-radius: 0 16px 15px 0;
                             transition: $ease-quarter-sec;
                             @include extra-extra-small {

@@ -583,6 +583,7 @@ body {
         box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
   body .site-container a {
     transition: ease all 0.125s;
+    text-decoration: none;
     border-bottom: 4px solid; }
     body .site-container a:hover {
       color: black;
@@ -622,24 +623,30 @@ body {
       @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body .site-container .site-inner .contact-logo {
           font-size: 52px;
-          line-height: 44px; } }
+          line-height: 44px;
+          margin-top: 14px; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body .site-container .site-inner .contact-logo {
           font-size: 44px;
-          line-height: 36px; } }
+          line-height: 43px;
+          margin-top: 14px; } }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .site-container .site-inner .contact-logo {
-          font-size: 28px;
-          line-height: 30px; } }
+          font-size: 34px;
+          line-height: 32px;
+          margin-top: 13px; } }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
         body .site-container .site-inner .contact-logo {
-          font-size: 24px;
-          line-height: 24px; } }
+          font-size: 32px;
+          line-height: 31px;
+          margin-top: 10px; } }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .site-container .site-inner .contact-logo {
-          font-size: 16px;
-          line-height: 16px; } }
+          font-size: 23px;
+          line-height: 20px;
+          margin-top: 10px; } }
   body .site-container .banner {
+    border-bottom: 2px solid #738f9b;
     box-shadow: #353737 0px -8px 15px 20px;
     background-color: #43616d;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
@@ -722,19 +729,18 @@ body {
       text-shadow: 1px 2px 6px #000;
       transition: ease all 0.25s;
       color: #f9ffdc;
-      font-size: 84px;
+      font-size: 88px;
       font-weight: 600;
-      margin-bottom: 8px;
       font-family: "Vollkorn SC", serif;
       margin: 20px 0 -76px 0;
       text-shadow: 0 0 18px black;
       -webkit-text-stroke: 1px black; }
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body .site-container .banner .banner-title {
-          font-size: 65px; } }
+          font-size: 74px; } }
       @media only screen and (min-width: 1024px) and (max-width: 1200px) {
         body .site-container .banner .banner-title {
-          font-size: 54px;
+          font-size: 64px;
           position: relative;
           bottom: 10px; } }
       @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -746,26 +752,27 @@ body {
         body .site-container .banner .banner-title {
           font-size: 50px;
           position: relative;
-          bottom: 50px; } }
+          bottom: 40px; } }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .site-container .banner .banner-title {
-          font-size: 45px;
+          font-size: 44px;
           line-height: 1.07em;
           position: relative;
-          bottom: 75px; } }
+          bottom: 48px; } }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
         body .site-container .banner .banner-title {
-          font-size: 38px;
+          font-size: 42px;
           line-height: 1.02em;
           position: relative;
-          bottom: 112px; } }
+          bottom: 42px; } }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .site-container .banner .banner-title {
-          font-size: 24px;
+          font-size: 30px;
           line-height: 1.0em;
           position: relative;
-          bottom: 75px; } }
+          bottom: 50px; } }
       body .site-container .banner .banner-title.site-description::before {
+        bottom: 8px;
         content: '';
         background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only.png);
         margin: 0 auto;
@@ -775,43 +782,53 @@ body {
         border-bottom: solid 10px #ebffe7;
         background-repeat: no-repeat;
         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
-        transition: ease all 0.25s; }
+        transition: ease all 0.25s;
+        position: relative; }
         @media only screen and (min-width: 1024px) and (max-width: 1200px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 800px;
             height: 185px;
-            background-size: contain; } }
+            background-size: contain;
+            position: relative;
+            bottom: 8px; } }
         @media only screen and (min-width: 992px) and (max-width: 1024px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 740px;
             height: 175px;
-            background-size: contain; } }
+            background-size: contain;
+            position: relative;
+            bottom: 8px; } }
         @media only screen and (min-width: 768px) and (max-width: 992px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 700px;
             height: 165px;
-            background-size: contain; } }
+            background-size: contain;
+            position: relative;
+            bottom: 8px; } }
         @media only screen and (min-width: 576px) and (max-width: 768px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 550px;
             height: 127px;
             background-size: contain;
             position: relative;
-            bottom: 10px; } }
+            bottom: 10px;
+            border-bottom: solid 8px #ebffe7; } }
         @media only screen and (min-width: 480px) and (max-width: 576px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 440px;
             height: 110px;
             background-size: contain;
             position: relative;
-            bottom: 7px; } }
+            bottom: 7px;
+            border-bottom: solid 6px #ebffe7; } }
         @media only screen and (min-width: 0) and (max-width: 480px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 280px;
             height: 65px;
             background-size: contain;
             position: relative;
-            bottom: 5px; } }
+            bottom: 5px;
+            border-bottom: solid 5px #ebffe7; } }
     body .site-container .banner h3.archive-title {
       text-shadow: 1px 1px 5px black;
       font-family: "Vollkorn SC", serif;
@@ -821,6 +838,21 @@ body {
       color: #ebffe7; }
   body .site-container div.wrap {
     max-width: 1620px !important; }
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      body .site-container div.wrap {
+        width: 95%; } }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      body .site-container div.wrap {
+        width: 96%; } }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body .site-container div.wrap {
+        width: 96%; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .site-container div.wrap {
+        width: 97%; } }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .site-container div.wrap {
+        width: 98%; } }
     body .site-container div.wrap main.content {
       width: 95%;
       width: 95%;
@@ -842,12 +874,11 @@ body {
             font-size: 35px; } }
       body .site-container div.wrap main.content button {
         background: #575872;
+        font-family: "Vollkorn SC", serif;
         margin-left: -1px;
         word-break: normal;
-        font-family: "Rubik", sans-serif;
         text-shadow: 0 0 20px #a2a2a2;
         -webkit-text-stroke: 1px #a9a9a2;
-        font-weight: 700;
         border-radius: 0 16px 15px 0;
         transition: ease all 0.25s; }
         @media only screen and (min-width: 0) and (max-width: 480px) {

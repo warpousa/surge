@@ -6,7 +6,7 @@
 		function removeCredits() {
 			document.querySelector('p.credit').remove();
 		}
-        function wrapExceptFirstLetters(selector, style = 'opacity:0.75') {
+        function wrapExceptFirstLetters(selector, style = 'opacity:0.6') {
           const element = document.querySelector(selector);
           if (!element) return;
           const words = element.textContent.split(/(\s+)/);
@@ -75,7 +75,7 @@
 			}
 		}		
 		// === Configurable Selectors ===
-		const navMenuRoot = document.querySelector('#menu-menu-1');
+		const navMenuRoot = document.querySelector('ul.menu.omega-nav-menu.menu-primary');
 		const menuIcon = document.querySelector('#menu-icon.menu-icon');
 		const content = document.querySelector('#content');
 		let overlay = null;
