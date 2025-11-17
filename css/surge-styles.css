@@ -48,7 +48,7 @@ body {
       body header#header.site-header {
         height: 62px; } }
     body header#header.site-header.hide-header {
-      transform: translateY(-568px); }
+      transform: translateY(-1000px); }
     body header#header.site-header.is-transparent {
       background: rgba(234, 234, 215, 0.55); }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -1056,6 +1056,38 @@ body {
           body .site-container .omega-nav-menu li ul.sub-menu {
             box-shadow: none;
             width: 100%; } }
+        @media only screen and (min-width: 1400px) {
+          body .site-container .omega-nav-menu li ul.sub-menu ul.sub-menu {
+            box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            position: absolute;
+            margin-left: 100%;
+            margin-top: -70px;
+            border-radius: 20px; } }
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+          body .site-container .omega-nav-menu li ul.sub-menu ul.sub-menu {
+            box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            position: absolute;
+            margin-left: 100%;
+            margin-top: -74px;
+            border-radius: 18px; } }
+        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+          body .site-container .omega-nav-menu li ul.sub-menu ul.sub-menu {
+            box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            position: absolute;
+            margin-left: 100%;
+            margin-top: -77px;
+            border-radius: 18px; } }
+        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+          body .site-container .omega-nav-menu li ul.sub-menu ul.sub-menu {
+            box-shadow: none;
+            width: 100%;
+            position: absolute;
+            margin-left: 100%;
+            margin-top: -77px;
+            border-radius: 15px; } }
   body .relevanssi-live-search-results {
     margin-top: -10px;
     border-top-color: rgba(255, 255, 255, 0);

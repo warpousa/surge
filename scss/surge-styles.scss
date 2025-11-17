@@ -130,7 +130,7 @@ $ease-eighth-sec: ease all 0.125s;
 $ease-quarter-sec: ease all 0.25s;
 $ease-half-sec: ease all 0.5s;
 $ease-one-sec: ease all 1s;
-$animate-header: translateY(-568px);
+$animate-header: translateY(-1000px);
 
 /* End Transforms & Transitions */
 
@@ -1408,6 +1408,42 @@ body {
 							box-shadow: none;
 							width: 100%;
 						}
+                        ul {
+                            &.sub-menu {
+                                @include hd-desktop-up {
+                                    box-shadow: $submenu-shadow1;
+                                    width: 100%;
+                                    position: absolute;
+                                    margin-left: 100%;
+                                    margin-top: -70px;
+                                    border-radius: 20px;                                   
+                                }                      
+                                @include large-desktop-up {
+                                    box-shadow: $submenu-shadow1;
+                                    width: 100%;
+                                    position: absolute;
+                                    margin-left: 100%;
+                                    margin-top: -74px;
+                                    border-radius: 18px;                                      
+                                }                       
+                                @include custom-desktop {
+                                    box-shadow: $submenu-shadow1;
+                                    width: 100%;
+                                    position: absolute;
+                                    margin-left: 100%;
+                                    margin-top: -77px;
+                                    border-radius: 18px;
+                                }                      
+                                @include desktop-up {
+                                    box-shadow: none;
+                                    width: 100%;
+                                    position: absolute;
+                                    margin-left: 100%;
+                                    margin-top: -77px;
+                                    border-radius: 15px;                                    
+                                }
+                            }
+                        }
 					}
 				}		
 			}
