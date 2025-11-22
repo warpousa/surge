@@ -196,6 +196,18 @@ body {
       @media only screen and (min-width: 992px) and (max-width: 1024px) {
         body header#header .site-title a img {
           max-height: 58px; } }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body header#header .site-title a img {
+          max-height: 70px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body header#header .site-title a img {
+          max-height: 70px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body header#header .site-title a img {
+          max-height: 70px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body header#header .site-title a img {
+          max-height: 70px; } }
   body header#header nav#navigation a {
     border-bottom: none; }
     body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
@@ -780,17 +792,17 @@ body {
       body .site-container .banner .banner-title.site-description::before {
         bottom: 8px;
         content: '';
-        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots.png);
+        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots-conning-tower.png);
         margin: 0 auto;
         width: 978px;
-        height: 245px;
+        height: 265px;
         display: block;
         border-bottom: solid 10px #ebffe7;
         background-repeat: no-repeat;
         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
         transition: ease all 0.25s;
         position: relative;
-        background-size: 90% 100%;
+        background-size: 65% 100%;
         background-position: 50%; }
         @media only screen and (min-width: 1024px) and (max-width: 1200px) {
           body .site-container .banner .banner-title.site-description::before {

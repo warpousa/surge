@@ -444,6 +444,18 @@ body {
                         @include desktop-up {
                             max-height: 58px;
                         }
+                        @include tablet-landscape-up { 
+                            max-height: 70px;
+                        }
+                        @include tablet-portrait-up { 
+                            max-height: 70px;
+                        }
+                        @include phone-only-up { 
+                            max-height: 70px;
+                        }
+                        @include extra-extra-small { 
+                            max-height: 70px;
+                        } 
                     }
 				}
 			}
@@ -1086,17 +1098,17 @@ body {
                     &::before {
                         bottom: 8px;
                         content: '';
-                        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots.png);
+                        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots-conning-tower.png);
                         margin: 0 auto;
                         width: 978px;
-                        height: 245px;
+                        height: 265px;
                         display: block;
                         border-bottom: solid 10px #ebffe7;
                         background-repeat: no-repeat;
                         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
                         transition: $ease-quarter-sec;
                         position: relative;
-                        background-size: 90% 100%;
+                        background-size: 65% 100%;
                         background-position: 50%;
                         @include custom-desktop {
                             width: 800px;
