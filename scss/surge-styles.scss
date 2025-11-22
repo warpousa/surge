@@ -143,9 +143,8 @@ $tablet-mobile-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4);
 /* Shading * /
 
 /* Fonts */
-
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&display=swap");
+/* End Fonts */
 
 $EliteFont: 'Special Elite', system-ui;
 $VollkornSCFont: "Vollkorn SC", serif;
@@ -938,31 +937,38 @@ body {
 			background-image: $main-background;
 			background-position: $main-background-pos;
             background-repeat: no-repeat;
-            padding: 180px 0;
             transition: $ease-half-sec;
             @include hd-desktop-up {
                 background-size: 100% calc(min(800px, 100%));
+                padding: 160px 0 150px 0;
             }                                            
             @include large-desktop-up {
                 background-size: 100% calc(min(750px, 100%));
+                padding: 150px 0 140px 0;
             }                                           
             @include custom-desktop {
                 background-size: 108% calc(min(730px, 100%));
+                padding: 135px 0 125px 0;
             }                                           
             @include desktop-up {
                 background-size: 120% calc(min(715px, 100%));
+                padding: 160px 0 80px 0;
             }                                              
             @include tablet-landscape-up {
                 background-size: 130% calc(min(700px, 100%));
+                padding: 158px 0 80px 0;
             }
             @include tablet-portrait-up {
                 background-size: 150% calc(min(680px, 100%));
+                padding: 156px 0 80px 0;
             }               
             @include phone-only-up {
                 background-size: 200% calc(min(660px, 170%));
+                padding: 154px 0 80px 0;
             }
             @include extra-extra-small {
                 background-size: 250% calc(min(640px, 100%));
+                padding: 150px 0 80px 0;
             }
 			&.bground1 {
 				background-image: $surge-bg1;
@@ -1080,16 +1086,18 @@ body {
                     &::before {
                         bottom: 8px;
                         content: '';
-                        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only.png);
+                        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots.png);
                         margin: 0 auto;
-                        width: 1040px;
-                        height: 230px;
+                        width: 978px;
+                        height: 245px;
                         display: block;
                         border-bottom: solid 10px #ebffe7;
                         background-repeat: no-repeat;
                         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
                         transition: $ease-quarter-sec;
-                        position: relative;                      
+                        position: relative;
+                        background-size: 90% 100%;
+                        background-position: 50%;
                         @include custom-desktop {
                             width: 800px;
                             height: 185px;
@@ -1211,6 +1219,37 @@ body {
                             &:active, &:focus {
                                 outline: dashed 3px #555e60;
                                 box-shadow: 11px 10px 25px #75858a;
+                            }
+                        }
+                        .wp-block-media-text {
+                            &.is-stacked-on-mobile {
+                                figure {
+                                    &.wp-block-media-text__media {
+                                        a {
+                                            border-bottom: none;
+                                        }
+                                    }
+                                }
+                                .wp-block-media-text__content {
+                                    h2, h3, h4 {
+                                        a {
+                                            border-bottom: none;
+                                        }
+                                        font-size: 300%;
+                                        @include tablet-landscape-up {
+                                            font-size: 200%;
+                                        }
+                                        @include tablet-portrait-up {
+                                            font-size: 180%;
+                                        }
+                                        @include phone-only-up {
+                                            font-size: 160%;
+                                        }	
+                                        @include extra-extra-small {
+                                            font-size: 120%;
+                                        }
+                                    }    
+                                }     
                             }
                         }
 					}
