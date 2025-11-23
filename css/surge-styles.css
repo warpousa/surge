@@ -742,6 +742,36 @@ body {
       backdrop-filter: blur(0.06em);
       background: rgba(0, 0, 0, 0.53);
       box-shadow: 7px 10px 55px 65px rgba(0, 0, 0, 0.53); }
+      body .site-container .banner .filter .entry-meta {
+        position: relative; }
+        @media only screen and (min-width: 1400px) {
+          body .site-container .banner .filter .entry-meta {
+            font-size: 24px;
+            top: 50px; } }
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+          body .site-container .banner .filter .entry-meta {
+            font-size: 20px;
+            top: 40px; } }
+        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+          body .site-container .banner .filter .entry-meta {
+            font-size: 19px;
+            top: 38px; } }
+        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+          body .site-container .banner .filter .entry-meta {
+            font-size: 18px;
+            top: 30px; } }
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+          body .site-container .banner .filter .entry-meta {
+            top: 25px; } }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container .banner .filter .entry-meta {
+            top: 20px; } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container .banner .filter .entry-meta {
+            top: 15px; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container .banner .filter .entry-meta {
+            top: 10px; } }
     body .site-container .banner .banner-title {
       padding: 25px 0;
       text-shadow: 1px 2px 6px #000;

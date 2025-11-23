@@ -1050,7 +1050,38 @@ body {
 //                filter: drop-shadow(2px 4px 6px $black);
                 backdrop-filter: blur(0.06em);
                 background: rgba(0, 0, 0, 0.53);
-                box-shadow: 7px 10px 55px 65px rgba(0, 0, 0,0.53); 
+                box-shadow: 7px 10px 55px 65px rgba(0, 0, 0,0.53);
+				.entry-meta {
+					position: relative;
+					@include hd-desktop-up {
+						font-size: 24px;
+						top: 50px;
+					}
+					@include large-desktop-up {
+						font-size: 20px;
+						top: 40px;
+					}
+					@include custom-desktop {
+						font-size: 19px;
+						top: 38px;
+					}
+					@include desktop-up {
+						font-size: 18px;
+						top: 30px;
+					}
+					@include tablet-landscape-up {
+						top: 25px; 
+					}
+					@include tablet-portrait-up {
+						top: 20px;
+					}
+					@include phone-only-up {
+						top: 15px;
+					}
+					@include extra-extra-small {
+						top: 10px;
+					}
+				}				
             }
 			.banner-title {
                 padding: 25px 0;
@@ -1156,7 +1187,7 @@ body {
                             border-bottom: solid 5px #ebffe7;
                         }                        
                     }
-                }                
+                }
 			}
 			h3 {
 				&.archive-title { 
