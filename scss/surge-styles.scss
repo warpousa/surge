@@ -98,7 +98,7 @@ $content-background1: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100
 $content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 232, 232, 1) 33%, rgba(239, 242, 227, 1) 100%);
 $contentcolor: #6d6666;
 $grey: grey;
-$linkhover: black;
+$linkhover: $black;
 $linkhover-border: rgba(0,0,0,0);
 $menu-background: rgba(255,255,255,0.9);   /*#eff4f2*/
 $menu-background-ii: #eff3e8;
@@ -1053,6 +1053,8 @@ body {
                 box-shadow: 7px 10px 55px 65px rgba(0, 0, 0,0.53);
 				.entry-meta {
 					position: relative;
+					text-shadow: 3px 2px 4px $black;
+					-webkit-text-stroke: 0.025em #476672;
 					@include hd-desktop-up {
 						font-size: 24px;
 						top: 50px;
