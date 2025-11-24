@@ -656,6 +656,23 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a:active, body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a:focus {
+      transform: scale(1.00198);
+      box-shadow: 0 0 20px;
+      top: 1px; }
+    body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img {
+      position: relative;
+      transition: ease all 0.25s;
+      margin-bottom: 10px;
+      border: 1px solid #caccc0;
+      padding: 7px; }
+      body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:hover {
+        transform: scale(1.002);
+        box-shadow: 0 0 25px; }
+      body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:active, body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:focus {
+        transform: scale(1.00198);
+        box-shadow: 0 0 20px;
+        top: 1px; }
   body .site-container .banner {
     border-bottom: 2px solid #738f9b;
     box-shadow: #353737 0px -8px 15px 20px;
