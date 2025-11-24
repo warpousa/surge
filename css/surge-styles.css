@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* SURGE-styles*/
 
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&display=swap");
 /* End Fonts */
 
@@ -964,6 +965,20 @@ body {
         @media only screen and (min-width: 0) and (max-width: 480px) {
           body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 {
             font-size: 120%; } }
+    body .site-container div.wrap main .entry-comments, body .site-container div.wrap main .comment-respond {
+      background: #f5f5f5 !important;
+      padding: 10px;
+      border-radius: 10px !important;
+      margin-top: 6px;
+      border: 2px solid #d2dbc4; }
+      body .site-container div.wrap main .entry-comments form.comment-form input, body .site-container div.wrap main .comment-respond form.comment-form input {
+        border-radius: 15px !important; }
+      body .site-container div.wrap main .entry-comments form .comment-form-cookies-consent, body .site-container div.wrap main .comment-respond form .comment-form-cookies-consent {
+        display: flex; }
+        body .site-container div.wrap main .entry-comments form .comment-form-cookies-consent input[type="checkbox"], body .site-container div.wrap main .comment-respond form .comment-form-cookies-consent input[type="checkbox"] {
+          min-width: 27px;
+          margin: 0 10px 0 0;
+          max-height: 27px; }
     body .site-container div.wrap main .entry {
       background: none !important; }
     body .site-container div.wrap main .nf-form-hp {

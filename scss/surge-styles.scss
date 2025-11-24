@@ -93,6 +93,7 @@ $xxl:  1400px;
 $surge-acqua: #25595c;
 $banner-shadow: #353737 0px -8px 15px 20px;
 $black: black;
+$blog-bg-ii: #f5f5f5;
 $charade: #222630;
 $content-background1: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%); /* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
 $content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 232, 232, 1) 33%, rgba(239, 242, 227, 1) 100%);
@@ -1298,6 +1299,30 @@ body {
                             }
                         }
 					}
+                    .entry-comments, .comment-respond {
+                        background: $blog-bg-ii !important;
+                        padding: 10px;
+                        border-radius: 10px !important;
+                        margin-top: 6px;
+                        border: 2px solid #d2dbc4;
+                        form {
+                            &.comment-form {
+                                input {
+                                    border-radius: 15px !important;
+                                }
+                            }
+                            .comment-form-cookies-consent {
+                                display: flex;
+                                input {
+                                    &[type="checkbox"] {
+                                        min-width: 27px;
+                                        margin: 0 10px 0 0;
+                                        max-height: 27px;
+                                    }
+                                }
+                            }
+                        }
+                    }
 					.entry {
 						background: none !important;
 					}						
