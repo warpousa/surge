@@ -1,10 +1,30 @@
 @charset "UTF-8";
 /* SURGE-styles*/
+/* Body Background */
+/* End Body Background */
+/* Background Img Variables */
+/* End Background Img Variables  */
+/* Breakpoints */
+/* End Breakpoints */
+/* Colors & Borders */
+/* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
+/*#eff4f2*/
+/* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
+/* #eff4f2;  */
+/* End Colors & Borders */
+/*  Img FX */
+/* End Img FX */
+/* Transforms & Transitions */
+/* End Transforms & Transitions */
+/* Shading  */
+/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&display=swap");
 /* End Fonts */
-
+/* End Fonts */
+/* Mixins */
+/* End Mixins */
 body {
   background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
   height: 100vh;
