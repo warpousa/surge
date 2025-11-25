@@ -989,13 +989,17 @@ body {
       margin-top: 6px;
       border: 2px solid #d2dbc4; }
       body .site-container div.wrap main .entry-comments form.comment-form input, body .site-container div.wrap main .comment-respond form.comment-form input {
-        border-radius: 15px !important; }
+        border-radius: 7px !important; }
+      body .site-container div.wrap main .entry-comments form.comment-form .comment-form-comment textarea, body .site-container div.wrap main .comment-respond form.comment-form .comment-form-comment textarea {
+        border-radius: 3px;
+        width: 75%; }
       body .site-container div.wrap main .entry-comments form .comment-form-cookies-consent, body .site-container div.wrap main .comment-respond form .comment-form-cookies-consent {
         display: flex; }
         body .site-container div.wrap main .entry-comments form .comment-form-cookies-consent input[type="checkbox"], body .site-container div.wrap main .comment-respond form .comment-form-cookies-consent input[type="checkbox"] {
           min-width: 27px;
           margin: 0 10px 0 0;
-          max-height: 27px; }
+          max-height: 27px;
+          cursor: pointer; }
     body .site-container div.wrap main .entry {
       background: none !important; }
     body .site-container div.wrap main .nf-form-hp {
@@ -1383,6 +1387,7 @@ body {
     outline: dashed 3px #555e60;
     box-shadow: 6px 5px 15px #75858a; }
   body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
+    background: #005d5d;
     width: 33%;
     min-width: 210px;
     font-size: 2.8em;
@@ -1390,8 +1395,8 @@ body {
     padding-top: 9px;
     border-radius: 10px;
     font-family: "Vollkorn SC", serif;
-    text-shadow: 0 0 20px #a2a2a2;
-    -webkit-text-stroke: 1px #a9a9a2;
+    text-shadow: 0 0 8px #a2a2a2;
+    -webkit-text-stroke: 1px #5c7ba1;
     font-weight: 700; }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element {
@@ -1405,10 +1410,13 @@ body {
         font-size: 1.4em;
         height: 60px; } }
     body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:hover {
-      transform: scale(1.01); }
+      transform: scale(1.01);
+      background: #1d3c46;
+      color: #c2e3e2; }
     body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:active, body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input.ninja-forms-field.nf-element:focus {
+      background: black;
       position: relative;
-      top: 2px;
+      top: 1px;
       transform: scale(1.02); }
   body .nf-form-layout form .nf-form-content .field-wrap.submit-wrap.textbox-wrap input[disabled="true"] {
     opacity: 0.3;

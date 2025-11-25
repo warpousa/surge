@@ -1337,8 +1337,14 @@ body {
                         form {
                             &.comment-form {
                                 input {
-                                    border-radius: 15px !important;
+                                    border-radius: 7px !important;
                                 }
+								.comment-form-comment {
+									textarea {
+										border-radius: 3px;
+										width: 75%;
+									}
+								}
                             }
                             .comment-form-cookies-consent {
                                 display: flex;
@@ -1347,6 +1353,7 @@ body {
                                         min-width: 27px;
                                         margin: 0 10px 0 0;
                                         max-height: 27px;
+										cursor: pointer;
                                     }
                                 }
                             }
@@ -1730,16 +1737,17 @@ body {
                             input {
                                 &.ninja-forms-field {
                                     &.nf-element {
-                                        width: 33%;
-                                        min-width: 210px;
-                                        font-size: 2.8em;
-                                        height: 80px;
-                                        padding-top: 9px;
-                                        border-radius: 10px;
-                                        font-family: $VollkornSCFont;
-                                        text-shadow: 0 0 20px #a2a2a2;
-                                        -webkit-text-stroke: 1px #a9a9a2;
-                                        font-weight: 700;
+										background: #005d5d;
+										width: 33%;
+										min-width: 210px;
+										font-size: 2.8em;
+										height: 80px;
+										padding-top: 9px;
+										border-radius: 10px;
+										font-family: "Vollkorn SC", serif;
+										text-shadow: 0 0 8px #a2a2a2;
+										-webkit-text-stroke: 1px #5c7ba1;
+										font-weight: 700;
                                         @include tablet-portrait-up {
                                             font-size: 1.8em;
                                         }                                       
@@ -1752,11 +1760,14 @@ body {
                                             height: 60px
                                         }
                                         &:hover {
-                                            transform: scale(1.01);
+											transform: scale(1.01);
+											background: #1d3c46;
+											color: #c2e3e2;
                                         }
                                         &:active, &:focus {
+											background: $black;
                                             position: relative;
-                                            top: 2px;
+                                            top: 1px;
                                             transform: scale(1.02);
                                         }
                                     }
