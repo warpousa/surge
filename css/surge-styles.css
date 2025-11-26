@@ -10,7 +10,7 @@ body {
   height: 100vh;
   color: #222630;
   font-family: "Special Elite", system-ui;
-  min-width: 290px; }
+  min-width: 275px; }
   body input, body select, body textarea {
     background: #fff;
     border: 1px solid #ddd;
@@ -844,7 +844,7 @@ body {
         background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots-conning-tower.png);
         margin: 0 auto;
         width: 978px;
-        height: 265px;
+        height: 245px;
         display: block;
         border-bottom: solid 10px #ebffe7;
         background-repeat: no-repeat;
@@ -918,10 +918,10 @@ body {
         width: 96%; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .site-container div.wrap {
-        width: 97%; } }
+        width: 98%; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container div.wrap {
-        width: 98%; } }
+        width: 100%; } }
     body .site-container div.wrap main.content {
       width: 95%;
       width: 95%;
@@ -1003,13 +1003,26 @@ body {
         transition: ease all 0.125s; }
         body .site-container div.wrap main .entry-comments form.comment-form input[type="submit"], body .site-container div.wrap main .comment-respond form.comment-form input[type="submit"] {
           font-family: "Vollkorn SC", serif;
+          font-size: 32px;
           background: #005d5d;
           font-weight: 700;
           text-shadow: 0 0 8px #a2a2a2;
           -webkit-text-stroke: 1px #5c7ba1;
-          padding: 15px 14px 5px 15px; }
+          padding: 10px 14px 5px 15px; }
           body .site-container div.wrap main .entry-comments form.comment-form input[type="submit"]:hover, body .site-container div.wrap main .comment-respond form.comment-form input[type="submit"]:hover {
             background: #1d3c46; }
+          @media only screen and (min-width: 768px) and (max-width: 992px) {
+            body .site-container div.wrap main .entry-comments form.comment-form input[type="submit"], body .site-container div.wrap main .comment-respond form.comment-form input[type="submit"] {
+              font-size: 28px; } }
+          @media only screen and (min-width: 576px) and (max-width: 768px) {
+            body .site-container div.wrap main .entry-comments form.comment-form input[type="submit"], body .site-container div.wrap main .comment-respond form.comment-form input[type="submit"] {
+              font-size: 22px; } }
+          @media only screen and (min-width: 480px) and (max-width: 576px) {
+            body .site-container div.wrap main .entry-comments form.comment-form input[type="submit"], body .site-container div.wrap main .comment-respond form.comment-form input[type="submit"] {
+              font-size: 18px; } }
+          @media only screen and (min-width: 0) and (max-width: 480px) {
+            body .site-container div.wrap main .entry-comments form.comment-form input[type="submit"], body .site-container div.wrap main .comment-respond form.comment-form input[type="submit"] {
+              font-size: 16px; } }
       body .site-container div.wrap main .entry-comments form.comment-form .required, body .site-container div.wrap main .comment-respond form.comment-form .required {
         color: #e80000; }
       body .site-container div.wrap main .entry-comments form .comment-form-cookies-consent, body .site-container div.wrap main .comment-respond form .comment-form-cookies-consent {
