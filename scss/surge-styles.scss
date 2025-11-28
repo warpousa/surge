@@ -42,15 +42,18 @@ $lv: 	600px;
 //// End Vertical ////
 
 //// Horizontal ////
-$xxs: 	    0;
-$xs: 	480px;
-$sm: 	576px;
-$md: 	768px;
-$lg: 	992px;
-$cfix:  1023px;
-$clg:  1024px;
-$xl:   1200px;
-$xxl:  1400px;
+
+$xxl:  	1400px;
+$xl:   	1200px;
+$clg:  	1025px;
+$cfix2:	1024px;
+$cfix:	1023px;
+$lg: 	 992px;
+$md: 	 768px;
+$sm: 	 576px;
+$xs: 	 480px;
+$xxs: 	     0;
+
 //// End Horizontal ////
 
 //////////////
@@ -61,8 +64,11 @@ $xxl:  1400px;
 @mixin large-desktop-up {
   @media only screen and (min-width: $xl) and (max-width: $xxl) { @content; }	
 }
+@mixin desktop-fix2 {
+  @media only screen and (min-width: $cfix2) and (max-width: $xl) { @content; }	
+}
 @mixin desktop-fix {
-  @media only screen and (min-width: $cfix) and (max-width: $cfix) { @content; }	
+  @media only screen and (min-width: $cfix) and (max-width: $cfix2) { @content; }	
 }
 @mixin custom-desktop {
   @media only screen and (min-width: $clg) and (max-width: $xl) { @content; }	
@@ -284,6 +290,9 @@ body {
 				z-index: 99;
                 height: 72px;
                 min-width: 290px;
+				@include hd-desktop-up {
+                    height: 72px;
+                }
                 @include large-desktop-up {
                     height: 65px;
                 }
@@ -294,7 +303,7 @@ body {
                     height: 72px !important;
 				}                
                 @include desktop-up {
-                    height: 62px;
+                    height: 72px;
 				}
 				&.hide-header {
 					transform: $animate-header;
@@ -443,7 +452,7 @@ body {
                             max-height: 60px;
                         }
                         @include desktop-up {
-                            max-height: 58px;
+                            max-height: 70px;
                         }
                         @include tablet-landscape-up { 
                             max-height: 70px;
@@ -487,7 +496,19 @@ body {
 					}                    
 					@include desktop-up {
 						margin-right: 25px;
-					}                    
+					}
+					@include desktop-fix2 {
+						position: fixed;
+						top: -1px;
+						left: 12%;
+						min-width: 900px;
+					}
+					@include desktop-fix {
+						position: fixed;
+						top: -25px;
+						left: 99px;
+						min-width: 980px;
+					}
  					@include tablet-landscape-up { 
 						margin-right: 20px;
 					}                   
@@ -585,7 +606,7 @@ body {
 								}
 								@include desktop-up {
 									left: 0px;
-									top: 62px;
+									top: 72px;
 									width: 100%;
 									margin: 0;
 								}
@@ -1475,7 +1496,7 @@ body {
 						// content: "\1F6E5";
 						content: '\00a0\00a0\00a0\00a0\00a0';
 						background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
-						background-size: 110px 29px;
+						background-size: 95px 25px;
 						background-repeat: no-repeat;
 						color: #6d6666;
 						position: absolute;
@@ -1485,7 +1506,7 @@ body {
 						opacity: 0;
 						transition: $ease-quarter-sec;
 						font-size: 22px;
-						width: 125px;
+						width: 127px;
                         z-index: 99;
  						@include hd-desktop-up {
 							background-position: 13px 37px;
@@ -1530,14 +1551,14 @@ body {
 							}                           
 							@include custom-desktop {
 								right: -30px !important;
-                                z-index: -1;
+                                //z-index: -1;
 							}
   							@include desktop-up {
 								right: -30px !important;
-                                z-index: -1;
+                                //z-index: -1;
 							}                          
 							@include tablet-landscape-up {
-								right: -40px !important;
+								right: -15px !important;
 								font-size: 25px;
                                 top: -7px;
 							}                            
@@ -1585,8 +1606,7 @@ body {
 						}                       
  						@include custom-desktop {
 							box-shadow: $submenu-shadow1;
-							width: 22%;
-							max-width: 300px;
+							width: 39%;
 						}                      
 						@include desktop-up {
 							box-shadow: none;
