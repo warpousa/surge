@@ -34,18 +34,21 @@ body {
     z-index: 99;
     height: 72px;
     min-width: 290px; }
+    @media only screen and (min-width: 1400px) {
+      body header#header.site-header {
+        height: 72px; } }
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body header#header.site-header {
         height: 65px; } }
-    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    @media only screen and (min-width: 1025px) and (max-width: 1200px) {
       body header#header.site-header {
         height: 62px; } }
-    @media only screen and (min-width: 1023px) and (max-width: 1023px) {
+    @media only screen and (min-width: 1023px) and (max-width: 1024px) {
       body header#header.site-header {
         height: 72px !important; } }
-    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+    @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body header#header.site-header {
-        height: 62px; } }
+        height: 72px; } }
     body header#header.site-header.hide-header {
       transform: translateY(-1000px); }
     body header#header.site-header.is-transparent {
@@ -125,7 +128,7 @@ body {
           display: inline-block;
           border-radius: 75px;
           border-bottom: none; } }
-      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1025px) and (max-width: 1200px) {
         body header#header .site-title a {
           font-size: 34px;
           left: 15px;
@@ -133,12 +136,12 @@ body {
           display: inline-block;
           border-radius: 75px;
           border-bottom: none; } }
-      @media only screen and (min-width: 1023px) and (max-width: 1023px) {
+      @media only screen and (min-width: 1023px) and (max-width: 1024px) {
         body header#header .site-title a {
           font-size: 33px;
           margin-right: 60px;
           border-bottom: none; } }
-      @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      @media only screen and (min-width: 992px) and (max-width: 1025px) {
         body header#header .site-title a {
           margin-right: 60px;
           font-size: 0;
@@ -186,16 +189,16 @@ body {
           border-bottom: none; } }
       @media only screen and (min-width: 1400px) {
         body header#header .site-title a img {
-          max-height: 68px; } }
+          max-height: 71px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body header#header .site-title a img {
           max-height: 62px; } }
-      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1025px) and (max-width: 1200px) {
         body header#header .site-title a img {
           max-height: 60px; } }
-      @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      @media only screen and (min-width: 992px) and (max-width: 1025px) {
         body header#header .site-title a img {
-          max-height: 58px; } }
+          max-height: 70px; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body header#header .site-title a img {
           max-height: 70px; } }
@@ -240,9 +243,21 @@ body {
   @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     body header#header nav#navigation {
       margin-right: 30px; } }
-  @media only screen and (min-width: 992px) and (max-width: 1024px) {
+  @media only screen and (min-width: 992px) and (max-width: 1025px) {
     body header#header nav#navigation {
       margin-right: 25px; } }
+  @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    body header#header nav#navigation {
+      position: fixed;
+      top: -1px;
+      left: 12%;
+      min-width: 900px; } }
+  @media only screen and (min-width: 1023px) and (max-width: 1024px) {
+    body header#header nav#navigation {
+      position: fixed;
+      top: -28px;
+      left: 99px;
+      min-width: 980px; } }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     body header#header nav#navigation {
       margin-right: 20px; } }
@@ -277,10 +292,10 @@ body {
   @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     body header#header nav#navigation.nav-primary a#menu-icon {
       display: none; } }
-  @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  @media only screen and (min-width: 1025px) and (max-width: 1200px) {
     body header#header nav#navigation.nav-primary a#menu-icon {
       display: none; } }
-  @media only screen and (min-width: 992px) and (max-width: 1024px) {
+  @media only screen and (min-width: 992px) and (max-width: 1025px) {
     body header#header nav#navigation.nav-primary a#menu-icon.menu-icon {
       padding: 30px 64px 25px 5px;
       top: 9px; }
@@ -358,15 +373,15 @@ body {
           margin-bottom: -5px; } }
   body header#header nav#navigation.nav-primary ul.menu {
     border-top: none !important; }
-    @media only screen and (max-height: 600px) and (max-width: 1024px) {
+    @media only screen and (max-height: 600px) and (max-width: 1025px) {
       body header#header nav#navigation.nav-primary ul.menu {
         overflow-y: scroll;
         overflow-x: hidden;
         height: 118vh; } }
-    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+    @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
-        top: 62px;
+        top: 72px;
         width: 100%;
         margin: 0; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
@@ -449,7 +464,7 @@ body {
         margin-top: 9px;
         z-index: 9999;
         transform: rotate(-90deg); } }
-    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+    @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children::before {
         color: black;
         content: " › ";
@@ -511,11 +526,11 @@ body {
       text-shadow: none;
       text-shadow: none;
       transition: ease all 0.5s; }
-      @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      @media only screen and (min-width: 992px) and (max-width: 1025px) {
         body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children > a::after {
           right: 3px;
           bottom: 7px; } }
-      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1025px) and (max-width: 1200px) {
         body header#header nav#navigation.nav-primary ul.menu li.menu-item-has-children > a::after {
           right: 3px;
           top: 6px; } }
@@ -540,11 +555,11 @@ body {
           body header#header nav#navigation.nav-primary ul.menu li.current_page_item::after {
             margin-top: -41px;
             margin-left: 14px !important; } }
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body header#header nav#navigation.nav-primary ul.menu li.current_page_item::after {
             margin-top: -39px;
             margin-left: 14px !important; } }
-        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body header#header nav#navigation.nav-primary ul.menu li.current_page_item::after {
             margin-top: -39px;
             margin-left: 14px !important; } }
@@ -627,11 +642,11 @@ body {
         body .site-container .site-inner .contact-logo {
           font-size: 68px;
           line-height: 65px; } }
-      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1025px) and (max-width: 1200px) {
         body .site-container .site-inner .contact-logo {
           font-size: 60px;
           line-height: 42px; } }
-      @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      @media only screen and (min-width: 992px) and (max-width: 1025px) {
         body .site-container .site-inner .contact-logo {
           font-size: 52px;
           line-height: 44px;
@@ -689,11 +704,11 @@ body {
       body .site-container .banner {
         background-size: 100% calc(min(750px, 100%));
         padding: 150px 0 140px 0; } }
-    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    @media only screen and (min-width: 1025px) and (max-width: 1200px) {
       body .site-container .banner {
         background-size: 108% calc(min(730px, 100%));
         padding: 135px 0 125px 0; } }
-    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+    @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body .site-container .banner {
         background-size: 120% calc(min(715px, 100%));
         padding: 160px 0 80px 0; } }
@@ -771,11 +786,11 @@ body {
           body .site-container .banner .filter .entry-meta {
             font-size: 20px;
             top: 40px; } }
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .banner .filter .entry-meta {
             font-size: 19px;
             top: 38px; } }
-        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body .site-container .banner .filter .entry-meta {
             font-size: 18px;
             top: 30px; } }
@@ -805,12 +820,12 @@ body {
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body .site-container .banner .banner-title {
           font-size: 74px; } }
-      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+      @media only screen and (min-width: 1025px) and (max-width: 1200px) {
         body .site-container .banner .banner-title {
           font-size: 64px;
           position: relative;
           bottom: 10px; } }
-      @media only screen and (min-width: 992px) and (max-width: 1024px) {
+      @media only screen and (min-width: 992px) and (max-width: 1025px) {
         body .site-container .banner .banner-title {
           font-size: 52px;
           position: relative;
@@ -853,14 +868,14 @@ body {
         position: relative;
         background-size: 65% 100%;
         background-position: 50%; }
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 800px;
             height: 185px;
             background-size: contain;
             position: relative;
             bottom: 8px; } }
-        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 740px;
             height: 175px;
@@ -907,7 +922,7 @@ body {
       color: #ebffe7; }
   body .site-container div.wrap {
     max-width: 1620px !important; }
-    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+    @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body .site-container div.wrap {
         width: 95%; } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -1078,16 +1093,19 @@ body {
         padding: 22px 18px 20px 37px;
         text-shadow: 1px 1px 19px #ffe29d;
         font-size: 18px; }
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1023px) and (max-width: 1024px) {
+          body .site-container .omega-nav-menu li a {
+            padding: 26px 18px 23px 37px; } }
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .omega-nav-menu li a {
             font-size: 14px; } }
-        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body .site-container .omega-nav-menu li a {
             font-size: 13.5px; } }
         body .site-container .omega-nav-menu li a::before {
           content: '\00a0\00a0\00a0\00a0\00a0';
           background-image: url("https://surge.ngo/wp-content/themes/composer/images/DasBoot.png");
-          background-size: 110px 29px;
+          background-size: 95px 25px;
           background-repeat: no-repeat;
           color: #6d6666;
           position: absolute;
@@ -1097,7 +1115,7 @@ body {
           opacity: 0;
           transition: ease all 0.25s;
           font-size: 22px;
-          width: 125px;
+          width: 127px;
           z-index: 99; }
           @media only screen and (min-width: 1400px) {
             body .site-container .omega-nav-menu li a::before {
@@ -1114,7 +1132,7 @@ body {
               right: 37px !important;
               background-size: 90px 26px;
               z-index: -1; } }
-          @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+          @media only screen and (min-width: 1025px) and (max-width: 1200px) {
             body .site-container .omega-nav-menu li a::before {
               background-position: 13px 37px;
               font-size: 38px;
@@ -1137,17 +1155,15 @@ body {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
                 right: -15px !important;
                 z-index: -1; } }
-            @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+            @media only screen and (min-width: 1025px) and (max-width: 1200px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important;
-                z-index: -1; } }
-            @media only screen and (min-width: 992px) and (max-width: 1024px) {
+                right: -30px !important; } }
+            @media only screen and (min-width: 992px) and (max-width: 1025px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -30px !important;
-                z-index: -1; } }
+                right: -30px !important; } }
             @media only screen and (min-width: 768px) and (max-width: 992px) {
               body .site-container .omega-nav-menu li a:hover::before, body .site-container .omega-nav-menu li a:focus::before, body .site-container .omega-nav-menu li a:active::before {
-                right: -40px !important;
+                right: -15px !important;
                 font-size: 25px;
                 top: -7px; } }
             @media only screen and (min-width: 576px) and (max-width: 768px) {
@@ -1179,22 +1195,24 @@ body {
         @media only screen and (min-width: 1400px) {
           body .site-container .omega-nav-menu li ul.sub-menu {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
-            width: 18%;
-            max-width: 480px; } }
+            width: 28%;
+            max-width: 600px; } }
         @media only screen and (min-width: 1200px) and (max-width: 1400px) {
           body .site-container .omega-nav-menu li ul.sub-menu {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
             width: 23%;
             max-width: 400px; } }
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .omega-nav-menu li ul.sub-menu {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
-            width: 22%;
-            max-width: 300px; } }
-        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+            width: 39%; } }
+        @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body .site-container .omega-nav-menu li ul.sub-menu {
             box-shadow: none;
             width: 100%; } }
+        @media only screen and (min-width: 1023px) and (max-width: 1024px) {
+          body .site-container .omega-nav-menu li ul.sub-menu {
+            max-width: 400px; } }
         @media only screen and (min-width: 1400px) {
           body .site-container .omega-nav-menu li ul.sub-menu ul.sub-menu {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
@@ -1211,7 +1229,7 @@ body {
             margin-left: 100%;
             margin-top: -74px;
             border-radius: 18px; } }
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .omega-nav-menu li ul.sub-menu ul.sub-menu {
             box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.3);
             width: 100%;
@@ -1219,7 +1237,7 @@ body {
             margin-left: 100%;
             margin-top: -77px;
             border-radius: 18px; } }
-        @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body .site-container .omega-nav-menu li ul.sub-menu ul.sub-menu {
             box-shadow: none;
             width: 100%;
@@ -1318,7 +1336,7 @@ body {
           body .footer-widgets .wrap .widget-area section.widget:last-of-type {
             max-width: 120px;
             margin-left: 15px; } }
-    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    @media only screen and (min-width: 1025px) and (max-width: 1200px) {
       body .footer-widgets .wrap .widget-area {
         display: flex;
         width: 95%; }
@@ -1330,7 +1348,7 @@ body {
           body .footer-widgets .wrap .widget-area section.widget:last-of-type {
             max-width: 120px;
             margin-left: 15px; } }
-    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+    @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body .footer-widgets .wrap .widget-area {
         display: flex;
         width: 95%; }

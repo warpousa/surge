@@ -443,7 +443,7 @@ body {
 					}
                     img {
                         @include hd-desktop-up { 
-                            max-height: 68px;
+                            max-height: 71px;
                         }                       
                          @include large-desktop-up { 
                             max-height: 62px;
@@ -505,7 +505,7 @@ body {
 					}
 					@include desktop-fix {
 						position: fixed;
-						top: -25px;
+						top: -28px;
 						left: 99px;
 						min-width: 980px;
 					}
@@ -1483,6 +1483,9 @@ body {
 				a {
 					color: $black;
 					padding: 22px 18px 20px 37px;
+					@include desktop-fix {
+						padding: 26px 18px 23px 37px;
+					}
     				text-shadow: $text-shadow;
 					// transition: $ease-half-sec;
 					font-size: 18px;
@@ -1596,8 +1599,8 @@ body {
 						border-bottom: dashed 1px darkgrey !important;
  						@include hd-desktop-up {
 							box-shadow: $submenu-shadow1;
-							width: 18%;
-							max-width: 480px;
+							width: 28%;
+							max-width: 600px;
 						}                      
  						@include large-desktop-up {
 							box-shadow: $submenu-shadow1;
@@ -1611,6 +1614,9 @@ body {
 						@include desktop-up {
 							box-shadow: none;
 							width: 100%;
+						}
+						@include desktop-fix {
+							max-width: 400px;
 						}
                         ul {
                             &.sub-menu {
