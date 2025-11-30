@@ -38,7 +38,13 @@ $surge-bg20: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bg
 /* Breakpoints */
 
 //// Vertical /////
+
 $lv: 	600px;
+
+@mixin lowres-vertical {
+	@media only screen and (max-height: $lv) and (max-width: $clg ) { @content}	
+}
+
 //// End Vertical ////
 
 //// Horizontal ////
@@ -53,10 +59,6 @@ $md: 	 768px;
 $sm: 	 576px;
 $xs: 	 480px;
 $xxs: 	     0;
-
-//// End Horizontal ////
-
-//////////////
 
 @mixin hd-desktop-up {
   @media only screen and (min-width: $xxl) { @content; }	
@@ -88,9 +90,8 @@ $xxs: 	     0;
 @mixin extra-extra-small {
   @media only screen and (min-width: $xxs) and (max-width: $xs) { @content; }
 }
-@mixin lowres-vertical {
-	@media only screen and (max-height: $lv) and (max-width: $clg ) { @content}	
-}
+
+//// End Horizontal ////
 
 /* End Breakpoints */
 
@@ -473,6 +474,7 @@ body {
 				&#navigation {
 					a {
                         border-bottom: none;
+						font-family: "Vollkorn SC", serif; // sets meganav font
 						&:hover, &:focus {
                             border-bottom: none;
 							text-decoration: none;
@@ -964,6 +966,30 @@ body {
                 }        
             }
 			.entry-wrap {
+				.wp-block-image, .wp-block-media {
+					&.image-var-i {
+						img {
+							border-radius: 10px;
+							border: solid 2px #7591a4;
+							box-shadow: 3px 4px 12px;
+						}
+					}
+					.alignleft {
+						margin: .5em 3em .5em 0;
+						@include phone-only-up {
+							margin: .2em 8.8em 1.5em 8.8em;
+							text-align: center;
+							min-width: 160px;
+						}
+						@include extra-extra-small { 
+							margin: .1em 6.5em 1.5em 6.5em;
+							text-align: center;
+							min-width: 160px;
+							position: relative;
+							right: 37px;
+						}
+					}
+				}
 				figure {
 					&.wp-block-media-text__media {
 						a {
@@ -1272,7 +1298,23 @@ body {
                     width: 100%;
                 }	                
 				main {
+					@include desktop-up {
+						font-size: 17px;
+					}                                              
+					@include tablet-landscape-up {
+						font-size: 16px;
+					}
+					@include tablet-portrait-up {
+						font-size: 15px;
+					}
+					@include phone-only-up {
+						font-size: 14px;
+					}	
+					@include extra-extra-small {
+						font-size: 13px;
+					}					
 					&.content {
+						
                         h2 {
                             &.wp-block-heading {
                                 &.has-text-align-center {

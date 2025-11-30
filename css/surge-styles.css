@@ -212,7 +212,8 @@ body {
         body header#header .site-title a img {
           max-height: 70px; } }
   body header#header nav#navigation a {
-    border-bottom: none; }
+    border-bottom: none;
+    font-family: "Vollkorn SC", serif; }
     body header#header nav#navigation a:hover, body header#header nav#navigation a:focus {
       border-bottom: none;
       text-decoration: none;
@@ -671,6 +672,24 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    body .site-container .site-inner .entry-wrap .wp-block-image.image-var-i img, body .site-container .site-inner .entry-wrap .wp-block-media.image-var-i img {
+      border-radius: 10px;
+      border: solid 2px #7591a4;
+      box-shadow: 3px 4px 12px; }
+    body .site-container .site-inner .entry-wrap .wp-block-image .alignleft, body .site-container .site-inner .entry-wrap .wp-block-media .alignleft {
+      margin: .5em 3em .5em 0; }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .site-container .site-inner .entry-wrap .wp-block-image .alignleft, body .site-container .site-inner .entry-wrap .wp-block-media .alignleft {
+          margin: .2em 8.8em 1.5em 8.8em;
+          text-align: center;
+          min-width: 160px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .site-container .site-inner .entry-wrap .wp-block-image .alignleft, body .site-container .site-inner .entry-wrap .wp-block-media .alignleft {
+          margin: .1em 6.5em 1.5em 6.5em;
+          text-align: center;
+          min-width: 160px;
+          position: relative;
+          right: 37px; } }
     body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a:active, body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a:focus {
       transform: scale(1.00198);
       box-shadow: 0 0 20px;
@@ -937,6 +956,21 @@ body {
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container div.wrap {
         width: 100%; } }
+    @media only screen and (min-width: 992px) and (max-width: 1025px) {
+      body .site-container div.wrap main {
+        font-size: 17px; } }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      body .site-container div.wrap main {
+        font-size: 16px; } }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body .site-container div.wrap main {
+        font-size: 15px; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .site-container div.wrap main {
+        font-size: 14px; } }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .site-container div.wrap main {
+        font-size: 13px; } }
     body .site-container div.wrap main.content {
       width: 95%;
       width: 95%;
