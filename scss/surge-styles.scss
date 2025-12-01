@@ -966,7 +966,7 @@ body {
                 }        
             }
 			.entry-wrap {
-				.wp-block-image, .wp-block-media {
+				.wp-block-image, .wp-block-media  {
 					&.image-var-i {
 						img {
 							border-radius: 10px;
@@ -1018,6 +1018,20 @@ body {
 									box-shadow: 0 0 20px;
 									top: 1px;
 								}
+							}
+						}
+					}
+				}
+				.wp-block-media-text {
+					border-top: 4px dashed;
+					font-size: 190%;
+					padding: 15px 0 5px 0;
+					&.image-var-i {
+						.wp-block-media-text__media {
+							img {
+								border-radius: 10px;
+								border: solid 2px #7591a4;
+								box-shadow: 3px 4px 12px;
 							}
 						}
 					}
@@ -1395,6 +1409,11 @@ body {
                                 }     
                             }
                         }
+						article {
+							border-bottom: 3px dashed;
+							margin-bottom: 30px;
+							padding-bottom: 5px;
+						}
 					}
                     .entry-comments, .comment-respond {
                         background: $blog-bg-ii !important;
@@ -1767,6 +1786,51 @@ body {
 		padding: 40px 0 16px;
 		.wrap {			
 			.widget-area {
+				section {
+					&.widget-last {
+						.widget-wrap {
+							a {
+								height: 149px;
+								display: inline-block;
+								border-radius: 25px;
+								padding: 5px 0 15px 15px;
+								box-shadow: none;
+								border: none;
+								@include tablet-landscape-up {
+									display: inline-flex;
+									flex-direction: column;
+								}                            
+								@include tablet-portrait-up {
+									display: inline-flex;
+									flex-direction: column;
+								}                            
+								@include phone-only-up {
+									display: inline-flex;
+									flex-direction: column;
+								}                           
+								@include extra-extra-small {
+									display: inline-flex;
+									flex-direction: column;
+								}
+								&::after {
+									content: '';
+									display: inline-block;
+									width: 117px;
+									height: 103px;
+									background-image: url(https://surge.ngo/wp-content/themes/composer/images/u-boat-search-icon.png);
+									background-size: 75%;
+									background-repeat: no-repeat;
+									transition: $ease-quarter-sec;
+								}
+								&:hover {
+									&::after {
+										transform: scale(1.1);
+									}
+								}
+							}
+						}
+					}
+				}
  				@include hd-desktop-up {
 					@include desktop-footer;
 				}               
@@ -1971,23 +2035,24 @@ body {
 					font-size: 14px;
 				}
 				&[type="submit"] {
-					left: 382px;
-					bottom: 82px;
+					left: 397px;
+					bottom: 85px;
 					border: 0;
 					clip: rect(0, 0, 0, 0);
 					margin: -1px;
 					padding: 0;
 					position: relative;
 					display: inline-block;
-					background: $searchbutton-bgcolor;
-					height: 83.5px;
+					background: #575872;
+					height: 86.5px;
 					width: 100px;
 					border-top-right-radius: 15px;
 					border-bottom-right-radius: 15px;
 					border-top-left-radius: 0;
 					border-bottom-left-radius: 0;
-					font-size: 25px;
+					font-size: 18px;
 					z-index: 999;
+					font-family: "Vollkorn SC", serif;
 				}
 				&:hover {
 					box-shadow: 5px 6px 15px #75858a; 
@@ -2018,8 +2083,8 @@ body {
 						max-width: 50px;
 						left: 114px;
 						font-size: 10px;
-						height: 47px;
-						bottom: 46px;
+						height: 52px;
+						bottom: 50px;
 					}
 				}
 			}
