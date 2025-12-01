@@ -270,7 +270,7 @@ body {
 		color: #999;
 		font-family: "Special Elite", system-ui;
 		font-size: 48px;
-		padding: 16px;
+		padding: 18px;
 		max-width: 100%;
 		color: black;
 		border-top-left-radius: 15px;
@@ -991,6 +991,11 @@ body {
 					}
 				}
 				figure {
+					sup {						
+						sub {
+							opacity: 0.3;
+						}
+					}
 					&.wp-block-media-text__media {
 						a {
 							&:active, &:focus { 
@@ -1314,9 +1319,9 @@ body {
 						font-size: 13px;
 					}					
 					&.content {
-						
                         h2 {
                             &.wp-block-heading {
+								border-bottom: 2px dashed;
                                 &.has-text-align-center {
                                     font-size: 50px;
                                     @include tablet-portrait-up {
@@ -1966,7 +1971,7 @@ body {
 					font-size: 14px;
 				}
 				&[type="submit"] {
-					left: 388px;
+					left: 382px;
 					bottom: 82px;
 					border: 0;
 					clip: rect(0, 0, 0, 0);
