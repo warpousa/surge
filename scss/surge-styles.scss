@@ -1394,18 +1394,18 @@ body {
                                         a {
                                             border-bottom: none;
                                         }
-                                        font-size: 300%;
+                                        font-size: 150%;
                                         @include tablet-landscape-up {
-                                            font-size: 200%;
+                                            font-size: 137%;
                                         }
                                         @include tablet-portrait-up {
-                                            font-size: 180%;
+                                            font-size: 127%;
                                         }
                                         @include phone-only-up {
-                                            font-size: 160%;
+                                            font-size: 117%;
                                         }	
                                         @include extra-extra-small {
-                                            font-size: 120%;
+                                            font-size: 108%;
                                         }
                                     }    
                                 }     

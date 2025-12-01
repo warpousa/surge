@@ -1029,21 +1029,21 @@ body {
       body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile figure.wp-block-media-text__media a {
         border-bottom: none; }
       body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 {
-        font-size: 300%; }
+        font-size: 150%; }
         body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2 a, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3 a, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 a {
           border-bottom: none; }
         @media only screen and (min-width: 768px) and (max-width: 992px) {
           body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 {
-            font-size: 200%; } }
+            font-size: 137%; } }
         @media only screen and (min-width: 576px) and (max-width: 768px) {
           body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 {
-            font-size: 180%; } }
+            font-size: 127%; } }
         @media only screen and (min-width: 480px) and (max-width: 576px) {
           body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 {
-            font-size: 160%; } }
+            font-size: 117%; } }
         @media only screen and (min-width: 0) and (max-width: 480px) {
           body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 {
-            font-size: 120%; } }
+            font-size: 108%; } }
       body .site-container div.wrap main.content article {
         border-bottom: 3px dashed;
         margin-bottom: 30px;
