@@ -106,6 +106,7 @@ $content-background1: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100
 $content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 232, 232, 1) 33%, rgba(239, 242, 227, 1) 100%);
 $contentcolor: #6d6666;
 $grey: grey;
+$linkcolor: #36768c;
 $linkhover: $black;
 $linkhover-border: rgba(0,0,0,0);
 $menu-background: rgba(255,255,255,0.9);   /*#eff4f2*/
@@ -900,12 +901,13 @@ body {
 		}
 	}
 	.site-container {
-        a {
+        a { 
+            border-bottom: 4px solid #1d5861;
+			color: $linkcolor;			
             transition: $ease-eighth-sec;
             text-decoration: none;
-            border-bottom: 4px solid;
             &:hover {
-                 color: $black;
+                color: $linkhover;
                 text-decoration: none;
                 text-shadow: 0 0 40px;
                 -webkit-text-stroke: 1px;
@@ -1784,7 +1786,7 @@ body {
 		background: none repeat scroll 0 0 #d5e1d3;
 		border-top: 2px solid #e1eae7;
 		padding: 40px 0 16px;
-		.wrap {			
+		.wrap {	
 			.widget-area {
 				section {
 					&.widget-last {
@@ -1859,7 +1861,7 @@ body {
 		}
 		a {
 			padding: 5px 2px 1px 2px;
-			@include link-props;
+//			@include link-props;
 			&:hover {
 				@include link-props-hover;
 				background-color: rgba(255,255,255,0.2);
