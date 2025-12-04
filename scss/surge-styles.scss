@@ -103,7 +103,7 @@ $black: black;
 $blog-bg-ii: #f5f5f5;
 $charade: #222630;
 $content-background1: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%); /* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
-$content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 232, 232, 1) 33%, rgba(239, 242, 227, 1) 100%);
+$content-background2: linear-gradient(0deg, #b7cccd 0%, #e8e8e8 95%, #eff2e3 100%);
 $contentcolor: #6d6666;
 $grey: grey;
 $linkcolor: #36768c;
@@ -1415,6 +1415,14 @@ body {
 							border-bottom: 3px dashed;
 							margin-bottom: 30px;
 							padding-bottom: 5px;
+							&.post-9 {
+								img {
+									border: dotted 11px #9fa291;
+									box-shadow: 0 0 6px 2px #9da094;
+									padding: 4px;
+									margin-bottom: 15px;
+								}
+							}
 						}
 					}
                     .entry-comments, .comment-respond {
