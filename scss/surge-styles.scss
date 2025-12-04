@@ -103,9 +103,10 @@ $black: black;
 $blog-bg-ii: #f5f5f5;
 $charade: #222630;
 $content-background1: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%); /* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
-$content-background2: linear-gradient(0deg,rgba(255, 249, 246, 1) 0%, rgba(232, 232, 232, 1) 33%, rgba(239, 242, 227, 1) 100%);
+$content-background2: linear-gradient(0deg, #b7cccd 0%, #e8e8e8 95%, #eff2e3 100%);
 $contentcolor: #6d6666;
 $grey: grey;
+$linkcolor: #36768c;
 $linkhover: $black;
 $linkhover-border: rgba(0,0,0,0);
 $menu-background: rgba(255,255,255,0.9);   /*#eff4f2*/
@@ -900,12 +901,13 @@ body {
 		}
 	}
 	.site-container {
-        a {
+        a { 
+            border-bottom: 4px solid #1d5861;
+			color: $linkcolor;			
             transition: $ease-eighth-sec;
             text-decoration: none;
-            border-bottom: 4px solid;
             &:hover {
-                 color: $black;
+                color: $linkhover;
                 text-decoration: none;
                 text-shadow: 0 0 40px;
                 -webkit-text-stroke: 1px;
@@ -966,7 +968,7 @@ body {
                 }        
             }
 			.entry-wrap {
-				.wp-block-image, .wp-block-media {
+				.wp-block-image, .wp-block-media  {
 					&.image-var-i {
 						img {
 							border-radius: 10px;
@@ -1018,6 +1020,20 @@ body {
 									box-shadow: 0 0 20px;
 									top: 1px;
 								}
+							}
+						}
+					}
+				}
+				.wp-block-media-text {
+					border-top: 4px dashed;
+					font-size: 190%;
+					padding: 15px 0 5px 0;
+					&.image-var-i {
+						.wp-block-media-text__media {
+							img {
+								border-radius: 10px;
+								border: solid 2px #7591a4;
+								box-shadow: 3px 4px 12px;
 							}
 						}
 					}
@@ -1378,23 +1394,36 @@ body {
                                         a {
                                             border-bottom: none;
                                         }
-                                        font-size: 300%;
+                                        font-size: 150%;
                                         @include tablet-landscape-up {
-                                            font-size: 200%;
+                                            font-size: 137%;
                                         }
                                         @include tablet-portrait-up {
-                                            font-size: 180%;
+                                            font-size: 127%;
                                         }
                                         @include phone-only-up {
-                                            font-size: 160%;
+                                            font-size: 117%;
                                         }	
                                         @include extra-extra-small {
-                                            font-size: 120%;
+                                            font-size: 108%;
                                         }
                                     }    
                                 }     
                             }
                         }
+						article {
+							border-bottom: 3px dashed;
+							margin-bottom: 30px;
+							padding-bottom: 5px;
+							&.post-9 {
+								img {
+									border: dotted 11px #9fa291;
+									box-shadow: 0 0 6px 2px #9da094;
+									padding: 4px;
+									margin-bottom: 15px;
+								}
+							}
+						}
 					}
                     .entry-comments, .comment-respond {
                         background: $blog-bg-ii !important;
@@ -1765,8 +1794,53 @@ body {
 		background: none repeat scroll 0 0 #d5e1d3;
 		border-top: 2px solid #e1eae7;
 		padding: 40px 0 16px;
-		.wrap {			
+		.wrap {	
 			.widget-area {
+				section {
+					&.widget-last {
+						.widget-wrap {
+							a {
+								height: 149px;
+								display: inline-block;
+								border-radius: 25px;
+								padding: 5px 0 15px 15px;
+								box-shadow: none;
+								border: none;
+								@include tablet-landscape-up {
+									display: inline-flex;
+									flex-direction: column;
+								}                            
+								@include tablet-portrait-up {
+									display: inline-flex;
+									flex-direction: column;
+								}                            
+								@include phone-only-up {
+									display: inline-flex;
+									flex-direction: column;
+								}                           
+								@include extra-extra-small {
+									display: inline-flex;
+									flex-direction: column;
+								}
+								&::after {
+									content: '';
+									display: inline-block;
+									width: 117px;
+									height: 103px;
+									background-image: url(https://surge.ngo/wp-content/themes/composer/images/u-boat-search-icon.png);
+									background-size: 75%;
+									background-repeat: no-repeat;
+									transition: $ease-quarter-sec;
+								}
+								&:hover {
+									&::after {
+										transform: scale(1.1);
+									}
+								}
+							}
+						}
+					}
+				}
  				@include hd-desktop-up {
 					@include desktop-footer;
 				}               
@@ -1795,7 +1869,7 @@ body {
 		}
 		a {
 			padding: 5px 2px 1px 2px;
-			@include link-props;
+//			@include link-props;
 			&:hover {
 				@include link-props-hover;
 				background-color: rgba(255,255,255,0.2);
@@ -1971,23 +2045,24 @@ body {
 					font-size: 14px;
 				}
 				&[type="submit"] {
-					left: 382px;
-					bottom: 82px;
+					left: 397px;
+					bottom: 85px;
 					border: 0;
 					clip: rect(0, 0, 0, 0);
 					margin: -1px;
 					padding: 0;
 					position: relative;
 					display: inline-block;
-					background: $searchbutton-bgcolor;
-					height: 83.5px;
+					background: #575872;
+					height: 86.5px;
 					width: 100px;
 					border-top-right-radius: 15px;
 					border-bottom-right-radius: 15px;
 					border-top-left-radius: 0;
 					border-bottom-left-radius: 0;
-					font-size: 25px;
+					font-size: 18px;
 					z-index: 999;
+					font-family: "Vollkorn SC", serif;
 				}
 				&:hover {
 					box-shadow: 5px 6px 15px #75858a; 
@@ -2018,8 +2093,8 @@ body {
 						max-width: 50px;
 						left: 114px;
 						font-size: 10px;
-						height: 47px;
-						bottom: 46px;
+						height: 52px;
+						bottom: 50px;
 					}
 				}
 			}
