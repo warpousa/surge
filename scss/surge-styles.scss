@@ -121,7 +121,10 @@ $searchbutton-bgcolor: #575872;
 $menu-highlight-shadow: 7px 6px 14px 0px rgba(80, 79, 77, 0.15);
 $text-shadow: 1px 1px 19px #ffe29d;
 $topborder: none !important;
+$table-shade-grey: rgba(200,200,200,0.4);
 $white: white;
+$wpblock-separator: #b1c7c9;
+$wpblockshadow: 0 5px 4px 0 rgba(255,255,255,0.5);
 
 /* End Colors & Borders */
 
@@ -1023,6 +1026,18 @@ body {
 							}
 						}
 					}
+					&.wp-block-table {
+						&.tableshade-pattern-a {
+							.has-fixed-layout {
+								min-width: 650px;
+								tr {
+									&:nth-child(odd) {
+										background-color: $table-shade-grey;
+									}
+								}
+							}
+						}
+					}
 				}
 				.wp-block-media-text {
 					border-top: 4px dashed;
@@ -1035,6 +1050,21 @@ body {
 								border: solid 2px #7591a4;
 								box-shadow: 3px 4px 12px;
 							}
+						}
+					}
+				}
+				ul {
+					&.wp-block-list {
+						&.bio-center {
+							margin-left: 23%;
+						}
+					}
+				}
+				hr {
+					&.wp-block-separator {
+						&.has-alpha-channel-opacity {
+							color: $wpblock-separator;
+							box-shadow: $wpblockshadow;
 						}
 					}
 				}
@@ -1420,7 +1450,7 @@ body {
 									border: dotted 11px #9fa291;
 									box-shadow: 0 0 6px 2px #9da094;
 									padding: 4px;
-									margin-bottom: 15px;
+									margin: 15px 5px;
 								}
 							}
 						}

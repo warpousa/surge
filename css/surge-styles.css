@@ -710,6 +710,10 @@ body {
         transform: scale(1.00198);
         box-shadow: 0 0 20px;
         top: 1px; }
+    body .site-container .site-inner .entry-wrap figure.wp-block-table.tableshade-pattern-a .has-fixed-layout {
+      min-width: 650px; }
+      body .site-container .site-inner .entry-wrap figure.wp-block-table.tableshade-pattern-a .has-fixed-layout tr:nth-child(odd) {
+        background-color: rgba(200, 200, 200, 0.4); }
     body .site-container .site-inner .entry-wrap .wp-block-media-text {
       border-top: 4px dashed;
       font-size: 190%;
@@ -718,6 +722,11 @@ body {
         border-radius: 10px;
         border: solid 2px #7591a4;
         box-shadow: 3px 4px 12px; }
+    body .site-container .site-inner .entry-wrap ul.wp-block-list.bio-center {
+      margin-left: 23%; }
+    body .site-container .site-inner .entry-wrap hr.wp-block-separator.has-alpha-channel-opacity {
+      color: #b1c7c9;
+      box-shadow: 0 5px 4px 0 rgba(255, 255, 255, 0.5); }
   body .site-container .banner {
     border-bottom: 2px solid #738f9b;
     box-shadow: #353737 0px -8px 15px 20px;
@@ -1052,7 +1061,7 @@ body {
           border: dotted 11px #9fa291;
           box-shadow: 0 0 6px 2px #9da094;
           padding: 4px;
-          margin-bottom: 15px; }
+          margin: 15px 5px; }
     body .site-container div.wrap main .entry-comments, body .site-container div.wrap main .comment-respond {
       background: #f5f5f5 !important;
       padding: 10px !important;
