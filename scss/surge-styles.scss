@@ -971,12 +971,38 @@ body {
                 }        
             }
 			.entry-wrap {
+				.wp-block-group-is-layout-flex {
+					@include tablet-portrait-up {
+						display: block;
+					}                                            
+					@include phone-only-up {
+						display: block;
+					}                                          
+					@include extra-extra-small {
+						display: block;
+					}
+				}
 				.wp-block-image, .wp-block-media  {
 					&.image-var-i {
 						img {
 							border-radius: 10px;
 							border: solid 2px #7591a4;
 							box-shadow: 3px 4px 12px;
+						}
+					}
+					&.img-constrain--i {
+						img {
+							transition: $ease-quarter-sec;
+			                min-width: 225px;
+							@include tablet-portrait-up { 
+								min-width: 200px;
+							}
+							@include phone-only-up {
+								min-width: 160px;
+							}
+							@include extra-extra-small {
+								min-width: 140px;
+							}
 						}
 					}
 					.alignleft {
@@ -1040,7 +1066,6 @@ body {
 					}
 				}
 				.wp-block-media-text {
-					border-top: 4px dashed;
 					font-size: 190%;
 					padding: 15px 0 5px 0;
 					&.image-var-i {
@@ -1068,10 +1093,77 @@ body {
 						}
 					}
 				}
+				form {
+					&.post-password-form {
+						input {
+							&[type="submit"] {
+								font-family: $VollkornSCFont;
+								border-radius: 0 10px 10px 0;
+								padding: 14px 12px 5px 8px;
+								position: relative;
+								top: 7px;
+								right: 12px;
+								min-height: 86px;
+								@include tablet-portrait-up {
+									font-size: 20px;
+									min-height: 49px;
+									top: 1px;
+									padding: 3px 10px 1px 3px;
+								}               
+								@include phone-only-up {
+									font-size: 17px;
+									min-height: 40px;
+									top: 1px;
+									padding: 6px 3px 2px 3px;
+									left: -1px;
+								}
+								@include extra-extra-small {
+									font-size: 15px;
+									min-height: 35px;
+									top: -4px;
+								}
+							}
+							&[name="post_password"] {
+								font-family: $VollkornSCFont;
+								padding: 14px 12px 5px 8px;
+								position: relative;
+								top: 7px;
+								right: 7px;
+								min-height: 86px;
+								min-width: 150px;
+								width: 60%;
+								@include tablet-portrait-up {
+									font-size: 20px;
+									min-height: 50px;
+									padding: 5px 5px 5px 8px;
+									top: 0px;
+									left: 1px;								
+								}               
+								@include phone-only-up {
+									font-size: 17px;
+									min-height: 40px;
+									padding: 7px 12px 5px 8px;
+									top: 0px;
+									right: -2px;
+									width: 55%;
+								}
+								@include extra-extra-small {
+									font-size: 15px;
+									min-height: 35px;
+									padding: 7px 12px 5px 8px;
+									top: 0px;
+									right: -2px;
+									width: 40%;
+									min-width: 100px;									
+								}
+							}							
+						}
+					}
+				}
 			}
 		}
 		.banner {
-            border-bottom: 2px solid #738f9b;
+            //border-bottom: 2px solid #738f9b;
 			box-shadow: $banner-shadow;
 			background-color: $surge-bg-color;
 			background-image: $main-background;
@@ -1224,7 +1316,7 @@ body {
                 @include custom-desktop { 
                     font-size: 64px;
                     position: relative;
-                    bottom: 10px;;
+                    bottom: 10px;
                 }                 
                 @include desktop-up { 
                     font-size: 52px;
@@ -1367,9 +1459,10 @@ body {
 					&.content {
                         h2 {
                             &.wp-block-heading {
-								border-bottom: 2px dashed;
+								//border-bottom: 2px dashed;
                                 &.has-text-align-center {
                                     font-size: 50px;
+									text-decoration: underline;
                                     @include tablet-portrait-up {
                                         font-size: 45px;
                                     }
@@ -1442,7 +1535,7 @@ body {
                             }
                         }
 						article {
-							border-bottom: 3px dashed;
+							//border-bottom: 3px dashed;
 							margin-bottom: 30px;
 							padding-bottom: 5px;
 							&.post-9 {
@@ -2075,7 +2168,7 @@ body {
 					font-size: 14px;
 				}
 				&[type="submit"] {
-					left: 397px;
+					left: 390px;
 					bottom: 85px;
 					border: 0;
 					clip: rect(0, 0, 0, 0);

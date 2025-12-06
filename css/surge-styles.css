@@ -1,10 +1,30 @@
 @charset "UTF-8";
 /* SURGE-styles*/
+/* Body Background */
+/* End Body Background */
+/* Background Img Variables */
+/* End Background Img Variables  */
+/* Breakpoints */
+/* End Breakpoints */
+/* Colors & Borders */
+/* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
+/*#eff4f2*/
+/* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
+/* #eff4f2;  */
+/* End Colors & Borders */
+/*  Img FX */
+/* End Img FX */
+/* Transforms & Transitions */
+/* End Transforms & Transitions */
+/* Shading  */
+/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&display=swap");
 /* End Fonts */
-
+/* End Fonts */
+/* Mixins */
+/* End Mixins */
 body {
   background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
   height: 100vh;
@@ -673,10 +693,31 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      body .site-container .site-inner .entry-wrap .wp-block-group-is-layout-flex {
+        display: block; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      body .site-container .site-inner .entry-wrap .wp-block-group-is-layout-flex {
+        display: block; } }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      body .site-container .site-inner .entry-wrap .wp-block-group-is-layout-flex {
+        display: block; } }
     body .site-container .site-inner .entry-wrap .wp-block-image.image-var-i img, body .site-container .site-inner .entry-wrap .wp-block-media.image-var-i img {
       border-radius: 10px;
       border: solid 2px #7591a4;
       box-shadow: 3px 4px 12px; }
+    body .site-container .site-inner .entry-wrap .wp-block-image.img-constrain--i img, body .site-container .site-inner .entry-wrap .wp-block-media.img-constrain--i img {
+      transition: ease all 0.25s;
+      min-width: 225px; }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .site-container .site-inner .entry-wrap .wp-block-image.img-constrain--i img, body .site-container .site-inner .entry-wrap .wp-block-media.img-constrain--i img {
+          min-width: 200px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .site-container .site-inner .entry-wrap .wp-block-image.img-constrain--i img, body .site-container .site-inner .entry-wrap .wp-block-media.img-constrain--i img {
+          min-width: 160px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .site-container .site-inner .entry-wrap .wp-block-image.img-constrain--i img, body .site-container .site-inner .entry-wrap .wp-block-media.img-constrain--i img {
+          min-width: 140px; } }
     body .site-container .site-inner .entry-wrap .wp-block-image .alignleft, body .site-container .site-inner .entry-wrap .wp-block-media .alignleft {
       margin: .5em 3em .5em 0; }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
@@ -715,7 +756,6 @@ body {
       body .site-container .site-inner .entry-wrap figure.wp-block-table.tableshade-pattern-a .has-fixed-layout tr:nth-child(odd) {
         background-color: rgba(200, 200, 200, 0.4); }
     body .site-container .site-inner .entry-wrap .wp-block-media-text {
-      border-top: 4px dashed;
       font-size: 190%;
       padding: 15px 0 5px 0; }
       body .site-container .site-inner .entry-wrap .wp-block-media-text.image-var-i .wp-block-media-text__media img {
@@ -727,8 +767,66 @@ body {
     body .site-container .site-inner .entry-wrap hr.wp-block-separator.has-alpha-channel-opacity {
       color: #b1c7c9;
       box-shadow: 0 5px 4px 0 rgba(255, 255, 255, 0.5); }
+    body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"] {
+      font-family: "Vollkorn SC", serif;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 12px 5px 8px;
+      position: relative;
+      top: 7px;
+      right: 12px;
+      min-height: 86px; }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"] {
+          font-size: 20px;
+          min-height: 49px;
+          top: 1px;
+          padding: 3px 10px 1px 3px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"] {
+          font-size: 17px;
+          min-height: 40px;
+          top: 1px;
+          padding: 6px 3px 2px 3px;
+          left: -1px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"] {
+          font-size: 15px;
+          min-height: 35px;
+          top: -4px; } }
+    body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"] {
+      font-family: "Vollkorn SC", serif;
+      padding: 14px 12px 5px 8px;
+      position: relative;
+      top: 7px;
+      right: 7px;
+      min-height: 86px;
+      min-width: 150px;
+      width: 60%; }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"] {
+          font-size: 20px;
+          min-height: 50px;
+          padding: 5px 5px 5px 8px;
+          top: 0px;
+          left: 1px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"] {
+          font-size: 17px;
+          min-height: 40px;
+          padding: 7px 12px 5px 8px;
+          top: 0px;
+          right: -2px;
+          width: 55%; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"] {
+          font-size: 15px;
+          min-height: 35px;
+          padding: 7px 12px 5px 8px;
+          top: 0px;
+          right: -2px;
+          width: 40%;
+          min-width: 100px; } }
   body .site-container .banner {
-    border-bottom: 2px solid #738f9b;
     box-shadow: #353737 0px -8px 15px 20px;
     background-color: #43616d;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
@@ -999,19 +1097,18 @@ body {
       padding: 18px;
       border-radius: 10px;
       background: linear-gradient(0deg, #b7cccd 0%, #e8e8e8 95%, #eff2e3 100%); }
-      body .site-container div.wrap main.content h2.wp-block-heading {
-        border-bottom: 2px dashed; }
-        body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
-          font-size: 50px; }
-          @media only screen and (min-width: 576px) and (max-width: 768px) {
-            body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
-              font-size: 45px; } }
-          @media only screen and (min-width: 480px) and (max-width: 576px) {
-            body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
-              font-size: 40px; } }
-          @media only screen and (min-width: 0) and (max-width: 480px) {
-            body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
-              font-size: 35px; } }
+      body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+        font-size: 50px;
+        text-decoration: underline; }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+            font-size: 45px; } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+            font-size: 40px; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
+            font-size: 35px; } }
       body .site-container div.wrap main.content button {
         background: #575872;
         font-family: "Vollkorn SC", serif;
@@ -1054,7 +1151,6 @@ body {
           body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h2, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h3, body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content h4 {
             font-size: 108%; } }
       body .site-container div.wrap main.content article {
-        border-bottom: 3px dashed;
         margin-bottom: 30px;
         padding-bottom: 5px; }
         body .site-container div.wrap main.content article.post-9 img {
@@ -1619,7 +1715,7 @@ body {
           max-width: 180px;
           font-size: 14px; } }
       body .searchwp-modal-form .search-form input[type="submit"] {
-        left: 397px;
+        left: 390px;
         bottom: 85px;
         border: 0;
         clip: rect(0, 0, 0, 0);
