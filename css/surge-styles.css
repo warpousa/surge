@@ -1,30 +1,10 @@
 @charset "UTF-8";
 /* SURGE-styles*/
-/* Body Background */
-/* End Body Background */
-/* Background Img Variables */
-/* End Background Img Variables  */
-/* Breakpoints */
-/* End Breakpoints */
-/* Colors & Borders */
-/* linear-gradient(0deg, rgba(196, 200, 195, 1) 0%, rgba(168, 171, 167, 1) 24%, rgba(125, 120, 120, 1) 100%); */
-/*#eff4f2*/
-/* linear-gradient(90deg, #d6dfd1 0%, rgba(214,223,209,0.88) 50%, #fff 100%);  */
-/* #eff4f2;  */
-/* End Colors & Borders */
-/*  Img FX */
-/* End Img FX */
-/* Transforms & Transitions */
-/* End Transforms & Transitions */
-/* Shading  */
-/* Shading * /
 
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-/* End Fonts */
-/* Mixins */
-/* End Mixins */
+
 body {
   background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
   height: 100vh;
@@ -693,6 +673,37 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    body .site-container .site-inner .entry-wrap p {
+      transition: ease all 0.25s; }
+      body .site-container .site-inner .entry-wrap p.julius-sans {
+        font-family: "Julius Sans One", sans-serif;
+        font-weight: 900;
+        color: #013159;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3); }
+        @media only screen and (min-width: 1400px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 42px; } }
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 40px; } }
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 38px; } }
+        @media only screen and (min-width: 992px) and (max-width: 1025px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 36px; } }
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 32px; } }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 28px; } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 24px; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container .site-inner .entry-wrap p.julius-sans {
+            font-size: 20px; } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .site-container .site-inner .entry-wrap .wp-block-group-is-layout-flex {
         display: block; } }

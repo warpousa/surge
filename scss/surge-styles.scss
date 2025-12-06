@@ -155,11 +155,12 @@ $tablet-mobile-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4);
 /* Shading * /
 
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&display=swap");
-/* End Fonts */
 
-$EliteFont: 'Special Elite', system-ui;
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap');
+
+$EliteFont: "Special Elite", system-ui;
 $VollkornSCFont: "Vollkorn SC", serif;
+$JuliusFont: "Julius Sans One", sans-serif;
 
 /* End Fonts */
 
@@ -971,6 +972,39 @@ body {
                 }        
             }
 			.entry-wrap {
+                p {
+                   transition: $ease-quarter-sec;
+                    &.julius-sans {
+                        font-family: $JuliusFont;
+                        font-weight: 900;
+                        color: #013159;
+                        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+                        @include hd-desktop-up { 
+                            font-size: 42px;
+                        }
+                        @include large-desktop-up { 
+                            font-size: 40px;
+                        }
+                        @include custom-desktop {
+                            font-size: 38px;
+                        }
+                        @include desktop-up {
+                            font-size: 36px;
+                        }
+                        @include tablet-landscape-up { 
+                            font-size: 32px;
+                        }
+                        @include tablet-portrait-up {
+						    font-size: 28px;
+                        }                                            
+                        @include phone-only-up {
+                            font-size: 24px;
+                        }                                          
+                        @include extra-extra-small {
+                            font-size: 20px;
+                        }
+                    }
+                }
 				.wp-block-group-is-layout-flex {
 					@include tablet-portrait-up {
 						display: block;
