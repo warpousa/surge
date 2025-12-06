@@ -52,7 +52,7 @@
 				const header = document.getElementById('header');
 				if (!header) return;
 				const delta = Math.abs(currentScrollPos - prevScrollpos);
-				if (delta < 10) return; // ignore micro scrolls
+				if (delta < 100) return; // ignore micro scrolls
 				if (prevScrollpos > currentScrollPos) {
 					header.classList.add('show-header');
 					header.classList.remove('hide-header');
