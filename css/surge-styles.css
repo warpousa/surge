@@ -1137,6 +1137,13 @@ body {
         @media only screen and (min-width: 0) and (max-width: 480px) {
           body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
             font-size: 35px; } }
+      body .site-container div.wrap main.content input {
+        transition: ease all 0.25s; }
+        body .site-container div.wrap main.content input.wp-block-search__input:hover {
+          box-shadow: 5px 6px 15px #75858a; }
+        body .site-container div.wrap main.content input.wp-block-search__input:active, body .site-container div.wrap main.content input.wp-block-search__input:focus {
+          box-shadow: 11px 10px 25px #75858a;
+          outline: dashed 3px #555e60; }
       body .site-container div.wrap main.content button {
         background: #575872;
         font-family: "Vollkorn SC", serif;
@@ -1158,6 +1165,7 @@ body {
           background: black;
           box-shadow: 8px 7px 14px #75858a; }
         body .site-container div.wrap main.content button:active, body .site-container div.wrap main.content button:focus {
+          background-color: black;
           outline: dashed 3px #555e60;
           box-shadow: 11px 10px 25px #75858a; }
       body .site-container div.wrap main.content .wp-block-media-text.is-stacked-on-mobile figure.wp-block-media-text__media a {
@@ -1832,19 +1840,19 @@ body {
       body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {
         width: 80px;
         height: 80px;
-        top: 13px; } }
+        top: 20px; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {
         font-size: 60px;
         width: 60px;
         height: 60px;
-        top: 20px; } }
+        top: 30px; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {
         font-size: 50px;
         width: 50px;
         height: 50px;
-        top: 25px; } }
+        top: 37px; } }
     body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close:active, body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close:focus, body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible {
       outline: dashed 3px rgba(0, 0, 0, 0.5);
       background: white; }
@@ -1860,7 +1868,8 @@ body {
     overflow-y: hidden !important;
     box-shadow: 0 150px 0 #c3cccc; }
     body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
-      margin-top: 200px; }
+      margin-top: 200px;
+      margin-right: 100px; }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__content .search-form {
           margin-top: -100px; } }
@@ -1878,7 +1887,7 @@ body {
   body .searchwp-modal-form .searchwp-modal-form-default .searchwp-modal-form__close:before {
     font-size: 2em;
     position: fixed;
-    top: 35px;
+    top: 45px;
     right: 25px;
     transition: ease all 0.125s; }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
