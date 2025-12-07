@@ -779,13 +779,22 @@ body {
       color: #b1c7c9;
       box-shadow: 0 5px 4px 0 rgba(255, 255, 255, 0.5); }
     body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"] {
+      background-color: #575872;
       font-family: "Vollkorn SC", serif;
       border-radius: 0 10px 10px 0;
       padding: 14px 12px 5px 8px;
       position: relative;
       top: 7px;
       right: 12px;
-      min-height: 86px; }
+      min-height: 86px;
+      transition: ease all 0.125s; }
+      body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"]:hover {
+        box-shadow: 5px 6px 15px #75858a; }
+      body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"]:hover, body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"]:focus {
+        box-shadow: 11px 10px 25px #75858a; }
+      body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"]:active, body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"]:focus {
+        background: black;
+        outline: dashed 3px #555e60; }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"] {
           font-size: 20px;
@@ -803,7 +812,9 @@ body {
         body .site-container .site-inner .entry-wrap form.post-password-form input[type="submit"] {
           font-size: 15px;
           min-height: 35px;
-          top: -4px; } }
+          top: 1px;
+          padding: 6px 7px 4px 3px;
+          right: 2px; } }
     body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"] {
       font-family: "Vollkorn SC", serif;
       padding: 14px 12px 5px 8px;
@@ -812,7 +823,13 @@ body {
       right: 7px;
       min-height: 86px;
       min-width: 150px;
-      width: 60%; }
+      width: 60%;
+      transition: ease all 0.125s; }
+      body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"]:hover {
+        box-shadow: 5px 6px 15px #75858a; }
+      body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"]:focus, body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"]:active {
+        outline: dashed 3px #555e60;
+        box-shadow: 11px 10px 25px #75858a; }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .site-container .site-inner .entry-wrap form.post-password-form input[name="post_password"] {
           font-size: 20px;
@@ -836,7 +853,7 @@ body {
           top: 0px;
           right: -2px;
           width: 40%;
-          min-width: 100px; } }
+          min-width: 108px; } }
   body .site-container .banner {
     box-shadow: #353737 0px -8px 15px 20px;
     background-color: #43616d;
@@ -1485,12 +1502,17 @@ body {
     border-top: 2px solid #e1eae7;
     padding: 40px 0 16px; }
     body .footer-widgets .wrap .widget-area section.widget-last .widget-wrap a {
-      height: 149px;
+      height: 175px;
       display: inline-block;
       border-radius: 25px;
       padding: 5px 0 15px 15px;
       box-shadow: none;
-      border: none; }
+      border: none;
+      font-family: "Vollkorn SC", serif;
+      font-size: 160%;
+      text-decoration: underline;
+      position: relative;
+      bottom: 14px; }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body .footer-widgets .wrap .widget-area section.widget-last .widget-wrap a {
           display: inline-flex;
@@ -1516,8 +1538,12 @@ body {
         background-size: 75%;
         background-repeat: no-repeat;
         transition: ease all 0.25s; }
-      body .footer-widgets .wrap .widget-area section.widget-last .widget-wrap a:hover::after {
-        transform: scale(1.1); }
+      body .footer-widgets .wrap .widget-area section.widget-last .widget-wrap a:hover {
+        text-decoration: none; }
+        body .footer-widgets .wrap .widget-area section.widget-last .widget-wrap a:hover::after {
+          transform: scale(1.1); }
+      body .footer-widgets .wrap .widget-area section.widget-last .widget-wrap a:active, body .footer-widgets .wrap .widget-area section.widget-last .widget-wrap a:focus {
+        top: -13px; }
     @media only screen and (min-width: 1400px) {
       body .footer-widgets .wrap .widget-area {
         display: flex;
@@ -1629,11 +1655,12 @@ body {
     background: #575872;
     margin-left: 0;
     border-radius: 0 15px 15px 0; }
+    body .nf-form-layout form button.wp-block-search__button:hover {
+      box-shadow: 5px 6px 15px #75858a; }
     body .nf-form-layout form button.wp-block-search__button:hover, body .nf-form-layout form button.wp-block-search__button:focus {
       box-shadow: 11px 10px 25px #75858a; }
     body .nf-form-layout form button.wp-block-search__button:hover, body .nf-form-layout form button.wp-block-search__button:active, body .nf-form-layout form button.wp-block-search__button:focus {
       background: black;
-      box-shadow: 5px 6px 15px #75858a;
       outline: dashed 3px #555e60; }
   body .nf-form-layout form .nf-form-content textarea.ninja-forms-field {
     border: solid 2px #c4c4c4;
@@ -1736,12 +1763,12 @@ body {
         display: inline-block;
         background: #575872;
         height: 86.5px;
-        width: 100px;
+        width: 108px;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        font-size: 18px;
+        font-size: 24px;
         z-index: 999;
         font-family: "Vollkorn SC", serif; }
       body .searchwp-modal-form .search-form input:hover {
