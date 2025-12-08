@@ -266,6 +266,29 @@
 		function removeCredits() {
 			document.querySelector('p.credit').remove();
 		}
+		function doubleHoverActiveFocus() {
+			document.querySelectorAll('.wp-block-media-text').forEach(block => {
+			const imglink = block.querySelector('figure a');		
+			const img = block.querySelector('figure a img');
+			const link = block.querySelector('h2.wp-block-heading a');
+			if (imglink && img && link) {
+				imglink.addEventListener('mouseenter', () => link.classList.add('is-hovered'));
+				imglink.addEventListener('mouseleave', () => link.classList.remove('is-hovered'));
+				imglink.addEventListener('focus', () => link.classList.add('is-active-focused'));
+				imglink.addEventListener('blur', () => link.classList.remove('is-active-focused'));	
+				///////////
+				img.addEventListener('mouseenter', () => link.classList.add('is-hovered'));
+				img.addEventListener('mouseleave', () => link.classList.remove('is-hovered'));
+				img.addEventListener('focus', () => link.classList.add('is-active-focused'));
+				img.addEventListener('blur', () => link.classList.remove('is-active-focused'));
+				///////////
+				link.addEventListener('mouseenter', () => img.classList.add('is-hovered'));
+				link.addEventListener('mouseleave', () => img.classList.remove('is-hovered'));
+				link.addEventListener('focus', () => imglink.classList.add('is-active-focused'));
+				link.addEventListener('blur', () => imglink.classList.remove('is-active-focused'));
+				}
+			});
+		}
         function wrapExceptFirstLetters(selector, style = 'opacity:0.6') {
           const element = document.querySelector(selector);
           if (!element) return;
@@ -312,7 +335,7 @@
 				const header = document.getElementById('header');
 				if (!header) return;
 				const delta = Math.abs(currentScrollPos - prevScrollpos);
-				if (delta < 100) return; // ignore micro scrolls
+				if (delta < 300) return; // ignore micro scrolls
 				if (prevScrollpos > currentScrollPos) {
 					header.classList.add('show-header');
 					header.classList.remove('hide-header');
@@ -547,6 +570,7 @@
 		}
 		// === Run All ===
 		assignRandomBannerClasses();
+		doubleHoverActiveFocus();
         wrapExceptFirstLetters('h1.banner-title.site-description'); 
 		initHeaderState();
 		initSubmenus();
@@ -564,5 +588,5 @@
 	})();
 	///////////////////////////////////////////////////
 	/////* End SURGE Javascript Customizations *///////
-	///////////////////////////////////////////////////                           
+	///////////////////////////////////////////////////                                
 })(jQuery, window);
