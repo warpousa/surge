@@ -1,16 +1,35 @@
 @charset "UTF-8";
 /* SURGE-styles*/
+/* Body Background */
+/* End Body Background */
+/* Background Img Variables */
+/* End Background Img Variables  */
+/* Breakpoints */
+/* End Breakpoints */
+/* Colors & Borders */
+/*#eff4f2*/
+/* #eff4f2;  */
+/* End Colors & Borders */
+/*  Img FX */
+/* End Img FX */
+/* Transforms & Transitions */
+/* End Transforms & Transitions */
+/* Shading  */
+/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-
+/* Mixins */
+/* End Mixins */
 body {
   background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
   height: 100vh;
   color: #222630;
   font-family: "Special Elite", system-ui;
   min-width: 275px; }
+  body ul.menu-primary ul {
+    border-top: none !important; }
   body input, body select, body textarea {
     background: #fff;
     border: 1px solid #ddd;
@@ -22,8 +41,6 @@ body {
     color: black;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px; }
-  body ul.menu-primary ul {
-    border-top: none !important; }
   body header#header.site-header {
     box-shadow: #777 0 0 40px;
     padding: 0;
@@ -609,10 +626,11 @@ body {
         margin: 0;
         box-shadow: 2px 165px 130px rgba(0, 0, 0, 0.4); } }
   body .site-container a {
-    border-bottom: 4px solid #1d5861;
+    border-bottom: 4px dotted #1d5861;
     color: #36768c;
     transition: ease all 0.125s;
-    text-decoration: none; }
+    text-decoration: none;
+    padding: 8px 5px 1px 5px; }
     body .site-container a:hover {
       color: black;
       text-decoration: none;
@@ -673,8 +691,45 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    body .site-container .site-inner .entry-wrap .dotted-underline:hover, body .site-container .site-inner .entry-wrap .dotted-underline:focus-within {
+      text-decoration: none !important; }
+    body .site-container .site-inner .entry-wrap .dotted-underline h2 {
+      text-decoration: underline dotted !important;
+      color: #6ea3c2; }
+      body .site-container .site-inner .entry-wrap .dotted-underline h2:active, body .site-container .site-inner .entry-wrap .dotted-underline h2:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2:focus {
+        text-decoration: none !important; }
+      body .site-container .site-inner .entry-wrap .dotted-underline h2 a {
+        padding: 15px 10px 5px 10px;
+        border-radius: 5px; }
+        body .site-container .site-inner .entry-wrap .dotted-underline h2 a:active, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:focus {
+          color: black;
+          text-decoration: none !important; }
+    body .site-container .site-inner .entry-wrap h2.about-us-h2link {
+      text-decoration: dotted underline !important;
+      color: #6ea3c2; }
+      body .site-container .site-inner .entry-wrap h2.about-us-h2link:hover, body .site-container .site-inner .entry-wrap h2.about-us-h2link:active, body .site-container .site-inner .entry-wrap h2.about-us-h2link:focus, body .site-container .site-inner .entry-wrap h2.about-us-h2link:focus-within {
+        text-decoration: none !important; }
+      body .site-container .site-inner .entry-wrap h2.about-us-h2link a {
+        color: #f9ffdc;
+        border: none;
+        text-decoration: none;
+        padding: 15px 15px 5px 5px;
+        border-radius: 5px; }
+        body .site-container .site-inner .entry-wrap h2.about-us-h2link a:hover {
+          color: black;
+          border-bottom: none !important; }
+        body .site-container .site-inner .entry-wrap h2.about-us-h2link a:active, body .site-container .site-inner .entry-wrap h2.about-us-h2link a:focus {
+          color: black;
+          border: 2px dashed !important; }
     body .site-container .site-inner .entry-wrap p {
+      line-height: 1.35em;
       transition: ease all 0.25s; }
+      body .site-container .site-inner .entry-wrap p.about-us-text-i {
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 50px #000;
+        border-radius: 13px;
+        padding: 20px;
+        text-shadow: 1px 1px 1px rgba(55, 155, 120, 0.9); }
       body .site-container .site-inner .entry-wrap p.julius-sans {
         font-family: "Julius Sans One", sans-serif;
         font-weight: 900;
@@ -743,23 +798,55 @@ body {
           min-width: 160px;
           position: relative;
           right: 37px; } }
+    body .site-container .site-inner .entry-wrap div.wp-block-media-text__content h2.wp-block-heading a.is-hovered {
+      color: black;
+      text-decoration: none;
+      text-shadow: 0 0 40px;
+      -webkit-text-stroke: 1px;
+      background: white; }
+    body .site-container .site-inner .entry-wrap div.wp-block-media-text__content h2.wp-block-heading a.is-active-focused {
+      color: black;
+      text-decoration: none;
+      text-shadow: 0 0 57px;
+      -webkit-text-stroke: 1.5px;
+      background: white;
+      outline: dotted 2px; }
+    body .site-container .site-inner .entry-wrap figure .wp-block-image figcaption.wp-element-caption {
+      font-size: 23px;
+      text-shadow: 1px 1px 5px black; }
     body .site-container .site-inner .entry-wrap figure sup sub {
       opacity: 0.3; }
+    body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a:hover {
+      background: white;
+      border-radius: 25px; }
     body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a:active, body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a:focus {
-      transform: scale(1.00198);
+      border-radius: 25px;
+      transform: scale(1.006);
       box-shadow: 0 0 20px;
       top: 1px; }
+    body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a.is-active-focused {
+      color: black;
+      text-decoration: none;
+      text-shadow: 0 0 57px;
+      -webkit-text-stroke: 1.5px;
+      background: white;
+      outline: dotted 2px;
+      border-radius: 25px;
+      transform: scale(1.006);
+      box-shadow: 0 0 20px; }
     body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img {
+      border-radius: 25px;
       position: relative;
       transition: ease all 0.25s;
       margin-bottom: 10px;
       border: 1px solid #caccc0;
-      padding: 7px; }
-      body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:hover {
-        transform: scale(1.002);
-        box-shadow: 0 0 25px; }
+      padding: 7px;
+      box-shadow: 0 0 25px; }
+      body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:hover, body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img.is-hovered {
+        transform: scale(1.005);
+        box-shadow: 0 0 25px black; }
       body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:active, body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:focus {
-        transform: scale(1.00198);
+        transform: scale(1.006);
         box-shadow: 0 0 20px;
         top: 1px; }
     body .site-container .site-inner .entry-wrap figure.wp-block-table.tableshade-pattern-a .has-fixed-layout {
@@ -860,6 +947,7 @@ body {
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
     background-repeat: no-repeat;
+    border-bottom: 3px solid #6e8a71;
     transition: ease all 0.5s; }
     @media only screen and (min-width: 1400px) {
       body .site-container .banner {
@@ -1251,7 +1339,8 @@ body {
     body .site-container div.wrap main .nf-form-hp {
       position: inherit; }
     body .site-container div.wrap main .nf-form-cont span h3 {
-      font-size: 60px; }
+      font-size: 60px;
+      margin-bottom: 100px; }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .site-container div.wrap main .nf-form-cont span h3 {
           font-size: 50px; } }
@@ -1498,13 +1587,6 @@ body {
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
         background: rgba(140, 155, 155, 0.33); }
-  body .site-footer {
-    border-top: 1px solid #eaf4f0;
-    color: #666;
-    font-size: 16px;
-    padding: 30px 0;
-    text-align: center;
-    background-color: #d3e9e4; }
   body .footer-widgets {
     background: none repeat scroll 0 0 #d5e1d3;
     border-top: 2px solid #e1eae7;
@@ -1518,7 +1600,7 @@ body {
       border: none;
       font-family: "Vollkorn SC", serif;
       font-size: 160%;
-      text-decoration: underline;
+      text-decoration: dotted underline;
       position: relative;
       bottom: 14px; }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -1911,3 +1993,10 @@ body {
     opacity: 0.95;
     background-color: rgba(200, 220, 255, 0.95) !important;
     z-index: 1; }
+  body .site-footer {
+    border-top: 1px solid #eaf4f0;
+    color: #666;
+    font-size: 16px;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #d3e9e4; }
