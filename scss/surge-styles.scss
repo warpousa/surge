@@ -1359,15 +1359,35 @@ body {
 				}
 				.surge-youtube-video-i {
 					.wp-block-embed__wrapper {
-						text-align: center;
+                        margin-bottom: 50px;
+                        text-align: center;
+                        @include tablet-landscape-up { 
+                            margin-bottom:20px;
+                        }							
+                        @include tablet-portrait-up {
+                            margin-bottom:15px;
+                        }               
+                        @include phone-only-up {
+                            margin-bottom:10px;
+                        }
+                        @include extra-extra-small {
+                            margin-bottom:5px;
+                        }
 						&::before {
-							content: '／';
-							font-size: 45px;
-							position: relative;
-							left: 9%;
-							top: 33px;
-							font-family: sans-serif;
-							font-weight: 500;
+                            content: '';
+                            font-size: 45px;
+                            position: absolute;
+                            top: 48px;
+                            font-family: sans-serif;
+                            font-weight: 500;
+                            background: url(https://surge.ngo/wp-content/themes/composer/images/screen-stand-legs.png);
+                            height: 50px;
+                            width: 150px;
+                            display: inline-block;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            margin-top: 344px;
+                            margin-left: 280px;
 							@include tablet-landscape-up { 
 								display: none;
 							}							
@@ -1380,27 +1400,6 @@ body {
 							@include extra-extra-small {
 								display: none;
 							}
-						}
-						&::after {
-							content: '∖';
-							font-size: 43px;
-							position: relative;
-							left: -8%;
-							top: 30px;
-							font-family: sans-serif;
-							font-weight: 900;
-							@include tablet-landscape-up { 
-								display: none;
-							}							
-							@include tablet-portrait-up {
-								display: none;
-							}               
-							@include phone-only-up {
-								display: none;
-							}
-							@include extra-extra-small {
-								display: none;
-							}							
 						}
 						iframe {
 							border-radius: 15px;

@@ -1,29 +1,10 @@
 @charset "UTF-8";
 /* SURGE-styles*/
-/* Body Background */
-/* End Body Background */
-/*  Special Backgrounds */
-/* End Special Backgrounds */
-/* Background Img Variables */
-/* End Background Img Variables  */
-/* Breakpoints */
-/* End Breakpoints */
-/* Colors & Borders */
-/*#eff4f2*/
-/* #eff4f2;  */
-/* End Colors & Borders */
-/*  Img FX */
-/* End Img FX */
-/* Transforms & Transitions */
-/* End Transforms & Transitions */
-/* Shading  */
-/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-/* Mixins */
-/* End Mixins */
+
 body {
   background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
   height: 100vh;
@@ -970,15 +951,35 @@ body {
           width: 40%;
           min-width: 108px; } }
     body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper {
+      margin-bottom: 50px;
       text-align: center; }
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper {
+          margin-bottom: 20px; } }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper {
+          margin-bottom: 15px; } }
+      @media only screen and (min-width: 480px) and (max-width: 576px) {
+        body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper {
+          margin-bottom: 10px; } }
+      @media only screen and (min-width: 0) and (max-width: 480px) {
+        body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper {
+          margin-bottom: 5px; } }
       body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
-        content: '／';
+        content: '';
         font-size: 45px;
-        position: relative;
-        left: 9%;
-        top: 33px;
+        position: absolute;
+        top: 48px;
         font-family: sans-serif;
-        font-weight: 500; }
+        font-weight: 500;
+        background: url(https://surge.ngo/wp-content/themes/composer/images/screen-stand-legs.png);
+        height: 50px;
+        width: 150px;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 344px;
+        margin-left: 280px; }
         @media only screen and (min-width: 768px) and (max-width: 992px) {
           body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
             display: none; } }
@@ -990,26 +991,6 @@ body {
             display: none; } }
         @media only screen and (min-width: 0) and (max-width: 480px) {
           body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
-            display: none; } }
-      body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
-        content: '∖';
-        font-size: 43px;
-        position: relative;
-        left: -8%;
-        top: 30px;
-        font-family: sans-serif;
-        font-weight: 900; }
-        @media only screen and (min-width: 768px) and (max-width: 992px) {
-          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
-            display: none; } }
-        @media only screen and (min-width: 576px) and (max-width: 768px) {
-          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
-            display: none; } }
-        @media only screen and (min-width: 480px) and (max-width: 576px) {
-          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
-            display: none; } }
-        @media only screen and (min-width: 0) and (max-width: 480px) {
-          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
             display: none; } }
       body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper iframe {
         border-radius: 15px;
