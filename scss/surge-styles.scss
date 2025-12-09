@@ -970,18 +970,59 @@ body {
 			}
 			.entry-wrap {
 				.dotted-underline {
+					&:hover, &:focus-within {
+						text-decoration: none !important;
+					}
 					h2 {
+						text-decoration: underline dotted !important;
+						color: #6ea3c2;						
+						&:active, &:hover, &:focus {
+							text-decoration: none !important;
+						}
 						a {
-							border-bottom: dotted 4px #1d5861 !important;
+							padding: 15px 10px 5px 10px;
+    						border-radius: 5px;
 							&:active, &:hover, &:focus {
+								color: $black;
+								text-decoration: none !important;
+							} 
+						}
+					}
+				}
+				h2 {
+					&.about-us-h2link {
+						text-decoration: dotted underline !important;
+						color: #6ea3c2;	
+						&:hover, &:active, &:focus, &:focus-within {
+							text-decoration: none !important;
+						}
+						a {
+							color: #f9ffdc;
+							border: none;
+							text-decoration: none;
+							padding: 15px 15px 5px 5px;
+    						border-radius: 5px;
+							&:hover {
+								color: $black;
 								border-bottom: none !important;
+							}
+							&:active,  &:focus {
+								color: $black;
+								border: 2px dashed !important;
 							} 
 						}
 					}
 				}
 				p {
-				   line-height: 1.35em;
-				   transition: $ease-quarter-sec;
+					&.about-us-text-i {
+						background: rgba(0, 0, 0, 0.5);
+						box-shadow: 0 0 50px #000;
+						border-radius: 13px;
+						padding: 20px;
+						text-shadow: 1px 1px 1px rgba(55, 155, 120, 0.9);
+					}
+					line-height: 1.35em;
+					transition: $ease-quarter-sec;
 					&.julius-sans {
 						font-family: $JuliusFont;
 						font-weight: 900;

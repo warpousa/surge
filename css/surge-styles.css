@@ -674,13 +674,45 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
-    body .site-container .site-inner .entry-wrap .dotted-underline h2 a {
-      border-bottom: dotted 4px #1d5861 !important; }
-      body .site-container .site-inner .entry-wrap .dotted-underline h2 a:active, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:focus {
-        border-bottom: none !important; }
+    body .site-container .site-inner .entry-wrap .dotted-underline:hover, body .site-container .site-inner .entry-wrap .dotted-underline:focus-within {
+      text-decoration: none !important; }
+    body .site-container .site-inner .entry-wrap .dotted-underline h2 {
+      text-decoration: underline dotted !important;
+      color: #6ea3c2; }
+      body .site-container .site-inner .entry-wrap .dotted-underline h2:active, body .site-container .site-inner .entry-wrap .dotted-underline h2:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2:focus {
+        text-decoration: none !important; }
+      body .site-container .site-inner .entry-wrap .dotted-underline h2 a {
+        padding: 15px 10px 5px 10px;
+        border-radius: 5px; }
+        body .site-container .site-inner .entry-wrap .dotted-underline h2 a:active, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:focus {
+          color: black;
+          text-decoration: none !important; }
+    body .site-container .site-inner .entry-wrap h2.about-us-h2link {
+      text-decoration: dotted underline !important;
+      color: #6ea3c2; }
+      body .site-container .site-inner .entry-wrap h2.about-us-h2link:hover, body .site-container .site-inner .entry-wrap h2.about-us-h2link:active, body .site-container .site-inner .entry-wrap h2.about-us-h2link:focus, body .site-container .site-inner .entry-wrap h2.about-us-h2link:focus-within {
+        text-decoration: none !important; }
+      body .site-container .site-inner .entry-wrap h2.about-us-h2link a {
+        color: #f9ffdc;
+        border: none;
+        text-decoration: none;
+        padding: 15px 15px 5px 5px;
+        border-radius: 5px; }
+        body .site-container .site-inner .entry-wrap h2.about-us-h2link a:hover {
+          color: black;
+          border-bottom: none !important; }
+        body .site-container .site-inner .entry-wrap h2.about-us-h2link a:active, body .site-container .site-inner .entry-wrap h2.about-us-h2link a:focus {
+          color: black;
+          border: 2px dashed !important; }
     body .site-container .site-inner .entry-wrap p {
       line-height: 1.35em;
       transition: ease all 0.25s; }
+      body .site-container .site-inner .entry-wrap p.about-us-text-i {
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 50px #000;
+        border-radius: 13px;
+        padding: 20px;
+        text-shadow: 1px 1px 1px rgba(55, 155, 120, 0.9); }
       body .site-container .site-inner .entry-wrap p.julius-sans {
         font-family: "Julius Sans One", sans-serif;
         font-weight: 900;
