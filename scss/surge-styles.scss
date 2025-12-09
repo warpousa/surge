@@ -1130,6 +1130,14 @@ body {
 					}
 				}
 				figure {
+					.wp-block-image {
+						figcaption {
+							&.wp-element-caption {
+								font-size: 23px;
+								text-shadow: 1px 1px 5px black;
+							}
+						}
+					}
 					sup {					
 						sub {
 							opacity: 0.3;
