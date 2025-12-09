@@ -7,6 +7,12 @@ $bodybackground: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
 
 /* End Body Background */
 
+/*  Special Backgrounds */
+
+$bostonwhaler-bg: linear-gradient(to bottom,  #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); 
+
+/* End Special Backgrounds */
+
 /* Background Img Variables */
    
 $main-background: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg); 
@@ -1129,6 +1135,41 @@ body {
 						}
 					}
 				}
+				.boston-whaler {
+					figure {
+						a {
+							padding: 8px 5px 1px 5px;
+							background: $bostonwhaler-bg;
+							border-radius: 7px;
+							box-shadow: 1px 2px 5px;
+							margin-bottom: 10px;
+							&:hover {
+								transform: scale(1.18);
+							}
+							&:hover, &:active, &:focus {
+								border-bottom: 4px dotted rgba(255,255,255,0.0);
+								transform: scale(1.13);
+								background-color: aliceblue;
+							}
+							&::before {
+								content: '↪';
+								position: absolute;
+								font-size: 38px;
+								transform: rotate(45deg);
+								margin-left: 124px;
+								margin-top: -11px;
+							}
+							&::after {
+								content: 'Learn more ➣';
+								position: relative;
+								bottom: -4px;
+								font-size: 28px;
+								font-family: "Julius Sans One", sans-serif;
+								font-weight: bold;
+							}
+						}
+					}
+				}
 				figure {
 					.wp-block-image {
 						figcaption {
@@ -1313,6 +1354,58 @@ body {
 									min-width: 108px;									
 								}
 							}							
+						}
+					}
+				}
+				.surge-youtube-video-i {
+					.wp-block-embed__wrapper {
+						text-align: center;
+						&::before {
+							content: '／';
+							font-size: 45px;
+							position: relative;
+							left: 9%;
+							top: 33px;
+							font-family: sans-serif;
+							font-weight: 500;
+							@include tablet-landscape-up { 
+								display: none;
+							}							
+							@include tablet-portrait-up {
+								display: none;
+							}               
+							@include phone-only-up {
+								display: none;
+							}
+							@include extra-extra-small {
+								display: none;
+							}
+						}
+						&::after {
+							content: '∖';
+							font-size: 43px;
+							position: relative;
+							left: -8%;
+							top: 30px;
+							font-family: sans-serif;
+							font-weight: 900;
+							@include tablet-landscape-up { 
+								display: none;
+							}							
+							@include tablet-portrait-up {
+								display: none;
+							}               
+							@include phone-only-up {
+								display: none;
+							}
+							@include extra-extra-small {
+								display: none;
+							}							
+						}
+						iframe {
+							border-radius: 15px;
+							box-shadow: 0 0 15px $black;
+							border: 2px solid $black;
 						}
 					}
 				}

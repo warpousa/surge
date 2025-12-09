@@ -2,6 +2,8 @@
 /* SURGE-styles*/
 /* Body Background */
 /* End Body Background */
+/*  Special Backgrounds */
+/* End Special Backgrounds */
 /* Background Img Variables */
 /* End Background Img Variables  */
 /* Breakpoints */
@@ -811,6 +813,32 @@ body {
       -webkit-text-stroke: 1.5px;
       background: white;
       outline: dotted 2px; }
+    body .site-container .site-inner .entry-wrap .boston-whaler figure a {
+      padding: 8px 5px 1px 5px;
+      background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+      border-radius: 7px;
+      box-shadow: 1px 2px 5px;
+      margin-bottom: 10px; }
+      body .site-container .site-inner .entry-wrap .boston-whaler figure a:hover {
+        transform: scale(1.18); }
+      body .site-container .site-inner .entry-wrap .boston-whaler figure a:hover, body .site-container .site-inner .entry-wrap .boston-whaler figure a:active, body .site-container .site-inner .entry-wrap .boston-whaler figure a:focus {
+        border-bottom: 4px dotted rgba(255, 255, 255, 0);
+        transform: scale(1.13);
+        background-color: aliceblue; }
+      body .site-container .site-inner .entry-wrap .boston-whaler figure a::before {
+        content: '↪';
+        position: absolute;
+        font-size: 38px;
+        transform: rotate(45deg);
+        margin-left: 124px;
+        margin-top: -11px; }
+      body .site-container .site-inner .entry-wrap .boston-whaler figure a::after {
+        content: 'Learn more ➣';
+        position: relative;
+        bottom: -4px;
+        font-size: 28px;
+        font-family: "Julius Sans One", sans-serif;
+        font-weight: bold; }
     body .site-container .site-inner .entry-wrap figure .wp-block-image figcaption.wp-element-caption {
       font-size: 23px;
       text-shadow: 1px 1px 5px black; }
@@ -941,6 +969,52 @@ body {
           right: -2px;
           width: 40%;
           min-width: 108px; } }
+    body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper {
+      text-align: center; }
+      body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
+        content: '／';
+        font-size: 45px;
+        position: relative;
+        left: 9%;
+        top: 33px;
+        font-family: sans-serif;
+        font-weight: 500; }
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
+            display: none; } }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
+            display: none; } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
+            display: none; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::before {
+            display: none; } }
+      body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
+        content: '∖';
+        font-size: 43px;
+        position: relative;
+        left: -8%;
+        top: 30px;
+        font-family: sans-serif;
+        font-weight: 900; }
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
+            display: none; } }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
+            display: none; } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
+            display: none; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper::after {
+            display: none; } }
+      body .site-container .site-inner .entry-wrap .surge-youtube-video-i .wp-block-embed__wrapper iframe {
+        border-radius: 15px;
+        box-shadow: 0 0 15px black;
+        border: 2px solid black; }
   body .site-container .banner {
     box-shadow: #353737 0px -8px 15px 20px;
     background-color: #43616d;
