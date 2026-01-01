@@ -14,7 +14,7 @@ $bostonwhaler-bg: linear-gradient(to bottom,  #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%
 /* End Special Backgrounds */
 
 /* Background Img Variables */
-   
+
 $main-background: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg); 
 $main-background-pos: 20% -24.8333px;
 $surge-bg-color: #43616d;
@@ -117,7 +117,7 @@ $linkhover: $black;
 $linkhover-border: rgba(0,0,0,0);
 $menu-background: rgba(255,255,255,0.9);   /*#eff4f2*/
 $menu-background-ii: #eff3e8;
-$menu-background-transparent: rgba(234, 234, 215, 0.55);
+$menu-background-transparent: rgba(234, 234, 215, 0.8);
 $menu-item-hover: rgba(255,255,255, 0.15);
 $menu-background-highlight: rgba(255,255,255,0.75);  /* #eff4f2;  */
 $submenu-background: rgba(255,255,255,0);
@@ -611,9 +611,10 @@ body {
 							&.menu {
 								border-top: $topborder;
 								@include  lowres-vertical {
-									overflow-y: scroll;
 									overflow-x: hidden;
 									height: 118vh;
+									max-height: calc(100vh - 50px) !important;
+        							overflow-y: auto;
 								}
 								@include desktop-up {
 									left: 0px;
@@ -918,8 +919,8 @@ body {
 				text-decoration: none;
 				text-shadow: 0 0 40px;
 				-webkit-text-stroke: 1px;
-				background: white;
-				border-bottom: none;
+				background: $white;
+				border-bottom: dotted 4px rgba(0, 0, 0, 0);
 			}
 			&:active, &:focus {
 				color: $black;
@@ -928,7 +929,7 @@ body {
 				-webkit-text-stroke: 1.5px;
 				background: white;
 				outline: dotted 2px;
-				border-bottom: none;
+				border-bottom: dotted 4px rgba(0, 0, 0, 0);
 			}
 		}
 		.site-inner {
@@ -980,7 +981,7 @@ body {
 						text-decoration: none !important;
 					}
 					h2 {
-						text-decoration: underline dotted !important;
+						text-decoration: underline 3px dotted !important;
 						color: #6ea3c2;						
 						&:active, &:hover, &:focus {
 							text-decoration: none !important;
@@ -996,14 +997,14 @@ body {
 					}
 				}
 				h2 {
-					&.about-us-h2link {
-						text-decoration: dotted underline !important;
+					&.questions-comments-h2link {
+						text-decoration: dotted 4px underline !important;
 						color: #6ea3c2;	
 						&:hover, &:active, &:focus, &:focus-within {
 							text-decoration: none !important;
 						}
 						a {
-							color: #f9ffdc;
+							color: #5a5b74;
 							border: none;
 							text-decoration: none;
 							padding: 15px 15px 5px 5px;
@@ -1014,7 +1015,6 @@ body {
 							}
 							&:active,  &:focus {
 								color: $black;
-								border: 2px dashed !important;
 							} 
 						}
 					}
@@ -1024,6 +1024,7 @@ body {
 						background: rgba(0, 0, 0, 0.5);
 						box-shadow: 0 0 50px #000;
 						border-radius: 13px;
+						line-height: 1.2em;
 						padding: 20px;
 						text-shadow: 1px 1px 1px rgba(55, 155, 120, 0.9);
 					}
@@ -1145,10 +1146,11 @@ body {
 							margin-bottom: 10px;
 							&:hover {
 								transform: scale(1.18);
+								box-shadow:  0 0 30px $white;
 							}
 							&:hover, &:active, &:focus {
 								border-bottom: 4px dotted rgba(255,255,255,0.0);
-								transform: scale(1.13);
+								transform: scale(1.05);
 								background-color: aliceblue;
 							}
 							&::before {
@@ -1214,7 +1216,7 @@ body {
 								margin-bottom: 10px;
 								border: 1px solid #caccc0;
 								padding: 7px;
-								box-shadow: 0 0 25px;
+								box-shadow: #c7d3d6 0 0 25px;
 								&:hover, &.is-hovered {
 									transform: scale(1.005);
 									box-shadow: 0 0 25px $black;
@@ -1241,7 +1243,7 @@ body {
 					}
 				}
 				.wp-block-media-text {
-					font-size: 190%;
+					font-size: 120%;
 					padding: 15px 0 5px 0;
 					&.image-var-i {
 						.wp-block-media-text__media {
@@ -1408,6 +1410,9 @@ body {
 						}
 					}
 				}
+				.naval-greetings {
+					border-radius: 15px;
+				}
 			}
 		}
 		.banner {
@@ -1419,6 +1424,8 @@ body {
 			background-repeat: no-repeat;
 			border-bottom: 3px solid #6e8a71;
 			transition: $ease-half-sec;
+			max-height: calc(100vh - 50px) !important;
+        	overflow-y: auto;
 			@include hd-desktop-up {
 				background-size: 100% calc(min(800px, 100%));
 				padding: 160px 0 150px 0;
@@ -1711,6 +1718,7 @@ body {
 								&.has-text-align-center {
 									font-size: 50px;
 									text-decoration: underline;
+									margin-top: 30px;
 									@include tablet-portrait-up {
 										font-size: 45px;
 									}
@@ -1801,7 +1809,7 @@ body {
 							padding-bottom: 5px;
 							&.post-9 {
 								img {
-									border: dotted 11px #9fa291;
+									border: dotted 11px #90a5a8;
 									box-shadow: 0 0 6px 2px #9da094;
 									padding: 4px;
 									margin: 15px 5px;
