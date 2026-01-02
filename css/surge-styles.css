@@ -26,6 +26,7 @@ body {
     border-bottom-left-radius: 15px; }
   body header#header.site-header {
     box-shadow: #777 0 0 40px;
+    backdrop-filter: blur(3px);
     padding: 0;
     position: fixed;
     background: rgba(255, 255, 255, 0.9);
@@ -675,6 +676,21 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    body .site-container .site-inner .entry-wrap details summary {
+      transition: ease all 0.125s;
+      cursor: pointer;
+      max-width: 290px;
+      padding: 12px 5px 5px 5px;
+      border-radius: 10px;
+      margin: 0 auto; }
+      body .site-container .site-inner .entry-wrap details summary:hover {
+        background: rgba(100, 100, 100, 0.8); }
+      body .site-container .site-inner .entry-wrap details summary:focus-visible, body .site-container .site-inner .entry-wrap details summary:focus, body .site-container .site-inner .entry-wrap details summary:active {
+        background: rgba(100, 100, 100, 0.8);
+        outline: dotted; }
+    body .site-container .site-inner .entry-wrap details:open summary {
+      background: white;
+      color: black; }
     body .site-container .site-inner .entry-wrap .dotted-underline:hover, body .site-container .site-inner .entry-wrap .dotted-underline:focus-within {
       text-decoration: none !important; }
     body .site-container .site-inner .entry-wrap .dotted-underline h2 {
@@ -1124,7 +1140,7 @@ body {
       padding: 25px 0;
       text-shadow: 1px 2px 6px #000;
       transition: ease all 0.25s;
-      color: #f9ffdc;
+      color: #c4e5d5;
       font-size: 88px;
       font-weight: 600;
       font-family: "Vollkorn SC", serif;
@@ -1170,18 +1186,19 @@ body {
       body .site-container .banner .banner-title.site-description::before {
         bottom: 8px;
         content: '';
-        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots-conning-tower.png);
+        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-def-conning-tower.svg);
         margin: 0 auto;
         width: 978px;
         height: 245px;
         display: block;
-        border-bottom: solid 10px #ebffe7;
+        border-bottom: solid 10px #a2d3bb;
         background-repeat: no-repeat;
         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
         transition: ease all 0.25s;
         position: relative;
         background-size: 65% 100%;
-        background-position: 50%; }
+        background-position: 50%;
+        filter: drop-shadow(4px -3px 3px #001631); }
         @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 800px;

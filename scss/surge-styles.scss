@@ -115,6 +115,7 @@ $grey: grey;
 $linkcolor: #36768c;
 $linkhover: $black;
 $linkhover-border: rgba(0,0,0,0);
+$logo-color: #c4e5d5;
 $menu-background: rgba(255,255,255,0.9);   /*#eff4f2*/
 $menu-background-ii: #eff3e8;
 $menu-background-transparent: rgba(234, 234, 215, 0.8);
@@ -198,7 +199,7 @@ $JuliusFont: "Julius Sans One", sans-serif;
     background: rgba(140, 155, 155, 0.33);
 }
 @mixin banner-title {
-    color: #f9ffdc;
+    color: $logo-color;
     font-size: 88px;
     font-weight: 600;
     font-family: $VollkornSCFont;
@@ -295,6 +296,7 @@ body {
 		&#header {
 			&.site-header {
 				box-shadow: #777 0 0 40px;
+				backdrop-filter: blur(3px);
 				padding: 0;
 				position: fixed;
 				background: $menu-background;
@@ -976,6 +978,29 @@ body {
 				}        
 			}
 			.entry-wrap {
+				details {
+					summary {
+						transition: $ease-eighth-sec;
+						cursor: pointer;
+						max-width: 290px;
+						padding: 12px 5px 5px 5px;
+						border-radius: 10px;
+						margin: 0 auto;
+						&:hover {
+							background: rgba(100,100,100,0.8);
+						}
+						&:focus-visible, &:focus, &:active {
+							background: rgba(100,100,100,0.8);
+							outline: dotted;
+						}
+					}
+					&:open {
+						summary {
+							background: $white;
+							color: $black;
+						}
+					}
+				}
 				.dotted-underline {
 					&:hover, &:focus-within {
 						text-decoration: none !important;
@@ -1606,18 +1631,19 @@ body {
 					&::before {
 						bottom: 8px;
 						content: '';
-						background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots-conning-tower.png);
+						background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-def-conning-tower.svg);
 						margin: 0 auto;
 						width: 978px;
 						height: 245px;
 						display: block;
-						border-bottom: solid 10px #ebffe7;
+						border-bottom: solid 10px #a2d3bb;
 						background-repeat: no-repeat;
 						box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
 						transition: $ease-quarter-sec;
 						position: relative;
 						background-size: 65% 100%;
 						background-position: 50%;
+						filter: drop-shadow(4px -3px 3px #001631);
 						@include custom-desktop {
 							width: 800px;
 							height: 185px;
