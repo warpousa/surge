@@ -12,7 +12,7 @@
 				const imglink = block.querySelector('figure a');
 				const img     = block.querySelector('figure a img');
 				const link    = block.querySelector('h2.wp-block-heading a');
-				const btnlink = block.querySelector('.boston-whaler a');
+				const btnlink = block.querySelector('.hatch-btn a');
 
 				if (!(imglink && img && link && btnlink)) return;
 
@@ -34,7 +34,7 @@
 					{ source: link,    target: img,  className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
 					{ source: link,    target: imglink, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
 
-					// New button relationships (mirroring your original logic)
+					// New button relationships (mirroring original logic)
 					{ source: btnlink, target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
 					{ source: btnlink, target: link, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
 					{ source: btnlink, target: img,  className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
