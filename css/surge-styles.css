@@ -1016,6 +1016,8 @@ body {
         border: 2px solid black; }
     body .site-container .site-inner .entry-wrap .naval-greetings {
       border-radius: 15px; }
+    body .site-container .site-inner .entry-wrap .wp-block-search__label {
+      max-width: 80%; }
   body .site-container .banner {
     box-shadow: #353737 0px -8px 15px 20px;
     background-color: #43616d;
