@@ -26,6 +26,7 @@ body {
     border-bottom-left-radius: 15px; }
   body header#header.site-header {
     box-shadow: #777 0 0 40px;
+    backdrop-filter: blur(3px);
     padding: 0;
     position: fixed;
     background: rgba(255, 255, 255, 0.9);
@@ -52,7 +53,7 @@ body {
     body header#header.site-header.hide-header {
       transform: translateY(-1000px); }
     body header#header.site-header.is-transparent {
-      background: rgba(234, 234, 215, 0.55); }
+      background: rgba(234, 234, 215, 0.8); }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body header#header.site-header.menu-expanded {
         background-color: white; } }
@@ -376,9 +377,10 @@ body {
     border-top: none !important; }
     @media only screen and (max-height: 600px) and (max-width: 1025px) {
       body header#header nav#navigation.nav-primary ul.menu {
-        overflow-y: scroll;
         overflow-x: hidden;
-        height: 118vh; } }
+        height: 118vh;
+        max-height: calc(100vh - 50px) !important;
+        overflow-y: auto; } }
     @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body header#header nav#navigation.nav-primary ul.menu {
         left: 0px;
@@ -620,7 +622,7 @@ body {
       text-shadow: 0 0 40px;
       -webkit-text-stroke: 1px;
       background: white;
-      border-bottom: none; }
+      border-bottom: dotted 4px rgba(0, 0, 0, 0); }
     body .site-container a:active, body .site-container a:focus {
       color: black;
       text-decoration: none;
@@ -628,7 +630,7 @@ body {
       -webkit-text-stroke: 1.5px;
       background: white;
       outline: dotted 2px;
-      border-bottom: none; }
+      border-bottom: dotted 4px rgba(0, 0, 0, 0); }
   body .site-container .site-inner {
     background: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%);
     padding: 30px 0; }
@@ -674,10 +676,25 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    body .site-container .site-inner .entry-wrap details summary {
+      transition: ease all 0.125s;
+      cursor: pointer;
+      max-width: 290px;
+      padding: 12px 5px 5px 5px;
+      border-radius: 10px;
+      margin: 0 auto; }
+      body .site-container .site-inner .entry-wrap details summary:hover {
+        background: rgba(100, 100, 100, 0.8); }
+      body .site-container .site-inner .entry-wrap details summary:focus-visible, body .site-container .site-inner .entry-wrap details summary:focus, body .site-container .site-inner .entry-wrap details summary:active {
+        background: rgba(100, 100, 100, 0.8);
+        outline: dotted; }
+    body .site-container .site-inner .entry-wrap details:open summary {
+      background: white;
+      color: black; }
     body .site-container .site-inner .entry-wrap .dotted-underline:hover, body .site-container .site-inner .entry-wrap .dotted-underline:focus-within {
       text-decoration: none !important; }
     body .site-container .site-inner .entry-wrap .dotted-underline h2 {
-      text-decoration: underline dotted !important;
+      text-decoration: underline 3px dotted !important;
       color: #6ea3c2; }
       body .site-container .site-inner .entry-wrap .dotted-underline h2:active, body .site-container .site-inner .entry-wrap .dotted-underline h2:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2:focus {
         text-decoration: none !important; }
@@ -687,23 +704,22 @@ body {
         body .site-container .site-inner .entry-wrap .dotted-underline h2 a:active, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:focus {
           color: black;
           text-decoration: none !important; }
-    body .site-container .site-inner .entry-wrap h2.about-us-h2link {
-      text-decoration: dotted underline !important;
+    body .site-container .site-inner .entry-wrap h2.questions-comments-h2link {
+      text-decoration: dotted 4px underline !important;
       color: #6ea3c2; }
-      body .site-container .site-inner .entry-wrap h2.about-us-h2link:hover, body .site-container .site-inner .entry-wrap h2.about-us-h2link:active, body .site-container .site-inner .entry-wrap h2.about-us-h2link:focus, body .site-container .site-inner .entry-wrap h2.about-us-h2link:focus-within {
+      body .site-container .site-inner .entry-wrap h2.questions-comments-h2link:hover, body .site-container .site-inner .entry-wrap h2.questions-comments-h2link:active, body .site-container .site-inner .entry-wrap h2.questions-comments-h2link:focus, body .site-container .site-inner .entry-wrap h2.questions-comments-h2link:focus-within {
         text-decoration: none !important; }
-      body .site-container .site-inner .entry-wrap h2.about-us-h2link a {
-        color: #f9ffdc;
+      body .site-container .site-inner .entry-wrap h2.questions-comments-h2link a {
+        color: #5a5b74;
         border: none;
         text-decoration: none;
         padding: 15px 15px 5px 5px;
         border-radius: 5px; }
-        body .site-container .site-inner .entry-wrap h2.about-us-h2link a:hover {
+        body .site-container .site-inner .entry-wrap h2.questions-comments-h2link a:hover {
           color: black;
           border-bottom: none !important; }
-        body .site-container .site-inner .entry-wrap h2.about-us-h2link a:active, body .site-container .site-inner .entry-wrap h2.about-us-h2link a:focus {
-          color: black;
-          border: 2px dashed !important; }
+        body .site-container .site-inner .entry-wrap h2.questions-comments-h2link a:active, body .site-container .site-inner .entry-wrap h2.questions-comments-h2link a:focus {
+          color: black; }
     body .site-container .site-inner .entry-wrap p {
       line-height: 1.35em;
       transition: ease all 0.25s; }
@@ -711,6 +727,7 @@ body {
         background: rgba(0, 0, 0, 0.5);
         box-shadow: 0 0 50px #000;
         border-radius: 13px;
+        line-height: 1.2em;
         padding: 20px;
         text-shadow: 1px 1px 1px rgba(55, 155, 120, 0.9); }
       body .site-container .site-inner .entry-wrap p.julius-sans {
@@ -794,26 +811,27 @@ body {
       -webkit-text-stroke: 1.5px;
       background: white;
       outline: dotted 2px; }
-    body .site-container .site-inner .entry-wrap .boston-whaler figure a {
+    body .site-container .site-inner .entry-wrap .hatch-btn figure a {
       padding: 8px 5px 1px 5px;
       background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
       border-radius: 7px;
       box-shadow: 1px 2px 5px;
       margin-bottom: 10px; }
-      body .site-container .site-inner .entry-wrap .boston-whaler figure a:hover {
-        transform: scale(1.18); }
-      body .site-container .site-inner .entry-wrap .boston-whaler figure a:hover, body .site-container .site-inner .entry-wrap .boston-whaler figure a:active, body .site-container .site-inner .entry-wrap .boston-whaler figure a:focus {
+      body .site-container .site-inner .entry-wrap .hatch-btn figure a:hover {
+        transform: scale(1.18);
+        box-shadow: 0 0 30px white; }
+      body .site-container .site-inner .entry-wrap .hatch-btn figure a:hover, body .site-container .site-inner .entry-wrap .hatch-btn figure a:active, body .site-container .site-inner .entry-wrap .hatch-btn figure a:focus {
         border-bottom: 4px dotted rgba(255, 255, 255, 0);
-        transform: scale(1.13);
+        transform: scale(1.05);
         background-color: aliceblue; }
-      body .site-container .site-inner .entry-wrap .boston-whaler figure a::before {
+      body .site-container .site-inner .entry-wrap .hatch-btn figure a::before {
         content: '↪';
         position: absolute;
         font-size: 38px;
         transform: rotate(45deg);
         margin-left: 124px;
         margin-top: -11px; }
-      body .site-container .site-inner .entry-wrap .boston-whaler figure a::after {
+      body .site-container .site-inner .entry-wrap .hatch-btn figure a::after {
         content: 'Learn more ➣';
         position: relative;
         bottom: -4px;
@@ -850,7 +868,7 @@ body {
       margin-bottom: 10px;
       border: 1px solid #caccc0;
       padding: 7px;
-      box-shadow: 0 0 25px; }
+      box-shadow: #c7d3d6 0 0 25px; }
       body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img:hover, body .site-container .site-inner .entry-wrap figure.wp-block-media-text__media a img.is-hovered {
         transform: scale(1.005);
         box-shadow: 0 0 25px black; }
@@ -863,7 +881,7 @@ body {
       body .site-container .site-inner .entry-wrap figure.wp-block-table.tableshade-pattern-a .has-fixed-layout tr:nth-child(odd) {
         background-color: rgba(200, 200, 200, 0.4); }
     body .site-container .site-inner .entry-wrap .wp-block-media-text {
-      font-size: 190%;
+      font-size: 120%;
       padding: 15px 0 5px 0; }
       body .site-container .site-inner .entry-wrap .wp-block-media-text.image-var-i .wp-block-media-text__media img {
         border-radius: 10px;
@@ -996,6 +1014,10 @@ body {
         border-radius: 15px;
         box-shadow: 0 0 15px black;
         border: 2px solid black; }
+    body .site-container .site-inner .entry-wrap .naval-greetings {
+      border-radius: 15px; }
+    body .site-container .site-inner .entry-wrap .wp-block-search__label {
+      max-width: 80%; }
   body .site-container .banner {
     box-shadow: #353737 0px -8px 15px 20px;
     background-color: #43616d;
@@ -1003,7 +1025,9 @@ body {
     background-position: 20% -24.8333px;
     background-repeat: no-repeat;
     border-bottom: 3px solid #6e8a71;
-    transition: ease all 0.5s; }
+    transition: ease all 0.5s;
+    max-height: calc(100vh - 50px) !important;
+    overflow-y: auto; }
     @media only screen and (min-width: 1400px) {
       body .site-container .banner {
         background-size: 100% calc(min(800px, 100%));
@@ -1118,7 +1142,7 @@ body {
       padding: 25px 0;
       text-shadow: 1px 2px 6px #000;
       transition: ease all 0.25s;
-      color: #f9ffdc;
+      color: #c4e5d5;
       font-size: 88px;
       font-weight: 600;
       font-family: "Vollkorn SC", serif;
@@ -1164,18 +1188,19 @@ body {
       body .site-container .banner .banner-title.site-description::before {
         bottom: 8px;
         content: '';
-        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-no-dots-conning-tower.png);
+        background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-def-conning-tower.svg);
         margin: 0 auto;
         width: 978px;
         height: 245px;
         display: block;
-        border-bottom: solid 10px #ebffe7;
+        border-bottom: solid 10px #a2d3bb;
         background-repeat: no-repeat;
         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
         transition: ease all 0.25s;
         position: relative;
         background-size: 65% 100%;
-        background-position: 50%; }
+        background-position: 50%;
+        filter: drop-shadow(4px -3px 3px #001631); }
         @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .banner .banner-title.site-description::before {
             width: 800px;
@@ -1270,7 +1295,8 @@ body {
       background: linear-gradient(0deg, #b7cccd 0%, #e8e8e8 95%, #eff2e3 100%); }
       body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
         font-size: 50px;
-        text-decoration: underline; }
+        text-decoration: underline;
+        margin-top: 30px; }
         @media only screen and (min-width: 576px) and (max-width: 768px) {
           body .site-container div.wrap main.content h2.wp-block-heading.has-text-align-center {
             font-size: 45px; } }
@@ -1333,7 +1359,7 @@ body {
         margin-bottom: 30px;
         padding-bottom: 5px; }
         body .site-container div.wrap main.content article.post-9 img {
-          border: dotted 11px #9fa291;
+          border: dotted 11px #90a5a8;
           box-shadow: 0 0 6px 2px #9da094;
           padding: 4px;
           margin: 15px 5px; }

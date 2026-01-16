@@ -6,30 +6,46 @@
 		function removeCredits() {
 			document.querySelector('p.credit').remove();
 		}
-		function doubleHoverActiveFocus() {
+		function tripleHoverActiveFocus() {
 			document.querySelectorAll('.wp-block-media-text').forEach(block => {
-				const imglink = block.querySelector('figure a');        
+
+				const imglink = block.querySelector('figure a');
 				const img     = block.querySelector('figure a img');
 				const link    = block.querySelector('h2.wp-block-heading a');
-				if (imglink && img && link) {
-					const bindToggle = (el, target, className, events) => {
-						events.on.forEach(evt =>
-							el.addEventListener(evt, () => target.classList.add(className))
-						);
-						events.off.forEach(evt =>
-							el.addEventListener(evt, () => target.classList.remove(className))
-						);
-					};
-					const relationships = [
-						{ source: imglink, target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] } },
-						{ source: imglink, target: link, className: 'is-active-focused', events: { on: ['focus'],     off: ['blur'] } },
-						{ source: img,     target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] } },
-						{ source: img,     target: link, className: 'is-active-focused', events: { on: ['focus'],     off: ['blur'] } },
-						{ source: link,    target: img, className: 'is-hovered',        events: { on: ['mouseenter'], off: ['mouseleave'] } },
-						{ source: link,    target: imglink, className: 'is-active-focused', events: { on: ['focus'],  off: ['blur'] } }
-					];
-					relationships.forEach(rel => bindToggle(rel.source, rel.target, rel.className, rel.events));
-				}
+				const btnlink = block.querySelector('.hatch-btn a');
+
+				if (!(imglink && img && link && btnlink)) return;
+
+				const bindToggle = (source, target, className, events) => {
+					events.on.forEach(evt =>
+						source.addEventListener(evt, () => target.classList.add(className))
+					);
+					events.off.forEach(evt =>
+						source.addEventListener(evt, () => target.classList.remove(className))
+					);
+				};
+
+				const relationships = [
+					// Original relationships
+					{ source: imglink, target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
+					{ source: imglink, target: link, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
+					{ source: img,     target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
+					{ source: img,     target: link, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
+					{ source: link,    target: img,  className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
+					{ source: link,    target: imglink, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
+
+					// New button relationships (mirroring original logic)
+					{ source: btnlink, target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
+					{ source: btnlink, target: link, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
+					{ source: btnlink, target: img,  className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
+					{ source: btnlink, target: img,  className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
+					{ source: btnlink, target: imglink, className: 'is-hovered',    events: { on: ['mouseenter'], off: ['mouseleave'] }},
+					{ source: btnlink, target: imglink, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
+				];
+
+				relationships.forEach(rel =>
+					bindToggle(rel.source, rel.target, rel.className, rel.events)
+				);
 			});
 		}
         function wrapExceptFirstLetters(selector, style = 'opacity:0.6') {
@@ -313,7 +329,7 @@
 		}
 		// === Run All ===
 		assignRandomBannerClasses();
-		doubleHoverActiveFocus();
+		tripleHoverActiveFocus();
         wrapExceptFirstLetters('h1.banner-title.site-description'); 
 		initHeaderState();
 		initSubmenus();
