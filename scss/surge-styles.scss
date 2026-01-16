@@ -200,10 +200,10 @@ $JuliusFont: "Julius Sans One", sans-serif;
 }
 @mixin banner-title {
     color: $logo-color;
-    font-size: 88px;
+    font-size: 50px;
     font-weight: 600;
     font-family: $VollkornSCFont;
-    margin: 20px 0 -76px 0;
+    margin: 5px 0 -80px 0;
     text-shadow: 0 0 18px $black;
     -webkit-text-stroke: 1px $black;
 }
@@ -1439,7 +1439,7 @@ body {
 					border-radius: 15px;
 				}
 				.wp-block-search__label {
-					max-width: 80%;
+					max-width: 50%;
 				}
 			}
 		}
@@ -1452,39 +1452,39 @@ body {
 			background-repeat: no-repeat;
 			border-bottom: 3px solid #6e8a71;
 			transition: $ease-half-sec;
-			max-height: calc(100vh - 50px) !important;
-        	overflow-y: auto;
+//			max-height: calc(100vh - 50px) !important;
+//        	overflow-y: auto;
 			@include hd-desktop-up {
-				background-size: 100% calc(min(800px, 100%));
-				padding: 160px 0 150px 0;
+				background-size: 100% calc(min(800px, 650px));
+				padding: 255px 0 52px 0;
 			}                                            
 			@include large-desktop-up {
-				background-size: 100% calc(min(750px, 100%));
-				padding: 150px 0 140px 0;
+				background-size: 100% calc(min(750px, 590px));
+				padding: 140px 0 50px 0;
 			}                                           
 			@include custom-desktop {
-				background-size: 108% calc(min(730px, 100%));
-				padding: 135px 0 125px 0;
+				background-size: 108% calc(min(730px, 515px));
+				padding: 95px 0 50px 0;
 			}                                           
 			@include desktop-up {
-				background-size: 120% calc(min(715px, 100%));
-				padding: 160px 0 80px 0;
+				background-size: 120% calc(min(715px, 465px));
+				padding: 90px 0 47px 0;
 			}                                              
 			@include tablet-landscape-up {
-				background-size: 130% calc(min(700px, 100%));
-				padding: 158px 0 80px 0;
+				background-size: 130% calc(min(700px, 405px));
+				padding: 80px 0 42px 0;
 			}
 			@include tablet-portrait-up {
 				background-size: 150% calc(min(680px, 100%));
-				padding: 156px 0 80px 0;
+				padding: 70px 0 35px 0;
 			}               
 			@include phone-only-up {
 				background-size: 200% calc(min(660px, 170%));
-				padding: 154px 0 80px 0;
+				padding: 60px 0 30px 0;
 			}
 			@include extra-extra-small {
 				background-size: 250% calc(min(640px, 100%));
-				padding: 150px 0 80px 0;
+				padding: 50px 0 25px 0;
 			}
 			&.bground1 {
 				background-image: $surge-bg1;
@@ -1595,31 +1595,31 @@ body {
 				transition: $ease-quarter-sec;
 				@include banner-title;
 				@include large-desktop-up {
-					font-size: 74px;
+					font-size: 48px;
 				}                
 				@include custom-desktop { 
-					font-size: 64px;
+					font-size: 45px;
 					position: relative;
 					bottom: 10px;
 				}                 
 				@include desktop-up { 
-					font-size: 52px;
+					font-size: 40px;
 					position: relative;
 					bottom: 25px;
 				}                 
 				@include tablet-landscape-up { 
-					font-size: 50px;
+					font-size: 37px;
 					position: relative;
 					bottom: 40px;
 				}
 				@include tablet-portrait-up {
-					font-size: 44px;
+					font-size: 35px;
 					line-height: 1.07em;
 					position: relative;
 					bottom: 48px;
 				}               
 				@include phone-only-up {
-					font-size:42px;
+					font-size:32px;
 					line-height: 1.02em;
 					position: relative;
 					bottom: 42px;
@@ -1636,17 +1636,17 @@ body {
 						content: '';
 						background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-def-conning-tower.svg);
                         margin: 0 auto;
-                        width: 91%;
-                        height: 210px;
-                        display: block;
-                        border-bottom: solid 10px #a2d3bb;
-                        background-repeat: no-repeat;
-                        box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
-                        transition: ease all 0.25s;
-                        position: relative;
-                        background-size: 36% 100%;
-                        background-position: 50%;
-                        filter: drop-shadow(4px -3px 3px #001631);
+						width: 90%;
+						height: 146px;
+						display: block;
+						border-bottom: solid 10px #a2d3bb;
+						background-repeat: no-repeat;
+						box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
+						transition: ease all 0.25s;
+						position: relative;
+						background-size: 25% 100%;
+						background-position: 50%;
+						filter: drop-shadow(4px -3px 3px #001631);
 						@include custom-desktop {
 							width: 800px;
 							height: 185px;
