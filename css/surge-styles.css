@@ -1,15 +1,36 @@
 @charset "UTF-8";
 /* SURGE-styles*/
+/* Body Background */
+/* linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);  */
+/* End Body Background */
+/*  Special Backgrounds */
+/* End Special Backgrounds */
+/* Background Img Variables */
+/* End Background Img Variables  */
+/* Breakpoints */
+/* End Breakpoints */
+/* Colors & Borders */
+/*#eff4f2*/
+/* #eff4f2;  */
+/* End Colors & Borders */
+/*  Img FX */
+/* End Img FX */
+/* Transforms & Transitions */
+/* End Transforms & Transitions */
+/* Shading  */
+/* Shading * /
 
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-
+/* Mixins */
+/* End Mixins */
 body {
-  background: linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);
+  background: #446370;
   height: 100vh;
   color: #222630;
-  font-family: "Special Elite", system-ui;
+  font-family: "Google Sans", sans-serif;
+  font-size: 18px;
   min-width: 275px; }
   body ul.menu-primary ul {
     border-top: none !important; }
@@ -86,7 +107,7 @@ body {
       transform: scale(1.1); }
     body header#header .site-title a {
       color: #333;
-      font-family: "Special Elite", system-ui;
+      font-family: "Google Sans", sans-serif;
       text-transform: capitalize;
       letter-spacing: 2px;
       margin-left: 15px;
@@ -633,7 +654,7 @@ body {
       border-bottom: dotted 4px rgba(0, 0, 0, 0); }
   body .site-container .site-inner {
     background: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%);
-    padding: 30px 0; }
+    padding: 15px 0; }
     body .site-container .site-inner .contact-logo {
       color: #25595c;
       font-family: "Vollkorn SC", serif;
@@ -676,11 +697,13 @@ body {
           font-size: 23px;
           line-height: 20px;
           margin-top: 10px; } }
+    body .site-container .site-inner .entry-wrap h2 {
+      font-size: 22px; }
     body .site-container .site-inner .entry-wrap details summary {
       transition: ease all 0.125s;
       cursor: pointer;
-      max-width: 290px;
-      padding: 12px 5px 5px 5px;
+      max-width: 192px;
+      padding: 3px 5px 5px 5px;
       border-radius: 10px;
       margin: 0 auto; }
       body .site-container .site-inner .entry-wrap details summary:hover {
@@ -704,6 +727,8 @@ body {
         body .site-container .site-inner .entry-wrap .dotted-underline h2 a:active, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:hover, body .site-container .site-inner .entry-wrap .dotted-underline h2 a:focus {
           color: black;
           text-decoration: none !important; }
+    body .site-container .site-inner .entry-wrap .dotted-underline .wp-block-media-text__content h2 a {
+      line-height: 1.8em; }
     body .site-container .site-inner .entry-wrap h2.questions-comments-h2link {
       text-decoration: dotted 4px underline !important;
       color: #6ea3c2; }
@@ -811,33 +836,37 @@ body {
       -webkit-text-stroke: 1.5px;
       background: white;
       outline: dotted 2px; }
-    body .site-container .site-inner .entry-wrap .hatch-btn figure a {
+    body .site-container .site-inner .entry-wrap .surge-btn-i figure a, body .site-container .site-inner .entry-wrap .team-btn figure a {
       padding: 8px 5px 1px 5px;
       background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
       border-radius: 7px;
       box-shadow: 1px 2px 5px;
       margin-bottom: 10px; }
-      body .site-container .site-inner .entry-wrap .hatch-btn figure a:hover {
+      body .site-container .site-inner .entry-wrap .surge-btn-i figure a:hover, body .site-container .site-inner .entry-wrap .team-btn figure a:hover {
         transform: scale(1.18);
         box-shadow: 0 0 30px white; }
-      body .site-container .site-inner .entry-wrap .hatch-btn figure a:hover, body .site-container .site-inner .entry-wrap .hatch-btn figure a:active, body .site-container .site-inner .entry-wrap .hatch-btn figure a:focus {
+      body .site-container .site-inner .entry-wrap .surge-btn-i figure a:hover, body .site-container .site-inner .entry-wrap .surge-btn-i figure a:active, body .site-container .site-inner .entry-wrap .surge-btn-i figure a:focus, body .site-container .site-inner .entry-wrap .team-btn figure a:hover, body .site-container .site-inner .entry-wrap .team-btn figure a:active, body .site-container .site-inner .entry-wrap .team-btn figure a:focus {
         border-bottom: 4px dotted rgba(255, 255, 255, 0);
         transform: scale(1.05);
         background-color: aliceblue; }
-      body .site-container .site-inner .entry-wrap .hatch-btn figure a::before {
+      body .site-container .site-inner .entry-wrap .surge-btn-i figure a::before, body .site-container .site-inner .entry-wrap .team-btn figure a::before {
         content: '↪';
         position: absolute;
-        font-size: 38px;
+        font-size: 50px;
         transform: rotate(45deg);
-        margin-left: 124px;
-        margin-top: -11px; }
-      body .site-container .site-inner .entry-wrap .hatch-btn figure a::after {
+        margin-left: 125px;
+        margin-top: 0; }
+      body .site-container .site-inner .entry-wrap .surge-btn-i figure a::after, body .site-container .site-inner .entry-wrap .team-btn figure a::after {
         content: 'Learn more ➣';
         position: relative;
         bottom: -4px;
         font-size: 28px;
         font-family: "Julius Sans One", sans-serif;
         font-weight: bold; }
+      body .site-container .site-inner .entry-wrap .surge-btn-i figure a:nth-of-type(2), body .site-container .site-inner .entry-wrap .team-btn figure a:nth-of-type(2) {
+        filter: hue-rotate(330deg); }
+    body .site-container .site-inner .entry-wrap .team-btn figure a {
+      filter: hue-rotate(330deg); }
     body .site-container .site-inner .entry-wrap figure .wp-block-image figcaption.wp-element-caption {
       font-size: 23px;
       text-shadow: 1px 1px 5px black; }
@@ -1019,44 +1048,46 @@ body {
     body .site-container .site-inner .entry-wrap .wp-block-search__label {
       max-width: 50%; }
   body .site-container .banner {
-    box-shadow: #353737 0px -8px 15px 20px;
+    border: solid 1px;
     background-color: #43616d;
     background-image: url(https://surge.ngo/wp-content/themes/composer/images/header.jpg);
     background-position: 20% -24.8333px;
     background-repeat: no-repeat;
-    border-bottom: 3px solid #6e8a71;
+    max-width: 2200px;
+    margin: 0 auto;
+    border-radius: 0 0 25px 25px;
     transition: ease all 0.5s; }
     @media only screen and (min-width: 1400px) {
       body .site-container .banner {
-        background-size: 100% calc(min(800px, 650px));
-        padding: 255px 0 52px 0; } }
+        background-size: 100vw calc(min(1058px, 1058px));
+        padding: 350px 0 80px 0; } }
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body .site-container .banner {
-        background-size: 100% calc(min(750px, 590px));
-        padding: 140px 0 50px 0; } }
+        background-size: 100vw calc(min(770px, 770px));
+        padding: 275px 075px 0; } }
     @media only screen and (min-width: 1025px) and (max-width: 1200px) {
       body .site-container .banner {
-        background-size: 108% calc(min(730px, 515px));
-        padding: 95px 0 50px 0; } }
+        background-size: 100vw calc(min(700px, 700px));
+        padding: 320px 0 50px 0; } }
     @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body .site-container .banner {
-        background-size: 120% calc(min(715px, 465px));
-        padding: 90px 0 47px 0; } }
+        background-size: 100vw calc(min(550px, 550px));
+        padding: 200px 0 47px 0; } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body .site-container .banner {
-        background-size: 130% calc(min(700px, 405px));
+        background-size: 100vw calc(min(480px, 480px));
         padding: 80px 0 42px 0; } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .site-container .banner {
-        background-size: 150% calc(min(680px, 100%));
+        background-size: 100vw calc(min(380px, 380px));
         padding: 70px 0 35px 0; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .site-container .banner {
-        background-size: 200% calc(min(660px, 170%));
+        background-size: 100vw calc(min(360px, 360px));
         padding: 60px 0 30px 0; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container .banner {
-        background-size: 250% calc(min(640px, 100%));
+        background-size: 100vw calc(min(350px, 350px));
         padding: 50px 0 25px 0; } }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
@@ -1101,9 +1132,7 @@ body {
     body .site-container .banner.bground20 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground20.jpg) !important; }
     body .site-container .banner .filter {
-      backdrop-filter: blur(0.06em);
-      background: rgba(0, 0, 0, 0.53);
-      box-shadow: 7px 10px 55px 65px rgba(0, 0, 0, 0.53); }
+      backdrop-filter: blur(0.06em); }
       body .site-container .banner .filter .entry-meta {
         position: relative;
         text-shadow: 3px 2px 4px black;
@@ -1122,7 +1151,7 @@ body {
             top: 38px; } }
         @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body .site-container .banner .filter .entry-meta {
-            font-size: 18px;
+            font-size: 22px;
             top: 30px; } }
         @media only screen and (min-width: 768px) and (max-width: 992px) {
           body .site-container .banner .filter .entry-meta {
@@ -1137,113 +1166,143 @@ body {
           body .site-container .banner .filter .entry-meta {
             top: 10px; } }
     body .site-container .banner .banner-title {
-      padding: 25px 0;
-      text-shadow: 1px 2px 6px #000;
+      padding: 60px 0;
+      text-shadow: 1px -3px 3px black;
       transition: ease all 0.25s;
       color: #c4e5d5;
       font-size: 50px;
       font-weight: 600;
       font-family: "Vollkorn SC", serif;
-      margin: 5px 0 -80px 0;
-      text-shadow: 0 0 18px black;
+      margin: 80px 0 -130px 0;
+      text-shadow: 1px -3px 3px black;
       -webkit-text-stroke: 1px black; }
       @media only screen and (min-width: 1200px) and (max-width: 1400px) {
         body .site-container .banner .banner-title {
-          font-size: 48px; } }
+          font-size: 34px;
+          margin-bottom: -47px; } }
       @media only screen and (min-width: 1025px) and (max-width: 1200px) {
         body .site-container .banner .banner-title {
-          font-size: 45px;
+          font-size: 30px;
           position: relative;
-          bottom: 10px; } }
+          bottom: 37px; } }
       @media only screen and (min-width: 992px) and (max-width: 1025px) {
         body .site-container .banner .banner-title {
-          font-size: 40px;
+          font-size: 30px;
           position: relative;
           bottom: 25px; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body .site-container .banner .banner-title {
-          font-size: 37px;
+          font-size: 23px;
           position: relative;
-          bottom: 40px; } }
+          bottom: 33px;
+          -webkit-text-stroke: 0.02em black; } }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .site-container .banner .banner-title {
-          font-size: 35px;
+          font-size: 20px;
           line-height: 1.07em;
           position: relative;
-          bottom: 48px; } }
+          bottom: 40px;
+          -webkit-text-stroke: 0.015em black; } }
       @media only screen and (min-width: 480px) and (max-width: 576px) {
         body .site-container .banner .banner-title {
-          font-size: 32px;
+          font-size: 18px;
           line-height: 1.02em;
           position: relative;
-          bottom: 42px; } }
+          bottom: 42px;
+          -webkit-text-stroke: 0.01em black; } }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .site-container .banner .banner-title {
-          font-size: 30px;
+          font-size: 16px;
           line-height: 1.0em;
           position: relative;
-          bottom: 50px; } }
+          bottom: 50px;
+          -webkit-text-stroke: 0.01em black; } }
+      body .site-container .banner .banner-title.site-description dark-bg {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 18px;
+        box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5); }
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+          body .site-container .banner .banner-title.site-description dark-bg {
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3); } }
+        @media only screen and (min-width: 480px) and (max-width: 576px) {
+          body .site-container .banner .banner-title.site-description dark-bg {
+            background: none;
+            box-shadow: none; } }
+        @media only screen and (min-width: 0) and (max-width: 480px) {
+          body .site-container .banner .banner-title.site-description dark-bg {
+            background: none;
+            box-shadow: none; } }
       body .site-container .banner .banner-title.site-description::before {
         bottom: 8px;
         content: '';
         background: url(https://surge.ngo/wp-content/themes/composer/images/SURGE-LOGO-text-only-def-conning-tower.svg);
         margin: 0 auto;
-        width: 90%;
-        height: 146px;
+        width: 85%;
+        height: 190px;
         display: block;
         border-bottom: solid 10px #a2d3bb;
         background-repeat: no-repeat;
         box-shadow: 1px 9px 3px -4px rgba(0, 0, 0, 0.3);
         transition: ease all 0.25s;
         position: relative;
-        background-size: 25% 100%;
+        background-size: 500px 100%;
         background-position: 50%;
         filter: drop-shadow(4px -3px 3px #001631); }
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+          body .site-container .banner .banner-title.site-description::before {
+            border-bottom: solid 8px #a2d3bb;
+            background-size: 305px 100%;
+            height: 120px; } }
         @media only screen and (min-width: 1025px) and (max-width: 1200px) {
           body .site-container .banner .banner-title.site-description::before {
+            border-bottom: solid 8px #a2d3bb;
             width: 800px;
-            height: 185px;
-            background-size: contain;
+            background-size: 305px 100%;
+            height: 110px;
             position: relative;
             bottom: 8px; } }
         @media only screen and (min-width: 992px) and (max-width: 1025px) {
           body .site-container .banner .banner-title.site-description::before {
-            width: 740px;
-            height: 175px;
+            border-bottom: solid 7px #a2d3bb;
+            height: 105px;
+            background-size: 280px 100%;
+            width: 767px;
             background-size: contain;
             position: relative;
             bottom: 8px; } }
         @media only screen and (min-width: 768px) and (max-width: 992px) {
           body .site-container .banner .banner-title.site-description::before {
-            width: 700px;
-            height: 165px;
-            background-size: contain;
+            border-bottom: solid 6px #a2d3bb;
+            height: 100px;
+            width: 750px;
+            background-size: 250px 100%;
             position: relative;
             bottom: 8px; } }
         @media only screen and (min-width: 576px) and (max-width: 768px) {
           body .site-container .banner .banner-title.site-description::before {
-            width: 550px;
-            height: 127px;
+            border-bottom: solid 5px #a2d3bb;
+            width: 592px;
+            height: 62px;
             background-size: contain;
             position: relative;
-            bottom: 10px;
-            border-bottom: solid 8px #ebffe7; } }
+            bottom: 1px; } }
         @media only screen and (min-width: 480px) and (max-width: 576px) {
           body .site-container .banner .banner-title.site-description::before {
-            width: 440px;
-            height: 110px;
+            border-bottom: solid 4px #a2d3bb;
+            width: 420px;
+            height: 60px;
             background-size: contain;
             position: relative;
-            bottom: 7px;
-            border-bottom: solid 6px #ebffe7; } }
+            bottom: 3px; } }
         @media only screen and (min-width: 0) and (max-width: 480px) {
           body .site-container .banner .banner-title.site-description::before {
+            border-bottom: solid 3px #a2d3bb;
             width: 280px;
             height: 65px;
             background-size: contain;
             position: relative;
-            bottom: 5px;
-            border-bottom: solid 5px #ebffe7; } }
+            bottom: 5px; } }
     body .site-container .banner h3.archive-title {
       text-shadow: 1px 1px 5px black;
       font-family: "Vollkorn SC", serif;
@@ -1252,7 +1311,7 @@ body {
       font-weight: 700;
       color: #ebffe7; }
   body .site-container div.wrap {
-    max-width: 1620px !important; }
+    max-width: 2300px !important; }
     @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body .site-container div.wrap {
         width: 95%; } }
@@ -1313,7 +1372,7 @@ body {
           outline: dashed 3px #555e60; }
       body .site-container div.wrap main.content button {
         background: #575872;
-        font-family: "Vollkorn SC", serif;
+        font-family: "Google Sans", sans-serif;
         margin-left: -1px;
         word-break: normal;
         text-shadow: 0 0 20px #a2a2a2;
@@ -1430,7 +1489,7 @@ body {
         body .site-container div.wrap main .nf-form-cont span h3 {
           font-size: 36px; } }
   body .site-container h1.bground-title {
-    font-family: "Special Elite", system-ui;
+    font-family: "Google Sans", sans-serif;
     letter-spacing: 21px;
     font-size: 400% !important;
     text-shadow: 0 0 10px #000;
@@ -1439,7 +1498,7 @@ body {
   body .site-container .omega-nav-menu {
     font-size: 0; }
     body .site-container .omega-nav-menu li {
-      font-family: "Special Elite", system-ui;
+      font-family: "Google Sans", sans-serif;
       padding: 0 1px 0 0; }
       body .site-container .omega-nav-menu li.sfHover > a {
         background: rgba(255, 255, 255, 0.75);
@@ -1679,7 +1738,7 @@ body {
       border: none;
       font-family: "Vollkorn SC", serif;
       font-size: 160%;
-      text-decoration: dotted underline;
+      text-decoration: dotted underline 4px;
       position: relative;
       bottom: 14px; }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -1922,24 +1981,24 @@ body {
           max-width: 180px;
           font-size: 14px; } }
       body .searchwp-modal-form .search-form input[type="submit"] {
-        left: 390px;
-        bottom: 85px;
+        left: 357px;
+        bottom: 94px;
         border: 0;
         clip: rect(0, 0, 0, 0);
-        margin: -1px;
+        margin: -7px;
         padding: 0;
         position: relative;
         display: inline-block;
         background: #575872;
-        height: 86.5px;
-        width: 108px;
+        width: 135px;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         font-size: 24px;
         z-index: 999;
-        font-family: "Vollkorn SC", serif; }
+        height: 102px;
+        font-family: "Google Sans", sans-serif; }
       body .searchwp-modal-form .search-form input:hover {
         box-shadow: 5px 6px 15px #75858a; }
       body .searchwp-modal-form .search-form input:focus, body .searchwp-modal-form .search-form input:active {
@@ -1959,15 +2018,15 @@ body {
           max-width: 75px;
           left: 167px;
           font-size: 16px;
-          height: 56px;
-          bottom: 55px; } }
+          height: 67px;
+          bottom: 60px; } }
       @media only screen and (min-width: 0) and (max-width: 480px) {
         body .searchwp-modal-form .search-form input.search-submit {
           max-width: 50px;
           left: 114px;
           font-size: 10px;
-          height: 52px;
-          bottom: 50px; } }
+          height: 56px;
+          bottom: 49px; } }
 @-moz-document url-prefix() {
   body .searchwp-modal-form .search-form input {
     height: 81px;

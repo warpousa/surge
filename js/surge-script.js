@@ -12,7 +12,7 @@
 				const imglink = block.querySelector('figure a');
 				const img     = block.querySelector('figure a img');
 				const link    = block.querySelector('h2.wp-block-heading a');
-				const btnlink = block.querySelector('.hatch-btn a');
+				const btnlink = block.querySelector('.surge-btn-i a');
 
 				if (!(imglink && img && link && btnlink)) return;
 
@@ -48,7 +48,7 @@
 				);
 			});
 		}
-        function wrapExceptFirstLetters(selector, style = 'opacity:0.6') {
+        function wrapExceptFirstLetters(selector, style = 'opacity:0.77') {
           const element = document.querySelector(selector);
           if (!element) return;
           const words = element.textContent.split(/(\s+)/);
@@ -64,6 +64,15 @@
           });
           element.innerHTML = transformed.join('');
         }
+		function wrapAllContents(selector, wrapperTag = 'dark-bg') {
+		  const el = document.querySelector(selector);
+		  if (!el) return;
+		  const wrapper = document.createElement(wrapperTag);
+		  while (el.firstChild) {
+			wrapper.appendChild(el.firstChild);
+		  }
+		  el.appendChild(wrapper);
+		}		
 		function assignRandomBannerClasses() {
 			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5','bground6','bground7' /*,'bground8','bground9','bground10','bground11','bground12','bground13','bground14','bground15','bground16','bground17','bground18','bground19','bground20'*/];
 			document.querySelectorAll('.banner').forEach(banner => {
@@ -330,7 +339,11 @@
 		// === Run All ===
 		assignRandomBannerClasses();
 		tripleHoverActiveFocus();
-        wrapExceptFirstLetters('h1.banner-title.site-description'); 
+		wrapAllContents('h1.banner-title.site-description', 'dark-bg');		
+		wrapExceptFirstLetters('h1.banner-title.site-description');
+		requestAnimationFrame(() => {
+		  wrapAllContents('h1.banner-title.site-description', 'dark-bg');
+		});
 		initHeaderState();
 		initSubmenus();
 		initOverlayTriggers();
