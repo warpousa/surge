@@ -1,30 +1,10 @@
 @charset "UTF-8";
 /* SURGE-styles*/
-/* Body Background */
-/* linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);  */
-/* End Body Background */
-/*  Special Backgrounds */
-/* End Special Backgrounds */
-/* Background Img Variables */
-/* End Background Img Variables  */
-/* Breakpoints */
-/* End Breakpoints */
-/* Colors & Borders */
-/*#eff4f2*/
-/* #eff4f2;  */
-/* End Colors & Borders */
-/*  Img FX */
-/* End Img FX */
-/* Transforms & Transitions */
-/* End Transforms & Transitions */
-/* Shading  */
-/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-/* Mixins */
-/* End Mixins */
+
 body {
   background: #446370;
   height: 100vh;
@@ -698,22 +678,28 @@ body {
           line-height: 20px;
           margin-top: 10px; } }
     body .site-container .site-inner .entry-wrap h2 {
-      font-size: 22px; }
-    body .site-container .site-inner .entry-wrap details summary {
-      transition: ease all 0.125s;
-      cursor: pointer;
-      max-width: 192px;
-      padding: 3px 5px 5px 5px;
-      border-radius: 10px;
-      margin: 0 auto; }
-      body .site-container .site-inner .entry-wrap details summary:hover {
-        background: rgba(100, 100, 100, 0.8); }
-      body .site-container .site-inner .entry-wrap details summary:focus-visible, body .site-container .site-inner .entry-wrap details summary:focus, body .site-container .site-inner .entry-wrap details summary:active {
-        background: rgba(100, 100, 100, 0.8);
-        outline: dotted; }
-    body .site-container .site-inner .entry-wrap details:open summary {
-      background: white;
-      color: black; }
+      font-size: 22px;
+      text-shadow: 1px 1px 1px black;
+      -webkit-text-stroke: 0.01em black; }
+    body .site-container .site-inner .entry-wrap details {
+      text-shadow: 1px 1px 1px black;
+      -webkit-text-stroke: 0.01em black; }
+      body .site-container .site-inner .entry-wrap details summary {
+        transition: ease all 0.125s;
+        cursor: pointer;
+        max-width: 192px;
+        padding: 3px 5px 5px 5px;
+        border-radius: 10px;
+        margin: 0 auto; }
+        body .site-container .site-inner .entry-wrap details summary:hover {
+          background: rgba(100, 100, 100, 0.8); }
+        body .site-container .site-inner .entry-wrap details summary:focus-visible, body .site-container .site-inner .entry-wrap details summary:focus, body .site-container .site-inner .entry-wrap details summary:active {
+          background: rgba(100, 100, 100, 0.8);
+          outline: dotted; }
+      body .site-container .site-inner .entry-wrap details:open summary {
+        background: white;
+        color: black;
+        text-shadow: 1px 1px 1px #378b7e; }
     body .site-container .site-inner .entry-wrap .dotted-underline:hover, body .site-container .site-inner .entry-wrap .dotted-underline:focus-within {
       text-decoration: none !important; }
     body .site-container .site-inner .entry-wrap .dotted-underline h2 {
@@ -1059,35 +1045,35 @@ body {
     transition: ease all 0.5s; }
     @media only screen and (min-width: 1400px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(1058px, 1058px));
-        padding: 350px 0 80px 0; } }
+        background-size: 2337px calc(min(1058px, 1058px));
+        padding: 108px 0 250px 0; } }
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(770px, 770px));
-        padding: 275px 075px 0; } }
+        background-size: 1450px calc(min(770px, 770px));
+        padding: 100px 0 50px 0; } }
     @media only screen and (min-width: 1025px) and (max-width: 1200px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(700px, 700px));
-        padding: 320px 0 50px 0; } }
+        background-size: 1320px calc(min(700px, 700px));
+        padding: 67px 0 67px 0; } }
     @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(550px, 550px));
-        padding: 200px 0 47px 0; } }
+        background-size: 1280px calc(min(550px, 550px));
+        padding: 267px 0 67px 0; } }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(480px, 480px));
-        padding: 80px 0 42px 0; } }
+        background-size: 1100px calc(min(480px, 480px));
+        padding: 67px 0 67px 0; } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(380px, 380px));
+        background-size: 800px calc(min(380px, 380px));
         padding: 70px 0 35px 0; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(360px, 360px));
+        background-size: 600px calc(min(360px, 360px));
         padding: 60px 0 30px 0; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container .banner {
-        background-size: 100vw calc(min(350px, 350px));
+        background-size: 450px calc(min(350px, 350px));
         padding: 50px 0 25px 0; } }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
@@ -1220,7 +1206,8 @@ body {
       body .site-container .banner .banner-title.site-description dark-bg {
         background: rgba(0, 0, 0, 0.5);
         border-radius: 18px;
-        box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5); }
+        box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
+        font-weight: bold; }
         @media only screen and (min-width: 576px) and (max-width: 768px) {
           body .site-container .banner .banner-title.site-description dark-bg {
             background: rgba(0, 0, 0, 0.3);

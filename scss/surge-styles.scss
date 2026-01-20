@@ -233,6 +233,10 @@ $JuliusFont: "Julius Sans One", sans-serif;
     margin-bottom: 50px;
     text-align: center;
 }
+@mixin light-text-outline {
+    text-shadow: 1px 1px 1px black;
+    -webkit-text-stroke: 0.01em black;	
+}
 @mixin main-content {
 	width: 95%;
 	border: solid 2px #8e9993;
@@ -981,8 +985,10 @@ body {
 			.entry-wrap {
 				h2 {
 					font-size: 22px;
+					@include light-text-outline;
 				}
 				details {
+					@include light-text-outline;
 					summary {
 						transition: $ease-eighth-sec;
 						cursor: pointer;
@@ -1002,6 +1008,7 @@ body {
 						summary {
 							background: $white;
 							color: $black;
+							text-shadow: 1px 1px 1px #378b7e;
 						}
 					}
 				}
@@ -1480,35 +1487,35 @@ body {
 //			max-height: calc(100vh - 50px) !important;
 //        	overflow-y: auto;
 			@include hd-desktop-up {
-				background-size: 100vw calc(min(1058px, 1058px));
-				padding: 350px 0 80px 0;
+				background-size: 2337px calc(min(1058px, 1058px));
+				padding: 108px 0 250px 0;
 			}
 			@include large-desktop-up {
-				background-size: 100vw calc(min(770px, 770px));
-				padding: 275px 075px 0;
+				background-size: 1450px calc(min(770px, 770px));
+				padding: 100px 0 50px 0;
 			}                                           
 			@include custom-desktop {
-				background-size: 100vw calc(min(700px, 700px));
-				padding: 320px 0 50px 0;
+				background-size: 1320px calc(min(700px, 700px));
+				padding: 67px 0 67px 0;
 			}                                           
 			@include desktop-up {
-				background-size: 100vw calc(min(550px, 550px));
-				padding: 200px 0 47px 0;
+				background-size: 1280px calc(min(550px, 550px));
+				padding: 267px 0 67px 0;
 			}                                              
 			@include tablet-landscape-up {
-				background-size: 100vw calc(min(480px, 480px));
-				padding: 80px 0 42px 0;
+				background-size: 1100px calc(min(480px, 480px));
+				padding: 67px 0 67px 0;
 			}
 			@include tablet-portrait-up {
-				background-size: 100vw calc(min(380px, 380px));
+				background-size: 800px calc(min(380px, 380px));
 				padding: 70px 0 35px 0;
 			}               
 			@include phone-only-up {
-				background-size: 100vw calc(min(360px, 360px));
+				background-size: 600px calc(min(360px, 360px));
 				padding: 60px 0 30px 0;
 			}
 			@include extra-extra-small {
-				background-size: 100vw calc(min(350px, 350px));
+				background-size: 450px calc(min(350px, 350px));
 				padding: 50px 0 25px 0;
 			}
 			&.bground1 {
@@ -1668,6 +1675,7 @@ body {
 						background: rgba(0, 0, 0, 0.5);
 						border-radius: 18px;
 						box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
+						font-weight: bold;
 						@include tablet-portrait-up {
 							background: rgba(0, 0, 0, 0.3);
 							box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
