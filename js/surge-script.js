@@ -74,7 +74,7 @@
 		  el.appendChild(wrapper);
 		}		
 		function assignRandomBannerClasses() {
-			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5','bground6','bground7' /*,'bground8','bground9','bground10','bground11','bground12','bground13','bground14','bground15','bground16','bground17','bground18','bground19','bground20'*/];
+			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5','bground6','bground7' ,'bground8','bground9','bground10'/*,'bground11','bground12','bground13','bground14','bground15','bground16','bground17','bground18','bground19','bground20'*/];
 			document.querySelectorAll('.banner').forEach(banner => {
 				banner.classList.add(classes[Math.floor(Math.random() * classes.length)]);
 			});

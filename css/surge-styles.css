@@ -1045,7 +1045,7 @@ body {
     transition: ease all 0.5s; }
     @media only screen and (min-width: 1400px) {
       body .site-container .banner {
-        background-size: 2337px calc(min(1058px, 1058px));
+        background-size: 3037px calc(min(1058px, 1058px));
         padding: 108px 0 250px 0; } }
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body .site-container .banner {
