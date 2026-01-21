@@ -339,10 +339,10 @@
 		// === Run All ===
 		assignRandomBannerClasses();
 		tripleHoverActiveFocus();
-		wrapAllContents('h1.banner-title.site-description', 'dark-bg');		
-		wrapExceptFirstLetters('h1.banner-title.site-description');
+		wrapAllContents('h1.banner-title', 'dark-bg');		
+		wrapExceptFirstLetters('h1.banner-title');
 		requestAnimationFrame(() => {
-		  wrapAllContents('h1.banner-title.site-description', 'dark-bg');
+		  wrapAllContents('h1.banner-title', 'dark-bg');
 		});
 		initHeaderState();
 		initSubmenus();
