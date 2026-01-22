@@ -124,7 +124,23 @@
 				menuIcon.setAttribute("tabindex", "0"); // allow focus
 				menuIcon.setAttribute("aria-hidden", "false"); // expose to screen readers
 			}
+		}
+		function isMacOS() {
+		  return navigator.userAgentData
+			? navigator.userAgentData.platform === "macOS"
+			: navigator.platform.toUpperCase().indexOf("MAC") >= 0;
 		}		
+		function macOSfix() {
+			if (!isMacOS()) return;
+			const searchBtn = document.querySelector('.search-form .search-submit');
+			const inputField = document.querySelector('form.search-form input.search-field');
+			if (searchBtn) {
+			  searchBtn.classList.add('mac-os');
+			}
+			if (inputField) {
+				inputField.classList.add('mac-os');
+			}
+		}
 		// === Configurable Selectors ===
 		const navMenuRoot = document.querySelector('ul.menu.omega-nav-menu.menu-primary');
 		const menuIcon = document.querySelector('#menu-icon.menu-icon');
@@ -351,6 +367,8 @@
 		initGlobalEscapeHandler();
 		initScrollHeaderBehavior();
 		initMenuIcon();
+		isMacOS();
+		macOSfix();	
 		removeCredits();
 		updateBurgerAccessibility();
 		window.addEventListener('resize', () => {
