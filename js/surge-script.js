@@ -8,14 +8,12 @@
 		}
 		function tripleHoverActiveFocus() {
 			document.querySelectorAll('.wp-block-media-text').forEach(block => {
-
 				const imglink = block.querySelector('figure a');
 				const img     = block.querySelector('figure a img');
 				const link    = block.querySelector('h2.wp-block-heading a');
 				const btnlink = block.querySelector('.surge-btn-i a');
 
 				if (!(imglink && img && link && btnlink)) return;
-
 				const bindToggle = (source, target, className, events) => {
 					events.on.forEach(evt =>
 						source.addEventListener(evt, () => target.classList.add(className))
@@ -24,7 +22,6 @@
 						source.addEventListener(evt, () => target.classList.remove(className))
 					);
 				};
-
 				const relationships = [
 					// Original relationships
 					{ source: imglink, target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
@@ -42,36 +39,35 @@
 					{ source: btnlink, target: imglink, className: 'is-hovered',    events: { on: ['mouseenter'], off: ['mouseleave'] }},
 					{ source: btnlink, target: imglink, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
 				];
-
 				relationships.forEach(rel =>
 					bindToggle(rel.source, rel.target, rel.className, rel.events)
 				);
 			});
 		}
         function wrapExceptFirstLetters(selector, style = 'opacity:0.77') {
-          const element = document.querySelector(selector);
-          if (!element) return;
-          const words = element.textContent.split(/(\s+)/);
-          const transformed = words.map(word => {
-            if (/^\s+$/.test(word)) return word;
-            const firstLetter = word.charAt(0);
-            const remainder = word.slice(1);
-            if (remainder.length > 0) {
-              return firstLetter + `<span style="${style}">${remainder}</span>`;
-            } else {
-              return firstLetter; // single-letter word case
-            }
-          });
-          element.innerHTML = transformed.join('');
+			const element = document.querySelector(selector);
+			if (!element) return;
+			const words = element.textContent.split(/(\s+)/);
+			const transformed = words.map(word => {
+			if (/^\s+$/.test(word)) return word;
+			const firstLetter = word.charAt(0);
+			const remainder = word.slice(1);
+			if (remainder.length > 0) {
+				return firstLetter + `<span style="${style}">${remainder}</span>`;
+			} else {
+				return firstLetter; // single-letter word case
+			}
+			});
+			element.innerHTML = transformed.join('');
         }
 		function wrapAllContents(selector, wrapperTag = 'dark-bg') {
-		  const el = document.querySelector(selector);
-		  if (!el) return;
-		  const wrapper = document.createElement(wrapperTag);
-		  while (el.firstChild) {
-			wrapper.appendChild(el.firstChild);
-		  }
-		  el.appendChild(wrapper);
+			const el = document.querySelector(selector);
+			if (!el) return;
+			const wrapper = document.createElement(wrapperTag);
+			while (el.firstChild) {
+				wrapper.appendChild(el.firstChild);
+			}
+			el.appendChild(wrapper);
 		}		
 		function assignRandomBannerClasses() {
 			const classes = ['bground1', 'bground2', 'bground3', 'bground4', 'bground5','bground6','bground7' ,'bground8','bground9','bground10'/*,'bground11','bground12','bground13','bground14','bground15','bground16','bground17','bground18','bground19','bground20'*/];
@@ -131,22 +127,19 @@
 			: navigator.platform.toUpperCase().indexOf("MAC") >= 0;
 		}		
 		function macOSfix() {
-			if (!isMacOS()) return;
-			const searchBtn = document.querySelector('.search-form .search-submit');
-			const inputField = document.querySelector('form.search-form input.search-field');
-			if (searchBtn) {
-			  searchBtn.classList.add('mac-os');
-			}
-			if (inputField) {
-				inputField.classList.add('mac-os');
-			}
+		  if (!isMacOS()) return;
+		  document.querySelectorAll(`
+			.search-form .search-submit,
+			form.search-form input.search-field,
+			nav#navigation,
+			.menu-icon
+		  `).forEach(el => el.classList.add('mac-os'));
 		}
 		// === Configurable Selectors ===
 		const navMenuRoot = document.querySelector('ul.menu.omega-nav-menu.menu-primary');
 		const menuIcon = document.querySelector('#menu-icon.menu-icon');
 		const content = document.querySelector('#content');
 		let overlay = null;
-
 		// === Utility Functions ===
 		function showSubmenu(submenu) {
 			if (submenu) {
@@ -319,7 +312,6 @@
 						this.removeAttribute('data-opened');
 					}
 				});
-
 				anchor.addEventListener('focus', function () {
 					if (window.innerWidth < 1023) return;
 					triggerSuperfishEvent(this, 'mouseenter');
