@@ -3,6 +3,24 @@
 	///////////////////////////////////////////////////
 	(function () {
 		'use strict';
+		
+		function isMacOS() {
+			const ua = navigator.userAgent.toUpperCase();
+			const platform = navigator.platform.toUpperCase();
+
+			return (
+				platform.includes("MAC") ||
+				ua.includes("MAC OS X") ||
+				ua.includes("MACINTEL")
+			);
+		}
+		function macOSfix() {
+			if (isMacOS()) {
+				document.documentElement.classList.add("mac-os");
+			} else {
+				console.log("Not Mac OS.");
+			}
+		}
 		function removeCredits() {
 			document.querySelector('p.credit').remove();
 		}
@@ -12,7 +30,6 @@
 				const img     = block.querySelector('figure a img');
 				const link    = block.querySelector('h2.wp-block-heading a');
 				const btnlink = block.querySelector('.surge-btn-i a');
-
 				if (!(imglink && img && link && btnlink)) return;
 				const bindToggle = (source, target, className, events) => {
 					events.on.forEach(evt =>
@@ -30,7 +47,6 @@
 					{ source: img,     target: link, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
 					{ source: link,    target: img,  className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
 					{ source: link,    target: imglink, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
-
 					// New button relationships (mirroring original logic)
 					{ source: btnlink, target: link, className: 'is-hovered',       events: { on: ['mouseenter'], off: ['mouseleave'] }},
 					{ source: btnlink, target: link, className: 'is-active-focused', events: { on: ['focus','mousedown'], off: ['blur','mouseup'] }},
@@ -120,21 +136,7 @@
 				menuIcon.setAttribute("tabindex", "0"); // allow focus
 				menuIcon.setAttribute("aria-hidden", "false"); // expose to screen readers
 			}
-		}
-		function isMacOS() {
-		  return navigator.userAgentData
-			? navigator.userAgentData.platform === "macOS"
-			: navigator.platform.toUpperCase().indexOf("MAC") >= 0;
 		}		
-		function macOSfix() {
-		  if (!isMacOS()) return;
-		  document.querySelectorAll(`
-			.search-form .search-submit,
-			form.search-form input.search-field,
-			nav#navigation,
-			.menu-icon
-		  `).forEach(el => el.classList.add('mac-os'));
-		}
 		// === Configurable Selectors ===
 		const navMenuRoot = document.querySelector('ul.menu.omega-nav-menu.menu-primary');
 		const menuIcon = document.querySelector('#menu-icon.menu-icon');
@@ -346,12 +348,6 @@
 		}
 		// === Run All ===
 		assignRandomBannerClasses();
-		tripleHoverActiveFocus();
-		wrapAllContents('h1.banner-title', 'dark-bg');		
-		wrapExceptFirstLetters('h1.banner-title');
-		requestAnimationFrame(() => {
-		  wrapAllContents('h1.banner-title', 'dark-bg');
-		});
 		initHeaderState();
 		initSubmenus();
 		initOverlayTriggers();
@@ -359,15 +355,20 @@
 		initGlobalEscapeHandler();
 		initScrollHeaderBehavior();
 		initMenuIcon();
-		isMacOS();
-		macOSfix();	
 		removeCredits();
+		requestAnimationFrame(() => {
+		  wrapAllContents('h1.banner-title', 'dark-bg');
+		});
+		tripleHoverActiveFocus();
 		updateBurgerAccessibility();
 		window.addEventListener('resize', () => {
 			applyTransparency(window.pageYOffset);
 			updateBurgerAccessibility();
 		});
+		wrapAllContents('h1.banner-title', 'dark-bg');
+		wrapExceptFirstLetters('h1.banner-title');
+		macOSfix(); 
 	})();
 	///////////////////////////////////////////////////
 	/////* End SURGE Javascript Customizations *///////
-	///////////////////////////////////////////////////     
+	///////////////////////////////////////////////////      

@@ -55,6 +55,7 @@ $lv: 	600px;
 
 //// Horizontal ////
 
+$xxfix:	2200px;
 $xxl:  	1400px;
 $xl:   	1200px;
 $clg:  	1025px;
@@ -66,6 +67,9 @@ $sm: 	 576px;
 $xs: 	 480px;
 $xxs: 	     0;
 
+@mixin hd-center {	
+  @media only screen and (min-width: $xxl) and (max-width: $xxfix) { @content; }		
+}
 @mixin hd-desktop-up {
   @media only screen and (min-width: $xxl) { @content; }	
 }
@@ -200,7 +204,7 @@ $JuliusFont: "Julius Sans One", sans-serif;
 }
 @mixin banner-title {
     color: $logo-color;
-    font-size: 50px;
+    font-size: 44px;
     font-weight: 600;
     font-family: $VollkornSCFont;
     margin: 80px 0 -130px 0;
@@ -1025,6 +1029,7 @@ body {
 						a {
 							padding: 15px 10px 5px 10px;
     						border-radius: 5px;
+
 							&:active, &:hover, &:focus {
 								color: $black;
 								text-decoration: none !important;
@@ -1191,6 +1196,7 @@ body {
 								transform: scale(1.18);
 								box-shadow:  0 0 30px $white;
 							}
+
 							&:hover, &:active, &:focus {
 								border-bottom: 4px dotted rgba(255,255,255,0.0);
 								transform: scale(1.05);
@@ -1481,11 +1487,14 @@ body {
 			background-repeat: no-repeat;
 			max-width: 2200px;
 			margin: 0 auto;
-			border-radius: 0 0 25px 25px;
+			border-radius: 0 0 10px 10px;
 //			border-bottom: 3px solid #6e8a71;
 			transition: $ease-half-sec;
 //			max-height: calc(100vh - 50px) !important;
 //        	overflow-y: auto;
+			@include hd-center {
+				margin: 0 48px;
+			}			
 			@include hd-desktop-up {
 				background-size: 3037px calc(min(1058px, 1058px));
 				padding: 108px 0 250px 0;
@@ -1493,10 +1502,12 @@ body {
 			@include large-desktop-up {
 				background-size: 1450px calc(min(770px, 770px));
 				padding: 100px 0 50px 0;
+				margin: 0 30px;
 			}                                           
 			@include custom-desktop {
 				background-size: 1320px calc(min(700px, 700px));
 				padding: 67px 0 67px 0;
+				margin: 0 25px;
 			}                                           
 			@include desktop-up {
 				background-size: 1280px calc(min(550px, 550px));
@@ -1505,18 +1516,23 @@ body {
 			@include tablet-landscape-up {
 				background-size: 1100px calc(min(480px, 480px));
 				padding: 67px 0 67px 0;
+				margin: 0 43px;
 			}
 			@include tablet-portrait-up {
 				background-size: 800px calc(min(380px, 380px));
 				padding: 70px 0 35px 0;
+				margin: 0 30px;
 			}               
 			@include phone-only-up {
 				background-size: 600px calc(min(360px, 360px));
 				padding: 60px 0 30px 0;
+				margin: 0 10px;
+				
 			}
 			@include extra-extra-small {
 				background-size: 450px calc(min(350px, 350px));
 				padding: 50px 0 25px 0;
+				margin: 0 10px;
 			}
 			&.bground1 {
 				background-image: $surge-bg1;
@@ -1657,6 +1673,7 @@ body {
 					-webkit-text-stroke: 0.015em $black;
 				}               
 				@include phone-only-up {
+
 					font-size:18px;
 					line-height: 1.02em;
 					position: relative;
@@ -1730,14 +1747,14 @@ body {
 						 @include tablet-landscape-up {
 							border-bottom: solid 6px #a2d3bb;
 							height: 100px;
-							width: 750px;
+							width: 675px;
 							background-size: 250px 100%;
 							position: relative;
 							bottom: 8px;
 						}                       
 						@include tablet-portrait-up {
 							border-bottom: solid 5px #a2d3bb;
-							width: 592px;
+							width: 500px;
 							height: 62px;
 							background-size: contain;
 							position: relative;
@@ -2564,8 +2581,19 @@ body {
 					&:active, &:hover, &:focus {
 						background-color: $black !important;
 					}
+					@include large-desktop-up {
+						left: 357px;
+					}
+					@include custom-desktop {
+						left: 357px;
+					}
+					@include desktop-up {
+						left: 318px;
+						bottom: 95px;
+					}               
 					@include tablet-landscape-up {
-						left: 300px;
+						left: 318px;
+						bottom: 95px;
 					}
 					@include tablet-portrait-up {
 						max-width: 100px;
@@ -2585,8 +2613,56 @@ body {
 						height: 56px;
 						bottom: 49px;
 					}
+					@-moz-document url-prefix() {
+						@include hd-desktop-up {
+							left: 381px;
+							height: 81px;
+							bottom: 74px;
+						}
+						@include large-desktop-up {
+							left: 381px;
+							height: 81px;
+							bottom: 74px;
+						}
+						@include custom-desktop {
+							left: 381px;
+							height: 81px;
+							bottom: 74px;
+						}
+						@include desktop-up {
+							left: 381px;
+							bottom: 74px;
+							height: 81px;
+						}               
+						@include tablet-landscape-up {
+							left: 330px;
+							bottom: 74px;
+							height: 81px;
+						}
+						@include tablet-portrait-up {
+							max-width: 100px;
+							left: 232px;
+							height: 81px;
+							bottom: 74px;
+						}                    
+						@include phone-only-up {
+							max-width: 75px;
+							left: 167px;
+							font-size: 16px;
+							height: 56px;
+							bottom: 49px;
+						}
+						@include extra-extra-small {
+							max-width: 50px;
+							left: 114px;
+							font-size: 10px;
+							height: 46px;
+							bottom: 39px;
+						}
+					}			
 				}
 			}
+			
 			@-moz-document url-prefix() {
 				input {
 					height: 81px;
@@ -2619,28 +2695,28 @@ body {
 					z-index: 9999;
 					color: black;
 					font-size: 80px;
-					bottom: 100px;
 					position: fixed;
 					top: 0;
 					width: 100px;
 					height: 100px;                      
 					right: 17px;
+					top: 44px;
 					@include tablet-portrait-up {
 						width: 80px;
 						height: 80px;
-						top: 20px;
+						top: 53px;
 					}                    
 					@include phone-only-up {
 						font-size: 60px;
 						width: 60px;
 						height: 60px;
-						top: 30px;
+						top: 50px;
 					}                   
 					@include extra-extra-small {
 						font-size: 50px;
 						width: 50px;
 						height: 50px;
-						top: 37px;
+						top: 48px;
 					}
 					transition: $ease-quarter-sec;
 					&:active, &:focus, &:focus-visible {
@@ -2728,3 +2804,73 @@ body {
 /////////////////////////////////
 ///////////End body ///////////
 /////////////////////////////////
+
+////////// MacOS-only ///////////
+.mac-os {
+	.searchwp-modal-form {
+		.search-form {
+			input {
+				&[type="submit"] {
+					left: 323px;
+					height: 96px;
+					bottom: 88px;
+					@include tablet-landscape-up {
+						left: 315px;
+					}
+					@include tablet-portrait-up {
+						left: 220px;
+					}              
+					@include phone-only-up {
+						left: 167px;
+						height: 66px;
+						bottom: 58px;
+					}            
+					@include extra-extra-small {
+						left: 115px;
+						height: 57px;
+						bottom: 49px;
+					}
+					@-moz-document url-prefix() {
+						left: 417px;
+						bottom: 75px;
+						height: 84px;
+						@include tablet-landscape-up {
+							left: 330px;
+						}
+						@include tablet-portrait-up {
+							left: 220px;
+						}              
+						@include phone-only-up {
+							left: 167px;
+							height: 56px;
+							bottom: 49px;
+						}
+						@include extra-extra-small {
+							left: 114px;
+							height: 46px;
+							bottom: 39px;
+						}						
+					}
+				}
+			}
+		}
+	}
+	
+	@media only screen and (max-width: 1023px) and (min-width: 1023px) {
+		.menu-icon {
+			top: 35px !important;
+			left: 790px !important;
+			max-width: 100px;
+		}
+		.menu {
+			&.menu-primary {
+				left: -100px !important;
+				top: 100px !important;
+				width: 1023px !important;
+			}
+		}	
+	}
+}
+/////////////////////////////////
+////////// End MacOS-only ///////////
+/////////////////////////////////	

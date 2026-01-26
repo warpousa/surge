@@ -1,30 +1,10 @@
 @charset "UTF-8";
 /* SURGE-styles*/
-/* Body Background */
-/* linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);  */
-/* End Body Background */
-/*  Special Backgrounds */
-/* End Special Backgrounds */
-/* Background Img Variables */
-/* End Background Img Variables  */
-/* Breakpoints */
-/* End Breakpoints */
-/* Colors & Borders */
-/*#eff4f2*/
-/* #eff4f2;  */
-/* End Colors & Borders */
-/*  Img FX */
-/* End Img FX */
-/* Transforms & Transitions */
-/* End Transforms & Transitions */
-/* Shading  */
-/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-/* Mixins */
-/* End Mixins */
+
 body {
   background: #446370;
   height: 100vh;
@@ -1061,8 +1041,11 @@ body {
     background-repeat: no-repeat;
     max-width: 2200px;
     margin: 0 auto;
-    border-radius: 0 0 25px 25px;
+    border-radius: 0 0 10px 10px;
     transition: ease all 0.5s; }
+    @media only screen and (min-width: 1400px) and (max-width: 2200px) {
+      body .site-container .banner {
+        margin: 0 48px; } }
     @media only screen and (min-width: 1400px) {
       body .site-container .banner {
         background-size: 3037px calc(min(1058px, 1058px));
@@ -1070,11 +1053,13 @@ body {
     @media only screen and (min-width: 1200px) and (max-width: 1400px) {
       body .site-container .banner {
         background-size: 1450px calc(min(770px, 770px));
-        padding: 100px 0 50px 0; } }
+        padding: 100px 0 50px 0;
+        margin: 0 30px; } }
     @media only screen and (min-width: 1025px) and (max-width: 1200px) {
       body .site-container .banner {
         background-size: 1320px calc(min(700px, 700px));
-        padding: 67px 0 67px 0; } }
+        padding: 67px 0 67px 0;
+        margin: 0 25px; } }
     @media only screen and (min-width: 992px) and (max-width: 1025px) {
       body .site-container .banner {
         background-size: 1280px calc(min(550px, 550px));
@@ -1082,19 +1067,23 @@ body {
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       body .site-container .banner {
         background-size: 1100px calc(min(480px, 480px));
-        padding: 67px 0 67px 0; } }
+        padding: 67px 0 67px 0;
+        margin: 0 43px; } }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .site-container .banner {
         background-size: 800px calc(min(380px, 380px));
-        padding: 70px 0 35px 0; } }
+        padding: 70px 0 35px 0;
+        margin: 0 30px; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .site-container .banner {
         background-size: 600px calc(min(360px, 360px));
-        padding: 60px 0 30px 0; } }
+        padding: 60px 0 30px 0;
+        margin: 0 10px; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .site-container .banner {
         background-size: 450px calc(min(350px, 350px));
-        padding: 50px 0 25px 0; } }
+        padding: 50px 0 25px 0;
+        margin: 0 10px; } }
     body .site-container .banner.bground1 {
       background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
     body .site-container .banner.bground2 {
@@ -1176,7 +1165,7 @@ body {
       text-shadow: 1px -3px 3px black;
       transition: ease all 0.25s;
       color: #c4e5d5;
-      font-size: 50px;
+      font-size: 44px;
       font-weight: 600;
       font-family: "Vollkorn SC", serif;
       margin: 80px 0 -130px 0;
@@ -1282,14 +1271,14 @@ body {
           body .site-container .banner .banner-title.site-description::before {
             border-bottom: solid 6px #a2d3bb;
             height: 100px;
-            width: 750px;
+            width: 675px;
             background-size: 250px 100%;
             position: relative;
             bottom: 8px; } }
         @media only screen and (min-width: 576px) and (max-width: 768px) {
           body .site-container .banner .banner-title.site-description::before {
             border-bottom: solid 5px #a2d3bb;
-            width: 592px;
+            width: 500px;
             height: 62px;
             background-size: contain;
             position: relative;
@@ -2013,9 +2002,20 @@ body {
         box-shadow: 11px 10px 25px #75858a; }
       body .searchwp-modal-form .search-form input.search-submit:active, body .searchwp-modal-form .search-form input.search-submit:hover, body .searchwp-modal-form .search-form input.search-submit:focus {
         background-color: black !important; }
+      @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          left: 357px; } }
+      @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          left: 357px; } }
+      @media only screen and (min-width: 992px) and (max-width: 1025px) {
+        body .searchwp-modal-form .search-form input.search-submit {
+          left: 318px;
+          bottom: 95px; } }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
         body .searchwp-modal-form .search-form input.search-submit {
-          left: 300px; } }
+          left: 318px;
+          bottom: 95px; } }
       @media only screen and (min-width: 576px) and (max-width: 768px) {
         body .searchwp-modal-form .search-form input.search-submit {
           max-width: 100px;
@@ -2034,6 +2034,52 @@ body {
           font-size: 10px;
           height: 56px;
           bottom: 49px; } }
+@-moz-document url-prefix() {
+  @media only screen and (min-width: 1400px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      left: 381px;
+      height: 81px;
+      bottom: 74px; } }
+  @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      left: 381px;
+      height: 81px;
+      bottom: 74px; } }
+  @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      left: 381px;
+      height: 81px;
+      bottom: 74px; } }
+  @media only screen and (min-width: 992px) and (max-width: 1025px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      left: 381px;
+      bottom: 74px;
+      height: 81px; } }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      left: 330px;
+      bottom: 74px;
+      height: 81px; } }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      max-width: 100px;
+      left: 232px;
+      height: 81px;
+      bottom: 74px; } }
+  @media only screen and (min-width: 480px) and (max-width: 576px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      max-width: 75px;
+      left: 167px;
+      font-size: 16px;
+      height: 56px;
+      bottom: 49px; } }
+  @media only screen and (min-width: 0) and (max-width: 480px) {
+    body .searchwp-modal-form .search-form input.search-submit {
+      max-width: 50px;
+      left: 114px;
+      font-size: 10px;
+      height: 46px;
+      bottom: 39px; } } }
 @-moz-document url-prefix() {
   body .searchwp-modal-form .search-form input {
     height: 81px;
@@ -2056,30 +2102,30 @@ body {
     z-index: 9999;
     color: black;
     font-size: 80px;
-    bottom: 100px;
     position: fixed;
     top: 0;
     width: 100px;
     height: 100px;
     right: 17px;
+    top: 44px;
     transition: ease all 0.25s; }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {
         width: 80px;
         height: 80px;
-        top: 20px; } }
+        top: 53px; } }
     @media only screen and (min-width: 480px) and (max-width: 576px) {
       body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {
         font-size: 60px;
         width: 60px;
         height: 60px;
-        top: 30px; } }
+        top: 50px; } }
     @media only screen and (min-width: 0) and (max-width: 480px) {
       body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close {
         font-size: 50px;
         width: 50px;
         height: 50px;
-        top: 37px; } }
+        top: 48px; } }
     body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close:active, body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close:focus, body .searchwp-modal-form .searchwp-modal-form-default button.searchwp-modal-form__close:focus-visible {
       outline: dashed 3px rgba(0, 0, 0, 0.5);
       background: white; }
@@ -2145,3 +2191,54 @@ body {
     padding: 30px 0;
     text-align: center;
     background-color: #d3e9e4; }
+
+.mac-os .searchwp-modal-form .search-form input[type="submit"] {
+  left: 323px;
+  height: 96px;
+  bottom: 88px; }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+      left: 315px; } }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+      left: 220px; } }
+  @media only screen and (min-width: 480px) and (max-width: 576px) {
+    .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+      left: 167px;
+      height: 66px;
+      bottom: 58px; } }
+  @media only screen and (min-width: 0) and (max-width: 480px) {
+    .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+      left: 115px;
+      height: 57px;
+      bottom: 49px; } }
+@-moz-document url-prefix() {
+  .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+    left: 417px;
+    bottom: 75px;
+    height: 84px; }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+        left: 330px; } }
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+        left: 220px; } }
+    @media only screen and (min-width: 480px) and (max-width: 576px) {
+      .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+        left: 167px;
+        height: 56px;
+        bottom: 49px; } }
+    @media only screen and (min-width: 0) and (max-width: 480px) {
+      .mac-os .searchwp-modal-form .search-form input[type="submit"] {
+        left: 114px;
+        height: 46px;
+        bottom: 39px; } } }
+@media only screen and (max-width: 1023px) and (min-width: 1023px) {
+  .mac-os .menu-icon {
+    top: 35px !important;
+    left: 790px !important;
+    max-width: 100px; }
+  .mac-os .menu.menu-primary {
+    left: -100px !important;
+    top: 100px !important;
+    width: 1023px !important; } }
