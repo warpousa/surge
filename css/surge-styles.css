@@ -1130,8 +1130,16 @@ body {
       backdrop-filter: blur(0.06em); }
       body .site-container .banner .filter .entry-meta {
         position: relative;
-        text-shadow: 3px 2px 4px black;
-        -webkit-text-stroke: 0.025em #476672; }
+        text-shadow: 1px 0 4px black;
+        -webkit-text-stroke: 0.025em #476672;
+        margin-top: 50px;
+        line-height: 22px; }
+        body .site-container .banner .filter .entry-meta span.entry-author a, body .site-container .banner .filter .entry-meta span.entry-comments-link a {
+          color: #eaf6f9;
+          text-shadow: 1px 0 4px black; }
+          body .site-container .banner .filter .entry-meta span.entry-author a:hover, body .site-container .banner .filter .entry-meta span.entry-author a:focus, body .site-container .banner .filter .entry-meta span.entry-author a:active, body .site-container .banner .filter .entry-meta span.entry-comments-link a:hover, body .site-container .banner .filter .entry-meta span.entry-comments-link a:focus, body .site-container .banner .filter .entry-meta span.entry-comments-link a:active {
+            color: #1d5861;
+            text-shadow: 1px 0 1px black; }
         @media only screen and (min-width: 1400px) {
           body .site-container .banner .filter .entry-meta {
             font-size: 24px;
@@ -1299,6 +1307,11 @@ body {
             background-size: contain;
             position: relative;
             bottom: 5px; } }
+    body .site-container .banner dark-bg {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 18px;
+      box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
+      font-weight: bold; }
     body .site-container .banner h3.archive-title {
       text-shadow: 1px 1px 5px black;
       font-family: "Vollkorn SC", serif;

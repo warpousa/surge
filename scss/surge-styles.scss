@@ -115,6 +115,8 @@ $charade: #222630;
 $content-background1: linear-gradient(0deg, #c5cfcc 0%, #a8aba7 24%, #446370 100%);
 $content-background2: linear-gradient(0deg, #b7cccd 0%, #e8e8e8 95%, #eff2e3 100%);
 $contentcolor: #6d6666;
+$filterentry: #eaf6f9;
+$filterentryactivehover: #1d5861;
 $grey: grey;
 $linkcolor: #36768c;
 $linkhover: $black;
@@ -1607,9 +1609,23 @@ body {
 //              backdrop-filter: blur(3px);
 //              filter: drop-shadow(2px 4px 6px $black);				
 				.entry-meta {
+					span {
+						&.entry-author, &.entry-comments-link {
+							a {
+								color: $filterentry;
+								text-shadow: 1px 0 4px $black;
+								&:hover, &:focus, &:active {
+									color: $filterentryactivehover;
+									text-shadow: 1px 0 1px $black;
+								}
+							}
+						}
+					}
 					position: relative;
-					text-shadow: 3px 2px 4px $black;
+					text-shadow: 1px 0 4px $black;
 					-webkit-text-stroke: 0.025em #476672;
+					margin-top: 50px;
+					line-height: 22px;
 					@include hd-desktop-up {
 						font-size: 24px;
 						top: 50px;
@@ -1778,6 +1794,12 @@ body {
 						}                        
 					}
 				}
+			}
+			dark-bg {
+				background: rgba(0, 0, 0, 0.5);
+				border-radius: 18px;
+				box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
+				font-weight: bold;
 			}
 			h3 {
 				&.archive-title { 
