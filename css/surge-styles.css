@@ -4,7 +4,7 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-
+*/
 body {
   background: #446370;
   height: 100vh;
@@ -1998,6 +1998,13 @@ body {
     body .nf-form-layout form input:not([type=button]):active, body .nf-form-layout form input:not([type=button]):focus {
       outline: dashed 3px #555e60;
       box-shadow: 6px 5px 15px #75858a; }
+  body div .nf-response-msg {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    font-size: 150%;
+    margin: 290px 25px 25px 25px;
+    padding: 50px; }
   body .searchwp-modal-form .search-form {
     display: flex;
     flex-direction: column;

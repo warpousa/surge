@@ -117,6 +117,7 @@ $content-background2: linear-gradient(0deg, #b7cccd 0%, #e8e8e8 95%, #eff2e3 100
 $contentcolor: #6d6666;
 $filterentry: #eaf6f9;
 $filterentryactivehover: #1d5861;
+$formconfirmbg: rgba(255,255,255,0.5);
 $grey: grey;
 $linkcolor: #36768c;
 $linkhover: $black;
@@ -2578,6 +2579,16 @@ body {
 				}
 			}
 		}
+	}
+	div {
+		.nf-response-msg {
+			background: $formconfirmbg;
+			border-radius: 25px;
+			box-shadow: 0 0 25px rgba(0,0,0,0.3);
+			font-size: 150%;
+			margin: 290px 25px 25px 25px;
+			padding: 50px;
+		}		
 	}
 	////////////////////////////////////////////////////////////
 	.searchwp-modal-form {
