@@ -1211,6 +1211,18 @@ body {
 								transform: rotate(45deg);
 								margin-left: 125px;
 								margin-top: 0;
+								@include tablet-portrait-up { 
+									font-size: 45px;
+									margin-top: 10px;
+								}								
+								@include phone-only-up {
+									font-size: 40px;
+									margin-top: 20px;
+								}					
+								@include extra-extra-small {
+									font-size: 35px;
+									margin-top: 30px;
+								}								
 							}
 							&::after {
 								content: 'Learn more ➣';
@@ -1219,6 +1231,15 @@ body {
 								font-size: 28px;
 								font-family: "Julius Sans One", sans-serif;
 								font-weight: bold;
+								@include tablet-portrait-up { 
+									font-size: 25px;
+								}								
+								@include phone-only-up {
+									font-size: 21px;
+								}					
+								@include extra-extra-small {
+									font-size: 13px;
+								}
 							}
 							&:nth-of-type(2) {
 								filter: hue-rotate(330deg);
@@ -1239,6 +1260,18 @@ body {
 							&.wp-element-caption {
 								font-size: 23px;
 								text-shadow: 1px 1px 5px black;
+								@include tablet-portrait-up { 
+									font-size: 20px;
+									line-height: 20px;
+								}								
+								@include phone-only-up {
+									font-size: 17px;
+									line-height: 17px;
+								}					
+								@include extra-extra-small {
+									font-size: 12px;
+									line-height: 12px;
+								}
 							}
 						}
 					}
