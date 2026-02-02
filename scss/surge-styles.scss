@@ -1010,6 +1010,13 @@ body {
 							background: rgba(100,100,100,0.8);
 							outline: dotted;
 						}
+//						&::marker {
+//							
+//						}
+						strong {
+							position: relative;
+							top: 3px;
+						}
 					}
 					&:open {
 						summary {

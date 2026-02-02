@@ -4,7 +4,7 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-*/
+
 body {
   background: #446370;
   height: 100vh;
@@ -696,6 +696,9 @@ body {
         body .site-container .site-inner .entry-wrap details summary:focus-visible, body .site-container .site-inner .entry-wrap details summary:focus, body .site-container .site-inner .entry-wrap details summary:active {
           background: rgba(100, 100, 100, 0.8);
           outline: dotted; }
+        body .site-container .site-inner .entry-wrap details summary strong {
+          position: relative;
+          top: 3px; }
       body .site-container .site-inner .entry-wrap details:open summary {
         background: white;
         color: black;
