@@ -212,6 +212,7 @@ $JuliusFont: "Julius Sans One", sans-serif;
     font-family: $VollkornSCFont;
     margin: 80px 0 -130px 0;
     text-shadow: 1px -3px 3px $black;
+    text-wrap: balance;
     -webkit-text-stroke: 1px $black;
 }
 @mixin burger-menu {
@@ -950,6 +951,7 @@ body {
 			background: $content-background1;
 			padding: 15px 0;
 			.contact-logo {
+        text-wrap: balance;
 				@include contact-logo-styling;
 				@include hd-desktop-up {
 					font-size: 82px;
@@ -1730,7 +1732,6 @@ body {
 					-webkit-text-stroke: 0.015em $black;
 				}               
 				@include phone-only-up {
-
 					font-size:18px;
 					line-height: 1.02em;
 					position: relative;
