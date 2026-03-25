@@ -1,10 +1,30 @@
 @charset "UTF-8";
 /* SURGE-styles*/
+/* Body Background */
+/* linear-gradient(to bottom, #d3e9e4 65%, #1b648a 350%);  */
+/* End Body Background */
+/*  Special Backgrounds */
+/* End Special Backgrounds */
+/* Background Img Variables */
+/* End Background Img Variables  */
+/* Breakpoints */
+/* End Breakpoints */
+/* Colors & Borders */
+/*#eff4f2*/
+/* #eff4f2;  */
+/* End Colors & Borders */
+/*  Img FX */
+/* End Img FX */
+/* Transforms & Transitions */
+/* End Transforms & Transitions */
+/* Shading  */
+/* Shading * /
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap&family=Vollkorn+SC:wght@400;600;700;900&family=Julius+Sans+One&display=swap");
 /* End Fonts */
-
+/* Mixins */
+/* End Mixins */
 body {
   background: #446370;
   height: 100vh;
@@ -1122,47 +1142,47 @@ body {
         padding: 50px 0 25px 0;
         margin: 0 10px; } }
     body .site-container .banner.bground1 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground1.jpg) !important; }
     body .site-container .banner.bground2 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground2.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground2.jpg) !important; }
     body .site-container .banner.bground3 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground3.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground3.jpg) !important; }
     body .site-container .banner.bground4 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground4.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground4.jpg) !important; }
     body .site-container .banner.bground5 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground5.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground5.jpg) !important; }
     body .site-container .banner.bground6 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground6.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground6.jpg) !important; }
     body .site-container .banner.bground6 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground6.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground6.jpg) !important; }
     body .site-container .banner.bground7 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground7.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground7.jpg) !important; }
     body .site-container .banner.bground8 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground8.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground8.jpg) !important; }
     body .site-container .banner.bground9 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground9.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground9.jpg) !important; }
     body .site-container .banner.bground10 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground10.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground10.jpg) !important; }
     body .site-container .banner.bground11 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground11.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground11.jpg) !important; }
     body .site-container .banner.bground12 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground12.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground12.jpg) !important; }
     body .site-container .banner.bground13 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground13.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground13.jpg) !important; }
     body .site-container .banner.bground14 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground14.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground14.jpg) !important; }
     body .site-container .banner.bground15 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground15.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground15.jpg) !important; }
     body .site-container .banner.bground16 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground16.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground16.jpg) !important; }
     body .site-container .banner.bground17 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground17.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground17.jpg) !important; }
     body .site-container .banner.bground18 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground18.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground18.jpg) !important; }
     body .site-container .banner.bground19 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground19.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground19.jpg) !important; }
     body .site-container .banner.bground20 {
-      background-image: url(https://surge.ngo/wp-content/themes/composer/images/surgengo-bground20.jpg) !important; }
+      background-image: url(/wp-content/themes/composer/images/surgengo-bground20.jpg) !important; }
     body .site-container .banner .filter {
       backdrop-filter: blur(0.06em); }
       body .site-container .banner .filter .entry-meta {
