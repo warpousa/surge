@@ -1428,6 +1428,8 @@ body {
 								min-width: 150px;
 								width: 60%;
 								transition: $ease-eighth-sec;
+                margin-left: 20px;
+                max-width: 800px;
 								&:hover {
 									box-shadow: 5px 6px 15px #75858a;
 								}
@@ -2128,6 +2130,7 @@ body {
 				a {
 					color: $black;
 					padding: 22px 18px 20px 37px;
+          text-wrap: balance;
 					@include desktop-fix {
 						padding: 26px 18px 23px 37px;
 					}
@@ -2244,7 +2247,7 @@ body {
 						border-bottom: dashed 1px darkgrey !important;
 						@include hd-desktop-up {
 							box-shadow: $submenu-shadow1;
-							width: 28%;
+							width: 25%;
 							max-width: 600px;
 						}                      
 						@include large-desktop-up {
